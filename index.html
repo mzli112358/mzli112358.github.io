@@ -849,6 +849,11 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
             <li><strong>Outstanding Poster</strong>, Faculty of Science and Technology Poster Exhibition [2024]</li>
             <li><strong>First Prize</strong>, Huazhong Cup Mathematical Modeling Competition [2023]</li>
           </ul>
+          <hr>
+          <h1 id="visitor-map">🌍 Visitor map</h1>
+          <div class="visitor-map-wrap" aria-label="Visitor locations map">
+            <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=L2EvxI5IxPwlHLSJ8tvLwqVqeZIb3MyUf-OLupTd254&cl=ffffff&w=600"></script>
+          </div>
         </section>
         <footer class="page__meta"></footer>
       </div>
@@ -895,6 +900,15 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
     .preview-image:hover {
       transform: scale(1.02);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Visitor map: keep inside content column, capped width */
+    .visitor-map-wrap {
+      max-width: 600px;
+      margin: 0.75em auto 0;
+    }
+    .visitor-map-wrap iframe {
+      max-width: 100% !important;
     }
 
     /* Image Modal Styles */
@@ -1166,6 +1180,4 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
       });
     })();
   </script>
-  <!-- Map My Visitors (tracking in body per provider instructions) -->
-  <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=L2EvxI5IxPwlHLSJ8tvLwqVqeZIb3MyUf-OLupTd254&cl=ffffff&w=a"></script>
 </body></html>
