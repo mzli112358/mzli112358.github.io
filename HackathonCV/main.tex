@@ -1,6 +1,13 @@
+%===============================================================================
+% 双向同步与编译说明
+% 1. 修改“星尘黑客松-中文简历.tex”后，请同步更新同目录下的“星尘黑客松-中文简历.md”。
+% 2. AI 编辑本文件时，如发现 .tex 与 .md 内容不一致，应立即提醒用户并说明差异。
+% 3. 需要生成 PDF 时，请使用 TeXPage、Overleaf 等在线 LaTeX 工具，并将编译器设置为 XeLaTeX。
+% 4. 用途：星尘智能 Astribot OS「一句话生成App」机器人黑客松报名/展示用中文简历（与正式学术向「中文简历」成对文件不同）。
+%===============================================================================
 
 %-------------------------
-% 李明哲 - 中英文个人简历
+% 李明哲 - 星尘黑客松中文简历
 % XeLaTeX 专用版本
 %------------------------
 
@@ -92,16 +99,16 @@
 %----------HEADING----------
 \begin{center}
     \textbf{\Huge \scshape 李明哲} \\ \vspace{5pt}
-    \small 全栈机器人开发者 / 机器人原型系统工程实习生 / 具身智能与VLA系统开发 \\ \vspace{3pt}
-    \small 邮箱：\href{mailto:mc64655@um.edu.mo}{mc64655@um.edu.mo} $|$ 手机/微信：(+86) 137 1041 1101 $|$ 当前所在地：深圳 \\
-    % \small 个人主页：\href{https://mzli112358.github.io/}{https://mzli112358.github.io/}
+    \small 机器人系统 / 具身智能 / 场景App与任务智能体 \\ \vspace{3pt}
+    \small 邮箱：mc64655 [at] um [dot] edu [dot] mo $|$ 手机/微信：(+86) 137 1041 1101 $|$ 当前所在地：深圳 \\
+    \small 个人主页：\href{https://mzli112358.github.io/}{https://mzli112358.github.io/}
 \end{center}
 
 %-----------SUMMARY-----------
 \section{个人简介}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-    面向具身智能、家庭服务机器人与硬件快速原型的全栈机器人开发者，具备机器人系统从方案设计、硬件原型、底层通信、感知导航、遥操作数据采集到VLA模型适配的端到端开发经验。当前在原力无限科技控股（浙江）有限公司深圳研究院参与家庭服务机器人研发，负责机器人本体搭建、遥操作系统、数据采集链路、智能体任务规划与VLA训练相关工作推进。曾创立35人高校机器人实验室，带队获得RoboMaster分区赛工程挑战赛第一名；同时具备LLM、多智能体、3D视觉、3D Gaussian Splatting与机器人系统集成经验。
+    面向具身智能、家庭服务机器人与真实场景交付的全栈机器人开发者，具备从方案设计、硬件原型、感知导航、遥操作数据采集到VLA适配与任务智能体编排的端到端经验。当前在原力无限科技控股（浙江）有限公司深圳研究院参与家庭服务机器人研发。曾创立35人高校机器人实验室并获RoboMaster相关奖项。个人报名星尘Astribot OS黑客松，希望把此前因平台执行权限受限而未能完成的PhotoMate方案，在星尘本体与OS能力生态上真正做成可运行、可演示、可复用的具身智能摄影师App。
     }}
  \end{itemize}
 
@@ -126,16 +133,33 @@
     \resumeSubHeadingListEnd
 
 
-%-----------HARDWARE HACKATHON FIT-----------
-\section{硬件黑客松相关能力}
+%-----------ASTRIBOT HACKATHON FIT-----------
+\section{星尘黑客松相关能力}
     \resumeSubHeadingListStart
-        \resumeItem{快速原型能力：能在较短时间内完成需求拆解、方案选型、硬件采购、结构设计、装配调试、软件缝合与现场演示。}
-        \resumeItem{跨栈协作能力：能够同时理解机械、电控、嵌入式、ROS、视觉、模型训练与产品演示需求，并在多人并行开发中做任务拆解和接口协调。}
-        \resumeItem{问题定位能力：熟悉机器人开发中的高频问题，包括电机通信、驱动适配、坐标系、相机标定、数据采集、遥操作延迟、导航稳定性与整机联调。}
-        \resumeItem{展示交付能力：具备从概念到Demo的完整闭环经验，能够围绕真实场景快速构建可运行、可解释、可演示的机器人系统。}
+        \resumeItem{体验驱动交付：从“用户想获得什么体验”出发定义服务闭环，契合Astribot OS由自然语言需求组合机器人能力、生成场景App的路线。}
+        \resumeItem{场景App编排：具备任务智能体、状态机与工具调用经验，可将导航、感知、多模交互、灵巧操作、拍摄及交付模块编排为可恢复的长流程。}
+        \resumeItem{本体无关设计：PhotoMate按“能力接口—任务状态—外设适配”分层，不绑定单一机器人；更换本体时主要重做运动能力映射、坐标标定与外设适配。}
+        \resumeItem{真机快速落地：能够在短周期完成需求拆解、机械结构、3D打印、外设集成、软件缝合、整机排障与演示设计。}
     \resumeSubHeadingListEnd
 
-    
+%-----------RELEVANT PROJECT-----------
+\section{相关项目}
+    \resumeSubHeadingListStart
+    \resumeSubheading
+      {PhotoMate：面向商业空间的具身智能摄影师}{2026年7月}
+      {项目负责人 / 系统设计与集成}{探月黑客松方案延续，拟基于Astribot OS重启}
+      \resumeItemListStart
+        \resumeItem{\textbf{问题与场景：}面向展会、景区、毕业典礼和商场，解决无人帮拍、自拍构图受限，以及传统摄影成本高、覆盖不足的问题；机器人不是固定自拍亭，而是能主动发现需求、移动服务并创造互动体验的摄影师。}
+        \resumeItem{\textbf{完整流程：}巡航/待命—感知驻足、招手或语音请求并主动邀请—选择用户手机/机器人相机及打印/录像—导航至预设机位—分析人体、人脸、背景和光线并调整相机姿态—语音指导与倒计时—拍摄质检及失败重试—二维码或实体照片交付—清理数据并返回巡航。}
+        \resumeItem{\textbf{两种模式：}用户手机模式以末端夹具稳持设备、灵巧手触屏快门，照片不离开用户手机；机器人相机模式接入Insta360等USB相机，支持构图、曝光、闭眼/模糊检测、选片、短视频和扫码交付。}
+        \resumeItem{\textbf{实现架构：}按本体与外设、感知、能力、App编排四层设计；封装导航、机械臂/灵巧手、相机、语音、显示和打印工具，由显式状态机/任务智能体管理分支、超时、重试、恢复和资源释放，而非让大模型直接控制全部硬件。}
+        \resumeItem{\textbf{跨本体设计：}核心App仅依赖移动到机位、调整相机位姿、语音交互、触发拍摄、操作/递交等标准能力接口；不同机器人通过适配层完成能力映射、坐标标定与外设接入。}
+        \resumeItem{\textbf{此前受阻：}探月社区Physical AI黑客松期间，赞助商本体未开放导航、机械臂/灵巧手等所需执行权限，无法完成关键动作调用与真机闭环；项目停留在产品方案、结构/外设设计和部分软件链路，未形成完整Demo。}
+        \resumeItem{\textbf{星尘重启：}Astribot OS的模型—系统—本体一体化架构、Meta能力包、SDK/ROS2接口与应用编排思路，能够补足此前的本体调用断点；计划借助星尘真机、OS和开发支持，将PhotoMate实现为可运行App及可复制的摄影半解决方案。}
+      \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
 %-----------ROBOTICS EXPERIENCE-----------
 \section{机器人与工程经历}
     \resumeSubHeadingListStart
@@ -195,129 +219,12 @@
      \textbf{硬件原型}{: 机械结构设计、SolidWorks、OnShape、3D打印、PCB设计与打板、焊接装配、线束整理、整机联调、供应链调研与选型} \\
      \textbf{3D视觉与仿真}{: 3D Gaussian Splatting、NeRF、几何一致SLAM、NVIDIA Isaac Lab、机器人强化学习、物理仿真、相机标定、视觉感知} \\
      \textbf{机器学习与大模型}{: PyTorch、强化学习、Transformer、RAG、LangChain、模型微调、上下文学习、多智能体工作流} \\
-     \textbf{编程与工具}{: Python、C++、CUDA、Linux、Git、Docker、FastAPI/Flask、前后端快速开发、Vibe Coding、CAD/FEA、3D打印} \\
+     \textbf{编程与工具}{: Python、C++、CUDA、Linux、Git、Docker、FastAPI/Flask、前后端快速开发、CAD/FEA、3D打印} \\
      \textbf{使用/适配平台}{: 松灵Piper、Nero、OpenArm、Franka、星海图R1、Jetson平台、深度相机、激光雷达、VR遥操作设备} \\
      \textbf{语言能力}{: 英语，可用于学术阅读、技术文档阅读与专业沟通} \\
     }}
  \end{itemize}
 
 
-
-\newpage
-
-%========================
-% English Resume
-%========================
-
-%----------HEADING----------
-\begin{center}
-    \textbf{\Huge \scshape Mingzhe Li} \\ \vspace{5pt}
-    \small Full-stack Robotics Developer / Robotics Prototype Systems Engineering Intern / Embodied AI \& VLA System Development \\ \vspace{3pt}
-    \small Email: \href{mailto:mc64655@um.edu.mo}{mc64655@um.edu.mo} $|$ Mobile/WeChat: (+86) 137 1041 1101 $|$ Current Base: Shenzhen \\
-    % \small Portfolio: \href{https://mzli112358.github.io/}{https://mzli112358.github.io/}
-\end{center}
-
-%-----------SUMMARY-----------
-\section{Profile}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-    Full-stack robotics developer focused on embodied AI, home service robots, and rapid hardware prototyping. Experienced in end-to-end robotics system development, covering system design, hardware prototyping, low-level communication, perception and navigation, teleoperation-based data collection, and VLA model adaptation. Currently working at INFIFORCE Shenzhen Research Institute on home service robot development, driving robot platform integration, teleoperation systems, data collection pipelines, agentic task planning, and VLA training workflows. Founder of a 35-member university robotics lab and led the team to win 1st Place in the RoboMaster Regional Engineer Challenge, with additional experience in LLMs, multi-agent systems, 3D vision, 3D Gaussian Splatting, and robotics system integration.
-    }}
- \end{itemize}
-
-%-----------CURRENT EXPERIENCE-----------
-\section{Recent Experience}
-    \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {INFIFORCE Technology Holdings (Zhejiang) Co., Ltd. / Shenzhen Research Institute}{Shenzhen, China}
-      {Research Assistant / Embodied AI System Engineering Intern}{Mar. 2026 -- Present}
-      \resumeItemListStart
-        \resumeItem{Participate in home service robot and VLA system development, advancing the closed loop of robot deployment, real-world data collection, model training, and task-execution feedback.}
-        \resumeItem{Build robot prototypes from zero to one, including technical research, exhibition and supply-chain investigation, mechanical structure design, component selection, PCB design and prototyping, soldering, assembly, wiring, driver adaptation, motor zeroing, CAN communication, and whole-system debugging.}
-        \resumeItem{Develop and adapt multiple robot platforms and robotic arms, including AgileX Piper, Nero, OpenArm, Franka, and Galaxea R1; familiar with hardware debugging, ROS communication, control interface adaptation, and data collection pipelines.}
-        \resumeItem{Integrate SLAM, localization, mapping, navigation, visual perception, camera calibration, VR teleoperation, data collection, and model training repositories, extending robot capabilities from single-arm to dual-arm, gripper/hand replacement, and whole-body systems.}
-        \resumeItem{Familiar with the LeRobot framework; participate in ACT policy fine-tuning and OpenPI $\pi_{0.5}$ fine-tuning for robot manipulation data collection, policy learning, and cross-embodiment adaptation.}
-        \resumeItem{Contribute to long-horizon task agent systems, including task management, autonomous navigation and localization, task planning, and execution-chain design; coordinate two members working on agentic systems.}
-        \resumeItem{Take responsibility for small-team engineering management and technical review, coordinating interns across mechanical design, electronics, VR teleoperation, and agents; review mechanical drawings, PCB designs, technical plans, task breakdowns, project progress, and integration issues.}
-        \resumeItem{Able to respond and iterate quickly under high-intensity development cycles, making practical trade-offs across hardware, software, algorithms, and product requirements to turn prototypes into demonstrable systems.}
-      \resumeItemListEnd
-
-    \resumeSubHeadingListEnd
-
-
-%-----------HARDWARE HACKATHON FIT-----------
-\section{Hardware Hackathon Fit}
-    \resumeSubHeadingListStart
-        \resumeItem{Rapid prototyping: able to quickly complete requirement breakdown, technical selection, hardware sourcing, mechanical design, assembly, debugging, software integration, and live demonstration.}
-        \resumeItem{Cross-stack collaboration: able to understand mechanical design, electronics, embedded systems, ROS, vision, model training, and product demonstration needs, while coordinating interfaces and parallel development in a multi-person team.}
-        \resumeItem{Issue diagnosis: familiar with common robotics development issues, including motor communication, driver adaptation, coordinate frames, camera calibration, data collection, teleoperation latency, navigation stability, and whole-system integration.}
-        \resumeItem{Demo delivery: experienced in turning concepts into runnable, explainable, and demonstrable robot systems for real-world scenarios.}
-    \resumeSubHeadingListEnd
-
-
-%-----------ROBOTICS EXPERIENCE-----------
-\section{Robotics \& Engineering Experience}
-    \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {BNBU Navigator Robotics Lab}{Zhuhai, China}
-      {Founder / Technical Lead}{Apr. 2023 -- Present}
-      \resumeItemListStart
-        \resumeItem{Founded the university's first robotics lab, built the team from zero to one, secured approximately RMB 200,000 in funding, and expanded the team to 35 members.}
-        \resumeItem{Led full-stack robotics system integration, including industrial cameras, LiDAR, Jetson platforms, ROS2 communication, and real-time control systems for combat robots and wheeled-arm robot platforms.}
-        \resumeItem{Led the team to win 1st Place in the RoboMaster University League Engineer Challenge, Liaoning Station.}
-        \resumeItem{Experienced in mechanical design, SolidWorks modeling, 3D printing, sensor fusion, rapid prototyping, field debugging, and engineering delivery.}
-      \resumeItemListEnd
-
-    \resumeSubHeadingListEnd
-
-%-----------INTERNSHIP EXPERIENCE-----------
-\section{Other Internship Experience}
-    \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Shenzhen WISPRO Intellectual Property Agency / Xiaomei IP Group}{Shenzhen, China}
-      {LLM Engineer Intern}{Jun. 2025 -- Aug. 2025}
-      \resumeItemListStart
-        \resumeItem{Built LangChain-based automated multi-agent systems for patent document processing, workflow automation, knowledge retrieval, and task collaboration.}
-        \resumeItem{Participated in GPU cluster management and model training workflows, supporting LLM experiments, deployment, and engineering validation.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {EpicHust Technology (Wuhan) Co., Ltd.}{Wuhan, China}
-      {LLM Engineer Intern}{Jan. 2025 -- Feb. 2025}
-      \resumeItemListStart
-        \resumeItem{Participated in fine-tuning and evaluation of open-source models for industrial protocols and smart factory AI applications.}
-        \resumeItem{Contributed to RAG-based Q\&A systems, knowledge base construction, and deployment planning for industrial documents, device protocols, and enterprise knowledge retrieval.}
-      \resumeItemListEnd
-
-    \resumeSubHeadingListEnd
-
-%-----------EDUCATION-----------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {University of Macau}{Macau, China}
-      {Incoming M.Sc. in Robotics and Autonomous Systems}{Aug. 2026 -- Jun. 2028}
-    \resumeSubheading
-      {Beijing Normal-Hong Kong Baptist University}{Zhuhai, China}
-      {B.Sc. (Honours) in Data Science}{Aug. 2022 -- Jun. 2026}
-  \resumeSubHeadingListEnd
-
-%-----------SKILLS-----------
-\section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Embodied AI \& VLA}{: LeRobot, ACT policy fine-tuning, OpenPI $\pi_{0.5}$ fine-tuning, robot data collection, teleoperation, task planning, long-horizon agents, multi-agent systems} \\
-     \textbf{Robotics Systems}{: ROS1/ROS2, Gazebo, SLAM, localization, mapping and navigation, CAN communication, motor driver debugging, robotic arm control, gripper/end-effector adaptation, sensor fusion} \\
-     \textbf{Hardware Prototyping}{: Mechanical structure design, SolidWorks, OnShape, 3D printing, PCB design and prototyping, soldering and assembly, wiring, whole-system integration, supply-chain research and selection} \\
-     \textbf{3D Vision \& Simulation}{: 3D Gaussian Splatting, NeRF, geometry-consistent SLAM, NVIDIA Isaac Lab, robotics reinforcement learning, physics simulation, camera calibration, visual perception} \\
-     \textbf{Machine Learning \& LLMs}{: PyTorch, reinforcement learning, Transformers, RAG, LangChain, model fine-tuning, in-context learning, multi-agent workflows} \\
-     \textbf{Programming \& Tools}{: Python, C++, CUDA, Linux, Git, Docker, FastAPI/Flask, rapid full-stack development, vibe coding, CAD/FEA, 3D printing} \\
-     \textbf{Platforms Used / Adapted}{: AgileX Piper, Nero, OpenArm, Franka, Galaxea R1, Jetson platforms, depth cameras, LiDAR, VR teleoperation devices} \\
-     \textbf{Languages}{: English for academic reading, technical documentation, and professional communication} \\
-    }}
- \end{itemize}
 
 \end{document}
