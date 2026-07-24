@@ -73,7 +73,7 @@ def head(title: str, description: str, canonical: str) -> str:
   <link rel="preload" href="assets/css/main.css" as="style">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/academicons.css">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/site.css?v=20260725-lang">
   <link rel="icon" type="image/png" href="assets/images/headphoto.png">
   <style>
     html {{
