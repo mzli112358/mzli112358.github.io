@@ -1,4 +1,11 @@
 <!doctype html>
+<!--
+  BILINGUAL PAGE / 双语页面
+  Toggle: .lang-zh / .lang-en + assets/js/lang-switch.js
+  RULE: edit Chinese ⇒ edit English; edit English ⇒ edit Chinese (same commit).
+  规则：改中文必改英文，改英文必改中文（同一提交）。
+  Source of truth for this page family: _build_pages.py → python _build_pages.py
+-->
 <html lang="zh-CN" class="no-js">
 <head>
   <meta charset="utf-8">
@@ -64,6 +71,7 @@
 </head>
 <body>
 
+  <!-- BILINGUAL: masthead labels below are ZH/EN pairs — keep both in sync. -->
   <div class="masthead">
     <div class="masthead__inner-wrap">
       <div class="masthead__menu">
@@ -82,6 +90,12 @@
             <li class="masthead__menu-item current"><a href="projects.html"><span class="lang-zh">项目</span><span class="lang-en">Projects</span></a></li>
             <li class="masthead__menu-item"><a href="HackathonCV/"><span class="lang-zh">简历</span><span class="lang-en">CV</span></a></li>
             <li class="masthead__menu-item"><a href="photomate.html"><span class="lang-zh">PhotoMate</span><span class="lang-en">PhotoMate</span></a></li>
+            <li class="masthead__menu-item masthead__lang">
+              <div class="lang-switch" role="group" aria-label="Language / 语言">
+                <button type="button" data-lang-btn="zh" class="is-active" aria-pressed="true">中文</button>
+                <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+              </div>
+            </li>
           </ul>
           <ul class="hidden-links hidden"></ul>
         </nav>
@@ -90,20 +104,25 @@
   </div>
   <div id="main" role="main">
 
+  <!-- BILINGUAL: sidebar identity — ZH ↔ EN pair; edit both. -->
   <div class="sidebar sticky">
     <div itemscope itemtype="https://schema.org/Person">
       <div class="author__avatar">
         <img src="assets/images/headphoto.png" id="sidebar-avatar" class="author__avatar preview-image" alt="Mingzhe Li" fetchpriority="high" data-full-src="assets/images/headphoto.png">
       </div>
       <div class="author__content">
+        <!-- BILINGUAL PAIR / 双语成对
+     ZH ↔ EN must stay in sync.
+     修改中文时请同步修改英文；修改英文时请同步修改中文。
+     See BILINGUAL.md -->
         <h3 class="author__name"><span class="lang-zh">李明哲</span><span class="lang-en">Mingzhe Li</span></h3>
         <p class="author__bio lang-zh">澳门大学 RAS 硕士（拟入学）<br>具身智能 · 三维视觉 · 机器人系统</p>
         <p class="author__bio lang-en">Incoming M.Sc. RAS @ UMacau<br>Embodied AI · 3D Vision · Robotics</p>
       </div>
       <div class="author__urls-wrapper">
-        <div class="lang-switch" role="group" aria-label="Language">
-          <button type="button" id="langZh" class="is-active" aria-pressed="true">中文</button>
-          <button type="button" id="langEn" aria-pressed="false">EN</button>
+        <div class="lang-switch" role="group" aria-label="Language / 语言">
+          <button type="button" data-lang-btn="zh" class="is-active" aria-pressed="true">中文</button>
+          <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
         </div>
         <ul class="author__urls social-icons">
           <li class="lang-zh">深圳 / 澳门</li>
@@ -119,10 +138,20 @@
     <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
       <div class="page__inner-wrap">
         <header>
+<!-- BILINGUAL PAIR / 双语成对
+     ZH ↔ EN must stay in sync.
+     修改中文时请同步修改英文；修改英文时请同步修改中文。
+     See BILINGUAL.md -->
           <h1 class="page__title lang-zh" itemprop="headline">项目</h1>
           <h1 class="page__title lang-en" itemprop="headline">Projects</h1>
         </header>
         <section class="page__content" itemprop="text">
+
+<!-- BILINGUAL PAIR / 双语成对
+     ZH ↔ EN must stay in sync.
+     修改中文时请同步修改英文；修改英文时请同步修改中文。
+     See BILINGUAL.md -->
+<!-- PAGE BODY: every visible copy block below should be a ZH/EN pair. -->
 
           <div class="paper-card">
             <div class="paper-title lang-zh">1. IsoGS-SLAM：几何一致实时三维重建</div>
@@ -272,27 +301,6 @@
     })();
   </script>
   <script src="assets/js/main.min.js"></script>
-  <script>
-    (function () {
-      var root = document.documentElement;
-      var btnZh = document.getElementById('langZh');
-      var btnEn = document.getElementById('langEn');
-      if (!btnZh || !btnEn) return;
-      function setLang(lang) {
-        root.lang = lang;
-        var isZh = lang === 'zh-CN';
-        btnZh.classList.toggle('is-active', isZh);
-        btnEn.classList.toggle('is-active', !isZh);
-        btnZh.setAttribute('aria-pressed', String(isZh));
-        btnEn.setAttribute('aria-pressed', String(!isZh));
-        try { localStorage.setItem('site-lang', lang); } catch (e) {}
-      }
-      var saved = null;
-      try { saved = localStorage.getItem('site-lang'); } catch (e) {}
-      if (saved === 'en' || saved === 'zh-CN') setLang(saved);
-      btnZh.addEventListener('click', function () { setLang('zh-CN'); });
-      btnEn.addEventListener('click', function () { setLang('en'); });
-    })();
-  </script>
+  <script src="assets/js/lang-switch.js"></script>
 </body>
 </html>

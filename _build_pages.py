@@ -1,12 +1,33 @@
 # -*- coding: utf-8 -*-
-"""One-shot generator for academic-style static pages. Run from repo root."""
+"""
+Generate academic-style bilingual static pages.
+
+BILINGUAL / 双语 (see BILINGUAL.md):
+  - One HTML file per page; toggle ZH/EN via .lang-zh / .lang-en + lang-switch.js
+  - Edit ZH ⇒ edit EN (same commit). Edit EN ⇒ edit ZH.
+  - 修改中文必须同步修改英文；修改英文必须同步修改中文。
+  - Prefer editing THIS file, then: python _build_pages.py
+"""
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 
+# HTML comment injected near bilingual blocks.
+BILINGUAL_NOTE = """<!-- BILINGUAL PAIR / 双语成对
+     ZH ↔ EN must stay in sync.
+     修改中文时请同步修改英文；修改英文时请同步修改中文。
+     See BILINGUAL.md -->"""
+
 
 def head(title: str, description: str, canonical: str) -> str:
     return f"""<!doctype html>
+<!--
+  BILINGUAL PAGE / 双语页面
+  Toggle: .lang-zh / .lang-en + assets/js/lang-switch.js
+  RULE: edit Chinese ⇒ edit English; edit English ⇒ edit Chinese (same commit).
+  规则：改中文必改英文，改英文必改中文（同一提交）。
+  Source of truth for this page family: _build_pages.py → python _build_pages.py
+-->
 <html lang="zh-CN" class="no-js">
 <head>
   <meta charset="utf-8">
@@ -89,6 +110,7 @@ def masthead(active: str = "about") -> str:
         item("photomate", "photomate.html", "PhotoMate", "PhotoMate"),
     ])
     return f"""
+  <!-- BILINGUAL: masthead labels below are ZH/EN pairs — keep both in sync. -->
   <div class="masthead">
     <div class="masthead__inner-wrap">
       <div class="masthead__menu">
@@ -102,6 +124,12 @@ def masthead(active: str = "about") -> str:
               </a>
             </li>
 {items}
+            <li class="masthead__menu-item masthead__lang">
+              <div class="lang-switch" role="group" aria-label="Language / 语言">
+                <button type="button" data-lang-btn="zh" class="is-active" aria-pressed="true">中文</button>
+                <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+              </div>
+            </li>
           </ul>
           <ul class="hidden-links hidden"></ul>
         </nav>
@@ -112,21 +140,23 @@ def masthead(active: str = "about") -> str:
 
 
 def sidebar() -> str:
-    return """
+    return f"""
+  <!-- BILINGUAL: sidebar identity — ZH ↔ EN pair; edit both. -->
   <div class="sidebar sticky">
     <div itemscope itemtype="https://schema.org/Person">
       <div class="author__avatar">
         <img src="assets/images/headphoto.png" id="sidebar-avatar" class="author__avatar preview-image" alt="Mingzhe Li" fetchpriority="high" data-full-src="assets/images/headphoto.png">
       </div>
       <div class="author__content">
+        {BILINGUAL_NOTE}
         <h3 class="author__name"><span class="lang-zh">李明哲</span><span class="lang-en">Mingzhe Li</span></h3>
         <p class="author__bio lang-zh">澳门大学 RAS 硕士（拟入学）<br>具身智能 · 三维视觉 · 机器人系统</p>
         <p class="author__bio lang-en">Incoming M.Sc. RAS @ UMacau<br>Embodied AI · 3D Vision · Robotics</p>
       </div>
       <div class="author__urls-wrapper">
-        <div class="lang-switch" role="group" aria-label="Language">
-          <button type="button" id="langZh" class="is-active" aria-pressed="true">中文</button>
-          <button type="button" id="langEn" aria-pressed="false">EN</button>
+        <div class="lang-switch" role="group" aria-label="Language / 语言">
+          <button type="button" data-lang-btn="zh" class="is-active" aria-pressed="true">中文</button>
+          <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
         </div>
         <ul class="author__urls social-icons">
           <li class="lang-zh">深圳 / 澳门</li>
@@ -195,28 +225,7 @@ def footer_scripts() -> str:
     })();
   </script>
   <script src="assets/js/main.min.js"></script>
-  <script>
-    (function () {
-      var root = document.documentElement;
-      var btnZh = document.getElementById('langZh');
-      var btnEn = document.getElementById('langEn');
-      if (!btnZh || !btnEn) return;
-      function setLang(lang) {
-        root.lang = lang;
-        var isZh = lang === 'zh-CN';
-        btnZh.classList.toggle('is-active', isZh);
-        btnEn.classList.toggle('is-active', !isZh);
-        btnZh.setAttribute('aria-pressed', String(isZh));
-        btnEn.setAttribute('aria-pressed', String(!isZh));
-        try { localStorage.setItem('site-lang', lang); } catch (e) {}
-      }
-      var saved = null;
-      try { saved = localStorage.getItem('site-lang'); } catch (e) {}
-      if (saved === 'en' || saved === 'zh-CN') setLang(saved);
-      btnZh.addEventListener('click', function () { setLang('zh-CN'); });
-      btnEn.addEventListener('click', function () { setLang('en'); });
-    })();
-  </script>
+  <script src="assets/js/lang-switch.js"></script>
 </body>
 </html>
 """
@@ -232,6 +241,9 @@ def page(title, description, canonical, active, page_title_zh, page_title_en, co
         + """    <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
       <div class="page__inner-wrap">
         <header>
+"""
+        + BILINGUAL_NOTE
+        + """
           <h1 class="page__title lang-zh" itemprop="headline">"""
         + page_title_zh
         + """</h1>
@@ -241,6 +253,8 @@ def page(title, description, canonical, active, page_title_zh, page_title_en, co
         </header>
         <section class="page__content" itemprop="text">
 """
+        + f"\n{BILINGUAL_NOTE}\n"
+        + "<!-- PAGE BODY: every visible copy block below should be a ZH/EN pair. -->\n"
         + content
         + """
         </section>
@@ -255,6 +269,7 @@ def page(title, description, canonical, active, page_title_zh, page_title_en, co
 # ---------- page contents ----------
 
 index_content = r"""
+          <!-- BILINGUAL PAIR: about — ZH ↔ EN sync required / 改一语必改另一语 -->
           <div class="lang-zh">
             <p>我是面向<strong>机器人系统、具身智能与三维视觉</strong>的研究者与工程开发者，具备从本体设计、硬件原型、感知导航、遥操作数据采集到 <strong>VLA</strong> 训练与任务智能体的端到端经验。目前在<strong>原力无限（INFIFORCE）深圳研究院</strong>参与家庭服务机器人研发。</p>
             <p>本科毕业于北师香港浸会大学<strong>数据科学</strong>，已录取<strong>澳门大学机器人与自主系统（RAS）理学硕士</strong>（2026 年秋）。参与 <strong>ICML 2025</strong> 论文；创立 <strong>Navigator Robotics Lab</strong>（35 人），带队获 RoboMaster 工程挑战赛辽宁站第一名。</p>

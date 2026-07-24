@@ -1,11 +1,20 @@
 <!DOCTYPE html>
+<!--
+  BILINGUAL PAGE / 双语页面 (HackathonCV chrome)
+  Toggle: .lang-zh / .lang-en + ../assets/js/lang-switch.js
+  RULE: edit Chinese ⇒ edit English; edit English ⇒ edit Chinese (same commit).
+  规则：改中文必改英文，改英文必改中文（同一提交）。
+  NOTE: The embedded PDF itself is Chinese-only / PDF 正文目前为中文版。
+  See ../BILINGUAL.md
+-->
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>李明哲｜星尘黑客松中文简历</title>
-  <meta name="description" content="李明哲报名星尘 Astribot OS 机器人黑客松的最新中文简历。">
+  <title>Mingzhe Li | Astribot Hackathon CV</title>
+  <meta name="description" content="Latest Chinese CV for the Astribot OS robot hackathon / 星尘黑客松中文简历">
   <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../assets/css/site.css">
   <style>
     * { box-sizing: border-box; }
     body {
@@ -34,20 +43,27 @@
       text-decoration: none;
     }
     header a:hover { text-decoration: underline; }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
     .toolbar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem 1.25rem;
       margin-top: 0.6rem;
       font-size: 0.9rem;
+      align-items: center;
     }
     .viewer {
-      height: calc(100vh - 88px);
+      height: calc(100vh - 110px);
       min-height: 480px;
       background: #ddd;
     }
-    .viewer iframe,
-    .viewer embed {
+    .viewer iframe {
       width: 100%;
       height: 100%;
       border: 0;
@@ -56,25 +72,40 @@
     }
     @media (max-width: 600px) {
       header h1 { font-size: 1.1rem; }
-      .viewer { height: calc(100vh - 110px); }
+      .viewer { height: calc(100vh - 140px); }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>星尘黑客松中文简历</h1>
-    <p>李明哲 — 机器人系统 · 具身智能 · 场景 App 与任务智能体</p>
-    <div class="toolbar">
-      <a href="../">← Home</a>
-      <a href="../research.html">Research</a>
-      <a href="../projects.html">Projects</a>
-      <a href="../photomate.html">PhotoMate</a>
-      <a href="HackathonCV.pdf?v=20260724" target="_blank" rel="noopener noreferrer">打开 PDF</a>
-      <a href="HackathonCV.pdf?v=20260724" download="李明哲-星尘黑客松中文简历-0724.pdf">下载 PDF</a>
+    <div class="header-top">
+      <!-- BILINGUAL PAIR: page title / 页面标题 — ZH ↔ EN sync -->
+      <div>
+        <h1 class="lang-zh">星尘黑客松中文简历</h1>
+        <h1 class="lang-en">Astribot Hackathon CV (Chinese)</h1>
+        <p class="lang-zh">李明哲 — 机器人系统 · 具身智能 · 场景 App 与任务智能体</p>
+        <p class="lang-en">Mingzhe Li — Robotics · Embodied AI · Scene Apps &amp; Task Agents</p>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang-btn="zh" class="is-active" aria-pressed="true">中文</button>
+        <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+      </div>
     </div>
+    <!-- BILINGUAL PAIR: toolbar links / 工具栏 — keep ZH/EN labels paired -->
+    <div class="toolbar">
+      <a href="../"><span class="lang-zh">← 主页</span><span class="lang-en">← Home</span></a>
+      <a href="../research.html"><span class="lang-zh">研究</span><span class="lang-en">Research</span></a>
+      <a href="../projects.html"><span class="lang-zh">项目</span><span class="lang-en">Projects</span></a>
+      <a href="../photomate.html">PhotoMate</a>
+      <a href="HackathonCV.pdf?v=20260724" target="_blank" rel="noopener noreferrer"><span class="lang-zh">打开 PDF</span><span class="lang-en">Open PDF</span></a>
+      <a href="HackathonCV.pdf?v=20260724" download="李明哲-星尘黑客松中文简历-0724.pdf"><span class="lang-zh">下载 PDF</span><span class="lang-en">Download PDF</span></a>
+    </div>
+    <p class="lang-zh" style="margin:0.55rem 0 0;font-size:0.85rem;color:#777;">说明：嵌入的 PDF 目前为中文版。</p>
+    <p class="lang-en" style="margin:0.55rem 0 0;font-size:0.85rem;color:#777;">Note: the embedded PDF is currently the Chinese version.</p>
   </header>
   <main class="viewer">
-    <iframe src="HackathonCV.pdf?v=20260724" title="李明哲星尘黑客松中文简历 PDF"></iframe>
+    <iframe src="HackathonCV.pdf?v=20260724" title="Mingzhe Li Astribot Hackathon CV PDF"></iframe>
   </main>
+  <script src="../assets/js/lang-switch.js"></script>
 </body>
 </html>

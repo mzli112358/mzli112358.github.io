@@ -27,6 +27,17 @@ html[lang="en"] .lang-zh { display: none !important; }
   background: #52adc8;
 }
 
+/* Masthead language toggle sits in the nav row */
+.masthead__lang {
+  display: flex;
+  align-items: center;
+  margin-left: 0.25rem;
+}
+
+.masthead__lang .lang-switch {
+  margin: 0;
+}
+
 .lang-switch {
   margin: 0.35em 0 0.75em;
   display: flex;
