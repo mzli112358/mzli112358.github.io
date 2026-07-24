@@ -73,9 +73,12 @@ def head(title: str, description: str, canonical: str) -> str:
   <link rel="preload" href="assets/css/main.css" as="style">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/academicons.css">
-  <link rel="stylesheet" href="assets/css/site.css?v=20260725-masthead-pad2">
+  <link rel="stylesheet" href="assets/css/site.css?v=20260725-masthead-fix">
   <link rel="icon" type="image/png" href="assets/images/headphoto.png">
   <style>
+    /* Critical FOUC CSS only. Do NOT zero body padding here:
+       AcademicPages uses a fixed .masthead; main.css / site.css must keep
+       top clearance so .page__title is not covered. */
     html {{
       font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
       font-size: 16px;
@@ -83,7 +86,7 @@ def head(title: str, description: str, canonical: str) -> str:
       color: #333;
       background: #fff;
     }}
-    body {{ margin: 0; padding: 0; }}
+    body {{ margin: 0; }}
     a {{ color: #007acc; text-decoration: none; }}
     a:hover {{ text-decoration: underline; }}
   </style>

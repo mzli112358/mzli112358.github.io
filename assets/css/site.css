@@ -12,29 +12,37 @@ html[lang="en"] .lang-zh { display: none !important; }
 }
 
 /*
-  AcademicPages masthead is position:fixed and out of document flow.
-  Without top clearance, .page__title (e.g. 李明哲) sits under the bar.
-  Scope to pages that actually render .masthead (not PhotoMate / CV viewer).
+  AcademicPages masthead is position:fixed (out of flow).
+  main.css normally uses body { padding: 70px 0 0 }, but that was being
+  wiped by a later critical <style>body{padding:0}</style>. Keep a strong
+  clearance here so article.page / .page__title never sit under the bar.
 */
-body:has(.masthead) {
-  /* masthead inner padding (~1em) + nav row (~2.5rem) + small buffer */
-  padding-top: 4.25rem;
+html body {
+  /* taller than stock 70px: lang switch + hamburger sit in the masthead */
+  padding-top: 5.5rem !important;
 }
 
-body:has(.masthead) #main {
-  /* theme default margin-top:2em is not enough once masthead is fixed */
-  margin-top: 0.75em !important;
-  scroll-margin-top: 4.25rem;
+html body #main {
+  margin-top: 1.25em !important;
+  scroll-margin-top: 5.5rem;
 }
 
-body:has(.masthead) .page__title,
-body:has(.masthead) .page__inner-wrap > header {
-  scroll-margin-top: 4.5rem;
+html body .page__title,
+html body .page__inner-wrap > header,
+html body article.page {
+  scroll-margin-top: 5.75rem;
+}
+
+/* Theme fixes .sidebar from 1024px up; match masthead clearance there only */
+@media screen and (min-width: 1024px) {
+  html body .sidebar {
+    padding-top: 5.5rem !important;
+  }
 }
 
 @media (max-width: 520px) {
-  body:has(.masthead) {
-    padding-top: 4.75rem; /* lang buttons + hamburger may wrap a bit taller */
+  html body {
+    padding-top: 6rem !important;
   }
 }
 
