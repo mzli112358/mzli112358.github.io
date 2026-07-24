@@ -115,7 +115,8 @@ def masthead(active: str = "about") -> str:
     <div class="masthead__inner-wrap">
       <div class="masthead__menu">
         <nav id="site-nav" class="greedy-nav">
-          <button type="button"><div class="navicon"></div></button>
+          <!-- First <button> must remain the hamburger for greedy-nav JS -->
+          <button type="button" class="greedy-nav__toggle" aria-label="Toggle menu"><div class="navicon"></div></button>
           <ul class="visible-links">
             <li class="masthead__menu-item masthead__menu-item--lg">
               <a class="masthead__brand" href="index.html">
@@ -124,14 +125,13 @@ def masthead(active: str = "about") -> str:
               </a>
             </li>
 {items}
-            <li class="masthead__menu-item masthead__lang">
-              <div class="lang-switch" role="group" aria-label="Language / 语言">
-                <button type="button" data-lang-btn="zh" class="is-active" aria-pressed="true">中文</button>
-                <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
-              </div>
-            </li>
           </ul>
           <ul class="hidden-links hidden"></ul>
+          <!-- Lang toggle: sibling of menus, left of hamburger — not inside visible-links -->
+          <div class="lang-switch masthead-lang-switch" role="group" aria-label="Language / 语言">
+            <button type="button" data-lang-btn="zh" class="is-active" aria-pressed="true">中文</button>
+            <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+          </div>
         </nav>
       </div>
     </div>
