@@ -337,14 +337,26 @@ index_content = r"""
           <hr>
           <h2 id="education" class="lang-zh">教育经历</h2>
           <h2 id="education-en" class="lang-en">Education</h2>
-          <table class="compact-table lang-zh">
-            <tr><td><strong>澳门大学</strong> — 机器人与自主系统理学硕士（拟入学）</td><td>2026.08 – 2028.06</td></tr>
-            <tr><td><strong>北师香港浸会大学</strong> — 数据科学理学学士（荣誉）</td><td>2022.08 – 2026.06</td></tr>
-          </table>
-          <table class="compact-table lang-en">
-            <tr><td><strong>University of Macau</strong> — Incoming M.Sc. in Robotics and Autonomous Systems</td><td>Aug 2026 – Jun 2028</td></tr>
-            <tr><td><strong>BNBU / UIC</strong> — B.Sc. (Honours) in Data Science</td><td>Aug 2022 – Jun 2026</td></tr>
-          </table>
+          <ul class="edu-list lang-zh">
+            <li>
+              <strong>澳门大学</strong> — 机器人与自主系统理学硕士（拟入学）
+              <span class="edu-date">2026.08 – 2028.06</span>
+            </li>
+            <li>
+              <strong>北师香港浸会大学</strong> — 数据科学理学学士（荣誉）
+              <span class="edu-date">2022.08 – 2026.06</span>
+            </li>
+          </ul>
+          <ul class="edu-list lang-en">
+            <li>
+              <strong>University of Macau</strong> — Incoming M.Sc. in Robotics and Autonomous Systems
+              <span class="edu-date">Aug 2026 – Jun 2028</span>
+            </li>
+            <li>
+              <strong>BNBU / UIC</strong> — B.Sc. (Honours) in Data Science
+              <span class="edu-date">Aug 2022 – Jun 2026</span>
+            </li>
+          </ul>
 
           <hr>
           <h2 id="selected-pub" class="lang-zh">精选论文</h2>
