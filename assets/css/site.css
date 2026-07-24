@@ -1,0 +1,262 @@
+/* Site extras on top of Academic Pages / Minimal Mistakes */
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+html[lang="zh-CN"] .lang-en { display: none !important; }
+html[lang="en"] .lang-zh { display: none !important; }
+
+.masthead .masthead__menu-item a {
+  font-weight: 600;
+}
+
+.masthead__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.masthead__brand-mark {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #52adc8;
+}
+
+.lang-switch {
+  margin: 0.35em 0 0.75em;
+  display: flex;
+  gap: 0.35rem;
+}
+
+.lang-switch button {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #f7f7f7;
+  border-radius: 4px;
+  padding: 0.2em 0.6em;
+  font-size: 0.85em;
+}
+
+.lang-switch button.is-active {
+  background: #2a2a2a;
+  color: #fff;
+  border-color: #2a2a2a;
+}
+
+.author__bio {
+  line-height: 1.45;
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 1rem 0 1.5rem;
+}
+
+.interest-card {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid #e8eaed;
+  border-radius: 12px;
+  background: #f9f9f9;
+  text-decoration: none !important;
+  color: inherit;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.interest-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.interest-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  color: #1f2937;
+}
+
+.interest-card p {
+  margin: 0;
+  color: #667085;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.paper-card {
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.paper-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.paper-card h2,
+.paper-card .paper-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  text-decoration: none !important;
+}
+
+.paper-meta {
+  margin: 0.25rem 0 0.5rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.paper-links a {
+  margin-right: 0.65rem;
+  font-weight: 600;
+}
+
+a.pdf-link { color: #E41F26 !important; }
+a.code-link { color: #181717 !important; }
+a.poster-link { color: #0b7285 !important; }
+
+.news-list {
+  padding-left: 1.1rem;
+}
+
+.news-list li {
+  margin: 0.35rem 0;
+}
+
+details.past-news {
+  margin-top: 0.75rem;
+}
+
+details.past-news summary {
+  cursor: pointer;
+  color: #2f7f93;
+  font-weight: 600;
+}
+
+.compact-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.compact-table td {
+  padding: 0.2rem 0;
+  vertical-align: top;
+}
+
+.compact-table td:last-child {
+  text-align: right;
+  white-space: nowrap;
+  color: #667085;
+  padding-left: 1rem;
+}
+
+.section-note {
+  color: #667085;
+  margin-top: -0.35rem;
+}
+
+.visitor-map-wrap {
+  max-width: 600px;
+  margin: 0.75em auto 0;
+}
+
+.visitor-map-wrap iframe {
+  max-width: 100% !important;
+}
+
+.preview-image {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.preview-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.image-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.image-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+.image-modal-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  max-width: 95vw;
+  max-height: 95vh;
+  background: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  font-size: 36px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10001;
+  line-height: 1;
+}
+
+.image-modal-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .compact-table td:last-child {
+    display: block;
+    text-align: left;
+    padding-left: 0;
+    white-space: normal;
+  }
+}
