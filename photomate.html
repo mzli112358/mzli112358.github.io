@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhotoMate｜具身智能摄影师</title>
+  <meta name="description" content="PhotoMate 具身智能摄影师：计划在星尘 Astribot OS 机器人黑客松中实现的场景机器人 App。">
+  <link rel="canonical" href="https://mzli112358.github.io/photomate.html">
+  <style>
+    :root {
+      --ink: #18202d;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --paper: #ffffff;
+      --wash: #f7f5ff;
+      --brand: #6d4aff;
+      --brand-dark: #432bb8;
+      --accent: #15aabf;
+      --max: 1040px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: var(--brand-dark); }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 64px;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+    }
+    .nav a { color: #fff; text-decoration: none; }
+    .brand { font-weight: 800; letter-spacing: .02em; }
+
+    .hero {
+      color: #fff;
+      background:
+        radial-gradient(circle at 80% 15%, rgba(113, 82, 255, .75), transparent 28%),
+        radial-gradient(circle at 15% 80%, rgba(21, 170, 191, .35), transparent 32%),
+        linear-gradient(135deg, #16152c 0%, #282052 52%, #15182a 100%);
+      overflow: hidden;
+    }
+    .hero-inner { padding: 88px 0 96px; max-width: 800px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      font-size: 14px;
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(44px, 9vw, 82px);
+      line-height: 1.02;
+      letter-spacing: -.04em;
+    }
+    .hero h2 {
+      margin: 0 0 20px;
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 500;
+    }
+    .hero p { max-width: 720px; margin: 0; color: #e6e3ff; font-size: 18px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 10px;
+      background: #fff;
+      color: #27204e;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .button.secondary { color: #fff; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); }
+
+    main section { padding: 72px 0; }
+    main section:nth-child(even) { background: var(--wash); }
+    .section-head { max-width: 720px; margin-bottom: 34px; }
+    .kicker { color: var(--brand); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; font-size: 13px; }
+    h2 { margin: 6px 0 12px; font-size: clamp(28px, 5vw, 42px); line-height: 1.2; }
+    h3 { margin: 0 0 8px; font-size: 20px; }
+    .lead { color: var(--muted); font-size: 18px; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 35px rgba(35, 29, 75, .05);
+    }
+    .card p { margin: 0; color: var(--muted); }
+    .num { color: var(--brand); font-size: 14px; font-weight: 800; }
+
+    .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; counter-reset: flow; }
+    .step {
+      position: relative;
+      min-height: 130px;
+      padding: 20px;
+      border-radius: 14px;
+      color: #fff;
+      background: linear-gradient(145deg, var(--brand-dark), var(--brand));
+    }
+    .step::before {
+      counter-increment: flow;
+      content: "0" counter(flow);
+      display: block;
+      margin-bottom: 16px;
+      color: rgba(255,255,255,.65);
+      font-weight: 800;
+    }
+
+    .notice {
+      padding: 24px;
+      border-left: 5px solid var(--accent);
+      border-radius: 0 14px 14px 0;
+      background: #effbfc;
+    }
+    .notice strong { display: block; margin-bottom: 6px; }
+
+    .status {
+      display: inline-block;
+      padding: 5px 10px;
+      color: #fff;
+      background: var(--brand);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    footer {
+      padding: 32px 0;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .grid, .flow { grid-template-columns: 1fr 1fr; }
+      .hero-inner { padding: 64px 0 72px; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      .grid, .flow { grid-template-columns: 1fr; }
+      main section { padding: 54px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav wrap">
+      <a class="brand" href="index.html">Mingzhe Li</a>
+      <a href="#history">过往实现</a>
+    </nav>
+    <div class="hero-inner wrap">
+      <div class="eyebrow">计划在星尘 Astribot OS 机器人黑客松中实现</div>
+      <h1>PhotoMate</h1>
+      <h2>具身智能摄影师</h2>
+      <p>我们想做PhotoMate——面向展会、景区、毕业典礼和商场的具身智能摄影师。它不是固定自拍亭，而是能主动巡航或驻点服务，识别驻足、招手和语音请求后邀请用户拍照；用户可选择使用自己的手机或机器人相机，并决定是否录制短视频、打印照片或扫码获取电子版。机器人随后导航至预设最佳机位，根据人物、背景和光线调整拍摄位置与相机姿态，通过语音引导用户站位、看镜头和自然互动，完成倒计时拍摄与照片质检；若出现闭眼、模糊或构图不佳则自动提示重拍，最终通过二维码发送照片，或打印并递交实体照片，再返回巡航。实现上将导航、多模态感知、语音交互、相机控制、灵巧操作、显示和打印封装为独立能力，由显式状态机与任务智能体负责编排、重试和失败恢复，因此方案不绑定单一本体。该创意曾在探月社区黑客松中进行过方案和部分软件验证，但因现场本体未开放执行权限而未完成真机闭环；Astribot OS刚推出的能力包、应用编排与真机开发体系非常适合补齐这一环节，我们希望借助星尘把它真正做成可运行的机器人App和可复制的摄影半解决方案。</p>
+      <div class="actions">
+        <a class="button" href="#concept">查看项目设想</a>
+        <a class="button secondary" href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">代码仓库</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="concept">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="kicker">Concept</span>
+          <h2>不是自拍亭，而是会主动服务的摄影师</h2>
+          <p class="lead">机器人理解用户想留下怎样的瞬间，并把移动、感知、交互、操作和影像交付组合成一段完整体验。</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <span class="num">01</span>
+            <h3>主动发现</h3>
+            <p>巡航或驻点服务，识别驻足、招手与语音请求，主动询问是否需要拍照。</p>
+          </article>
+          <article class="card">
+            <span class="num">02</span>
+            <h3>专业引导</h3>
+            <p>选择合适机位，根据人物、背景和光线给出站位、姿态与倒计时提示。</p>
+          </article>
+          <article class="card">
+            <span class="num">03</span>
+            <h3>即时交付</h3>
+            <p>自动拍摄与质检，可通过二维码发送电子照片，或打印并递交实体照片。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="kicker">Experience Flow</span>
+          <h2>从一句话到一张可以带走的照片</h2>
+        </div>
+        <div class="flow">
+          <div class="step">主动邀请并确认拍摄需求</div>
+          <div class="step">选择手机/机器人相机与交付方式</div>
+          <div class="step">导航、构图、语音指导与拍摄质检</div>
+          <div class="step">扫码/打印交付并返回巡航</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="implementation">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="kicker">Implementation</span>
+          <h2>本体无关的场景 App 架构</h2>
+          <p class="lead">核心逻辑不绑定某一台机器人；不同本体通过能力适配层接入。</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>能力工具层</h3>
+            <p>导航、相机位姿、语音、多模态感知、灵巧操作、显示、打印与照片服务。</p>
+          </article>
+          <article class="card">
+            <h3>显式编排层</h3>
+            <p>以状态机/任务智能体管理分支、超时、重试、失败恢复与资源释放。</p>
+          </article>
+          <article class="card">
+            <h3>星尘实现计划</h3>
+            <p>通过 Astribot OS、Meta 能力包和开发接口，将自然语言体验转化为真机可执行 App。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="history">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="kicker">Previous Attempt</span>
+          <h2>过往实现：探月 Physical AI 黑客松</h2>
+        </div>
+        <div class="notice">
+          <strong>阶段记录（内容待进一步补充）</strong>
+          项目曾在探月社区 Physical AI 黑客松中进行产品方案、系统架构、结构/外设设计与部分拍照 Agent 软件链路开发。由于现场赞助商本体没有开放所需的导航、机械臂/灵巧手等执行权限，关键动作无法接入，最终未完成完整真机闭环。此次计划借助星尘刚推出的 Astribot OS 和真机开发支持，将原方案重新落地。
+        </div>
+      </div>
+    </section>
+
+    <section id="status">
+      <div class="wrap">
+        <span class="status">报名占位页 · 持续更新</span>
+        <h2>当前状态</h2>
+        <p class="lead">正在完善星尘黑客松实现范围、能力映射、交互脚本与 Demo 验收标准。更多设计与开发记录将在报名后补充。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      PhotoMate © 2026 Mingzhe Li · <a href="mailto:mc64655@um.edu.mo">mc64655@um.edu.mo</a>
+    </div>
+  </footer>
+</body>
+</html>

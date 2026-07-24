@@ -11,6 +11,7 @@
 ```
 .
 ├── index.html              # 主页（个人简介、研究、项目、论文）
+├── photomate.html          # PhotoMate 具身智能摄影师项目页
 ├── README.md               # 项目说明文档
 ├── assets/                 # 静态资源目录
 │   ├── css/                # 样式文件
