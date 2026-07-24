@@ -11,6 +11,32 @@ html[lang="en"] .lang-zh { display: none !important; }
   font-weight: 600;
 }
 
+/*
+  AcademicPages masthead is position:fixed and out of document flow.
+  Without top clearance, .page__title (e.g. 李明哲) sits under the bar.
+*/
+body {
+  /* masthead inner padding (~1em) + nav row (~2.5rem) + small buffer */
+  padding-top: 4.25rem;
+}
+
+#main {
+  /* theme default margin-top:2em is not enough once masthead is fixed */
+  margin-top: 0.75em !important;
+  scroll-margin-top: 4.25rem;
+}
+
+.page__title,
+.page__inner-wrap > header {
+  scroll-margin-top: 4.5rem;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding-top: 4.75rem; /* lang buttons + hamburger may wrap a bit taller */
+  }
+}
+
 .masthead__brand {
   display: inline-flex;
   align-items: center;
