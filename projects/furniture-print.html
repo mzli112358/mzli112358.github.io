@@ -1,0 +1,231 @@
+<!doctype html>
+<!--
+  BILINGUAL PAGE / 双语页面 (Furniture-scale / meter-scale collaborative-arm 3D printing)
+  Toggle: .lang-zh / .lang-en + ../assets/js/lang-switch.js
+  RULE: edit Chinese ⇒ edit English; edit English ⇒ edit Chinese (same commit).
+  See ../docs/BILINGUAL.md
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Indoor Meter-Scale Collaborative-Arm 3D Printing | Mingzhe Li</title>
+  <meta name="description" content="Indoor meter-scale collaborative-arm 3D printing platform for furniture-scale fabrication. Ongoing project by Mingzhe Li.">
+  <link rel="canonical" href="https://mzli112358.github.io/projects/furniture-print.html">
+  <link rel="stylesheet" href="../assets/css/site.css?v=20260725-furniture">
+  <style>
+    :root {
+      --ink: #1a1f24;
+      --muted: #5c6770;
+      --line: #d8dee4;
+      --paper: #fafbfc;
+      --panel: #ffffff;
+      --brand: #1f6b5a;
+      --brand-ink: #0f3d34;
+      --max: 920px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Source Sans 3", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: var(--brand-ink); }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap; min-height: 60px;
+      border-bottom: 1px solid var(--line); background: var(--panel);
+    }
+    .nav a { color: var(--ink); text-decoration: none; font-size: 14px; }
+    .nav-links { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .brand { font-weight: 700; letter-spacing: .01em; }
+    .hero {
+      padding: 64px 0 56px;
+      background:
+        linear-gradient(180deg, #eef3f1 0%, var(--paper) 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      display: inline-block; margin-bottom: 14px;
+      font-size: 13px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--brand);
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.15; letter-spacing: -.02em;
+      max-width: 18ch;
+    }
+    .hero p { margin: 0; max-width: 62ch; color: var(--muted); font-size: 17px; }
+    .meta { margin-top: 18px; color: var(--muted); font-size: 14px; }
+    main section { padding: 48px 0; border-bottom: 1px solid var(--line); }
+    h2 { margin: 0 0 12px; font-size: clamp(22px, 3vw, 28px); }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    .lead { color: var(--muted); margin: 0 0 20px; }
+    .stack { display: grid; gap: 14px; }
+    .block {
+      padding: 18px 20px; background: var(--panel);
+      border: 1px solid var(--line); border-radius: 4px;
+    }
+    .block p, .block li { color: var(--muted); margin: 0; }
+    .block ul { margin: 8px 0 0; padding-left: 1.15rem; }
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .pipe {
+      padding: 14px 12px; background: var(--brand-ink); color: #f3f7f5;
+      border-radius: 4px; font-size: 14px; min-height: 88px;
+    }
+    .pipe strong { display: block; margin-bottom: 6px; font-size: 13px; opacity: .85; }
+    footer {
+      padding: 28px 0 40px; color: var(--muted); font-size: 14px;
+    }
+    @media (max-width: 720px) {
+      .pipeline { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .pipeline { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav wrap">
+    <a class="brand" href="../index.html">Mingzhe Li</a>
+    <div class="nav-links">
+      <a href="../index.html"><span class="lang-zh">关于</span><span class="lang-en">About</span></a>
+      <a href="../research.html"><span class="lang-zh">研究</span><span class="lang-en">Research</span></a>
+      <a href="../projects.html"><span class="lang-zh">项目</span><span class="lang-en">Projects</span></a>
+      <a href="../CV/"><span class="lang-zh">简历</span><span class="lang-en">CV</span></a>
+      <a href="photomate.html">PhotoMate</a>
+      <div class="lang-switch" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang-btn="zh" class="is-active" aria-pressed="true">中文</button>
+        <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <!-- BILINGUAL PAIR: hero -->
+      <div class="eyebrow lang-zh">独立项目 · 进行中</div>
+      <div class="eyebrow lang-en">Independent · In Progress</div>
+      <h1 class="lang-zh">室内米级协作臂 3D 打印平台</h1>
+      <h1 class="lang-en">Indoor Meter-Scale Collaborative-Arm 3D Printing</h1>
+      <p class="lang-zh">用移动协作臂在室内完成家具尺度（约 0.3–3 m）连续增材制造：定位、运动、切片与挤出控制组成可扩展的自主打印系统。</p>
+      <p class="lang-en">A mobile collaborative-arm platform for indoor furniture-scale (about 0.3–3 m) additive manufacturing—localization, motion, slicing, and extrusion as one extensible autonomous print system.</p>
+      <p class="meta lang-zh">2026年7月 — 2027年1月（预计） · 李明哲</p>
+      <p class="meta lang-en">Jul 2026 – Jan 2027 (expected) · Mingzhe Li</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: gap -->
+        <h2 class="lang-zh">为什么做：尺度空白</h2>
+        <h2 class="lang-en">Why: a Scale Gap</h2>
+        <p class="lead lang-zh">消费级桌面 3D 打印（如拓竹、创想三维）成型尺寸多在约 30 cm 以内；更大尺寸往往跳到昂贵工业/特种材料增材，或十米级建筑水泥打印。约 0.3–3 m 的家具与室内物件尺度，在尺寸、材料、喷头与成本上都不匹配——这是一个尴尬但可挑战的区间。</p>
+        <p class="lead lang-en">Consumer desktop printers (e.g., Bambu Lab, Creality) are typically within ~30 cm. Larger scales jump to costly industrial/specialty-material AM or building-scale cement printers. The ~0.3–3 m furniture/indoor band is awkward in size, materials, nozzles, and cost—and worth challenging.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: goal -->
+        <h2 class="lang-zh">目标</h2>
+        <h2 class="lang-en">Goal</h2>
+        <div class="stack">
+          <div class="block">
+            <p class="lang-zh">搭建可在室内移动作业的打印平台，在约百日量级周期内完成系统开发，并实现稳定打印家具尺度物件。这是一个偏系统工程的挑战（类似用乐高搭椅子/赛车那种“能跑通全链路”的问题），而不是单点算法论文。</p>
+            <p class="lang-en">Build a mobile indoor printing platform, develop the full stack on a roughly 100-day timeline, and achieve stable furniture-scale prints. It is a systems-engineering challenge (full-stack closure), not a single-algorithm paper.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: system -->
+        <h2 class="lang-zh">系统构成</h2>
+        <h2 class="lang-en">System</h2>
+        <div class="stack">
+          <div class="block">
+            <h3 class="lang-zh">移动操作打印单元</h3>
+            <h3 class="lang-en">Mobile manipulative print unit</h3>
+            <p class="lang-zh">拟采用高擎科技协作臂 + 移动底盘（松灵 / 思岚或自研），构成可直行、可转向的室内打印机体。</p>
+            <p class="lang-en">Planned Gaoqing Tech collaborative arm on a mobile base (AgileX / Slamtec or self-built) for indoor traverse and print motion.</p>
+          </div>
+          <div class="block">
+            <h3 class="lang-zh">高精度室内定位融合</h3>
+            <h3 class="lang-en">Fused indoor localization</h3>
+            <p class="lang-zh">UWB、视觉标记、激光雷达与轮式里程计各有瞬时/累积误差；需要融合方案支撑长时连续打印。</p>
+            <p class="lang-en">UWB, visual markers, LiDAR, and wheel odometry each have transient/drift errors; fusion is required for long-horizon continuous printing.</p>
+          </div>
+          <div class="block">
+            <h3 class="lang-zh">全栈集成点</h3>
+            <h3 class="lang-en">Integration surface</h3>
+            <ul class="lang-zh">
+              <li>机械设计 / URDF / 仿真</li>
+              <li>切片、喷头路径规划、G-code</li>
+              <li>运动学解算、底层运动控制、电控</li>
+              <li>碰撞避障、挤出流量控制</li>
+            </ul>
+            <ul class="lang-en">
+              <li>Mechanics / URDF / simulation</li>
+              <li>Slicing, nozzle path planning, G-code</li>
+              <li>Kinematics, low-level motion control, electronics</li>
+              <li>Collision avoidance, extrusion flow control</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: pipeline -->
+        <h2 class="lang-zh">软件链路</h2>
+        <h2 class="lang-en">Software Pipeline</h2>
+        <p class="lead lang-zh">从自然语言需求到物理成型的一条链。</p>
+        <p class="lead lang-en">One chain from natural-language intent to physical form.</p>
+        <div class="pipeline">
+          <div class="pipe"><strong>01</strong><span class="lang-zh">语音 / Agent 理解需求</span><span class="lang-en">Voice / agent intent</span></div>
+          <div class="pipe"><strong>02</strong><span class="lang-zh">生成 STL 等三维模型</span><span class="lang-en">Generate STL / 3D model</span></div>
+          <div class="pipe"><strong>03</strong><span class="lang-zh">切片与喷头路径规划</span><span class="lang-en">Slice &amp; nozzle paths</span></div>
+          <div class="pipe"><strong>04</strong><span class="lang-zh">G-code 执行与监控</span><span class="lang-en">G-code execute &amp; monitor</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: status -->
+        <h2 class="lang-zh">当前状态</h2>
+        <h2 class="lang-en">Status</h2>
+        <div class="block">
+          <p class="lang-zh">项目刚启动，处于方案与平台选型阶段。各子模块多有成熟开源或理论可复用；难点在系统耦合、定位精度与长时稳定运行。本页随进展更新。</p>
+          <p class="lang-en">Just started: concept and platform selection. Submodules are largely available from open source/theory; the hard part is coupling, localization accuracy, and long-duration reliability. This page will update with progress.</p>
+        </div>
+        <p class="lead" style="margin-top:18px;">
+          <span class="lang-zh">关键词：</span><span class="lang-en">Keywords: </span>
+          mobile manipulator · indoor localization fusion · path planning · slicing/G-code · ROS · SolidWorks
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © 2026 Mingzhe Li · mc64655 [at] um [dot] edu [dot] mo ·
+      <a href="../projects.html"><span class="lang-zh">全部项目</span><span class="lang-en">All projects</span></a> ·
+      <a href="../index.html"><span class="lang-zh">主页</span><span class="lang-en">Home</span></a>
+    </div>
+  </footer>
+  <script src="../assets/js/lang-switch.js"></script>
+</body>
+</html>

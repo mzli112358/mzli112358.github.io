@@ -14,11 +14,11 @@ All pages use **in-file bilingual content** with paired `.lang-zh` / `.lang-en` 
 > **改中文必改英文；改英文必改中文。同一提交内完成。**  
 > **Edit ZH ⇒ edit EN. Edit EN ⇒ edit ZH. Same commit.**
 
-学术主站页面请改 `_build_pages.py` 后运行 `python _build_pages.py`，不要只改生成后的 HTML。  
-For academic pages, edit `_build_pages.py` then regenerate; do not edit generated HTML alone.
+学术主站页面请改 `tools/_build_pages.py` 后运行 `python tools/_build_pages.py`，不要只改生成后的 HTML。  
+For academic pages, edit `tools/_build_pages.py` then regenerate; do not edit generated HTML alone.
 
-独立页（`photomate.html`、`HackathonCV/index.html`）直接编辑文件内成对文案。  
-Standalone pages: edit paired strings in the HTML file directly.
+独立页（`projects/photomate.html`、`projects/furniture-print.html`、`CV/index.html`）直接编辑文件内成对文案。  
+Standalone pages: edit paired strings in those HTML files directly.
 
 ## 注释标记 / Comment Markers
 

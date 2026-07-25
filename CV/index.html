@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--
+  BILINGUAL PAGE / 双语页面 (Academic CV viewer)
+  UI language: ZH/EN toggle. PDF language: 简体 / 繁體 / English.
+  See ../docs/BILINGUAL.md
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mingzhe Li | CV / 简历</title>
+  <meta name="description" content="Academic CV of Mingzhe Li — Simplified Chinese, Traditional Chinese, and English PDFs">
+  <link rel="canonical" href="https://mzli112358.github.io/CV/">
+  <link rel="stylesheet" href="../assets/css/site.css?v=20260725-cv">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", "Noto Sans TC", sans-serif;
+      background: #f5f5f5;
+      color: #222;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 1rem 1.25rem;
+    }
+    header h1 { margin: 0 0 0.35rem; font-size: 1.25rem; font-weight: 600; }
+    header p { margin: 0; font-size: 0.9rem; color: #555; }
+    header a { color: #1565c0; text-decoration: none; }
+    header a:hover { text-decoration: underline; }
+    .header-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 12px; flex-wrap: wrap;
+    }
+    .toolbar {
+      display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem;
+      margin-top: 0.6rem; font-size: 0.9rem; align-items: center;
+    }
+    .viewer {
+      height: calc(100vh - 150px); min-height: 480px; background: #ddd;
+    }
+    .viewer iframe {
+      width: 100%; height: 100%; border: 0; display: block; background: #fff;
+    }
+    .pdf-switch { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .pdf-switch button {
+      border: 1px solid #ccc; background: #fff; padding: 5px 10px;
+      border-radius: 4px; cursor: pointer; font-size: 0.85rem;
+    }
+    .pdf-switch button.is-active {
+      border-color: #1565c0; background: #e3f2fd; color: #0d47a1; font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div>
+        <h1 class="lang-zh">学术简历</h1>
+        <h1 class="lang-en">Academic CV</h1>
+        <p class="lang-zh">李明哲 — 机器人系统 · 具身智能 · 三维视觉（可切换简体 / 繁體 / English PDF）</p>
+        <p class="lang-en">Mingzhe Li — Robotics · Embodied AI · 3D Vision (switch ZH-CN / ZH-Hant / EN PDF)</p>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang-btn="zh" class="is-active" aria-pressed="true">中文</button>
+        <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+    <div class="toolbar">
+      <a href="../"><span class="lang-zh">← 主页</span><span class="lang-en">← Home</span></a>
+      <a href="../research.html"><span class="lang-zh">研究</span><span class="lang-en">Research</span></a>
+      <a href="../projects.html"><span class="lang-zh">项目</span><span class="lang-en">Projects</span></a>
+      <a href="../projects/photomate.html">PhotoMate</a>
+      <a href="../projects/furniture-print.html"><span class="lang-zh">米级打印</span><span class="lang-en">Meter Print</span></a>
+      <span class="pdf-switch" role="group" aria-label="PDF language">
+        <button type="button" class="is-active" data-pdf="李明哲_简历-0725.pdf" data-label="zh-CN">简体</button>
+        <button type="button" data-pdf="李明哲_簡歷-0725.pdf" data-label="zh-Hant">繁體</button>
+        <button type="button" data-pdf="Mingzhe_Li_CV-0725.pdf" data-label="en">English</button>
+      </span>
+      <a id="open-pdf" href="李明哲_简历-0725.pdf?v=20260725" target="_blank" rel="noopener noreferrer"><span class="lang-zh">打开 PDF</span><span class="lang-en">Open PDF</span></a>
+      <a id="dl-pdf" href="李明哲_简历-0725.pdf?v=20260725" download><span class="lang-zh">下载 PDF</span><span class="lang-en">Download PDF</span></a>
+    </div>
+    <p class="lang-zh" style="margin:0.55rem 0 0;font-size:0.85rem;color:#777;">版本：2026-07-25。星尘黑客松旧版见 <a href="archive/HackathonCV-0724.pdf">archive</a>。</p>
+    <p class="lang-en" style="margin:0.55rem 0 0;font-size:0.85rem;color:#777;">Version: 2026-07-25. Older Astribot hackathon CV in <a href="archive/HackathonCV-0724.pdf">archive</a>.</p>
+  </header>
+  <main class="viewer">
+    <iframe id="pdf-frame" src="李明哲_简历-0725.pdf?v=20260725" title="Mingzhe Li CV PDF"></iframe>
+  </main>
+  <script src="../assets/js/lang-switch.js"></script>
+  <script>
+    (function () {
+      var frame = document.getElementById('pdf-frame');
+      var openA = document.getElementById('open-pdf');
+      var dlA = document.getElementById('dl-pdf');
+      var buttons = document.querySelectorAll('.pdf-switch button');
+      var key = 'cv-pdf-lang';
+      function setPdf(name) {
+        var url = encodeURI(name) + '?v=20260725';
+        frame.src = url;
+        openA.href = url;
+        dlA.href = url;
+        dlA.setAttribute('download', name);
+      }
+      function activate(btn) {
+        buttons.forEach(function (b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        setPdf(btn.getAttribute('data-pdf'));
+        try { localStorage.setItem(key, btn.getAttribute('data-label')); } catch (e) {}
+      }
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () { activate(btn); });
+      });
+      try {
+        var saved = localStorage.getItem(key);
+        if (saved) {
+          buttons.forEach(function (btn) {
+            if (btn.getAttribute('data-label') === saved) activate(btn);
+          });
+        }
+      } catch (e) {}
+    })();
+  </script>
+</body>
+</html>

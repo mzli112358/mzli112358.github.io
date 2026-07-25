@@ -1,47 +1,44 @@
 # Mingzhe Li · Academic Homepage
 
-Personal academic site hosted on GitHub Pages.
-
 **Live:** https://mzli112358.github.io
 
-## Bilingual / 中英双语
+个人学术主页（GitHub Pages）。中英双语单文件切换。
 
-All pages are bilingual in **one HTML file** with a 中文 / EN toggle (`.lang-zh` / `.lang-en` + `assets/js/lang-switch.js`).
+## 快速导航
 
-**Hard rule:** edit Chinese ⇒ edit English; edit English ⇒ edit Chinese (same commit).  
-详见 [BILINGUAL.md](BILINGUAL.md)。
+| 内容 | 路径 |
+| --- | --- |
+| 关于 / 动态 | `index.html` |
+| 研究 | `research.html` |
+| 论文 | `publications.html` |
+| 项目列表 | `projects.html` |
+| PhotoMate | `projects/photomate.html`（短链 `photomate.html`） |
+| 室内米级协作臂 3D 打印 | `projects/furniture-print.html`（短链 `furniture-print.html`） |
+| 学术简历 | `CV/` |
+| 目录说明 | [docs/STRUCTURE.md](docs/STRUCTURE.md) |
+| 双语约定 | [docs/BILINGUAL.md](docs/BILINGUAL.md) |
 
-## Structure
+## 怎么改内容
 
+1. **学术主站四页**：编辑 [`tools/_build_pages.py`](tools/_build_pages.py)，然后：
+
+```bash
+python tools/_build_pages.py
 ```
-.
-├── index.html              # About · Research Interests · News
-├── research.html           # Research directions & experience
-├── publications.html       # Publications
-├── projects.html           # Selected projects
-├── photomate.html          # PhotoMate project page (bilingual)
-├── HackathonCV/            # CV viewer chrome (bilingual; PDF is ZH)
-├── BILINGUAL.md            # ZH/EN maintenance contract
-├── _build_pages.py         # Regenerates academic pages
-├── assets/css/site.css
-├── assets/js/lang-switch.js
-└── .github/workflows/deploy.yml
-```
 
-## Edit content
+2. **项目页**：直接编辑 `projects/photomate.html`、`projects/furniture-print.html`（改中文必改英文）。
+3. **简历**：替换 `CV/*-0725.pdf`（或新日期文件名），同步改 `CV/index.html` 引用。
 
-1. Academic pages: edit `_build_pages.py` (paired ZH/EN), then `python _build_pages.py`
-2. `photomate.html` / `HackathonCV/index.html`: edit paired strings in-file
-3. Commit and push `main`
-
-## Local preview
+## 本地预览
 
 ```bash
 python -m http.server 8000
 ```
 
-Open http://localhost:8000
+打开 http://localhost:8000
 
-## Deploy
+## 部署
 
-Push to `main` triggers GitHub Pages via Actions (with `.nojekyll`).
+推送到子模块仓库 `main`；GitHub Actions 发布 Pages（含 `.nojekyll`）。
+
+父仓库 `lmz-obsidian-private` 需更新 submodule 指针后一并提交。
