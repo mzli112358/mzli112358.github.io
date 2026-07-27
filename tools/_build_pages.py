@@ -275,13 +275,13 @@ def page(title, description, canonical, active, page_title_zh, page_title_en, co
 index_content = r"""
           <!-- BILINGUAL PAIR: about — ZH ↔ EN sync required / 改一语必改另一语 -->
           <div class="lang-zh">
-            <p>我是面向<strong>机器人系统、具身智能与三维视觉</strong>的研究者与工程开发者，具备从本体设计、硬件原型、感知导航、遥操作数据采集到 <strong>VLA</strong> 训练与任务智能体的端到端经验。目前在<strong>原力无限（INFIFORCE）深圳研究院</strong>参与家庭服务机器人研发，并为香港大学陈佳玉助理教授 <strong>Agentic Intelligence Lab</strong> 核心研究实习生。</p>
-            <p>本科毕业于北师香港浸会大学<strong>数据科学</strong>，已录取<strong>澳门大学机器人与自主系统（RAS）理学硕士</strong>（2026 年秋）。参与 <strong>ICML 2025</strong> 论文；本科期间创立 <strong>Navigator Robotics Lab</strong>（约 35 人），带队获 RoboMaster 工程挑战赛辽宁站第一名。</p>
+            <p>我是面向<strong>机器人系统、具身智能与三维视觉</strong>的研究者与工程开发者，具备从本体设计、硬件原型、感知导航、遥操作数据采集到 <strong>VLA</strong> 训练与任务智能体的端到端经验。目前在<strong>原力无限（INFIFORCE）深圳研究院</strong>参与家庭服务机器人研发，并为香港大学陈佳玉助理教授 <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> 核心研究实习生。</p>
+            <p>本科毕业于北师香港浸会大学<strong>数据科学</strong>，已录取<strong>澳门大学机器人与自主系统（RAS）理学硕士</strong>（2026 年秋）。参与 <strong>ICML 2025</strong> 论文（通讯作者 <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">贾维嘉</a>）；本科期间在 <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> 支持下创立 <strong>Navigator Robotics Lab</strong>（约 35 人；战队早期名「烧仙草」），带队获 RoboMaster 工程挑战赛辽宁站第一名。</p>
             <p>更多见 <a href="research.html">研究</a>、<a href="projects.html">项目</a>、<a href="https://github.com/mzli112358">GitHub</a> 与 <a href="CV/">简历</a>。</p>
           </div>
           <div class="lang-en">
-            <p>I am a researcher-engineer working on <strong>robotics systems, embodied AI, and 3D vision</strong>, with end-to-end experience from hardware prototyping and perception to <strong>VLA</strong> training and task agents. I currently work at the <strong>INFIFORCE Shenzhen Research Institute</strong> on home-service robots, and as a core research intern in Prof. Jiayu Chen’s <strong>Agentic Intelligence Lab</strong> at HKU.</p>
-            <p>B.Sc. in <strong>Data Science</strong> (BNBU/UIC); incoming <strong>M.Sc. in Robotics and Autonomous Systems</strong> at the <strong>University of Macau</strong> (Fall 2026). Contributor to an <strong>ICML 2025</strong> paper; during undergrad founded <strong>Navigator Robotics Lab</strong> (~35 members) with 1st Place in the RoboMaster Regional Engineer Challenge.</p>
+            <p>I am a researcher-engineer working on <strong>robotics systems, embodied AI, and 3D vision</strong>, with end-to-end experience from hardware prototyping and perception to <strong>VLA</strong> training and task agents. I currently work at the <strong>INFIFORCE Shenzhen Research Institute</strong> on home-service robots, and as a core research intern in Prof. Jiayu Chen’s <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> at HKU.</p>
+            <p>B.Sc. in <strong>Data Science</strong> (BNBU/UIC); incoming <strong>M.Sc. in Robotics and Autonomous Systems</strong> at the <strong>University of Macau</strong> (Fall 2026). Contributor to an <strong>ICML 2025</strong> paper (corresponding author <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">Weijia Jia</a>); during undergrad founded <strong>Navigator Robotics Lab</strong> (~35 members; formerly “Shao Xian Cao”) with support from <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a>, and led the team to 1st Place in the RoboMaster Regional Engineer Challenge.</p>
             <p>See <a href="research.html">Research</a>, <a href="projects.html">Projects</a>, <a href="https://github.com/mzli112358">GitHub</a>, and <a href="CV/">CV</a>.</p>
           </div>
 
@@ -338,8 +338,8 @@ index_content = r"""
             <li class="lang-en"><strong>[2026.07]</strong> Started <a href="projects/furniture-print.html">indoor meter-scale collaborative-arm 3D printing</a> (ongoing, expected through Jan 2027).</li>
             <li class="lang-zh"><strong>[2026.07.08–11]</strong> 探月 Physical AI 黑客松：完成 <a href="projects/photomate.html">PhotoMate</a> 软件链；真机执行权限未开放。<a href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">代码</a></li>
             <li class="lang-en"><strong>[2026.07.08–11]</strong> Tanyue Physical AI Hackathon: <a href="projects/photomate.html">PhotoMate</a> software stack delivered; real-robot APIs unavailable. <a href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">Code</a></li>
-            <li class="lang-zh"><strong>[2026.03]</strong> 加入 INFIFORCE 深圳研究院，并加入港大陈佳玉助理教授 Agentic Intelligence Lab（预计至 2026.09）。</li>
-            <li class="lang-en"><strong>[2026.03]</strong> Joined INFIFORCE Shenzhen + Prof. Jiayu Chen’s Agentic Intelligence Lab at HKU (expected through Sep 2026).</li>
+            <li class="lang-zh"><strong>[2026.03]</strong> 加入 INFIFORCE 深圳研究院，并加入港大陈佳玉助理教授 <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">Agentic Intelligence Lab</a>（预计至 2026.09）。</li>
+            <li class="lang-en"><strong>[2026.03]</strong> Joined INFIFORCE Shenzhen + Prof. Jiayu Chen’s <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">Agentic Intelligence Lab</a> at HKU (expected through Sep 2026).</li>
             <li class="lang-zh"><strong>[2026.03]</strong> 录取澳门大学 RAS 理学硕士（2026 秋）。</li>
             <li class="lang-en"><strong>[2026.03]</strong> Admitted to M.Sc. RAS, University of Macau (Fall 2026).</li>
           </ul>
@@ -352,8 +352,8 @@ index_content = r"""
               <li class="lang-en"><strong>[2025.10]</strong> ICML 2025 Poster: demonstration selection for in-context learning.</li>
               <li class="lang-zh"><strong>[2025.06]</strong> 威世博 / 小美知识产权：LLM 工程实习。</li>
               <li class="lang-en"><strong>[2025.06]</strong> LLM Engineer Intern at WISPRO / Xiaomei IP.</li>
-              <li class="lang-zh"><strong>[2024.04]</strong> RoboMaster 工程挑战赛辽宁站第一名。</li>
-              <li class="lang-en"><strong>[2024.04]</strong> 1st Place, RoboMaster Regional Engineer Challenge (Liaoning).</li>
+              <li class="lang-zh"><strong>[2024.04]</strong> RoboMaster 工程挑战赛辽宁站第一名（<a href="https://fst.uic.edu.cn/info/1146/5615.htm" target="_blank" rel="noopener noreferrer">报道</a> · <a href="projects.html#navigator">项目</a>）。</li>
+              <li class="lang-en"><strong>[2024.04]</strong> 1st Place, RoboMaster Regional Engineer Challenge (Liaoning) — <a href="https://fst.uic.edu.cn/info/1146/5615.htm" target="_blank" rel="noopener noreferrer">news</a> · <a href="projects.html#navigator">project</a>.</li>
             </ul>
           </details>
 
@@ -368,6 +368,7 @@ index_content = r"""
             <li>
               <strong>北师香港浸会大学</strong> — 数据科学理学学士（荣誉）
               <span class="edu-date">2022.08 – 2026.06</span>
+              <br><span style="font-size:0.92em;color:#555;">本科研究相关：受 <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">贾维嘉</a> 老师指导；参与 <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a>（广东省教育厅人工智能与多模态数据处理重点实验室）支持下的机器人实践。</span>
             </li>
           </ul>
           <ul class="edu-list lang-en">
@@ -378,6 +379,7 @@ index_content = r"""
             <li>
               <strong>BNBU / UIC</strong> — B.Sc. (Honours) in Data Science
               <span class="edu-date">Aug 2022 – Jun 2026</span>
+              <br><span style="font-size:0.92em;color:#555;">Undergraduate research: advised by <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">Prof. Weijia Jia</a>; robotics practice supported by <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> (Key Lab for AI &amp; Multi-Modal Data Processing, Guangdong).</span>
             </li>
           </ul>
 
@@ -386,7 +388,7 @@ index_content = r"""
           <h2 id="selected-pub-en" class="lang-en">Selected Publication</h2>
           <div class="paper-card">
             <div class="paper-title">Demonstration Selection for In-Context Learning via Reinforcement Learning</div>
-            <p class="paper-meta">Xubin Wang, Jianfei Wu, Yichen Yuan, Deyu Cai, <strong>Mingzhe Li</strong>, Weijia Jia · <em>ICML 2025</em></p>
+            <p class="paper-meta">Xubin Wang, Jianfei Wu, Yichen Yuan, Deyu Cai, <strong>Mingzhe Li</strong>, <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">Weijia Jia</a> · <em>ICML 2025</em></p>
             <p class="paper-links">
               <a class="pdf-link" href="https://arxiv.org/abs/2412.03966" target="_blank" rel="noopener noreferrer">PDF</a>
               <a href="https://icml.cc/virtual/2025/poster/43807" target="_blank" rel="noopener noreferrer">ICML</a>
@@ -431,11 +433,11 @@ research_content = r"""
           <p class="lang-zh">遥操作 · ACT / OpenPI · 跨本体适配</p>
           <p class="lang-en">Teleoperation · ACT / OpenPI · cross-embodiment</p>
           <ul class="lang-zh">
-            <li>INFIFORCE + 港大 Agentic Intelligence Lab：家庭服务机器人闭环（部署—采集—训练—执行反馈）。</li>
+            <li>INFIFORCE + 港大 <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">Agentic Intelligence Lab</a>：家庭服务机器人闭环（部署—采集—训练—执行反馈）。</li>
             <li>平台：Piper、Nero、OpenArm、Franka、星海图 R1；LeRobot / ACT / OpenPI π₀.₅。</li>
           </ul>
           <ul class="lang-en">
-            <li>INFIFORCE + HKU Agentic Intelligence Lab: home-service robot loop (deploy–collect–train–execute).</li>
+            <li>INFIFORCE + HKU <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">Agentic Intelligence Lab</a>: home-service robot loop (deploy–collect–train–execute).</li>
             <li>Platforms: Piper, Nero, OpenArm, Franka, Galaxea R1; LeRobot / ACT / OpenPI π₀.₅.</li>
           </ul>
 
@@ -444,11 +446,11 @@ research_content = r"""
           <p class="lang-en">Mechanics · electronics · ROS · integration</p>
           <ul class="lang-zh">
             <li>从 0 到 1 原型：结构、PCB、装配、CAN、驱动与联调。</li>
-            <li>Navigator Robotics Lab：35 人实验室建设与 RoboMaster 竞赛交付。</li>
+            <li><a href="projects.html#navigator">Navigator Robotics Lab</a>：35 人实验室建设与 RoboMaster 竞赛交付（<a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> 支持）。</li>
           </ul>
           <ul class="lang-en">
             <li>Zero-to-one prototyping: structure, PCB, assembly, CAN, drivers.</li>
-            <li>Navigator Robotics Lab: 35-member lab + RoboMaster delivery.</li>
+            <li><a href="projects.html#navigator">Navigator Robotics Lab</a>: 35-member lab + RoboMaster delivery (supported by <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a>).</li>
           </ul>
 
           <h2 id="agents"><span class="lang-zh">场景 App / 任务智能体</span><span class="lang-en">Scene Apps / Task Agents</span></h2>
@@ -487,8 +489,8 @@ research_content = r"""
 
           <hr>
           <h2 id="experience"><span class="lang-zh">相关经历</span><span class="lang-en">Related Experience</span></h2>
-          <h3 class="lang-zh">原力无限（INFIFORCE）深圳研究院 · 港大 Agentic Intelligence Lab</h3>
-          <h3 class="lang-en">INFIFORCE Shenzhen · HKU Agentic Intelligence Lab</h3>
+          <h3 class="lang-zh">原力无限（INFIFORCE）深圳研究院 · 港大 <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">Agentic Intelligence Lab</a></h3>
+          <h3 class="lang-en">INFIFORCE Shenzhen · HKU <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">Agentic Intelligence Lab</a></h3>
           <p class="lang-zh"><em>科研助理 / 核心研究实习生 · 2026.03 – 2026.09（预计）</em></p>
           <p class="lang-en"><em>Research Assistant / Core Research Intern · Mar 2026 – Sep 2026 (expected)</em></p>
           <ul class="lang-zh">
@@ -499,15 +501,19 @@ research_content = r"""
             <li>Home-service robots &amp; VLA: deployment, data, training, long-horizon execution.</li>
             <li>Multi-platform adaptation; small-team engineering management.</li>
           </ul>
-          <h3 class="lang-zh">BNBU Navigator Robotics Lab</h3>
+          <h3 id="navigator-exp" class="lang-zh">BNBU Navigator Robotics Lab</h3>
           <h3 class="lang-en">BNBU Navigator Robotics Lab</h3>
           <p class="lang-zh"><em>创始人 / 技术负责人 · 2023.04 – 2025.08</em></p>
           <p class="lang-en"><em>Founder / Technical Lead · Apr 2023 – Aug 2025</em></p>
           <ul class="lang-zh">
-            <li>本科期间从零组建校内机器人实验室；约 20 万元经费；RoboMaster 辽宁站第一名。</li>
+            <li>本科期间从零组建校内机器人实验室 / 战队（早期队名「烧仙草」，后更名 Navigator）；获 <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> 支持，相关学生项目与成果见 <a href="https://aidsrh.bnbu.edu.cn/kxyj/kyxm.htm" target="_blank" rel="noopener noreferrer">实验室项目页</a>、<a href="https://aidsrh.bnbu.edu.cn/kxyj/kycg.htm" target="_blank" rel="noopener noreferrer">科研成果页</a>。</li>
+            <li>RoboMaster 等竞赛交付；校内报道：<a href="https://fst.uic.edu.cn/cst/info/1003/1936.htm" target="_blank" rel="noopener noreferrer">烧仙草→Navigator</a>、<a href="https://fst.uic.edu.cn/info/1146/5615.htm" target="_blank" rel="noopener noreferrer">2024 战绩</a>、<a href="https://fst.bnbu.edu.cn/info/1146/5823.htm" target="_blank" rel="noopener noreferrer">年度分享会</a>。</li>
+            <li>校内指导老师含纪燕燕等；本科研究长期受 <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">贾维嘉</a> 老师指导。</li>
           </ul>
           <ul class="lang-en">
-            <li>Founded the student robotics lab during undergrad; ~RMB 200k funding; RoboMaster Liaoning 1st Place.</li>
+            <li>Founded the student robotics lab/team during undergrad (formerly “Shao Xian Cao”, later Navigator); supported by <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> — see <a href="https://aidsrh.bnbu.edu.cn/kxyj/kyxm.htm" target="_blank" rel="noopener noreferrer">student projects</a> and <a href="https://aidsrh.bnbu.edu.cn/kxyj/kycg.htm" target="_blank" rel="noopener noreferrer">achievements</a>.</li>
+            <li>RoboMaster delivery; campus coverage: <a href="https://fst.uic.edu.cn/cst/info/1003/1936.htm" target="_blank" rel="noopener noreferrer">rename note</a>, <a href="https://fst.uic.edu.cn/info/1146/5615.htm" target="_blank" rel="noopener noreferrer">2024 results</a>, <a href="https://fst.bnbu.edu.cn/info/1146/5823.htm" target="_blank" rel="noopener noreferrer">annual showcase</a>.</li>
+            <li>Faculty mentors include Ji Yanyan et al.; long-term research advising by <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">Prof. Weijia Jia</a>.</li>
           </ul>
 """
 
@@ -519,7 +525,7 @@ publications_content = r"""
           <div class="paper-card">
             <div class="paper-title">Demonstration Selection for In-Context Learning via Reinforcement Learning</div>
             <p class="paper-meta">
-              Xubin Wang, Jianfei Wu, Yichen Yuan, Deyu Cai, <strong>Mingzhe Li</strong>, Weijia Jia<br>
+              Xubin Wang, Jianfei Wu, Yichen Yuan, Deyu Cai, <strong>Mingzhe Li</strong>, <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">Weijia Jia</a><br>
               <em>International Conference on Machine Learning (ICML)</em>, 2025 · Poster
             </p>
             <p class="paper-links">
@@ -577,8 +583,8 @@ projects_content = r"""
           </div>
 
           <div class="paper-card">
-            <div class="paper-title lang-zh">3. 家庭服务机器人与 VLA（INFIFORCE / AIL）</div>
-            <div class="paper-title lang-en">3. Home-Service Robot &amp; VLA (INFIFORCE / AIL)</div>
+            <div class="paper-title lang-zh">3. 家庭服务机器人与 VLA（INFIFORCE / <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">AIL</a>）</div>
+            <div class="paper-title lang-en">3. Home-Service Robot &amp; VLA (INFIFORCE / <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">AIL</a>)</div>
             <p class="paper-meta">2026.03–2026.09 (exp.) · LeRobot · ACT / OpenPI · teleop</p>
             <ul class="lang-zh">
               <li>多臂平台集成、真实数据采集与策略微调；长程任务智能体链路。</li>
@@ -625,15 +631,17 @@ projects_content = r"""
             </ul>
           </div>
 
-          <div class="paper-card">
-            <div class="paper-title lang-zh">7. RoboMaster 实验室与竞赛机器人</div>
-            <div class="paper-title lang-en">7. RoboMaster Lab &amp; Competition Robots</div>
-            <p class="paper-meta">2023.04–2025.08 · team leadership · mechanical · ROS2</p>
+          <div class="paper-card" id="navigator">
+            <div class="paper-title lang-zh">7. RoboMaster 实验室与竞赛机器人（Navigator）</div>
+            <div class="paper-title lang-en">7. RoboMaster Lab &amp; Competition Robots (Navigator)</div>
+            <p class="paper-meta">2023.04–2025.08 · team leadership · mechanical · ROS2 · AIRH-supported</p>
             <ul class="lang-zh">
-              <li>Navigator Robotics Lab；竞赛机器人全栈交付；辽宁站第一名。</li>
+              <li><strong>Navigator Robotics Lab</strong>（早期「烧仙草」战队）：全栈竞赛机器人；辽宁站第一名。</li>
+              <li>公开材料：<a href="https://aidsrh.bnbu.edu.cn/kxyj/kyxm.htm" target="_blank" rel="noopener noreferrer">AIRH 学生项目</a> · <a href="https://aidsrh.bnbu.edu.cn/kxyj/kycg.htm" target="_blank" rel="noopener noreferrer">AIRH 科研成果</a> · <a href="https://fst.uic.edu.cn/cst/info/1003/1936.htm" target="_blank" rel="noopener noreferrer">UIC 报道</a> · <a href="https://fst.bnbu.edu.cn/info/1146/5823.htm" target="_blank" rel="noopener noreferrer">年度分享会</a>。</li>
             </ul>
             <ul class="lang-en">
-              <li>Navigator Robotics Lab; full-stack competition robots; Liaoning 1st Place.</li>
+              <li><strong>Navigator Robotics Lab</strong> (formerly Shao Xian Cao): full-stack competition robots; Liaoning 1st Place.</li>
+              <li>Public links: <a href="https://aidsrh.bnbu.edu.cn/kxyj/kyxm.htm" target="_blank" rel="noopener noreferrer">AIRH projects</a> · <a href="https://aidsrh.bnbu.edu.cn/kxyj/kycg.htm" target="_blank" rel="noopener noreferrer">AIRH achievements</a> · <a href="https://fst.uic.edu.cn/cst/info/1003/1936.htm" target="_blank" rel="noopener noreferrer">UIC news</a> · <a href="https://fst.bnbu.edu.cn/info/1146/5823.htm" target="_blank" rel="noopener noreferrer">showcase</a>.</li>
             </ul>
             <img src="assets/images/rm_nano.png" data-full-src="assets/images/RM.png" alt="RoboMaster Robotics Team" class="preview-image" style="width:100%;height:auto;margin-top:0.5rem;">
           </div>
