@@ -18,6 +18,10 @@
 | 目录说明 | [docs/STRUCTURE.md](docs/STRUCTURE.md) |
 | 双语约定 | [docs/BILINGUAL.md](docs/BILINGUAL.md) |
 
+## 待做（产品意向）
+
+- **活动记录页 / Activities**（**方案 A，2026-07-30 已定**）：**先只留素材，暂不做页面**——不改导航、不建独立 HTML、不动 `_build_pages.py`。出席/证书等继续写在父库 [`履历背景/活动记录.md`](../履历背景/活动记录.md)；日后若要上线再另开任务。
+
 ## 怎么改内容
 
 1. **学术主站四页**：编辑 [`tools/_build_pages.py`](tools/_build_pages.py)，然后：
