@@ -19,6 +19,15 @@ BILINGUAL_NOTE = """<!-- BILINGUAL PAIR / 双语成对
      修改中文时请同步修改英文；修改英文时请同步修改中文。
      See BILINGUAL.md -->"""
 
+# Hidden archive links kept near Jia Weijia mentions (not rendered).
+JIA_ARCHIVE_COMMENT = """<!-- Jia Weijia / 贾维嘉 — extra refs (not shown on page; kept in HTML source):
+     http://bnuaifn.cn/ScientificResearchTeam/JiaWeijia.html
+     https://skliotsc.um.edu.mo/%E3%80%8C5g-enabled%EF%BC%8Ceverything-connected%E3%80%8D-%EF%BC%9Aprof-jia-weijia-deputy-director-of-smart-city-iot-state-key-lab-interviewed-by-tencent-finance-channel-on-august-30/
+     https://skliotsc.um.edu.mo/prof-jia-weijia-elected-ieee-fellow%EF%BC%81/
+     https://www.gov.mo/en/news/120431/
+     https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+-->"""
+
 
 def head(title: str, description: str, canonical: str) -> str:
     return f"""<!doctype html>
@@ -276,12 +285,20 @@ index_content = r"""
           <!-- BILINGUAL PAIR: about — ZH ↔ EN sync required / 改一语必改另一语 -->
           <div class="lang-zh">
             <p>我是面向<strong>机器人系统、具身智能与三维视觉</strong>的研究者与工程开发者，具备从本体设计、硬件原型、感知导航、遥操作数据采集到 <strong>VLA</strong> 训练与任务智能体的端到端经验。目前在<strong>原力无限（INFIFORCE）深圳研究院</strong>参与家庭服务机器人研发，并为香港大学陈佳玉助理教授 <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> 核心研究实习生。</p>
-            <p>本科毕业于北师香港浸会大学<strong>数据科学</strong>，已录取<strong>澳门大学机器人与自主系统（RAS）理学硕士</strong>（2026 年秋）。参与 <strong>ICML 2025</strong> 论文（通讯作者 <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">贾维嘉</a>）；本科期间在 <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> 支持下创立 <strong>Navigator Robotics Lab</strong>（约 35 人；战队早期名「烧仙草」），带队获 RoboMaster 工程挑战赛辽宁站第一名。</p>
+            <!-- Jia Weijia / 贾维嘉 — extra refs (not shown on page; kept in HTML source):
+                 http://bnuaifn.cn/ScientificResearchTeam/JiaWeijia.html
+                 https://skliotsc.um.edu.mo/%E3%80%8C5g-enabled%EF%BC%8Ceverything-connected%E3%80%8D-%EF%BC%9Aprof-jia-weijia-deputy-director-of-smart-city-iot-state-key-lab-interviewed-by-tencent-finance-channel-on-august-30/
+                 https://skliotsc.um.edu.mo/prof-jia-weijia-elected-ieee-fellow%EF%BC%81/
+                 https://www.gov.mo/en/news/120431/
+     https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+                 https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+            -->
+            <p>本科毕业于北师香港浸会大学<strong>数据科学</strong>，已录取<strong>澳门大学机器人与自主系统（RAS）理学硕士</strong>（2026 年秋）。参与 <strong>ICML 2025</strong> 论文（通讯作者 <a href="https://staff.uic.edu.cn/jiawj/cn" target="_blank" rel="noopener noreferrer">贾维嘉</a>）；本科期间在 <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> 支持下创立 <strong>Navigator Robotics Lab</strong>（约 35 人；战队早期名「烧仙草」），带队获 RoboMaster 工程挑战赛辽宁站第一名。</p>
             <p>更多见 <a href="research.html">研究</a>、<a href="projects.html">项目</a>、<a href="https://github.com/mzli112358">GitHub</a> 与 <a href="CV/">简历</a>。</p>
           </div>
           <div class="lang-en">
             <p>I am a researcher-engineer working on <strong>robotics systems, embodied AI, and 3D vision</strong>, with end-to-end experience from hardware prototyping and perception to <strong>VLA</strong> training and task agents. I currently work at the <strong>INFIFORCE Shenzhen Research Institute</strong> on home-service robots, and as a core research intern in Prof. Jiayu Chen’s <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> at HKU.</p>
-            <p>B.Sc. in <strong>Data Science</strong> (BNBU/UIC); incoming <strong>M.Sc. in Robotics and Autonomous Systems</strong> at the <strong>University of Macau</strong> (Fall 2026). Contributor to an <strong>ICML 2025</strong> paper (corresponding author <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">Weijia Jia</a>); during undergrad founded <strong>Navigator Robotics Lab</strong> (~35 members; formerly “Shao Xian Cao”) with support from <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a>, and led the team to 1st Place in the RoboMaster Regional Engineer Challenge.</p>
+            <p>B.Sc. in <strong>Data Science</strong> (BNBU/UIC); incoming <strong>M.Sc. in Robotics and Autonomous Systems</strong> at the <strong>University of Macau</strong> (Fall 2026). Contributor to an <strong>ICML 2025</strong> paper (corresponding author <a href="https://staff.uic.edu.cn/jiawj/en" target="_blank" rel="noopener noreferrer">Weijia Jia</a>); during undergrad founded <strong>Navigator Robotics Lab</strong> (~35 members; formerly “Shao Xian Cao”) with support from <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a>, and led the team to 1st Place in the RoboMaster Regional Engineer Challenge.</p>
             <p>See <a href="research.html">Research</a>, <a href="projects.html">Projects</a>, <a href="https://github.com/mzli112358">GitHub</a>, and <a href="CV/">CV</a>.</p>
           </div>
 
@@ -368,7 +385,16 @@ index_content = r"""
             <li>
               <strong>北师香港浸会大学</strong> — 数据科学理学学士（荣誉）
               <span class="edu-date">2022.08 – 2026.06</span>
-              <br><span style="font-size:0.92em;color:#555;">本科研究相关：受 <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">贾维嘉</a> 老师指导；参与 <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a>（广东省教育厅人工智能与多模态数据处理重点实验室）支持下的机器人实践。</span>
+              <!-- Jia Weijia / 贾维嘉 — extra refs (not shown on page; kept in HTML source):
+                   http://bnuaifn.cn/ScientificResearchTeam/JiaWeijia.html
+                   https://skliotsc.um.edu.mo/%E3%80%8C5g-enabled%EF%BC%8Ceverything-connected%E3%80%8D-%EF%BC%9Aprof-jia-weijia-deputy-director-of-smart-city-iot-state-key-lab-interviewed-by-tencent-finance-channel-on-august-30/
+                   https://skliotsc.um.edu.mo/prof-jia-weijia-elected-ieee-fellow%EF%BC%81/
+                   https://www.gov.mo/en/news/120431/
+     https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+                 https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+                   https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+              -->
+              <br><span style="font-size:0.92em;color:#555;">本科研究相关：受 <a href="https://staff.uic.edu.cn/jiawj/cn" target="_blank" rel="noopener noreferrer">贾维嘉</a> 老师指导；参与 <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a>（广东省教育厅人工智能与多模态数据处理重点实验室）支持下的机器人实践。</span>
             </li>
           </ul>
           <ul class="edu-list lang-en">
@@ -379,7 +405,16 @@ index_content = r"""
             <li>
               <strong>BNBU / UIC</strong> — B.Sc. (Honours) in Data Science
               <span class="edu-date">Aug 2022 – Jun 2026</span>
-              <br><span style="font-size:0.92em;color:#555;">Undergraduate research: advised by <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">Prof. Weijia Jia</a>; robotics practice supported by <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> (Key Lab for AI &amp; Multi-Modal Data Processing, Guangdong).</span>
+              <!-- Jia Weijia / 贾维嘉 — extra refs (not shown on page; kept in HTML source):
+                   http://bnuaifn.cn/ScientificResearchTeam/JiaWeijia.html
+                   https://skliotsc.um.edu.mo/%E3%80%8C5g-enabled%EF%BC%8Ceverything-connected%E3%80%8D-%EF%BC%9Aprof-jia-weijia-deputy-director-of-smart-city-iot-state-key-lab-interviewed-by-tencent-finance-channel-on-august-30/
+                   https://skliotsc.um.edu.mo/prof-jia-weijia-elected-ieee-fellow%EF%BC%81/
+                   https://www.gov.mo/en/news/120431/
+     https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+                 https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+                   https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+              -->
+              <br><span style="font-size:0.92em;color:#555;">Undergraduate research: advised by <a href="https://staff.uic.edu.cn/jiawj/en" target="_blank" rel="noopener noreferrer">Prof. Weijia Jia</a>; robotics practice supported by <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> (Key Lab for AI &amp; Multi-Modal Data Processing, Guangdong).</span>
             </li>
           </ul>
 
@@ -388,7 +423,15 @@ index_content = r"""
           <h2 id="selected-pub-en" class="lang-en">Selected Publication</h2>
           <div class="paper-card">
             <div class="paper-title">Demonstration Selection for In-Context Learning via Reinforcement Learning</div>
-            <p class="paper-meta">Xubin Wang, Jianfei Wu, Yichen Yuan, Deyu Cai, <strong>Mingzhe Li</strong>, <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">Weijia Jia</a> · <em>ICML 2025</em></p>
+            <!-- Jia Weijia / 贾维嘉 — extra refs (not shown on page; kept in HTML source):
+                 http://bnuaifn.cn/ScientificResearchTeam/JiaWeijia.html
+                 https://skliotsc.um.edu.mo/%E3%80%8C5g-enabled%EF%BC%8Ceverything-connected%E3%80%8D-%EF%BC%9Aprof-jia-weijia-deputy-director-of-smart-city-iot-state-key-lab-interviewed-by-tencent-finance-channel-on-august-30/
+                 https://skliotsc.um.edu.mo/prof-jia-weijia-elected-ieee-fellow%EF%BC%81/
+                 https://www.gov.mo/en/news/120431/
+     https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+                 https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+            -->
+            <p class="paper-meta">Xubin Wang, Jianfei Wu, Yichen Yuan, Deyu Cai, <strong>Mingzhe Li</strong>, <a class="lang-zh" href="https://staff.uic.edu.cn/jiawj/cn" target="_blank" rel="noopener noreferrer">贾维嘉</a><a class="lang-en" href="https://staff.uic.edu.cn/jiawj/en" target="_blank" rel="noopener noreferrer">Weijia Jia</a> · <em>ICML 2025</em></p>
             <p class="paper-links">
               <a class="pdf-link" href="https://arxiv.org/abs/2412.03966" target="_blank" rel="noopener noreferrer">PDF</a>
               <a href="https://icml.cc/virtual/2025/poster/43807" target="_blank" rel="noopener noreferrer">ICML</a>
@@ -508,12 +551,20 @@ research_content = r"""
           <ul class="lang-zh">
             <li>本科期间从零组建校内机器人实验室 / 战队（早期队名「烧仙草」，后更名 Navigator）；获 <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> 支持，相关学生项目与成果见 <a href="https://aidsrh.bnbu.edu.cn/kxyj/kyxm.htm" target="_blank" rel="noopener noreferrer">实验室项目页</a>、<a href="https://aidsrh.bnbu.edu.cn/kxyj/kycg.htm" target="_blank" rel="noopener noreferrer">科研成果页</a>。</li>
             <li>RoboMaster 等竞赛交付；校内报道：<a href="https://fst.uic.edu.cn/cst/info/1003/1936.htm" target="_blank" rel="noopener noreferrer">烧仙草→Navigator</a>、<a href="https://fst.uic.edu.cn/info/1146/5615.htm" target="_blank" rel="noopener noreferrer">2024 战绩</a>、<a href="https://fst.bnbu.edu.cn/info/1146/5823.htm" target="_blank" rel="noopener noreferrer">年度分享会</a>。</li>
-            <li>校内指导老师含纪燕燕等；本科研究长期受 <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">贾维嘉</a> 老师指导。</li>
+            <!-- Jia Weijia / 贾维嘉 — extra refs (not shown on page; kept in HTML source):
+                 http://bnuaifn.cn/ScientificResearchTeam/JiaWeijia.html
+                 https://skliotsc.um.edu.mo/%E3%80%8C5g-enabled%EF%BC%8Ceverything-connected%E3%80%8D-%EF%BC%9Aprof-jia-weijia-deputy-director-of-smart-city-iot-state-key-lab-interviewed-by-tencent-finance-channel-on-august-30/
+                 https://skliotsc.um.edu.mo/prof-jia-weijia-elected-ieee-fellow%EF%BC%81/
+                 https://www.gov.mo/en/news/120431/
+     https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+                 https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+            -->
+            <li>校内指导老师含纪燕燕等；本科研究长期受 <a href="https://staff.uic.edu.cn/jiawj/cn" target="_blank" rel="noopener noreferrer">贾维嘉</a> 老师指导。</li>
           </ul>
           <ul class="lang-en">
             <li>Founded the student robotics lab/team during undergrad (formerly “Shao Xian Cao”, later Navigator); supported by <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> — see <a href="https://aidsrh.bnbu.edu.cn/kxyj/kyxm.htm" target="_blank" rel="noopener noreferrer">student projects</a> and <a href="https://aidsrh.bnbu.edu.cn/kxyj/kycg.htm" target="_blank" rel="noopener noreferrer">achievements</a>.</li>
             <li>RoboMaster delivery; campus coverage: <a href="https://fst.uic.edu.cn/cst/info/1003/1936.htm" target="_blank" rel="noopener noreferrer">rename note</a>, <a href="https://fst.uic.edu.cn/info/1146/5615.htm" target="_blank" rel="noopener noreferrer">2024 results</a>, <a href="https://fst.bnbu.edu.cn/info/1146/5823.htm" target="_blank" rel="noopener noreferrer">annual showcase</a>.</li>
-            <li>Faculty mentors include Ji Yanyan et al.; long-term research advising by <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">Prof. Weijia Jia</a>.</li>
+            <li>Faculty mentors include Ji Yanyan et al.; long-term research advising by <a href="https://staff.uic.edu.cn/jiawj/en" target="_blank" rel="noopener noreferrer">Prof. Weijia Jia</a>.</li>
           </ul>
 """
 
@@ -525,7 +576,16 @@ publications_content = r"""
           <div class="paper-card">
             <div class="paper-title">Demonstration Selection for In-Context Learning via Reinforcement Learning</div>
             <p class="paper-meta">
-              Xubin Wang, Jianfei Wu, Yichen Yuan, Deyu Cai, <strong>Mingzhe Li</strong>, <a href="https://www.fst.um.edu.mo/people/jiawj/" target="_blank" rel="noopener noreferrer">Weijia Jia</a><br>
+              <!-- Jia Weijia / 贾维嘉 — extra refs (not shown on page; kept in HTML source):
+                   http://bnuaifn.cn/ScientificResearchTeam/JiaWeijia.html
+                   https://skliotsc.um.edu.mo/%E3%80%8C5g-enabled%EF%BC%8Ceverything-connected%E3%80%8D-%EF%BC%9Aprof-jia-weijia-deputy-director-of-smart-city-iot-state-key-lab-interviewed-by-tencent-finance-channel-on-august-30/
+                   https://skliotsc.um.edu.mo/prof-jia-weijia-elected-ieee-fellow%EF%BC%81/
+                   https://www.gov.mo/en/news/120431/
+     https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+                 https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+                   https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
+              -->
+              Xubin Wang, Jianfei Wu, Yichen Yuan, Deyu Cai, <strong>Mingzhe Li</strong>, <a class="lang-zh" href="https://staff.uic.edu.cn/jiawj/cn" target="_blank" rel="noopener noreferrer">贾维嘉</a><a class="lang-en" href="https://staff.uic.edu.cn/jiawj/en" target="_blank" rel="noopener noreferrer">Weijia Jia</a><br>
               <em>International Conference on Machine Learning (ICML)</em>, 2025 · Poster
             </p>
             <p class="paper-links">
