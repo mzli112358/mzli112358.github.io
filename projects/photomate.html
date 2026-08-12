@@ -11,7 +11,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PhotoMate | Embodied Photographer / 具身智能摄影师</title>
-  <meta name="description" content="PhotoMate: conversational robot photography service. Software stack validated at Tanyue; planned for Astribot OS.">
+  <meta name="description" content="PhotoMate: conversational robot photography service. S1–S6 photo-agent software (FastAPI + Qwen-Omni + React) validated at Tanyue; planned for Astribot OS.">
   <link rel="canonical" href="https://mzli112358.github.io/photomate.html">
   <link rel="stylesheet" href="../assets/css/site.css?v=20260725-lang">
   <style>
@@ -218,8 +218,8 @@
     </nav>
     <div class="hero-inner wrap">
       <!-- BILINGUAL PAIR: hero — 修改中文时请同步修改英文 -->
-      <div class="eyebrow lang-zh">探月已验证软件链 · 计划在星尘 Astribot OS 落地真机</div>
-      <div class="eyebrow lang-en">Software stack validated at Tanyue · Planned for Astribot OS</div>
+      <div class="eyebrow lang-zh">探月已验证 S1–S6 软件链（已合入 main）· 计划在星尘 Astribot OS 落地真机</div>
+      <div class="eyebrow lang-en">S1–S6 software stack validated at Tanyue (merged to main) · Planned for Astribot OS</div>
       <h1>PhotoMate</h1>
       <h2 class="lang-zh">会说话的拍照机器人服务</h2>
       <h2 class="lang-en">A Conversational Robot Photography Service</h2>
@@ -262,8 +262,8 @@
             <span class="num">03</span>
             <h3 class="lang-zh">即时交付</h3>
             <h3 class="lang-en">Instant Delivery</h3>
-            <p class="lang-zh">屏幕复核成片，支持重拍；上传云端并生成二维码，客人扫码带走 JPEG。</p>
-            <p class="lang-en">On-screen review with retake; upload to cloud and show a QR code for JPEG download.</p>
+            <p class="lang-zh">屏幕复核成片，支持重拍；后端给出稳定 <code>photo_url</code>，可选上传 Supabase，前端展示二维码扫码带走 JPEG。</p>
+            <p class="lang-en">On-screen review with retake; backend issues a stable <code>photo_url</code> (optional Supabase upload); frontend shows a QR for JPEG download.</p>
           </article>
         </div>
       </div>
@@ -276,16 +276,16 @@
           <span class="kicker">Experience Flow</span>
           <h2 class="lang-zh">一次服务：S0 → S6</h2>
           <h2 class="lang-en">One Session: S0 → S6</h2>
-          <p class="lead lang-zh">探月 MVP 把流程拆成显式状态；前端 `/flow/` 按后端状态自动切页，客人无需点「下一步」。</p>
-          <p class="lead lang-en">The Tanyue MVP uses an explicit state machine; the `/flow/` frontend auto-routes from backend state—no manual “next”.</p>
+          <p class="lead lang-zh">代码状态枚举为 <code>S0→S1→S2→S3→S5→S6→S0</code>（产品文档里的「S4 拍照质检」合入 S3 内完成）。前端 <code>/flow/</code> 经 SSE 跟随后端状态自动切页，客人无需点「下一步」。</p>
+          <p class="lead lang-en">Code states: <code>S0→S1→S2→S3→S5→S6→S0</code> (product-doc “S4 capture/QC” is folded into S3). The <code>/flow/</code> frontend follows backend state over SSE—no manual “next”.</p>
         </div>
         <div class="flow">
           <div class="step"><span class="code">S0</span><span class="lang-zh">待机：等待开始一轮服务</span><span class="lang-en">Idle: wait to start a session</span></div>
-          <div class="step"><span class="code">S1</span><span class="lang-zh">寻人：实时画面；发现后进入邀请</span><span class="lang-en">Search: live view; invite when found</span></div>
+          <div class="step"><span class="code">S1</span><span class="lang-zh">寻人：正脸+停留唤醒，建立 Omni 会话</span><span class="lang-en">Search: face+dwell wake, open Omni session</span></div>
           <div class="step"><span class="code">S2</span><span class="lang-zh">询问：要不要拍 → 选设备 → 选模式</span><span class="lang-en">Ask: intent → device → mode</span></div>
-          <div class="step"><span class="code">S3</span><span class="lang-zh">取景：语音引导站位/姿势，自动快门</span><span class="lang-en">Pose: voice guidance, auto shutter</span></div>
-          <div class="step"><span class="code">S5</span><span class="lang-zh">复核：看成片；保存或再来一张</span><span class="lang-en">Review: keep or retake</span></div>
-          <div class="step"><span class="code">S6</span><span class="lang-zh">交付：二维码下载；约 60 秒后下一轮</span><span class="lang-en">Deliver: QR download; ~60s then next</span></div>
+          <div class="step"><span class="code">S3</span><span class="lang-zh">引导+拍照：interval 姿态引导；达标后快门与质检（可回环）</span><span class="lang-en">Guide+capture: pose interval; shutter + QC (retry loop)</span></div>
+          <div class="step"><span class="code">S5</span><span class="lang-zh">复核：看成片；保存或再来一张（回 S3）</span><span class="lang-en">Review: keep or retake (back to S3)</span></div>
+          <div class="step"><span class="code">S6</span><span class="lang-zh">交付：稳定 photo_url + 二维码；复位 S0</span><span class="lang-en">Deliver: stable photo_url + QR; reset to S0</span></div>
         </div>
       </div>
     </section>
@@ -302,10 +302,10 @@
         </div>
         <div class="arch">
           <div class="arch-row"><strong class="lang-zh">① 体验层</strong><strong class="lang-en">① Experience</strong><span class="lang-zh">外接屏浏览器 kiosk · 语音 · 打卡立牌 · 手机扫码</span><span class="lang-en">Kiosk screen · voice · check-in sign · phone QR</span></div>
-          <div class="arch-row"><strong class="lang-zh">② 展示层</strong><strong class="lang-en">② Presentation</strong><span class="lang-zh">React + Vite `/flow/`：寻人 / 设备 / 模式 / 取景 / 复核 / 分享</span><span class="lang-en">React + Vite `/flow/`: search / device / mode / preview / review / share</span></div>
-          <div class="arch-row"><strong class="lang-zh">③ 编排层</strong><strong class="lang-en">③ Orchestration</strong><span class="lang-zh">Python FastAPI：会话 · Runtime · FSM · 工具分发 · 拍照/上传/二维码</span><span class="lang-en">Python FastAPI: session · runtime · FSM · tools · capture/upload/QR</span></div>
-          <div class="arch-row"><strong class="lang-zh">④ 设备层</strong><strong class="lang-en">④ Devices</strong><span class="lang-zh">相机 · 麦克风 · 扬声器 · AEC · Insta360（UVC）</span><span class="lang-en">Camera · mic · speaker · AEC · Insta360 (UVC)</span></div>
-          <div class="arch-row"><strong class="lang-zh">⑤ 云端层</strong><strong class="lang-en">⑤ Cloud</strong><span class="lang-zh">DashScope Qwen-Omni · Supabase Storage（预留打印）</span><span class="lang-en">DashScope Qwen-Omni · Supabase Storage (printer reserved)</span></div>
+          <div class="arch-row"><strong class="lang-zh">② 展示层</strong><strong class="lang-en">② Presentation</strong><span class="lang-zh">React + Vite <code>/flow/</code>（TanStack）：寻人 / 设备 / 模式 / 取景 / 复核 / 分享；另有 <code>/photo-agent</code> 调试台</span><span class="lang-en">React + Vite <code>/flow/</code> (TanStack): search / device / mode / preview / review / share; plus <code>/photo-agent</code> test console</span></div>
+          <div class="arch-row"><strong class="lang-zh">③ 编排层</strong><strong class="lang-en">③ Orchestration</strong><span class="lang-zh">Python FastAPI：显式 asyncio FSM · SessionContext · 工具分发 · 本地照片 API</span><span class="lang-en">Python FastAPI: explicit asyncio FSM · SessionContext · tool dispatch · local photo API</span></div>
+          <div class="arch-row"><strong class="lang-zh">④ 设备层</strong><strong class="lang-en">④ Devices</strong><span class="lang-zh">本机相机 / 麦克风 / 扬声器 · AEC · Insta360 / Galbot adapter 预留</span><span class="lang-en">Local camera / mic / speaker · AEC · Insta360 / Galbot adapters reserved</span></div>
+          <div class="arch-row"><strong class="lang-zh">⑤ 云端层</strong><strong class="lang-en">⑤ Cloud</strong><span class="lang-zh">DashScope Qwen-Omni Realtime · 可选 Supabase 对象存储 · segno 二维码</span><span class="lang-en">DashScope Qwen-Omni Realtime · optional Supabase storage · segno QR</span></div>
         </div>
         <div class="grid-2" style="margin-top:18px;">
           <article class="card">
@@ -326,10 +326,10 @@
             <h3 class="lang-zh">AI 可调用的「按钮」</h3>
             <h3 class="lang-en">AI Function-Call “Buttons”</h3>
             <ul>
-              <li>`report_photo_intent` / `report_capture_device` / `report_capture_mode`</li>
-              <li>`report_pose_turn` / `report_pose_readiness` / `capture_photo`</li>
-              <li class="lang-zh">`report_review_intent`（保存 → S6；重拍 → 回 S3）</li>
-              <li class="lang-en">`report_review_intent` (keep → S6; retake → S3)</li>
+              <li><code>report_photo_intent</code> / <code>report_capture_device</code> / <code>report_capture_mode</code></li>
+              <li><code>report_pose_turn</code> / <code>report_pose_readiness</code> / <code>capture_photo</code></li>
+              <li class="lang-zh"><code>report_review_intent</code>（保存 → S6；重拍 → 回 S3）</li>
+              <li class="lang-en"><code>report_review_intent</code> (keep → S6; retake → S3)</li>
             </ul>
           </article>
         </div>
@@ -343,8 +343,8 @@
           <span class="kicker">What We Built</span>
           <h2 class="lang-zh">探月黑客松实际做到了什么</h2>
           <h2 class="lang-en">What Was Actually Built at Tanyue</h2>
-          <p class="lead lang-zh">依据仓库 <a href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">PhotoMate-Moonbot-Hackthon</a> 与完成审计：软件编排链可跑；本体执行层未开放权限，真机闭环未完成。</p>
-          <p class="lead lang-en">Per <a href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">PhotoMate-Moonbot-Hackthon</a> and the completion audit: the software orchestration chain runs; robot execution permissions were unavailable, so the real-robot loop was not closed.</p>
+          <p class="lead lang-zh">依据仓库 <a href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">PhotoMate-Moonbot-Hackthon</a>（<code>main</code> 已合入 photo-agent）与完成审计：软件编排链可跑；本体执行层未开放权限，真机服务闭环未完成。</p>
+          <p class="lead lang-en">Per <a href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">PhotoMate-Moonbot-Hackthon</a> (<code>main</code> includes photo-agent) and the completion audit: the software orchestration chain runs; robot execution permissions were unavailable, so the real-robot service loop was not closed.</p>
         </div>
         <table>
           <thead>
@@ -358,32 +358,32 @@
             <tr>
               <td>S1–S6 FSM + Runtime</td>
               <td><span class="done lang-zh">已完成</span><span class="done lang-en">Done</span></td>
-              <td><span class="lang-zh">`app/photo_agent/`：asyncio FSM、会话、工具分发、JSON 日志；pytest 覆盖</span><span class="lang-en">`app/photo_agent/`: asyncio FSM, session, tools, JSON logs; pytest coverage</span></td>
+              <td><span class="lang-zh"><code>app/photo_agent/</code>：asyncio FSM、超时/重试/回环、JSON 日志；pytest 全覆盖（约 91）</span><span class="lang-en"><code>app/photo_agent/</code>: asyncio FSM, timeouts/retries/loops, JSON logs; full pytest (~91)</span></td>
             </tr>
             <tr>
               <td>Qwen-Omni realtime</td>
               <td><span class="done lang-zh">已完成</span><span class="done lang-en">Done</span></td>
-              <td><span class="lang-zh">真实麦克风/扬声器 + Function Calling；mock / local-real</span><span class="lang-en">Real mic/speaker + function calling; mock / local-real</span></td>
+              <td><span class="lang-zh">真实麦克风/扬声器 smoke；Function Calling；mock / local-real；真人 S1 正向唤醒已通过</span><span class="lang-en">Real mic/speaker smoke; function calling; mock / local-real; live S1 wake verified</span></td>
             </tr>
             <tr>
-              <td>Frontend `/flow/`</td>
+              <td>Frontend <code>/flow/</code></td>
               <td><span class="done lang-zh">已完成</span><span class="done lang-en">Done</span></td>
-              <td><span class="lang-zh">search / device / mode / preview / review / post；SSE 切页</span><span class="lang-en">search / device / mode / preview / review / post; SSE routing</span></td>
+              <td><span class="lang-zh">search / device / mode / preview / review / post；SSE 切页；二维码 UI 已接 <code>qr_url</code></span><span class="lang-en">search / device / mode / preview / review / post; SSE routing; QR UI wired to <code>qr_url</code></span></td>
             </tr>
             <tr>
               <td><span class="lang-zh">设备适配与交付</span><span class="lang-en">Devices &amp; delivery</span></td>
               <td><span class="done lang-zh">部分完成</span><span class="done lang-en">Partial</span></td>
-              <td><span class="lang-zh">本机相机/音频、AEC、照片 API、Supabase/二维码、Insta360 UVC</span><span class="lang-en">Local camera/audio, AEC, photo API, Supabase/QR, Insta360 UVC</span></td>
+              <td><span class="lang-zh">本机相机/音频 + AEC、本地照片 API、segno QR、可选 Supabase；Insta360 / Jetson 适配器预留</span><span class="lang-en">Local camera/audio + AEC, local photo API, segno QR, optional Supabase; Insta360 / Jetson adapters reserved</span></td>
             </tr>
             <tr>
               <td><span class="lang-zh">导航 / 机械臂 / 灵巧手</span><span class="lang-en">Nav / arm / dexterous hand</span></td>
               <td><span class="blocked lang-zh">未闭环</span><span class="blocked lang-en">Blocked</span></td>
-              <td><span class="lang-zh">现场本体未开放执行权限</span><span class="lang-en">Execution APIs unavailable on the sponsor robot</span></td>
+              <td><span class="lang-zh">现场本体未开放执行权限；软件链刻意不绑 GalbotSDK</span><span class="lang-en">Execution APIs unavailable on the sponsor robot; software stack kept embodiment-agnostic</span></td>
             </tr>
             <tr>
               <td><span class="lang-zh">完整真机 Demo</span><span class="lang-en">Full real-robot demo</span></td>
               <td><span class="blocked lang-zh">未完成</span><span class="blocked lang-en">Incomplete</span></td>
-              <td><span class="lang-zh">本地链曾到拍照/质检；整链与巡航交付未完成</span><span class="lang-en">Local chain reached capture/QC; full S1→S6 + cruise delivery unfinished</span></td>
+              <td><span class="lang-zh">本机链曾跑到拍照/质检；不间断真人 S1→S6 暂停待复测；巡航交付未做</span><span class="lang-en">Local chain reached capture/QC; uninterrupted live S1→S6 paused pending retest; cruise delivery unfinished</span></td>
             </tr>
           </tbody>
         </table>
@@ -391,19 +391,19 @@
           <article class="card">
             <h3 class="lang-zh">技术栈（探月 MVP）</h3>
             <h3 class="lang-en">Stack (Tanyue MVP)</h3>
-            <p>Python 3.11 + FastAPI · React + Vite · Qwen-Omni · OpenCV · PyAudio + AEC · Supabase · segno</p>
+            <p>Python 3.10+ · FastAPI · React + Vite (TanStack) · Qwen-Omni · OpenCV · PyAudio + AEC · segno · optional Supabase</p>
           </article>
           <article class="card">
             <h3 class="lang-zh">现场部署形态</h3>
             <h3 class="lang-en">Deployment Shape</h3>
-            <p class="lang-zh">主机后端 `:8000` + 前端 `:8080/flow/`；浏览器 kiosk；可选 SSH 端口转发。</p>
-            <p class="lang-en">Host backend `:8000` + frontend `:8080/flow/`; browser kiosk; optional SSH port-forward.</p>
+            <p class="lang-zh">后端 <code>:8000</code> + 前端 <code>:8080/flow/</code> kiosk；调试台 <code>/photo-agent</code>；可选 SSH 端口转发。</p>
+            <p class="lang-en">Backend <code>:8000</code> + frontend <code>:8080/flow/</code> kiosk; test console <code>/photo-agent</code>; optional SSH port-forward.</p>
           </article>
           <article class="card">
             <h3 class="lang-zh">占位未做满的能力</h3>
             <h3 class="lang-en">Placeholders / Stretch</h3>
-            <p class="lang-zh">手机拍摄占位、录像暂按拍照、导航与打印/递照片未进 MVP 闭环。</p>
-            <p class="lang-en">Phone capture placeholder, video treated as photo, nav/print/hand-off not in MVP loop.</p>
+            <p class="lang-zh">手机拍摄占位、录像暂按拍照、Demo 默认跳过 OpenCV 质检、导航与打印/递照片未进 MVP 闭环。</p>
+            <p class="lang-en">Phone capture placeholder, video treated as photo, demo skips OpenCV QC by default, nav/print/hand-off not in MVP loop.</p>
           </article>
         </div>
       </div>
@@ -422,8 +422,8 @@
           <strong class="lang-en">Fact statement (do not re-ask)</strong>
           <p class="lang-zh">PhotoMate 在探月计划 · Physical AI 黑客松期间<strong>未完成完整真机 Demo</strong>。直接原因是赞助商本体未向参赛项目开放导航、机械臂/灵巧手等执行权限，感知—交互—拍摄软件链无法接到真实机器人动作上。</p>
           <p class="lang-en">During the Tanyue Physical AI Hackathon, PhotoMate <strong>did not finish a full real-robot demo</strong>. The sponsor platform did not expose navigation / arm / dexterous-hand execution APIs, so the perception–interaction–capture software could not close on real robot actions.</p>
-          <p class="lang-zh">当时实际沉淀：产品与流程设计、五层软件架构、拍照 Agent 状态机与前后端、本机设备与 Omni 联调、部分硬件/外设方案。文档里完整「巡航→点快门→递照片」多为设计目标，不能表述为已全部完成。</p>
-          <p class="lang-en">What shipped: product/flow design, five-layer software, photo-agent FSM + frontend/backend, local device + Omni integration, partial hardware plans. Full “cruise → shutter tap → hand photo” was mostly a design target, not completed delivery.</p>
+          <p class="lang-zh">当时实际沉淀：产品与流程设计、五层软件架构、<code>app/photo_agent/</code> 状态机与 adapter、React <code>/flow/</code> 与调试台、本机设备与 Omni 联调、部署文档与部分硬件/外设方案。文档里完整「巡航→点快门→递照片」多为设计目标，不能表述为已全部完成。</p>
+          <p class="lang-en">What shipped: product/flow design, five-layer software, <code>app/photo_agent/</code> FSM + adapters, React <code>/flow/</code> + test console, local device + Omni integration, deployment docs, partial hardware plans. Full “cruise → shutter tap → hand photo” was mostly a design target, not completed delivery.</p>
           <p class="lang-zh">方案按「能力接口—任务状态—本体适配」设计，不依赖银河通用。星尘 Astribot OS 适合把同一体验做成可运行 App / 半解决方案。</p>
           <p class="lang-en">The design is capability-interface / task-state / embodiment-adapter based—not Galbot-locked. Astribot OS fits turning the same experience into a runnable App / semi-solution.</p>
         </div>
@@ -469,12 +469,12 @@
     <section id="status">
       <div class="wrap">
         <!-- BILINGUAL PAIR: status -->
-        <span class="status lang-zh">星尘黑客松报名页 · 持续更新</span>
-        <span class="status lang-en">Astribot Hackathon Page · Updating</span>
+        <span class="status lang-zh">对照仓库 main · 2026-08 更新</span>
+        <span class="status lang-en">Synced to repo main · Updated Aug 2026</span>
         <h2 class="lang-zh">当前状态</h2>
         <h2 class="lang-en">Current Status</h2>
-        <p class="lead lang-zh">探月仓库已公开记录软件链与限制边界；本页同步产品框架与完成口径。后续补充星尘能力映射、Demo 验收指标与现场材料。</p>
-        <p class="lead lang-en">The Tanyue repo documents the software chain and limits; this page mirrors product framing and completion claims. Next: Astribot capability mapping, demo acceptance metrics, and field materials.</p>
+        <p class="lead lang-zh">S1–S6 软件链、mock/本机 adapter、Omni、照片 API、独立 smoke 与分状态入口已完成并合入仓库；真人正向唤醒与本机链到拍照/质检已验证。不间断整链复测与真实 Insta360 / Jetson / Galbot / 现场网络仍待团队验证。本页与仓库完成口径对齐，后续补星尘能力映射与现场材料。</p>
+        <p class="lead lang-en">S1–S6 software, mock/local adapters, Omni, photo API, smoke tests, and per-state runners are merged; live wake and local capture/QC verified. Uninterrupted full-chain retest and real Insta360 / Jetson / Galbot / field network remain team-pending. This page matches the repo’s completion claims; next: Astribot mapping and field materials.</p>
         <p class="lead" style="margin-top:12px;">
           <span class="lang-zh">代码：</span><span class="lang-en">Code: </span>
           <a href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">github.com/mzli112358/PhotoMate-Moonbot-Hackthon</a>

@@ -336,8 +336,8 @@ index_content = r"""
           <ul class="news-list">
             <li class="lang-zh"><strong>[2026.07]</strong> 启动 <a href="projects/furniture-print.html">室内米级协作臂 3D 打印</a> 项目（进行中，预计至 2027.01）。</li>
             <li class="lang-en"><strong>[2026.07]</strong> Started <a href="projects/furniture-print.html">indoor meter-scale collaborative-arm 3D printing</a> (ongoing, expected through Jan 2027).</li>
-            <li class="lang-zh"><strong>[2026.07.08–11]</strong> 探月 Physical AI 黑客松：完成 <a href="projects/photomate.html">PhotoMate</a> 软件链；真机执行权限未开放。<a href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">代码</a></li>
-            <li class="lang-en"><strong>[2026.07.08–11]</strong> Tanyue Physical AI Hackathon: <a href="projects/photomate.html">PhotoMate</a> software stack delivered; real-robot APIs unavailable. <a href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">Code</a></li>
+            <li class="lang-zh"><strong>[2026.07.08–11]</strong> 探月 Physical AI 黑客松：完成 <a href="projects/photomate.html">PhotoMate</a> S1–S6 软件链（FastAPI + Qwen-Omni + React）；真机执行权限未开放。<a href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">代码</a></li>
+            <li class="lang-en"><strong>[2026.07.08–11]</strong> Tanyue Physical AI Hackathon: <a href="projects/photomate.html">PhotoMate</a> S1–S6 software stack (FastAPI + Qwen-Omni + React); real-robot APIs unavailable. <a href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">Code</a></li>
             <li class="lang-zh"><strong>[2026.03]</strong> 加入 INFIFORCE 深圳研究院，并加入港大陈佳玉助理教授 <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">Agentic Intelligence Lab</a>（预计至 2026.09）。</li>
             <li class="lang-en"><strong>[2026.03]</strong> Joined INFIFORCE Shenzhen + Prof. Jiayu Chen’s <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">Agentic Intelligence Lab</a> at HKU (expected through Sep 2026).</li>
             <li class="lang-zh"><strong>[2026.03]</strong> 录取澳门大学 RAS 理学硕士（2026 秋）。</li>
@@ -457,12 +457,12 @@ research_content = r"""
           <p class="lang-zh">显式状态机 · 多模态交互 · 体验交付</p>
           <p class="lang-en">Explicit FSM · multimodal interaction · experience delivery</p>
           <ul class="lang-zh">
-            <li><a href="projects/photomate.html"><strong>PhotoMate</strong></a>：S0–S6 拍照 Agent（FastAPI + Qwen-Omni + React）；探月完成软件链。</li>
+            <li><a href="projects/photomate.html"><strong>PhotoMate</strong></a>：S0–S6 拍照 Agent（FastAPI + Qwen-Omni + React <code>/flow/</code>）；探月完成软件链，真机执行未闭环。</li>
             <li><a href="projects/furniture-print.html"><strong>室内米级协作臂 3D 打印</strong></a>：移动操作打印 + 语音/Agent → STL → 切片执行（进行中）。</li>
             <li>长程任务智能体：导航定位、任务规划与执行链路。</li>
           </ul>
           <ul class="lang-en">
-            <li><a href="projects/photomate.html"><strong>PhotoMate</strong></a>: S0–S6 photo agent (FastAPI + Qwen-Omni + React); software validated at Tanyue.</li>
+            <li><a href="projects/photomate.html"><strong>PhotoMate</strong></a>: S0–S6 photo agent (FastAPI + Qwen-Omni + React <code>/flow/</code>); software validated at Tanyue; real-robot loop unfinished.</li>
             <li><a href="projects/furniture-print.html"><strong>Indoor meter-scale arm printing</strong></a>: mobile manipulative AM + voice/agent → STL → slice/execute (ongoing).</li>
             <li>Long-horizon agents: navigation, planning, and execution chains.</li>
           </ul>
@@ -571,13 +571,13 @@ projects_content = r"""
             <p class="paper-meta lang-zh">2026.07.08–11 · 探月 Physical AI 黑客松 · S0–S6 Agent</p>
             <p class="paper-meta lang-en">Jul 8–11, 2026 · Tanyue Physical AI Hackathon · S0–S6 agent</p>
             <ul class="lang-zh">
-              <li>会说话的拍照服务：寻人、询问、取景、复核、二维码交付。</li>
-              <li>完成 FastAPI / Qwen-Omni / React 软件链；真机执行权限未开放，未闭环。</li>
+              <li>会说话的拍照服务：寻人、询问、引导+拍照质检、复核、photo_url / 二维码交付。</li>
+              <li>完成 FastAPI / Qwen-Omni / React 软件链（已合入 main）；真机执行权限未开放，未闭环。</li>
               <li><a href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">代码</a> · <a href="projects/photomate.html">项目页</a></li>
             </ul>
             <ul class="lang-en">
-              <li>Conversational photography: search, ask, guide, review, QR delivery.</li>
-              <li>Software stack completed; real-robot loop blocked by missing execution APIs.</li>
+              <li>Conversational photography: search, ask, guide+capture/QC, review, photo_url / QR delivery.</li>
+              <li>Software stack completed and merged to main; real-robot loop blocked by missing execution APIs.</li>
               <li><a href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">Repo</a> · <a href="projects/photomate.html">Page</a></li>
             </ul>
           </div>
