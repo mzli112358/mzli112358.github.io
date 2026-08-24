@@ -163,8 +163,8 @@ def sidebar() -> str:
       <div class="author__content">
         {BILINGUAL_NOTE}
         <h3 class="author__name"><span class="lang-zh">李明哲</span><span class="lang-en">Mingzhe Li</span></h3>
-        <p class="author__bio lang-zh">澳门大学 RAS 硕士生<br>具身智能 · 三维视觉 · 机器人系统</p>
-        <p class="author__bio lang-en">M.Sc. RAS @ UMacau<br>Embodied AI · 3D Vision · Robotics</p>
+        <p class="author__bio lang-zh">澳门大学 RAS 硕士生<br>具身智能 · VLA · 机器人系统 · 三维视觉</p>
+        <p class="author__bio lang-en">M.Sc. RAS @ UMacau<br>Embodied AI · VLA · Robotics Systems · 3D Vision</p>
       </div>
       <div class="author__urls-wrapper">
         <div class="lang-switch" role="group" aria-label="Language / 语言">
@@ -726,7 +726,7 @@ projects_content = r"""
 pages = [
     (
         "index.html",
-        "Mingzhe Li | M.Sc. RAS, University of Macau | Embodied AI, 3D Vision, Robotics",
+        "Mingzhe Li | M.Sc. RAS, University of Macau | Embodied AI, VLA, Robotics, 3D Vision",
         "M.Sc. student in Robotics and Autonomous Systems at University of Macau. Embodied AI, VLA, 3DGS/SLAM, and robotics systems.",
         "",
         "about",
