@@ -284,7 +284,7 @@ def page(title, description, canonical, active, page_title_zh, page_title_en, co
 index_content = r"""
           <!-- BILINGUAL PAIR: about — ZH ↔ EN sync required / 改一语必改另一语 -->
           <div class="lang-zh">
-            <p>我是面向<strong>机器人系统、具身智能与三维视觉</strong>的研究者与工程开发者，具备从本体设计、硬件原型、感知导航、遥操作数据采集到 <strong>VLA</strong> 训练与任务智能体的端到端经验。目前在<strong>原力无限（INFIFORCE）深圳研究院</strong>参与家庭服务机器人研发，并为香港大学陈佳玉助理教授 <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> 核心研究实习生。</p>
+            <p>我是面向<strong>机器人系统、具身智能与三维视觉</strong>的研究者与工程开发者，具备从本体设计、硬件原型、感知导航、遥操作数据采集到 <strong>VLA</strong> 训练与任务智能体的端到端经验。即将加入<strong>星尘智能（Astribot）</strong>任<strong>机器人算法工程师（实习）</strong>（2026 年 9 月入职）。当前仍在<strong>原力无限（INFIFORCE）深圳研究院</strong>参与家庭服务机器人研发，并为香港大学陈佳玉助理教授 <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> 核心研究实习生。</p>
             <!-- Jia Weijia / 贾维嘉 — extra refs (not shown on page; kept in HTML source):
                  http://bnuaifn.cn/ScientificResearchTeam/JiaWeijia.html
                  https://skliotsc.um.edu.mo/%E3%80%8C5g-enabled%EF%BC%8Ceverything-connected%E3%80%8D-%EF%BC%9Aprof-jia-weijia-deputy-director-of-smart-city-iot-state-key-lab-interviewed-by-tencent-finance-channel-on-august-30/
@@ -297,7 +297,7 @@ index_content = r"""
             <p>更多见 <a href="research.html">研究</a>、<a href="projects.html">项目</a>、<a href="https://github.com/mzli112358">GitHub</a> 与 <a href="CV/">简历</a>。</p>
           </div>
           <div class="lang-en">
-            <p>I am a researcher-engineer working on <strong>robotics systems, embodied AI, and 3D vision</strong>, with end-to-end experience from hardware prototyping and perception to <strong>VLA</strong> training and task agents. I currently work at the <strong>INFIFORCE Shenzhen Research Institute</strong> on home-service robots, and as a core research intern in Prof. Jiayu Chen’s <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> at HKU.</p>
+            <p>I am a researcher-engineer working on <strong>robotics systems, embodied AI, and 3D vision</strong>, with end-to-end experience from hardware prototyping and perception to <strong>VLA</strong> training and task agents. Incoming <strong>Robotics Algorithm Engineer Intern</strong> at <strong>Astribot</strong> (starting Sep 2026). Currently wrapping up at the <strong>INFIFORCE Shenzhen Research Institute</strong> on home-service robots, and as a core research intern in Prof. Jiayu Chen’s <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> at HKU.</p>
             <p>B.Sc. in <strong>Data Science</strong> (BNBU/UIC); currently an <strong>M.Sc. student in Robotics and Autonomous Systems</strong> at the <strong>University of Macau</strong>. Contributor to an <strong>ICML 2025</strong> paper (corresponding author <a href="https://staff.uic.edu.cn/jiawj/en" target="_blank" rel="noopener noreferrer">Weijia Jia</a>); during undergrad founded <strong>Navigator Robotics Lab</strong> (~35 members; formerly “Shao Xian Cao”) with support from <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a>, and led the team to 1st Place in the RoboMaster Regional Engineer Challenge. In August 2026, <strong>2nd Prize</strong> at the Astribot OS “Generate an App in One Sentence” Robot Hackathon (Shenzhen), advancing to the October national finals.</p>
             <p>See <a href="research.html">Research</a>, <a href="projects.html">Projects</a>, <a href="https://github.com/mzli112358">GitHub</a>, and <a href="CV/">CV</a>.</p>
           </div>
@@ -351,6 +351,8 @@ index_content = r"""
           <h2 id="news" class="lang-zh">动态</h2>
           <h2 id="news-en" class="lang-en">News</h2>
           <ul class="news-list">
+            <li class="lang-zh"><strong>[2026.08.28]</strong> 通过星尘智能 <strong>机器人算法工程师（实习）</strong>面试；定于 <strong>2026-09-21</strong> 线上入职。</li>
+            <li class="lang-en"><strong>[2026.08.28]</strong> Passed Astribot interview for <strong>Robotics Algorithm Engineer Intern</strong>; online onboarding on <strong>2026-09-21</strong>.</li>
             <li class="lang-zh"><strong>[2026.08.22–23]</strong> 星尘 OS「一句话生成 App」机器人黑客松深圳站<strong>二等奖</strong>；晋级 <strong>10 月 24–25 日</strong>全国总决赛 · 共创者大会。</li>
             <li class="lang-en"><strong>[2026.08.22–23]</strong> <strong>2nd Prize</strong>, Astribot OS “Generate an App in One Sentence” Robot Hackathon (Shenzhen); advanced to the national finals / Co-Creation Conference (<strong>Oct 24–25</strong>).</li>
             <li class="lang-zh"><strong>[2026.07]</strong> 启动 <a href="projects/furniture-print.html">室内米级协作臂 3D 打印</a> 项目（进行中，预计至 2027.01）。</li>
