@@ -516,16 +516,6 @@ research_content = r"""
             <li>Long-horizon agents: navigation, planning, and execution chains.</li>
           </ul>
 
-          <h2 id="cad"><span class="lang-zh">语言模型 × 参数化 CAD</span><span class="lang-en">LLM × Parametric CAD</span></h2>
-          <p class="lang-zh">合成数据 · LoRA · 符号约束</p>
-          <p class="lang-en">Synthetic data · LoRA · symbolic constraints</p>
-          <ul class="lang-zh">
-            <li>~35k CadQuery 样本；DeepSeek Coder 6.7B LoRA；语法 / 执行 / 约束指标验证。</li>
-          </ul>
-          <ul class="lang-en">
-            <li>~35k CadQuery samples; DeepSeek Coder 6.7B LoRA with syntax / execution / constraint metrics.</li>
-          </ul>
-
           <h2 id="llm"><span class="lang-zh">LLM 智能体应用</span><span class="lang-en">LLM Agent Applications</span></h2>
           <p class="lang-zh">RAG · LangChain · 工业与知识产权</p>
           <p class="lang-en">RAG · LangChain · industry &amp; IP</p>
@@ -674,20 +664,8 @@ projects_content = r"""
           </div>
 
           <div class="paper-card">
-            <div class="paper-title lang-zh">5. 面向参数化 CAD 的专用语言模型</div>
-            <div class="paper-title lang-en">5. Domain LM for Parametric CAD</div>
-            <p class="paper-meta">2025.11–2026.03 · DeepSeek Coder · LoRA · CadQuery</p>
-            <ul class="lang-zh">
-              <li>~35,000 合成样本；95.5% 语法正确率、88.2% 执行成功率。</li>
-            </ul>
-            <ul class="lang-en">
-              <li>~35,000 synthetic samples; 95.5% syntactic / 88.2% execution success.</li>
-            </ul>
-          </div>
-
-          <div class="paper-card">
-            <div class="paper-title lang-zh">6. 动态环境鲁棒单目 SLAM（毕业设计）</div>
-            <div class="paper-title lang-en">6. Robust Monocular SLAM (FYP)</div>
+            <div class="paper-title lang-zh">5. 动态环境鲁棒单目 SLAM（毕业设计）</div>
+            <div class="paper-title lang-en">5. Robust Monocular SLAM (FYP)</div>
             <p class="paper-meta">2025.05–2025.11 · ORB-SLAM3 · YOLO · C++</p>
             <ul class="lang-zh">
               <li>语义掩码抑制动态特征，评估定位与目标跟踪。</li>
@@ -698,8 +676,8 @@ projects_content = r"""
           </div>
 
           <div class="paper-card" id="navigator">
-            <div class="paper-title lang-zh">7. RoboMaster 实验室与竞赛机器人（Navigator）</div>
-            <div class="paper-title lang-en">7. RoboMaster Lab &amp; Competition Robots (Navigator)</div>
+            <div class="paper-title lang-zh">6. RoboMaster 实验室与竞赛机器人（Navigator）</div>
+            <div class="paper-title lang-en">6. RoboMaster Lab &amp; Competition Robots (Navigator)</div>
             <p class="paper-meta">2023.04–2025.08 · team leadership · mechanical · ROS2 · AIRH-supported</p>
             <ul class="lang-zh">
               <li><strong>Navigator Robotics Lab</strong>（早期「烧仙草」战队）：全栈竞赛机器人；辽宁站第一名。</li>
@@ -713,8 +691,8 @@ projects_content = r"""
           </div>
 
           <div class="paper-card">
-            <div class="paper-title lang-zh">8. 工业与知识产权 LLM 智能体</div>
-            <div class="paper-title lang-en">8. LLM Agents for Industry &amp; IP</div>
+            <div class="paper-title lang-zh">7. 工业与知识产权 LLM 智能体</div>
+            <div class="paper-title lang-en">7. LLM Agents for Industry &amp; IP</div>
             <p class="paper-meta">RAG · LangChain · multi-agent</p>
             <ul class="lang-zh">
               <li>数字工厂调度/质检；专利文档自动化审查与检索。</li>
