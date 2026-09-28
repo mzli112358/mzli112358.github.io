@@ -284,7 +284,7 @@ def page(title, description, canonical, active, page_title_zh, page_title_en, co
 index_content = r"""
           <!-- BILINGUAL PAIR: about — ZH ↔ EN sync required / 改一语必改另一语 -->
           <div class="lang-zh">
-            <p>我是面向<strong>机器人系统、具身智能与三维视觉</strong>的研究者与工程开发者，具备从本体设计、硬件原型、感知导航、遥操作数据采集到 <strong>VLA</strong> 训练与任务智能体的端到端经验。现于<strong>星尘智能（Astribot）</strong>任<strong>机器人算法工程师（实习）</strong>（2026 年 9 月至今）。当前仍在<strong>原力无限（INFIFORCE）深圳研究院</strong>参与家庭服务机器人研发，并为香港大学陈佳玉助理教授 <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> 核心研究实习生。</p>
+            <p>我是面向<strong>机器人系统、具身智能与三维视觉</strong>的研究者与工程开发者，具备从本体设计、硬件原型、感知导航、遥操作数据采集到 <strong>VLA</strong> 训练与任务智能体的端到端经验。现于<strong>星尘智能（Astribot）</strong>任<strong>机器人算法工程师（实习）</strong>（2026 年 9 月至今），独立负责单场景轮式机械臂应用，从场景定义、技术路线、机械模块与仿真，到运动控制、闭环评估和真机测试的全链路交付。此前于 2026 年 3–9 月在<strong>原力无限（INFIFORCE）深圳研究院</strong>参与家庭服务机器人研发，并在香港大学陈佳玉助理教授 <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> 担任研究助理。</p>
             <!-- Jia Weijia / 贾维嘉 — extra refs (not shown on page; kept in HTML source):
                  http://bnuaifn.cn/ScientificResearchTeam/JiaWeijia.html
                  https://skliotsc.um.edu.mo/%E3%80%8C5g-enabled%EF%BC%8Ceverything-connected%E3%80%8D-%EF%BC%9Aprof-jia-weijia-deputy-director-of-smart-city-iot-state-key-lab-interviewed-by-tencent-finance-channel-on-august-30/
@@ -293,12 +293,12 @@ index_content = r"""
      https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
                  https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
             -->
-            <p>本科毕业于北师香港浸会大学<strong>数据科学</strong>，现为<strong>澳门大学机器人与自主系统（RAS）理学硕士生</strong>。参与 <strong>ICML 2025</strong> 论文（通讯作者 <a href="https://staff.uic.edu.cn/jiawj/cn" target="_blank" rel="noopener noreferrer">贾维嘉</a>）；本科期间在 <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> 支持下创立 <strong>Navigator Robotics Lab</strong>（约 35 人；战队早期名「烧仙草」），带队获 RoboMaster 工程挑战赛辽宁站第一名。2026 年 8 月获星尘 OS「一句话生成 App」机器人黑客松深圳站<strong>二等奖</strong>，并晋级 10 月全国总决赛。</p>
+            <p>本科毕业于北师香港浸会大学<strong>数据科学</strong>，现为<strong>澳门大学机器人与自主系统（RAS）理学硕士生</strong>。一作 <strong>IsoGS-SLAM</strong> 论文正在修改，预印本准备中；参与 <strong>ICML 2025</strong> 论文（通讯作者 <a href="https://staff.uic.edu.cn/jiawj/cn" target="_blank" rel="noopener noreferrer">贾维嘉</a>）；本科期间在 <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> 支持下创立 <strong>Navigator Robotics Lab</strong>（约 35 人；战队早期名「烧仙草」），带队获 RoboMaster 工程挑战赛辽宁站第一名。2026 年 8 月获星尘 OS「一句话生成 App」机器人黑客松深圳站<strong>二等奖</strong>，并晋级 10 月全国总决赛。</p>
             <p>更多见 <a href="research.html">研究</a>、<a href="projects.html">项目</a>、<a href="https://github.com/mzli112358">GitHub</a> 与 <a href="CV/">简历</a>。</p>
           </div>
           <div class="lang-en">
-            <p>I am a researcher-engineer working on <strong>robotics systems, embodied AI, and 3D vision</strong>, with end-to-end experience from hardware prototyping and perception to <strong>VLA</strong> training and task agents. <strong>Robotics Algorithm Engineer Intern</strong> at <strong>Astribot</strong> (Sep 2026–Present). Currently wrapping up at the <strong>INFIFORCE Shenzhen Research Institute</strong> on home-service robots, and as a core research intern in Prof. Jiayu Chen’s <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> at HKU.</p>
-            <p>B.Sc. in <strong>Data Science</strong> (BNBU/UIC); currently an <strong>M.Sc. student in Robotics and Autonomous Systems</strong> at the <strong>University of Macau</strong>. Contributor to an <strong>ICML 2025</strong> paper (corresponding author <a href="https://staff.uic.edu.cn/jiawj/en" target="_blank" rel="noopener noreferrer">Weijia Jia</a>); during undergrad founded <strong>Navigator Robotics Lab</strong> (~35 members; formerly “Shao Xian Cao”) with support from <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a>, and led the team to 1st Place in the RoboMaster Regional Engineer Challenge. In August 2026, <strong>2nd Prize</strong> at the Astribot OS “Generate an App in One Sentence” Robot Hackathon (Shenzhen), advancing to the October national finals.</p>
+            <p>I am a researcher-engineer working on <strong>robotics systems, embodied AI, and 3D vision</strong>, with end-to-end experience from hardware prototyping and perception to <strong>VLA</strong> training and task agents. <strong>Robotics Algorithm Engineer Intern</strong> at <strong>Astribot</strong> (Sep 2026–Present), owning the full delivery chain for a single-scenario wheeled-arm application: scenario definition, technical approach, mechanical modules, simulation, motion control, closed-loop evaluation, and real-robot testing. Previously worked on home-service robots at the <strong>INFIFORCE Shenzhen Research Institute</strong> (Mar–Sep 2026), as a research assistant in Prof. Jiayu Chen’s <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> at HKU.</p>
+            <p>B.Sc. in <strong>Data Science</strong> (BNBU/UIC); currently an <strong>M.Sc. student in Robotics and Autonomous Systems</strong> at the <strong>University of Macau</strong>. First-authored <strong>IsoGS-SLAM</strong> manuscript under revision, with a preprint in preparation; contributor to an <strong>ICML 2025</strong> paper (corresponding author <a href="https://staff.uic.edu.cn/jiawj/en" target="_blank" rel="noopener noreferrer">Weijia Jia</a>); during undergrad founded <strong>Navigator Robotics Lab</strong> (~35 members; formerly “Shao Xian Cao”) with support from <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a>, and led the team to 1st Place in the RoboMaster Regional Engineer Challenge. In August 2026, <strong>2nd Prize</strong> at the Astribot OS “Generate an App in One Sentence” Robot Hackathon (Shenzhen), advancing to the October national finals.</p>
             <p>See <a href="research.html">Research</a>, <a href="projects.html">Projects</a>, <a href="https://github.com/mzli112358">GitHub</a>, and <a href="CV/">CV</a>.</p>
           </div>
 
@@ -329,14 +329,8 @@ index_content = r"""
             <a class="interest-card" href="research.html#agents">
               <h3 class="lang-zh">场景 App / 任务智能体</h3>
               <h3 class="lang-en">Scene Apps / Task Agents</h3>
-              <p class="lang-zh">状态机编排 · PhotoMate · 移动打印</p>
-              <p class="lang-en">FSM · PhotoMate · mobile printing</p>
-            </a>
-            <a class="interest-card" href="research.html#cad">
-              <h3 class="lang-zh">语言模型 × CAD</h3>
-              <h3 class="lang-en">LLM × Parametric CAD</h3>
-              <p class="lang-zh">代码生成 · LoRA · 神经符号约束</p>
-              <p class="lang-en">Code generation · LoRA · neuro-symbolic constraints</p>
+              <p class="lang-zh">状态机编排 · PhotoMate · 多模态交互</p>
+              <p class="lang-en">FSM · PhotoMate · multimodal interaction</p>
             </a>
             <a class="interest-card" href="research.html#llm">
               <h3 class="lang-zh">LLM 智能体</h3>
@@ -351,16 +345,16 @@ index_content = r"""
           <h2 id="news" class="lang-zh">动态</h2>
           <h2 id="news-en" class="lang-en">News</h2>
           <ul class="news-list">
-            <li class="lang-zh"><strong>[2026.08.28]</strong> 通过星尘智能 <strong>机器人算法工程师（实习）</strong>面试；已于 <strong>2026-09-21</strong> 线上入职。</li>
-            <li class="lang-en"><strong>[2026.08.28]</strong> Passed Astribot interview for <strong>Robotics Algorithm Engineer Intern</strong>; joined on <strong>2026-09-21</strong> with online onboarding.</li>
+            <li class="lang-zh"><strong>[2026.09.21]</strong> 加入星尘智能（Astribot），担任<strong>机器人算法工程师（实习）</strong>，负责轮式机械臂应用的全栈开发。</li>
+            <li class="lang-en"><strong>[2026.09.21]</strong> Joined Astribot as a <strong>Robotics Algorithm Engineer Intern</strong>, working on full-stack development of a wheeled-arm robot application.</li>
             <li class="lang-zh"><strong>[2026.08.22–23]</strong> 星尘 OS「一句话生成 App」机器人黑客松深圳站<strong>二等奖</strong>；晋级 <strong>10 月 24–25 日</strong>全国总决赛 · 共创者大会。</li>
             <li class="lang-en"><strong>[2026.08.22–23]</strong> <strong>2nd Prize</strong>, Astribot OS “Generate an App in One Sentence” Robot Hackathon (Shenzhen); advanced to the national finals / Co-Creation Conference (<strong>Oct 24–25</strong>).</li>
-            <li class="lang-zh"><strong>[2026.07]</strong> 启动 <a href="projects/furniture-print.html">室内米级协作臂 3D 打印</a> 项目（进行中，预计至 2027.01）。</li>
-            <li class="lang-en"><strong>[2026.07]</strong> Started <a href="projects/furniture-print.html">indoor meter-scale collaborative-arm 3D printing</a> (ongoing, expected through Jan 2027).</li>
+            <li class="lang-zh"><strong>[2026.07]</strong> 启动 <a href="projects/furniture-print.html">室内米级协作臂 3D 打印</a> 项目（2026 年 9 月 27 日起暂停）。</li>
+            <li class="lang-en"><strong>[2026.07]</strong> Started <a href="projects/furniture-print.html">indoor meter-scale collaborative-arm 3D printing</a> (on hold since September 27, 2026).</li>
             <li class="lang-zh"><strong>[2026.07.08–11]</strong> 探月 Physical AI 黑客松：完成 <a href="projects/photomate.html">PhotoMate</a> S1–S6 软件链（FastAPI + Qwen-Omni + React）；真机执行权限未开放。<a href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">代码</a></li>
             <li class="lang-en"><strong>[2026.07.08–11]</strong> Tanyue Physical AI Hackathon: <a href="projects/photomate.html">PhotoMate</a> S1–S6 software stack (FastAPI + Qwen-Omni + React); real-robot APIs unavailable. <a href="https://github.com/mzli112358/PhotoMate-Moonbot-Hackthon">Code</a></li>
-            <li class="lang-zh"><strong>[2026.03]</strong> 加入 INFIFORCE 深圳研究院，并加入港大陈佳玉助理教授 <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">Agentic Intelligence Lab</a>（预计至 2026.09）。</li>
-            <li class="lang-en"><strong>[2026.03]</strong> Joined INFIFORCE Shenzhen + Prof. Jiayu Chen’s <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">Agentic Intelligence Lab</a> at HKU (expected through Sep 2026).</li>
+            <li class="lang-zh"><strong>[2026.03]</strong> 加入 INFIFORCE 深圳研究院，并加入港大陈佳玉助理教授 <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">Agentic Intelligence Lab</a>（2026.03–2026.09）。</li>
+            <li class="lang-en"><strong>[2026.03]</strong> Joined INFIFORCE Shenzhen + Prof. Jiayu Chen’s <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">Agentic Intelligence Lab</a> at HKU (Mar–Sep 2026).</li>
             <li class="lang-zh"><strong>[2026.03]</strong> 录取澳门大学 RAS 理学硕士（2026 秋）。</li>
             <li class="lang-en"><strong>[2026.03]</strong> Admitted to M.Sc. RAS, University of Macau (Fall 2026).</li>
           </ul>
@@ -369,8 +363,8 @@ index_content = r"""
             <ul class="news-list">
               <li class="lang-zh"><strong>[2025.11]</strong> 毕业设计：动态环境鲁棒单目 SLAM 与目标跟踪。</li>
               <li class="lang-en"><strong>[2025.11]</strong> FYP: Robust Monocular SLAM in Dynamic Environments.</li>
-              <li class="lang-zh"><strong>[2025.10]</strong> ICML 2025 Poster：上下文学习示范选择。</li>
-              <li class="lang-en"><strong>[2025.10]</strong> ICML 2025 Poster: demonstration selection for in-context learning.</li>
+              <li class="lang-zh"><strong>[2025]</strong> ICML 2025 Poster：上下文学习示范选择。</li>
+              <li class="lang-en"><strong>[2025]</strong> ICML 2025 Poster: demonstration selection for in-context learning.</li>
               <li class="lang-zh"><strong>[2025.06]</strong> 威世博 / 小美知识产权：LLM 工程实习。</li>
               <li class="lang-en"><strong>[2025.06]</strong> LLM Engineer Intern at WISPRO / Xiaomei IP.</li>
               <li class="lang-zh"><strong>[2024.04]</strong> RoboMaster 工程挑战赛辽宁站第一名（<a href="https://fst.uic.edu.cn/info/1146/5615.htm" target="_blank" rel="noopener noreferrer">报道</a> · <a href="projects.html#navigator">项目</a>）。</li>
@@ -470,11 +464,11 @@ research_content = r"""
           <p class="lang-zh">几何一致 · 实时重建 · 碰撞与规划</p>
           <p class="lang-en">Geometry consistency · real-time reconstruction · collision &amp; planning</p>
           <ul class="lang-zh">
-            <li><strong>IsoGS-SLAM</strong>（2025.12–2026.04）：将隐式几何约束引入 3DGS，提升法向连续性与可交互表面。</li>
+            <li><strong>IsoGS-SLAM</strong>（2025.12–2026.04）：将隐式几何约束引入 3DGS，提升法向连续性与可交互表面；一作论文修改中，预印本准备中。</li>
             <li><strong>动态环境单目 SLAM</strong>（FYP）：YOLO 语义掩码 + ORB-SLAM3，抑制动态特征干扰。</li>
           </ul>
           <ul class="lang-en">
-            <li><strong>IsoGS-SLAM</strong> (Dec 2025–Apr 2026): implicit geometric constraints for 3DGS surface consistency.</li>
+            <li><strong>IsoGS-SLAM</strong> (Dec 2025–Apr 2026): implicit geometric constraints for 3DGS surface consistency; first-authored manuscript under revision, preprint in preparation.</li>
             <li><strong>Dynamic monocular SLAM</strong> (FYP): YOLO masking + ORB-SLAM3.</li>
           </ul>
 
@@ -507,12 +501,12 @@ research_content = r"""
           <p class="lang-en">Explicit FSM · multimodal interaction · experience delivery</p>
           <ul class="lang-zh">
             <li><a href="projects/photomate.html"><strong>PhotoMate</strong></a>：S0–S6 拍照 Agent（FastAPI + Qwen-Omni + React <code>/flow/</code>）；探月完成软件链，真机执行未闭环。</li>
-            <li><a href="projects/furniture-print.html"><strong>室内米级协作臂 3D 打印</strong></a>：移动操作打印 + 语音/Agent → STL → 切片执行（进行中）。</li>
+            <li><a href="projects/furniture-print.html"><strong>室内米级协作臂 3D 打印</strong></a>：原构想为移动操作打印 + 语音/Agent → STL → 切片执行；2026 年 9 月 27 日起暂停。</li>
             <li>长程任务智能体：导航定位、任务规划与执行链路。</li>
           </ul>
           <ul class="lang-en">
             <li><a href="projects/photomate.html"><strong>PhotoMate</strong></a>: S0–S6 photo agent (FastAPI + Qwen-Omni + React <code>/flow/</code>); software validated at Tanyue; real-robot loop unfinished.</li>
-            <li><a href="projects/furniture-print.html"><strong>Indoor meter-scale arm printing</strong></a>: mobile manipulative AM + voice/agent → STL → slice/execute (ongoing).</li>
+            <li><a href="projects/furniture-print.html"><strong>Indoor meter-scale arm printing</strong></a>: concept for mobile manipulative AM + voice/agent → STL → slice/execute; on hold since September 27, 2026.</li>
             <li>Long-horizon agents: navigation, planning, and execution chains.</li>
           </ul>
 
@@ -528,10 +522,24 @@ research_content = r"""
 
           <hr>
           <h2 id="experience"><span class="lang-zh">相关经历</span><span class="lang-en">Related Experience</span></h2>
+          <h3 class="lang-zh">星尘智能（Astribot）</h3>
+          <h3 class="lang-en">Astribot</h3>
+          <p class="lang-zh"><em>机器人算法工程师（实习） · 2026.09 – 至今</em></p>
+          <p class="lang-en"><em>Robotics Algorithm Engineer Intern · Sep 2026 – Present</em></p>
+          <ul class="lang-zh">
+            <li>独立负责单场景轮式机械臂应用的全链路交付：场景定义、技术路线、机械模块、仿真、运动控制、闭环评估与真机测试。</li>
+            <li>搭建仿真场景，在实际部署前迭代任务执行；结合交付周期和可控性，对比传统 CV/SLAM、强化学习和学习策略。</li>
+            <li>以远程工作为主，定期赴深圳进行真机测试。</li>
+          </ul>
+          <ul class="lang-en">
+            <li>Own the full delivery chain for a single-scenario wheeled-arm application: scenario definition, technical approach, mechanical modules, simulation, motion control, closed-loop evaluation, and real-robot testing.</li>
+            <li>Build simulation scenes and iterate task execution before deployment; evaluate classical CV/SLAM, reinforcement learning, and learned policies against delivery and controllability constraints.</li>
+            <li>Primarily remote, with periodic on-site real-robot testing in Shenzhen.</li>
+          </ul>
           <h3 class="lang-zh">原力无限（INFIFORCE）深圳研究院 · 港大 <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">Agentic Intelligence Lab</a></h3>
           <h3 class="lang-en">INFIFORCE Shenzhen · HKU <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">Agentic Intelligence Lab</a></h3>
-          <p class="lang-zh"><em>科研助理 / 核心研究实习生 · 2026.03 – 2026.09（预计）</em></p>
-          <p class="lang-en"><em>Research Assistant / Core Research Intern · Mar 2026 – Sep 2026 (expected)</em></p>
+          <p class="lang-zh"><em>研究助理 · 2026.03 – 2026.09</em></p>
+          <p class="lang-en"><em>Research Assistant · Mar 2026 – Sep 2026</em></p>
           <ul class="lang-zh">
             <li>家庭服务机器人与 VLA：本体部署、数据采集、策略训练、长程任务执行。</li>
             <li>多平台适配与小团队工程管理 / 技术评审。</li>
@@ -608,16 +616,16 @@ publications_content = r"""
 projects_content = r"""
           <div class="paper-card">
             <div class="paper-title"><a href="projects/furniture-print.html"><span class="lang-zh">1. 室内米级协作臂 3D 打印平台</span><span class="lang-en">1. Indoor Meter-Scale Collaborative-Arm 3D Printing</span></a></div>
-            <p class="paper-meta lang-zh">进行中 · 2026.07–2027.01（预计）· 移动操作 · 定位融合 · 切片/G-code</p>
-            <p class="paper-meta lang-en">In progress · Jul 2026–Jan 2027 (exp.) · mobile manip · localization fusion · slicing/G-code</p>
+            <p class="paper-meta lang-zh">已暂停（2026.09.27 起）· 2026.07 启动 · 移动操作 · 定位融合 · 切片/G-code</p>
+            <p class="paper-meta lang-en">On hold since Sep 27, 2026 · Started Jul 2026 · mobile manipulation · localization fusion · slicing/G-code</p>
             <ul class="lang-zh">
-              <li>瞄准 0.3–3 m 家具/室内尺度空白：消费级桌面打印太小，工业/建筑增材太贵或太大。</li>
-              <li>协作臂 + 移动底盘 + 高精度室内定位；语音/Agent → STL → 切片 → 稳定打印。</li>
+              <li>原构想面向 0.3–3 m 家具与室内物件尺度，探索移动协作臂打印方案。</li>
+              <li>原计划采用协作臂 + 移动底盘 + 高精度室内定位，打通语音/Agent → STL → 切片 → 打印；系统未完成。</li>
               <li><a href="projects/furniture-print.html">项目页 →</a></li>
             </ul>
             <ul class="lang-en">
-              <li>Targets the awkward 0.3–3 m furniture/indoor gap between desktop and industrial/building AM.</li>
-              <li>Collaborative arm + mobile base + fused indoor localization; voice/agent → STL → slice → print.</li>
+              <li>Original concept: explore mobile collaborative-arm printing for 0.3–3 m furniture and indoor objects.</li>
+              <li>Planned architecture: collaborative arm + mobile base + fused indoor localization, with voice/agent → STL → slice → print; the system was not completed.</li>
               <li><a href="projects/furniture-print.html">Project page →</a></li>
             </ul>
           </div>
@@ -641,7 +649,7 @@ projects_content = r"""
           <div class="paper-card">
             <div class="paper-title lang-zh">3. 家庭服务机器人与 VLA（INFIFORCE / <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">AIL</a>）</div>
             <div class="paper-title lang-en">3. Home-Service Robot &amp; VLA (INFIFORCE / <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">AIL</a>)</div>
-            <p class="paper-meta">2026.03–2026.09 (exp.) · LeRobot · ACT / OpenPI · teleop</p>
+            <p class="paper-meta">2026.03–2026.09 · LeRobot · ACT / OpenPI · teleop</p>
             <ul class="lang-zh">
               <li>多臂平台集成、真实数据采集与策略微调；长程任务智能体链路。</li>
             </ul>
@@ -657,9 +665,11 @@ projects_content = r"""
             <p class="paper-meta lang-en">Dec 2025–Apr 2026 · 3DGS · SLAM · analytic normals · CUDA</p>
             <ul class="lang-zh">
               <li>针对 3DGS 表面几何与法向连续性不足，引入隐式几何约束与变分优化。</li>
+              <li>一作论文正在修改，预印本准备中，尚未发表。</li>
             </ul>
             <ul class="lang-en">
               <li>Improves surface geometry and normal continuity in 3DGS via implicit constraints.</li>
+              <li>First-authored manuscript under revision; preprint in preparation, not yet published.</li>
             </ul>
           </div>
 
@@ -717,7 +727,7 @@ pages = [
     (
         "research.html",
         "Research | Mingzhe Li",
-        "Research interests: spatial intelligence, embodied AI / VLA, robotics systems, scene apps, LLM×CAD.",
+        "Research interests: spatial intelligence, embodied AI / VLA, robotics systems, scene apps, and LLM agents.",
         "research.html",
         "research",
         "研究",
@@ -737,7 +747,7 @@ pages = [
     (
         "projects.html",
         "Projects | Mingzhe Li",
-        "Selected projects: meter-scale 3D printing, PhotoMate, VLA, IsoGS-SLAM, CAD LM, RoboMaster.",
+        "Selected projects: PhotoMate, VLA, IsoGS-SLAM, RoboMaster, and a meter-scale 3D printing concept currently on hold.",
         "projects.html",
         "projects",
         "项目",
@@ -748,7 +758,11 @@ pages = [
 
 for fname, title, desc, canon, active, tzh, ten, content in pages:
     html = page(title, desc, canon, active, tzh, ten, content)
-    (ROOT / fname).write_text(html, encoding="utf-8")
+    target = ROOT / fname
+    # Keep existing line endings consistent across Windows and Linux builds.
+    newline = "\r\n" if target.exists() and b"\r\n" in target.read_bytes() else "\n"
+    with target.open("w", encoding="utf-8", newline=newline) as output:
+        output.write(html)
     print("wrote", fname, "bytes", len(html.encode("utf-8")))
 
 print("done")

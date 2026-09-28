@@ -10,8 +10,10 @@ mzli112358.github.io/
 │   └── furniture-print.html                                      # 室内米级协作臂 3D 打印
 ├── CV/
 │   ├── index.html                                                # 学术简历查看器（中/英 PDF）
-│   ├── Mingzhe_Li_CV-0725.pdf
-│   ├── 李明哲_简历-0725.pdf
+│   ├── Mingzhe_Li_CV.pdf
+│   ├── 李明哲_简历.pdf
+│   ├── 李明哲_簡歷.pdf
+│   ├── *-0725.pdf                                                # 保留旧链接的历史版本
 │   └── archive/                                                  # 星尘黑客松旧简历等
 ├── tools/
 │   └── _build_pages.py                                           # 生成学术页；改完后运行
@@ -27,7 +29,7 @@ mzli112358.github.io/
 
 1. **学术四页**：只改 `tools/_build_pages.py`，再 `python tools/_build_pages.py`。
 2. **项目独立页**：直接改 `projects/*.html` 内中英成对文案。
-3. **简历 PDF**：更新 `CV/` 下带日期的 PDF，并改 `CV/index.html` 中的文件名与 `?v=` 缓存参数。
+3. **简历 PDF**：三语 `.md` / `.tex` 源文件在父库 `找工作/简历/`。更新后用 XeLaTeX 导出，复制到 `CV/` 下不带日期的最新 PDF，并改 `CV/index.html` 中的版本日期与 `?v=` 缓存参数。`*-0725.pdf` 为历史版本，保留旧链接。
 4. 旧 URL（`photomate.html`、`HackathonCV/`）保留跳转，勿删短链。
 
 ## 待规划

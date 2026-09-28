@@ -31,7 +31,7 @@ python tools/_build_pages.py
 ```
 
 2. **项目页**：直接编辑 `projects/photomate.html`、`projects/furniture-print.html`（改中文必改英文）。
-3. **简历**：替换 `CV/*-0725.pdf`（或新日期文件名），同步改 `CV/index.html` 引用。
+3. **简历**：以父库 `找工作/简历/Mingzhe_Li_CV.md` 为内容基准，同步简体与繁体的 `.md` / `.tex`，使用 XeLaTeX 编译后替换 `CV/Mingzhe_Li_CV.pdf`、`CV/李明哲_简历.pdf`、`CV/李明哲_簡歷.pdf`，同步更新 `CV/index.html` 的版本日期与 `?v=` 缓存参数。带 `-0725` 的文件保留为历史版本。
 
 ## 本地预览
 
