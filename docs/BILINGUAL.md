@@ -6,6 +6,10 @@
 
 All pages use **in-file bilingual content** with paired `.lang-zh` / `.lang-en` nodes and a toggle button. Choice is stored in `localStorage.site-lang`.
 
+首次访问默认显示英文；访客手动切换后，继续记住已有语言选择。静态 HTML 的 `lang` 和按钮初始状态也必须为英文，避免脚本加载前显示中文。CV 页面首次默认打开英文 PDF，仍保留三语切换和独立的 PDF 语言偏好。
+
+First-time visitors see English by default; returning visitors retain their saved language choice. Static HTML language and toggle states must also start in English. The CV viewer initially opens the English PDF and preserves its separate three-language PDF preference.
+
 共享脚本：`assets/js/lang-switch.js`  
 共享样式：`assets/css/site.css`（`html[lang=...] .lang-zh/.lang-en`）
 

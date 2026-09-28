@@ -1,5 +1,6 @@
 /**
  * Site-wide ZH/EN toggle.
+ * - Defaults to English on first visit; restores a saved language choice.
  * - Persists choice in localStorage key `site-lang` (`zh-CN` | `en`)
  * - Expects buttons #langZh / #langEn (may appear multiple times; all are synced)
  * - Content visibility uses CSS: html[lang=...] .lang-zh / .lang-en
@@ -43,7 +44,7 @@
     if (saved === 'en' || saved === 'zh-CN') {
       applyLang(saved);
     } else {
-      applyLang(document.documentElement.lang === 'en' ? 'en' : 'zh-CN');
+      applyLang('en');
     }
   }
 

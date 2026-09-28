@@ -38,7 +38,7 @@ def head(title: str, description: str, canonical: str) -> str:
   规则：改中文必改英文，改英文必改中文（同一提交）。
   Source of truth for this page family: _build_pages.py → python _build_pages.py
 -->
-<html lang="zh-CN" class="no-js">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -142,8 +142,8 @@ def masthead(active: str = "about") -> str:
           <ul class="hidden-links hidden"></ul>
           <!-- Lang toggle: sibling of menus, left of hamburger — not inside visible-links -->
           <div class="lang-switch masthead-lang-switch" role="group" aria-label="Language / 语言">
-            <button type="button" data-lang-btn="zh" class="is-active" aria-pressed="true">中文</button>
-            <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+            <button type="button" data-lang-btn="zh" aria-pressed="false">中文</button>
+            <button type="button" data-lang-btn="en" class="is-active" aria-pressed="true">EN</button>
           </div>
         </nav>
       </div>
@@ -168,8 +168,8 @@ def sidebar() -> str:
       </div>
       <div class="author__urls-wrapper">
         <div class="lang-switch" role="group" aria-label="Language / 语言">
-          <button type="button" data-lang-btn="zh" class="is-active" aria-pressed="true">中文</button>
-          <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang-btn="zh" aria-pressed="false">中文</button>
+          <button type="button" data-lang-btn="en" class="is-active" aria-pressed="true">EN</button>
         </div>
         <ul class="author__urls social-icons">
           <li class="lang-zh">深圳 / 澳门</li>
@@ -238,7 +238,7 @@ def footer_scripts() -> str:
     })();
   </script>
   <script src="assets/js/main.min.js"></script>
-  <script src="assets/js/lang-switch.js"></script>
+  <script src="assets/js/lang-switch.js?v=20260928-en"></script>
 </body>
 </html>
 """

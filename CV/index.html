@@ -4,7 +4,7 @@
   UI language: ZH/EN toggle. PDF language: 简体 / 繁體 / English.
   See ../docs/BILINGUAL.md
 -->
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,8 +63,8 @@
         <p class="lang-en">Mingzhe Li — Robotics · Embodied AI · 3D Vision (switch ZH-CN / ZH-Hant / EN PDF)</p>
       </div>
       <div class="lang-switch" role="group" aria-label="Language / 语言">
-        <button type="button" data-lang-btn="zh" class="is-active" aria-pressed="true">中文</button>
-        <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang-btn="zh" aria-pressed="false">中文</button>
+        <button type="button" data-lang-btn="en" class="is-active" aria-pressed="true">EN</button>
       </div>
     </div>
     <div class="toolbar">
@@ -74,20 +74,20 @@
       <a href="../projects/photomate.html">PhotoMate</a>
       <a href="../projects/furniture-print.html"><span class="lang-zh">米级打印</span><span class="lang-en">Meter Print</span></a>
       <span class="pdf-switch" role="group" aria-label="PDF language">
-        <button type="button" class="is-active" data-pdf="李明哲_简历.pdf" data-label="zh-CN">简体</button>
+        <button type="button" data-pdf="李明哲_简历.pdf" data-label="zh-CN">简体</button>
         <button type="button" data-pdf="李明哲_簡歷.pdf" data-label="zh-Hant">繁體</button>
-        <button type="button" data-pdf="Mingzhe_Li_CV.pdf" data-label="en">English</button>
+        <button type="button" class="is-active" data-pdf="Mingzhe_Li_CV.pdf" data-label="en">English</button>
       </span>
-      <a id="open-pdf" href="李明哲_简历.pdf?v=20260928" target="_blank" rel="noopener noreferrer"><span class="lang-zh">打开 PDF</span><span class="lang-en">Open PDF</span></a>
-      <a id="dl-pdf" href="李明哲_简历.pdf?v=20260928" download><span class="lang-zh">下载 PDF</span><span class="lang-en">Download PDF</span></a>
+      <a id="open-pdf" href="Mingzhe_Li_CV.pdf?v=20260928" target="_blank" rel="noopener noreferrer"><span class="lang-zh">打开 PDF</span><span class="lang-en">Open PDF</span></a>
+      <a id="dl-pdf" href="Mingzhe_Li_CV.pdf?v=20260928" download><span class="lang-zh">下载 PDF</span><span class="lang-en">Download PDF</span></a>
     </div>
     <p class="lang-zh" style="margin:0.55rem 0 0;font-size:0.85rem;color:#777;">版本：2026-09-28。星尘黑客松旧版见 <a href="archive/HackathonCV-0724.pdf">archive</a>。</p>
     <p class="lang-en" style="margin:0.55rem 0 0;font-size:0.85rem;color:#777;">Version: 2026-09-28. Older Astribot hackathon CV in <a href="archive/HackathonCV-0724.pdf">archive</a>.</p>
   </header>
   <main class="viewer">
-    <iframe id="pdf-frame" src="李明哲_简历.pdf?v=20260928" title="Mingzhe Li CV PDF"></iframe>
+    <iframe id="pdf-frame" src="Mingzhe_Li_CV.pdf?v=20260928" title="Mingzhe Li CV PDF"></iframe>
   </main>
-  <script src="../assets/js/lang-switch.js"></script>
+  <script src="../assets/js/lang-switch.js?v=20260928-en"></script>
   <script>
     (function () {
       var frame = document.getElementById('pdf-frame');
