@@ -293,12 +293,12 @@ index_content = r"""
      https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
                  https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
             -->
-            <p>本科毕业于北师香港浸会大学<strong>数据科学</strong>，现为<strong>澳门大学机器人与自主系统（RAS）理学硕士生</strong>。一作 <strong>IsoGS-SLAM</strong> 论文正在修改，预印本准备中；参与 <strong>ICML 2025</strong> 论文（通讯作者 <a href="https://staff.uic.edu.cn/jiawj/cn" target="_blank" rel="noopener noreferrer">贾维嘉</a>）；本科期间在 <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> 支持下创立 <strong>Navigator Robotics Lab</strong>（约 35 人；战队早期名「烧仙草」），带队获 RoboMaster 工程挑战赛辽宁站第一名。2026 年 8 月获星尘 OS「一句话生成 App」机器人黑客松深圳站<strong>二等奖</strong>，并晋级 10 月全国总决赛。</p>
+            <p>本科毕业于北师香港浸会大学<strong>数据科学</strong>，现为<strong>澳门大学机器人与自主系统（RAS）理学硕士生</strong>。本科 FYP 之外完成的未发表 <strong>IsoGS-SLAM</strong> 项目（ITSC 2026 拒稿后已停止推进）；参与 <strong>ICML 2025</strong> 论文（通讯作者 <a href="https://staff.uic.edu.cn/jiawj/cn" target="_blank" rel="noopener noreferrer">贾维嘉</a>）；本科期间在 <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> 支持下创立 <strong>Navigator Robotics Lab</strong>（约 35 人；战队早期名「烧仙草」），带队获 RoboMaster 工程挑战赛辽宁站第一名。2026 年 8 月获星尘 OS「一句话生成 App」机器人黑客松深圳站<strong>二等奖</strong>，并晋级 10 月全国总决赛。</p>
             <p>更多见 <a href="research.html">研究</a>、<a href="projects.html">项目</a>、<a href="https://github.com/mzli112358">GitHub</a> 与 <a href="CV/">简历</a>。</p>
           </div>
           <div class="lang-en">
             <p>I am a researcher-engineer working on <strong>robotics systems, embodied AI, and 3D vision</strong>, with end-to-end experience from hardware prototyping and perception to <strong>VLA</strong> training and task agents. <strong>Robotics Algorithm Engineer Intern</strong> at <strong>Astribot</strong> (Sep 2026–Present), owning the full delivery chain for a single-scenario wheeled-arm application: scenario definition, technical approach, mechanical modules, simulation, motion control, closed-loop evaluation, and real-robot testing. Previously worked on home-service robots at the <strong>INFIFORCE Shenzhen Research Institute</strong> (Mar–Sep 2026), as a research assistant in Prof. Jiayu Chen’s <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> at HKU.</p>
-            <p>B.Sc. in <strong>Data Science</strong> (BNBU/UIC); currently an <strong>M.Sc. student in Robotics and Autonomous Systems</strong> at the <strong>University of Macau</strong>. First-authored <strong>IsoGS-SLAM</strong> manuscript under revision, with a preprint in preparation; contributor to an <strong>ICML 2025</strong> paper (corresponding author <a href="https://staff.uic.edu.cn/jiawj/en" target="_blank" rel="noopener noreferrer">Weijia Jia</a>); during undergrad founded <strong>Navigator Robotics Lab</strong> (~35 members; formerly “Shao Xian Cao”) with support from <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a>, and led the team to 1st Place in the RoboMaster Regional Engineer Challenge. In August 2026, <strong>2nd Prize</strong> at the Astribot OS “Generate an App in One Sentence” Robot Hackathon (Shenzhen), advancing to the October national finals.</p>
+            <p>B.Sc. in <strong>Data Science</strong> (BNBU/UIC); currently an <strong>M.Sc. student in Robotics and Autonomous Systems</strong> at the <strong>University of Macau</strong>. Completed an unpublished <strong>IsoGS-SLAM</strong> project outside the undergraduate FYP (submission rejected at ITSC 2026 and no longer being pursued); contributor to an <strong>ICML 2025</strong> paper (corresponding author <a href="https://staff.uic.edu.cn/jiawj/en" target="_blank" rel="noopener noreferrer">Weijia Jia</a>); during undergrad founded <strong>Navigator Robotics Lab</strong> (~35 members; formerly “Shao Xian Cao”) with support from <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a>, and led the team to 1st Place in the RoboMaster Regional Engineer Challenge. In August 2026, <strong>2nd Prize</strong> at the Astribot OS “Generate an App in One Sentence” Robot Hackathon (Shenzhen), advancing to the October national finals.</p>
             <p>See <a href="research.html">Research</a>, <a href="projects.html">Projects</a>, <a href="https://github.com/mzli112358">GitHub</a>, and <a href="CV/">CV</a>.</p>
           </div>
 
@@ -464,11 +464,11 @@ research_content = r"""
           <p class="lang-zh">几何一致 · 实时重建 · 碰撞与规划</p>
           <p class="lang-en">Geometry consistency · real-time reconstruction · collision &amp; planning</p>
           <ul class="lang-zh">
-            <li><strong>IsoGS-SLAM</strong>（2025.12–2026.04）：将隐式几何约束引入 3DGS，提升法向连续性与可交互表面；一作论文修改中，预印本准备中。</li>
+            <li><strong>IsoGS-SLAM</strong>（2025.12–2026.04）：本科 FYP 之外的未发表延伸项目；研究 3DGS 的几何约束与在线网格提取，ITSC 2026 拒稿后停止推进。</li>
             <li><strong>动态环境单目 SLAM</strong>（FYP）：YOLO 语义掩码 + ORB-SLAM3，抑制动态特征干扰。</li>
           </ul>
           <ul class="lang-en">
-            <li><strong>IsoGS-SLAM</strong> (Dec 2025–Apr 2026): implicit geometric constraints for 3DGS surface consistency; first-authored manuscript under revision, preprint in preparation.</li>
+            <li><strong>IsoGS-SLAM</strong> (Dec 2025–Apr 2026): an unpublished project completed outside the undergraduate FYP, investigating geometric constraints and online mesh extraction in 3DGS; discontinued after an ITSC 2026 rejection.</li>
             <li><strong>Dynamic monocular SLAM</strong> (FYP): YOLO masking + ORB-SLAM3.</li>
           </ul>
 
@@ -665,11 +665,11 @@ projects_content = r"""
             <p class="paper-meta lang-en">Dec 2025–Apr 2026 · 3DGS · SLAM · analytic normals · CUDA</p>
             <ul class="lang-zh">
               <li>针对 3DGS 表面几何与法向连续性不足，引入隐式几何约束与变分优化。</li>
-              <li>一作论文正在修改，预印本准备中，尚未发表。</li>
+              <li>本科 FYP 之外的未发表项目；ITSC 2026 拒稿后已停止推进。</li>
             </ul>
             <ul class="lang-en">
-              <li>Improves surface geometry and normal continuity in 3DGS via implicit constraints.</li>
-              <li>First-authored manuscript under revision; preprint in preparation, not yet published.</li>
+              <li>Investigated geometric constraints and normal continuity in 3DGS; results are archived as an unpublished project.</li>
+              <li>Unpublished project; no current submission is planned.</li>
             </ul>
           </div>
 
