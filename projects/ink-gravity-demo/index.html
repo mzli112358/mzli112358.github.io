@@ -1,0 +1,148 @@
+<!--
+  SpaceXSI Macau Hackathon · Physical AI Track · 写毛笔字
+  Date: 2026-11-13
+  File: docs/demos/web_calligraphy/index.html
+  Name: 书法轨迹 Web 回放
+  Port: http://127.0.0.1:8770/
+  Desc: 纯前端 Three.js 回放已导出的网格 episode（.json+.bin），展示机械臂写字与墨迹；无浏览器物理。
+        可随控制台一并启动，或独立 bash run.sh / calligraphy_web_demos.sh 仅做展示。
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SO-101 · 书法轨迹回放</title>
+<style>
+  :root {
+    --bg: #0b1220;
+    --panel: rgba(12, 20, 34, 0.78);
+    --stroke: rgba(255, 255, 255, 0.14);
+    --text: #e8eef8;
+    --muted: #9fb0c8;
+    --accent: #5ec2ff;
+    --accent2: #7ef0b2;
+    --ink: #111111;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; height: 100%; overflow: hidden;
+    background: var(--bg); color: var(--text);
+    font-family: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  #c { display: block; width: 100vw; height: 100vh; }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--stroke);
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+
+  #hud {
+    position: fixed; top: 18px; left: 18px; padding: 14px 16px 12px;
+    min-width: 280px; pointer-events: none; z-index: 5;
+  }
+  #hud .kicker { font-size: 10.5px; letter-spacing: .16em; color: var(--accent); text-transform: uppercase; }
+  #hud h1 { margin: 4px 0 2px; font-size: 17px; font-weight: 650; letter-spacing: .01em; }
+  #hud .sub { font-size: 11.5px; color: var(--muted); margin-bottom: 10px; word-break: break-all; }
+  #hud .rows { display: grid; grid-template-columns: 78px 1fr; row-gap: 5px; font-size: 12px; }
+  #hud .rows .k { color: var(--muted); }
+  #hud .rows .v { font-variant-numeric: tabular-nums; color: var(--text); }
+  #hud .v.ink { color: var(--accent2); }
+
+  #timeline {
+    position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%);
+    width: min(920px, 92vw); padding: 12px 16px; z-index: 5;
+  }
+  #timeline .row { display: flex; align-items: center; gap: 12px; }
+  #timeline .row + .row { margin-top: 9px; }
+  button {
+    font: inherit; color: var(--text); background: rgba(255,255,255,0.08);
+    border: 1px solid var(--stroke); border-radius: 10px; padding: 6px 12px;
+    cursor: pointer; transition: background .15s, border-color .15s;
+  }
+  button:hover { background: rgba(94,194,255,0.16); border-color: rgba(94,194,255,0.45); }
+  button.active { background: rgba(94,194,255,0.26); border-color: rgba(94,194,255,0.7); color: #fff; }
+  #play { width: 44px; height: 34px; font-size: 15px; display: grid; place-items: center; }
+  #seek { flex: 1; accent-color: var(--accent); height: 4px; }
+  #time { font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--muted); min-width: 108px; text-align: right; }
+  .spacer { flex: 1; }
+  .group { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .group .label { font-size: 11px; color: var(--muted); margin-right: 2px; }
+  label.loop { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 5px; cursor: pointer; }
+
+  #overlay {
+    position: fixed; inset: 0; display: grid; place-items: center;
+    background: radial-gradient(1200px 600px at 50% 40%, rgba(20,34,58,.85), rgba(8,12,20,.96));
+    z-index: 20; transition: opacity .35s;
+  }
+  #overlay.hidden { opacity: 0; pointer-events: none; }
+  #overlay .card { padding: 22px 26px; text-align: center; max-width: 520px; }
+  #overlay h2 { margin: 0 0 8px; font-size: 16px; }
+  #overlay p { margin: 0; color: var(--muted); font-size: 12.5px; line-height: 1.6; }
+  #overlay .err { color: #ff8f8f; }
+  .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent2); margin-right: 6px; }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three.module.js"
+  }
+}
+</script>
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+  <div id="hud" class="panel">
+    <div class="kicker">SO-101 · mesh replay</div>
+    <h1 id="taskName">Loading…</h1>
+    <div class="sub" id="ckpt">—</div>
+    <div class="rows">
+      <div class="k">Episode</div><div class="v" id="ep">kai_ao</div>
+      <div class="k">Time</div><div class="v" id="hudTime">0.00 s</div>
+      <div class="k">Phase</div><div class="v ink" id="hudPhase">—</div>
+      <div class="k">Frame</div><div class="v" id="hudFrame">0 / 0</div>
+      <div class="k">Camera</div><div class="v" id="hudCam">自由视角</div>
+    </div>
+  </div>
+
+  <div id="timeline" class="panel">
+    <div class="row">
+      <button id="play" title="Play / pause (Space)">⏸</button>
+      <input id="seek" type="range" min="0" max="1000" value="0" />
+      <div id="time">0.00 / 0.00 s</div>
+    </div>
+    <div class="row">
+      <div class="group">
+        <span class="label">Playback</span>
+        <button class="rate" data-rate="0.25">0.25×</button>
+        <button class="rate" data-rate="0.5">0.5×</button>
+        <button class="rate active" data-rate="1">1×</button>
+        <button class="rate" data-rate="2">2×</button>
+        <label class="loop"><input type="checkbox" id="loop" checked /> 循环</label>
+      </div>
+      <div class="spacer"></div>
+      <div class="group">
+        <span class="label">Camera</span>
+        <button class="cam" data-cam="third">第三人称</button>
+        <button class="cam" data-cam="top">俯视纸面</button>
+        <button class="cam" data-cam="side">侧面</button>
+        <button class="cam active" data-cam="free">自由视角</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay">
+    <div class="card panel">
+      <h2><span class="dot"></span>SO-101 · 书法轨迹回放</h2>
+      <p id="overlayText">正在加载 episode…</p>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

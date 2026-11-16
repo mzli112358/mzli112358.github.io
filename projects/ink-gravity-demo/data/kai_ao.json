@@ -1,0 +1,867 @@
+{
+  "format": "so101-calligraphy-webdemo/1.0",
+  "compatible_with": "q1v3-webdemo/1.0",
+  "bin": "kai_ao.bin",
+  "task": "calligraphy-write",
+  "title": "SO-101 · 毛笔写「澳」",
+  "char": "澳",
+  "episode_name": "kai_ao",
+  "checkpoint": "docs/demos/so101_calligraphy_ao_joints.csv",
+  "fps": 30.0,
+  "num_frames": 304,
+  "num_bodies": 10,
+  "duration_s": 10.1,
+  "body_order": [
+    "base",
+    "shoulder",
+    "upper_arm",
+    "lower_arm",
+    "wrist",
+    "gripper",
+    "moving_jaw_so101_v1",
+    "brush",
+    "table",
+    "paper_sheet"
+  ],
+  "bodies": {
+    "base": [
+      {
+        "vert_offset": 0,
+        "num_verts": 18766,
+        "face_offset": 0,
+        "num_faces": 37540,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "base_motor_holder_so101_v1"
+      },
+      {
+        "vert_offset": 225192,
+        "num_verts": 4577,
+        "face_offset": 450480,
+        "num_faces": 9430,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "base_so101_v2"
+      },
+      {
+        "vert_offset": 280116,
+        "num_verts": 9526,
+        "face_offset": 563640,
+        "num_faces": 19080,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "sts3215_03a_v1"
+      },
+      {
+        "vert_offset": 394428,
+        "num_verts": 621,
+        "face_offset": 792600,
+        "num_faces": 1254,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "waveshare_mounting_plate_so101_v2"
+      }
+    ],
+    "shoulder": [
+      {
+        "vert_offset": 401880,
+        "num_verts": 9526,
+        "face_offset": 807648,
+        "num_faces": 19080,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "sts3215_03a_v1"
+      },
+      {
+        "vert_offset": 516192,
+        "num_verts": 11253,
+        "face_offset": 1036608,
+        "num_faces": 22586,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "motor_holder_so101_base_v1"
+      },
+      {
+        "vert_offset": 651228,
+        "num_verts": 8800,
+        "face_offset": 1307640,
+        "num_faces": 17672,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "rotation_pitch_so101_v1"
+      }
+    ],
+    "upper_arm": [
+      {
+        "vert_offset": 756828,
+        "num_verts": 9526,
+        "face_offset": 1519704,
+        "num_faces": 19080,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "sts3215_03a_v1"
+      },
+      {
+        "vert_offset": 871140,
+        "num_verts": 12976,
+        "face_offset": 1748664,
+        "num_faces": 26068,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "upper_arm_so101_v1"
+      }
+    ],
+    "lower_arm": [
+      {
+        "vert_offset": 1026852,
+        "num_verts": 19720,
+        "face_offset": 2061480,
+        "num_faces": 39516,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "under_arm_so101_v1"
+      },
+      {
+        "vert_offset": 1263492,
+        "num_verts": 10481,
+        "face_offset": 2535672,
+        "num_faces": 21042,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "motor_holder_so101_wrist_v1"
+      },
+      {
+        "vert_offset": 1389264,
+        "num_verts": 9526,
+        "face_offset": 2788176,
+        "num_faces": 19080,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "sts3215_03a_v1"
+      }
+    ],
+    "wrist": [
+      {
+        "vert_offset": 1503576,
+        "num_verts": 8652,
+        "face_offset": 3017136,
+        "num_faces": 17316,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "sts3215_03a_no_horn_v1"
+      },
+      {
+        "vert_offset": 1607400,
+        "num_verts": 26967,
+        "face_offset": 3224928,
+        "num_faces": 53994,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "wrist_roll_pitch_so101_v2"
+      }
+    ],
+    "gripper": [
+      {
+        "vert_offset": 1931004,
+        "num_verts": 9526,
+        "face_offset": 3872856,
+        "num_faces": 19080,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "sts3215_03a_v1"
+      },
+      {
+        "vert_offset": 2045316,
+        "num_verts": 14354,
+        "face_offset": 4101816,
+        "num_faces": 28796,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "wrist_roll_follower_so101_v1"
+      }
+    ],
+    "moving_jaw_so101_v1": [
+      {
+        "vert_offset": 2218788,
+        "num_verts": 14103,
+        "face_offset": 4449096,
+        "num_faces": 28270,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "moving_jaw_so101_v1"
+      }
+    ],
+    "brush": [
+      {
+        "vert_offset": 2217564,
+        "num_verts": 26,
+        "face_offset": 4447368,
+        "num_faces": 48,
+        "rgba": [
+          0.42,
+          0.22,
+          0.08,
+          1.0
+        ],
+        "r": [
+          0.42,
+          0.22,
+          0.08
+        ],
+        "mesh": "brush_handle"
+      },
+      {
+        "vert_offset": 2217876,
+        "num_verts": 26,
+        "face_offset": 4447944,
+        "num_faces": 48,
+        "rgba": [
+          0.55,
+          0.45,
+          0.15,
+          1.0
+        ],
+        "r": [
+          0.55,
+          0.45,
+          0.15
+        ],
+        "mesh": "brush_ferrule"
+      },
+      {
+        "vert_offset": 2218188,
+        "num_verts": 50,
+        "face_offset": 4448520,
+        "num_faces": 48,
+        "rgba": [
+          0.06,
+          0.06,
+          0.08,
+          1.0
+        ],
+        "r": [
+          0.06,
+          0.06,
+          0.08
+        ],
+        "mesh": "brush_hair"
+      }
+    ],
+    "table": [
+      {
+        "vert_offset": 2388024,
+        "num_verts": 8,
+        "face_offset": 4788336,
+        "num_faces": 12,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "table_top"
+      },
+      {
+        "vert_offset": 2388120,
+        "num_verts": 26,
+        "face_offset": 4788480,
+        "num_faces": 48,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "leg_near_l"
+      },
+      {
+        "vert_offset": 2388432,
+        "num_verts": 26,
+        "face_offset": 4789056,
+        "num_faces": 48,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "leg_near_r"
+      },
+      {
+        "vert_offset": 2388744,
+        "num_verts": 26,
+        "face_offset": 4789632,
+        "num_faces": 48,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "leg_far_l"
+      },
+      {
+        "vert_offset": 2389056,
+        "num_verts": 26,
+        "face_offset": 4790208,
+        "num_faces": 48,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "leg_far_r"
+      }
+    ],
+    "paper_sheet": [
+      {
+        "vert_offset": 2389368,
+        "num_verts": 8,
+        "face_offset": 4790784,
+        "num_faces": 12,
+        "rgba": [
+          0.5,
+          0.5,
+          0.5,
+          1.0
+        ],
+        "r": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mesh": "paper"
+      }
+    ]
+  },
+  "pose_layout": "per frame [x, y, z, qw, qx, qy, qz] for each body in body_order",
+  "frames_are_world": true,
+  "byte_offsets": {
+    "vertices": 0,
+    "indices": 2389464,
+    "poses": 7180392,
+    "tips": 7265512,
+    "pen_down": 7269160
+  },
+  "vertices": {
+    "count": 199122,
+    "dtype": "float32"
+  },
+  "indices": {
+    "count": 1197732,
+    "dtype": "uint32"
+  },
+  "poses": {
+    "count": 21280,
+    "dtype": "float32"
+  },
+  "tips": {
+    "count": 912,
+    "dtype": "float32"
+  },
+  "pen_down": {
+    "count": 304,
+    "dtype": "uint8"
+  },
+  "phases": [
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "hold",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "write",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end",
+    "end"
+  ],
+  "props": {
+    "paper_center": [
+      0.25,
+      0.0,
+      0.001
+    ],
+    "ground_size": [
+      1.2,
+      1.2
+    ]
+  },
+  "note": "SO-101 STL + brush/table/paper primitives；墨迹用 tip+pen_down",
+  "reason": "demo",
+  "seed": 0,
+  "metrics": {},
+  "placeholder": false
+}

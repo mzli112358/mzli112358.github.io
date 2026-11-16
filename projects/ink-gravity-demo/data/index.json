@@ -1,0 +1,11 @@
+{
+  "default": "kai_ao",
+  "episodes": [
+    {
+      "name": "kai_ao",
+      "json": "kai_ao.json",
+      "title": "SO-101 · 毛笔写「澳」",
+      "note": "SO-101 STL + brush/table/paper primitives；墨迹用 tip+pen_down"
+    }
+  ]
+}
