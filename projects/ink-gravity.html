@@ -83,8 +83,28 @@
     }
     .demo iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
     .demo-link { margin: 10px 0 0; font-size: 14px; }
-    @media (max-width: 720px) { .pipeline { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 480px) { .pipeline { grid-template-columns: 1fr; } }
+    .cover { margin: 0 0 28px; }
+    .cover img, .fig img, video.clip { width: 100%; height: auto; display: block; border-radius: 4px; }
+    .fig img { border: 1px solid var(--line); background: #fff; }
+    video.clip { background: #111; }
+    .fig { margin: 14px 0 0; }
+    .fig figcaption, .cover figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+    .pipeline.cols3 { grid-template-columns: repeat(3, 1fr); }
+    .team { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+    .team img { width: 100%; height: auto; display: block; }
+    .team figcaption { margin-top: 8px; font-size: 13px; color: var(--muted); text-align: center; }
+    .team strong { display: block; color: var(--ink); font-size: 14px; }
+    table.cmp { width: 100%; border-collapse: collapse; background: var(--panel); font-size: 15px; }
+    table.cmp th, table.cmp td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+    table.cmp th { background: #f3e6dc; }
+    @media (max-width: 860px) {
+      .pipeline, .pipeline.cols3, .grid3, .team { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .pipeline, .pipeline.cols3, .grid2, .grid3, .team { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -106,6 +126,9 @@
   <header class="hero">
     <div class="wrap">
       <!-- BILINGUAL PAIR: hero -->
+      <figure class="cover">
+        <img src="../assets/images/ink/cover.jpg" alt="Title card: a robot arm holding a brush through the characters 墨有引力">
+      </figure>
       <div class="eyebrow lang-zh">SpaceXAI 澳门黑客松 · 第一名</div>
       <div class="eyebrow lang-en">SpaceXAI Macau Hackathon · 1st Place</div>
       <h1 class="lang-zh">墨有引力</h1>
@@ -120,105 +143,282 @@
   <main>
     <section>
       <div class="wrap">
-        <!-- BILINGUAL PAIR: sim replay -->
-        <h2 class="lang-zh">仿真回放</h2>
-        <h2 class="lang-en">Simulation Replay</h2>
-        <p class="lead lang-zh">浏览器里回放仿真导出的轨迹，写的是「澳」。可以拖动视角、暂停、改速度。这不是真机录像。</p>
-        <p class="lead lang-en">A browser replay of the exported simulation trajectory, writing 澳. Drag to orbit, pause, or change speed. This is not the real-arm recording.</p>
+        <!-- BILINGUAL PAIR: video -->
+        <h2 class="lang-zh">实拍</h2>
+        <h2 class="lang-en">The Recording</h2>
+        <p class="lead lang-zh">终稿演示用的现场录像，大约 30 秒。后面的播放器是仿真回放，不是这段。</p>
+        <p class="lead lang-en">The on-site recording from the deck, about 30 seconds. The player further down is the simulation replay, not this clip.</p>
+        <video class="clip" controls playsinline preload="metadata" poster="../assets/images/ink/write-scene.jpg">
+          <source src="../assets/images/ink/demo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: why -->
+        <h2 class="lang-zh">手写的字</h2>
+        <h2 class="lang-en">Handwritten Signs</h2>
+        <p class="lead lang-zh">终稿从香港街头讲起。手写招牌、霓虹、灯箱，是这页要接住的东西。</p>
+        <p class="lead lang-en">The deck opens on a Hong Kong street. Handwritten shop signs, neon, and light boxes are what this page is trying to hold onto.</p>
+        <figure class="fig">
+          <img src="../assets/images/ink/street.jpg" alt="Hong Kong street of handwritten shop signs, a neon sign, and a sign painter with light-box letters">
+          <figcaption>
+            <span class="lang-zh">上图是街头繁体手写招牌。左下是太子「劳联」霓虹，李汉师傅最后一件霓虹招牌，后来拆了，图来自 leehon_hk 的 Instagram，当代中国网 2021-04-14 转载。右下两张是招牌师傅欧阳昌：皇都戏院工作现场，以及他的「真体字」灯箱，出处同为当代中国网，2021-04-14。</span>
+            <span class="lang-en">Top: a street of traditional-character shop signs. Bottom left: the “劳联” neon in Prince Edward, master Li Han’s last neon sign, later taken down; photo by leehon_hk on Instagram, republished by Our China Story on 2021-04-14. Bottom right: sign painter Ouyang Chang at work in the Rialto, and his “真体字” light boxes. Those three are also from Our China Story, 2021-04-14.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: three lines -->
+        <h2 class="lang-zh">三条线</h2>
+        <h2 class="lang-en">Three Lines</h2>
+        <p class="lead lang-zh">先有字，再落笔。字体是队友的线，我在台上快速带过。现场演示走的是规则控制。</p>
+        <p class="lead lang-en">A character first, then the brush. The font line belonged to a teammate; on stage I only walked through it. The live demo was the rule controller.</p>
+        <div class="pipeline cols3">
+          <div class="pipe"><strong>01</strong><span class="lang-zh">字体生成。开源底座上做风格 LoRA，让新内容接上指定风格。</span><span class="lang-en">Font generation. A style LoRA on an open base, so new characters take on a chosen hand.</span></div>
+          <div class="pipe"><strong>02</strong><span class="lang-zh">规则控制。字形到笔画、中线、轨迹。先仿真，再真机。</span><span class="lang-en">Rule control. Glyph to strokes, centerline, trajectory. Simulation first, then the real arm.</span></div>
+          <div class="pipe"><strong>03</strong><span class="lang-zh">模型驱动。主从遥操作采示范，准备训 ACT。这一版没有用它替换规则。</span><span class="lang-en">A learned policy. Leader–follower demonstrations, collected for ACT. This version did not replace the rules with it.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: font -->
+        <h2 class="lang-zh">字体生成</h2>
+        <h2 class="lang-en">Font Generation</h2>
+        <p class="lead lang-zh">底座不是我们训的。开源 zi2zi-JiT 的 JiT-B/16 已经认识「一个字正常长什么样」。我们只在上面挂 LoRA。</p>
+        <p class="lead lang-en">We did not train the base. The open zi2zi-JiT JiT-B/16 already knows what a character looks like. We only hung a LoRA on it.</p>
+        <figure class="fig">
+          <img src="../assets/images/ink/font-flow.png" alt="Flowchart of JiT-B/16 pretraining and a Lantingji Xu LoRA">
+          <figcaption>
+            <span class="lang-zh">上半：四百多种字体、三十万张以上字形，预训练 2000 个 epoch。图里「每种字体最多 800 字」是底座语料的上限。下半：《兰亭集序》206 个不重复字，训练 198 张，留出 8 个，大约 23 分钟。另一套风格是方正北魏，800 张，大约 2 小时。</span>
+            <span class="lang-en">Top: 400+ fonts and 300k+ glyph images, pretrained for 2,000 epochs. “At most 800 characters per font” is the cap on that corpus. Bottom: Lantingji Xu, 206 unique characters, 198 training images, 8 held out, about 23 minutes. A second style, Founder Beiwei, used 800 images and about 2 hours.</span>
+          </figcaption>
+        </figure>
+        <div class="grid2">
+          <figure class="fig">
+            <img src="../assets/images/ink/sample-beiwei.jpg" alt="Founder Beiwei samples next to a source glyph">
+            <figcaption><span class="lang-zh">方正北魏的样本。</span><span class="lang-en">Founder Beiwei samples.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="../assets/images/ink/sample-lanting.jpg" alt="Lantingji Xu style samples next to a source glyph">
+            <figcaption><span class="lang-zh">《兰亭集序》风格的样本。</span><span class="lang-en">Lantingji Xu style samples.</span></figcaption>
+          </figure>
+        </div>
+        <figure class="fig">
+          <img src="../assets/images/ink/heldout.png" alt="Eight characters: source font, original Lanting glyphs, and model output">
+          <figcaption>
+            <span class="lang-zh">也、化、合、宙、少、幽、自、遇。中间一行是原帖里的字。训练时没给模型看。下面一行是生成的。</span>
+            <span class="lang-en">也, 化, 合, 宙, 少, 幽, 自, 遇. The middle row is the original Lanting glyphs. They were held out of training. The bottom row is the model.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: rules -->
+        <h2 class="lang-zh">规则写字</h2>
+        <h2 class="lang-en">Rule-Based Writing</h2>
+        <p class="lead lang-zh">我负责算法。一张字图要变成关节角，中间四步。笔杆歪比笔尖偏两毫米更要命，所以腕滚转锁在 90 度，笔杆相对竖直的倾角压在 5 度以内，逆解只用肩、肩俯仰、肘、腕俯仰。</p>
+        <p class="lead lang-en">I owned the algorithm. Four steps turn a glyph into joint angles. A tilted brush shaft matters more than a 2 mm tip error, so wrist roll stays locked at 90° and shaft tilt stays within 5° of vertical. Inverse kinematics uses shoulder, shoulder pitch, elbow, and wrist pitch.</p>
+        <div class="pipeline">
+          <div class="pipe"><strong>01</strong><span class="lang-zh">矢量化。字图拆成独立笔画，每笔有起笔、收笔。</span><span class="lang-en">Vectorize. Split the glyph into strokes, each with a start and an end.</span></div>
+          <div class="pipe"><strong>02</strong><span class="lang-zh">笔顺。makemeahanzi 楷体笔画库，9,574 字，拿来贴合。</span><span class="lang-en">Stroke order. Fit a makemeahanzi regular-script library, 9,574 characters.</span></div>
+          <div class="pipe"><strong>03</strong><span class="lang-zh">中线。骨架加上法向距离变换的峰值，交叉口不窜笔。</span><span class="lang-en">Centerline. A skeleton plus the peak of the normal distance transform, so crossings do not jump strokes.</span></div>
+          <div class="pipe"><strong>04</strong><span class="lang-zh">逆解。纸面坐标变成四个关节角。</span><span class="lang-en">Inverse kinematics. Paper coordinates become four joint angles.</span></div>
+        </div>
+        <div class="grid2">
+          <figure class="fig">
+            <img src="../assets/images/ink/centerline.png" alt="The character 永 as ink and as colored stroke centerlines">
+            <figcaption><span class="lang-zh">左是字形，右是贴出来的笔顺中线，一笔一色。笔尖走的是这条线。</span><span class="lang-en">Left, the ink. Right, the fitted centerlines, one color per stroke. The tip follows that line.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="../assets/images/ink/path.png" alt="Stroke paths the arm actually followed for 永">
+            <figcaption><span class="lang-zh">仿真里机械臂实际走出来的一笔一笔。能跑通，才上真机。</span><span class="lang-en">The strokes the arm actually traced in simulation. It went to the real arm after this ran.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: sim and hardware -->
+        <h2 class="lang-zh">先仿真，再真机</h2>
+        <h2 class="lang-en">Simulation, Then the Arm</h2>
+        <p class="lead lang-zh">MuJoCo 场景按 SO-101 的真实尺寸搭，桌子、纸、虚拟毛笔都在。轨迹先在仿真里跑。现场网只有几百 KB/s，数采脚本是当场让 Cursor 写的，没有把仓库拉下来。</p>
+        <p class="lead lang-en">The MuJoCo scene uses the SO-101’s real dimensions: table, paper, and a virtual brush. Trajectories ran there first. The venue network was a few hundred KB/s, so the logging scripts were written on the spot in Cursor instead of cloning a repository.</p>
+        <figure class="fig">
+          <img src="../assets/images/ink/sim.jpg" alt="MuJoCo scene of an SO-101 arm writing on paper">
+          <figcaption><span class="lang-zh">一比一的仿真场景。</span><span class="lang-en">The one-to-one simulation scene.</span></figcaption>
+        </figure>
+        <p class="lead lang-zh" style="margin-top:18px;">下面是浏览器里回放的仿真轨迹，写的是「澳」。可以拖动视角、暂停、改速度。这不是真机录像。</p>
+        <p class="lead lang-en" style="margin-top:18px;">A browser replay of the exported simulation trajectory, writing 澳. Drag to orbit, pause, or change speed. This is not the real-arm recording.</p>
         <div class="demo">
           <iframe src="ink-gravity-demo/index.html" title="SO-101 calligraphy simulation replay" allow="fullscreen" loading="lazy"></iframe>
         </div>
         <p class="demo-link"><a href="ink-gravity-demo/index.html"><span class="lang-zh">单独打开</span><span class="lang-en">Open full page</span></a></p>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <!-- BILINGUAL PAIR: pipeline -->
-        <h2 class="lang-zh">规则写字</h2>
-        <h2 class="lang-en">Rule-Based Writing</h2>
-        <p class="lead lang-zh">我负责算法。笔杆歪比笔尖偏两毫米更要命，所以腕滚转锁住，笔杆相对竖直的倾角压在 5 度以内，逆解只用 4 个关节：肩、肩俯仰、肘、腕俯仰。</p>
-        <p class="lead lang-en">I owned the algorithm. A tilted brush shaft matters more than a 2 mm tip error, so wrist roll stays locked and shaft tilt stays within 5° of vertical. Inverse kinematics uses four joints: shoulder, shoulder pitch, elbow, and wrist pitch.</p>
-        <div class="pipeline">
-          <div class="pipe"><strong>01</strong><span class="lang-zh">字图拆成独立笔画</span><span class="lang-en">Split the glyph into strokes</span></div>
-          <div class="pipe"><strong>02</strong><span class="lang-zh">用楷体笔画库对齐笔顺</span><span class="lang-en">Align stroke order to a regular-script library</span></div>
-          <div class="pipe"><strong>03</strong><span class="lang-zh">笔尖走笔画中线</span><span class="lang-en">Follow the stroke centerline</span></div>
-          <div class="pipe"><strong>04</strong><span class="lang-zh">MuJoCo 仿真，再下发真机</span><span class="lang-en">MuJoCo, then the real arm</span></div>
+        <div class="grid2">
+          <figure class="fig">
+            <img src="../assets/images/ink/arm.jpg" alt="SO-101 arm with a clamped brush dipping toward an ink dish">
+            <figcaption><span class="lang-zh">笔夹是量了笔杆再参数化打印的。舵机夹爪力矩小，笔杆必须夹死，一歪，坐标系就乱。</span><span class="lang-en">The clamp was printed from a measured shaft. The servo gripper is too weak unless the shaft is locked in. If it tilts, the frame is gone.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="../assets/images/ink/ink-dish.jpg" alt="Brush dipping into a printed Chinese lock-pattern ink dish">
+            <figcaption><span class="lang-zh">中式锁纹墨碟，大约 76×62×6.5 mm。相机机位改到能同时看见笔尖和纸。</span><span class="lang-en">A Chinese lock-pattern ink dish, about 76×62×6.5 mm. The camera was moved so it sees both the tip and the paper.</span></figcaption>
+          </figure>
+        </div>
+        <div class="block" style="margin-top:14px;">
+          <p class="lang-zh">真下发角是仿真角加这台从臂自己的零点偏移。换臂要重标定。官方校准会改零点，这条写字线没有用它。</p>
+          <p class="lang-en">Commanded angles are simulated angles plus that follower’s zero offset. Another arm needs a new calibration. The stock calibrate routine moves the zero, so this writing line does not use it.</p>
         </div>
       </div>
     </section>
 
     <section>
       <div class="wrap">
-        <!-- BILINGUAL PAIR: hardware -->
-        <h2 class="lang-zh">真机上补的东西</h2>
-        <h2 class="lang-en">On the Real Arm</h2>
-        <div class="stack">
-          <div class="block">
-            <h3 class="lang-zh">仿真到这台从臂</h3>
-            <h3 class="lang-en">Simulation to this follower</h3>
-            <p class="lang-zh">仿真场景按 SO-101 的真实尺寸搭。真下发角是仿真角加一台从臂自己的零点偏移，换臂要重标定。官方校准流程会改零点，这条写字线没有用它。</p>
-            <p class="lang-en">The MuJoCo scene uses the SO-101’s real dimensions. Commanded angles are simulated angles plus that follower’s zero offset; another arm needs a new calibration. The stock calibrate routine moves the zero, so this writing line does not use it.</p>
-          </div>
-          <div class="block">
-            <h3 class="lang-zh">笔、墨、相机</h3>
-            <h3 class="lang-en">Brush, ink, camera</h3>
-            <ul class="lang-zh">
-              <li>参数化笔夹：舵机夹爪力矩小，笔杆必须夹死。</li>
-              <li>中式锁纹墨碟，大约 76×62×6.5 mm。</li>
-              <li>相机机位改到能同时看见笔尖和纸。</li>
-            </ul>
-            <ul class="lang-en">
-              <li>A parametric brush clamp. The servo gripper is too weak unless the shaft is locked in.</li>
-              <li>A Chinese lock-pattern ink dish, about 76×62×6.5 mm.</li>
-              <li>The camera moved so it sees both the tip and the paper.</li>
-            </ul>
-          </div>
+        <!-- BILINGUAL PAIR: pressure -->
+        <h2 class="lang-zh">提按：把粗细写成高度</h2>
+        <h2 class="lang-en">Pressure, Written as Height</h2>
+        <p class="lead lang-zh">毛笔没有力传感器。沿中线量法向宽度，窄的地方抬，宽的地方压，想用高度去近似提按。这一版规划器还是整笔恒定下压，这条曲线没有接进去。</p>
+        <p class="lead lang-en">The brush has no force sensor. The idea is to measure width along the normal of the centerline, lift where it is thin, and press where it is thick, so height stands in for pressure. This version’s planner still uses one constant press for the whole stroke. That curve is not wired in.</p>
+        <figure class="fig">
+          <img src="../assets/images/ink/width.png" alt="Normal width samples across the character 永, blue for thin and red for thick">
+          <figcaption><span class="lang-zh">蓝是细，红是粗。每一条是一次法向宽度。图是这个方法，不是这一版已经跑出来的高度曲线。</span><span class="lang-en">Blue is thin, red is thick. Each line is one width sample. The figure is the method, not a height curve this version already ran.</span></figcaption>
+        </figure>
+        <div class="grid3">
+          <figure class="fig">
+            <img src="../assets/images/ink/write-scene.jpg" alt="Two SO-101 arms at a table, with 天 written on paper">
+            <figcaption><span class="lang-zh">真机现场。纸上是「天」。</span><span class="lang-en">The real setup. The paper says 天.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="../assets/images/ink/write-tian.jpg" alt="Brush-written character 天 on paper">
+            <figcaption><span class="lang-zh">「天」。</span><span class="lang-en">天.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="../assets/images/ink/write-qiu-b.jpg" alt="Brush-written character 求 on paper">
+            <figcaption><span class="lang-zh">「求」。</span><span class="lang-en">求.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="../assets/images/ink/write-qiu-a.jpg" alt="A heavier brush rendering of 求">
+            <figcaption><span class="lang-zh">另一张「求」。</span><span class="lang-en">Another 求.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="../assets/images/ink/write-extra.jpg" alt="Another brush-written character on paper">
+            <figcaption><span class="lang-zh">真机写在纸上的字。</span><span class="lang-en">Ink from the real arm.</span></figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <section>
       <div class="wrap">
-        <!-- BILINGUAL PAIR: model line -->
-        <h2 class="lang-zh">另一条线：遥操作和字体</h2>
-        <h2 class="lang-en">The Other Lines: Teleoperation and Fonts</h2>
-        <div class="stack">
-          <div class="block">
-            <h3 class="lang-zh">主从遥操作，准备训 ACT</h3>
-            <h3 class="lang-en">Leader–follower teleoperation for ACT</h3>
-            <p class="lang-zh">主从同构，30 Hz，正视和腕部两路相机。采了人怎么写的数据，和仿真混合，准备训练 ACT。台上这一版没有用模型替代规则链路。遥操作是握着主臂平移，采得到动作，采不到笔法。</p>
-            <p class="lang-en">Isomorphic leader–follower at 30 Hz, with front and wrist cameras. Human writing was collected and mixed with simulation for an ACT run. The on-stage version did not replace the rule chain with the model. Translating the leader arm captures the motion, not the brush technique.</p>
-          </div>
-          <div class="block">
-            <h3 class="lang-zh">字体风格</h3>
-            <h3 class="lang-en">Font style</h3>
-            <p class="lang-zh">字体是队友的线。底座是开源 zi2zi-JiT 的 JiT-B/16，这次不重训底座。用少量《兰亭集序》样本做 LoRA 看风格能不能外推。我在台上只带过这组数字。</p>
-            <p class="lang-en">The font line belonged to a teammate. The base is the open zi2zi-JiT JiT-B/16 and was not retrained. A small Lantingji Xu LoRA tested whether the style extrapolates. On stage I only walked through those numbers.</p>
-          </div>
+        <!-- BILINGUAL PAIR: act -->
+        <h2 class="lang-zh">模型这一条</h2>
+        <h2 class="lang-en">The Model Line</h2>
+        <p class="lead lang-zh">规则写的是字形。人写的还有停顿和出手，那些不在字库里。所以另外采了主从同构的遥操作：30 Hz，正视和腕部两路相机。官方校准会改零点，数采没有用它。终稿这页写的是遥操 55 条，真机和仿真按 7 比 3 混合，准备训 ACT。</p>
+        <p class="lead lang-en">The rules write the geometry. A person also pauses and flicks, and that is not in a font file. The other line is isomorphic leader–follower teleoperation at 30 Hz, with front and wrist cameras. Stock calibration moves the zero, so logging did not use it. The deck’s page says 55 teleop episodes, mixed real to simulation at 7 to 3, for an ACT run.</p>
+        <div class="grid2">
+          <figure class="fig">
+            <img src="../assets/images/ink/teleop.jpg" alt="A person holding the leader arm while the follower writes on red paper">
+            <figcaption><span class="lang-zh">主臂在手上，从臂在纸上。遥操作是握着主臂平移。</span><span class="lang-en">Leader in hand, follower on the paper. Teleoperation here is translating the leader arm.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="../assets/images/ink/collect-ui.jpg" alt="Data-collection screen with front and wrist camera views">
+            <figcaption><span class="lang-zh">数采界面。左是第三视角，右是腕部。</span><span class="lang-en">The logging screen. Front view on the left, wrist view on the right.</span></figcaption>
+          </figure>
+        </div>
+        <p class="lead lang-zh" style="margin-top:18px;">两条线不互相替换。规则保证写得出，模型追求写得像。</p>
+        <p class="lead lang-en" style="margin-top:18px;">The two lines do not replace each other. Rules make a character come out. The model is there to make it feel written.</p>
+        <table class="cmp lang-zh">
+          <thead><tr><th></th><th>规则控制</th><th>模型驱动（ACT）</th></tr></thead>
+          <tbody>
+            <tr><td>任意新字</td><td>直接写</td><td>要先采集</td></tr>
+            <tr><td>笔顺</td><td>显式可控</td><td>从数据里学</td></tr>
+            <tr><td>轻重提按</td><td>高度近似，这一版还没接上</td><td>想学到手感</td></tr>
+            <tr><td>泛化</td><td>字库里有的字可以直接写</td><td>以采过的字为主</td></tr>
+          </tbody>
+        </table>
+        <table class="cmp lang-en">
+          <thead><tr><th></th><th>Rule control</th><th>Learned policy (ACT)</th></tr></thead>
+          <tbody>
+            <tr><td>A new character</td><td>Write it directly</td><td>Needs a demonstration first</td></tr>
+            <tr><td>Stroke order</td><td>Explicit</td><td>Learned from data</td></tr>
+            <tr><td>Pressure</td><td>Height as a stand-in; not wired in this version</td><td>Meant to pick up the feel</td></tr>
+            <tr><td>Generalization</td><td>Any glyph in the library</td><td>Mostly characters that were collected</td></tr>
+          </tbody>
+        </table>
+        <p class="lead lang-zh" style="margin-top:16px;">遥操作采得到动作，采不到笔法。握着主臂平移，和写毛笔不是同一个动作。</p>
+        <p class="lead lang-en" style="margin-top:16px;">Teleoperation captures the motion, not the brush technique. Translating a leader arm is not the same action as writing with a brush.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: team -->
+        <h2 class="lang-zh">谁做的</h2>
+        <h2 class="lang-en">Who Did What</h2>
+        <p class="lead lang-zh">照片按终稿团队页的位置对上名字。代码还在本机，没有公开仓库。</p>
+        <p class="lead lang-en">Photos are matched to names by where they sit on the deck’s team page. The code is still local. There is no public repository yet.</p>
+        <div class="team">
+          <figure>
+            <img src="../assets/images/ink/team-mingzhe.png" alt="Mingzhe Li">
+            <figcaption><strong>李明哲</strong><span class="lang-zh">算法</span><span class="lang-en">Algorithm</span></figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/images/ink/team-yuequn.png" alt="Ling Yuequn">
+            <figcaption><strong>零越群</strong><span class="lang-zh">机械臂</span><span class="lang-en">Arm</span></figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/images/ink/team-manting.png" alt="Li Manting">
+            <figcaption><strong>李曼婷</strong><span class="lang-zh">机械臂</span><span class="lang-en">Arm</span></figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/images/ink/team-rong.png" alt="Ma Rong">
+            <figcaption><strong>马茸</strong><span class="lang-zh">字体模型</span><span class="lang-en">Font model</span></figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/images/ink/team-zijun.png" alt="Ye Zijun">
+            <figcaption><strong>葉子俊</strong><span class="lang-zh">视觉</span><span class="lang-en">Vision</span></figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/images/ink/team-zhuo.png" alt="Huang Zhuo">
+            <figcaption><strong>黃卓</strong><span class="lang-zh">书法</span><span class="lang-en">Calligraphy</span></figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <section>
       <div class="wrap">
-        <!-- BILINGUAL PAIR: team and limits -->
-        <h2 class="lang-zh">分工，以及还没做完的</h2>
-        <h2 class="lang-en">Team, and What Is Not Done</h2>
+        <!-- BILINGUAL PAIR: next -->
+        <h2 class="lang-zh">下一步</h2>
+        <h2 class="lang-en">Next</h2>
+        <p class="lead lang-zh">三条都还没做。终稿自己写的下一步是：遥操作换成动作捕捉再重定向，以及把粗细曲线真正写进规划器。</p>
+        <p class="lead lang-en">None of the three is started. The deck’s own next step was to replace teleoperation with motion capture and retargeting, and to put the thickness curve into the planner.</p>
         <div class="stack">
           <div class="block">
-            <p class="lang-zh">李明哲：算法。零越群、李曼婷：机械臂。马茸：字体模型。葉子俊：视觉。黃卓：书法。</p>
-            <p class="lang-en">Mingzhe Li: algorithm. Ling Yuequn and Li Manting: the arm. Ma Rong: the font model. Ye Zijun: vision. Huang Zhuo: calligraphy.</p>
+            <h3 class="lang-zh">写字算法</h3>
+            <h3 class="lang-en">Writing control</h3>
+            <p class="lang-zh">继续优化我负责的控制算法。给每个笔画建一套规范运笔倾角，以及同类运笔数据。</p>
+            <p class="lang-en">Keep improving the control algorithm I own. For each stroke, build a library of the canonical brush inclination and the related stroke data.</p>
           </div>
           <div class="block">
-            <ul class="lang-zh">
-              <li>现场演示跑通的是规则写字。逐点提按（窄则抬、宽则压）还没写进规划器，这一版是恒定下压。</li>
-              <li>上面是仿真回放。代码和真机视频还在本机，没有公开仓库。</li>
-            </ul>
-            <ul class="lang-en">
-              <li>The live demo was the rule writer. Per-point pressure (lift on a thin stroke, press on a thick one) is not in the planner; this version uses a constant press.</li>
-              <li>The player above is the simulation replay. Code and the real-arm video are still local. There is no public repository yet.</li>
-            </ul>
+            <h3 class="lang-zh">数位毛笔</h3>
+            <h3 class="lang-en">A digital brush</h3>
+            <p class="lang-zh">把数采做扎实，把模型训好，做成一支数位毛笔。</p>
+            <p class="lang-en">Collect better data, train a better model, and make a digital calligraphy brush.</p>
+          </div>
+          <div class="block">
+            <h3 class="lang-zh">涂鸦</h3>
+            <h3 class="lang-en">Graffiti</h3>
+            <p class="lang-zh"><a href="next-idea.html">涂鸦机器人</a>。概念已经写在那一页，样机还没有。</p>
+            <p class="lang-en"><a href="next-idea.html">Graffiti robot</a>. The concept is on that page. There is no prototype yet.</p>
           </div>
         </div>
       </div>
