@@ -1,0 +1,183 @@
+<!doctype html>
+<!--
+  BILINGUAL PAGE / 双语页面 (Astribot billiards companion)
+  Toggle: .lang-zh / .lang-en + ../assets/js/lang-switch.js
+  RULE: edit Chinese ⇒ edit English; edit English ⇒ edit Chinese (same commit).
+  See ../docs/BILINGUAL.md
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Billiards Companion | 自助台球厅陪练 | Mingzhe Li</title>
+  <meta name="description" content="A wheeled-arm billiards companion for self-service halls: move, see, stroke, and talk. 2nd prize, Astribot OS Hackathon Shenzhen, August 2026.">
+  <link rel="canonical" href="https://mzli112358.github.io/projects/billiards.html">
+  <link rel="stylesheet" href="../assets/css/site.css?v=20261116-billiards">
+  <style>
+    :root {
+      --ink: #17211c;
+      --muted: #5c6b63;
+      --line: #d5e0d8;
+      --paper: #f7faf7;
+      --panel: #ffffff;
+      --brand: #1d6b45;
+      --brand-ink: #0e3d28;
+      --max: 920px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Source Sans 3", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: var(--brand-ink); }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap; min-height: 60px;
+      border-bottom: 1px solid var(--line); background: var(--panel);
+    }
+    .nav a { color: var(--ink); text-decoration: none; font-size: 14px; }
+    .nav-links { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .brand { font-weight: 700; }
+    .hero {
+      padding: 64px 0 56px;
+      background: linear-gradient(180deg, #e7f3eb 0%, var(--paper) 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      display: inline-block; margin-bottom: 14px;
+      font-size: 13px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--brand);
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.15; letter-spacing: -.02em;
+    }
+    .hero p { margin: 0; max-width: 66ch; color: var(--muted); font-size: 17px; }
+    .meta { margin-top: 18px; color: var(--muted); font-size: 14px; }
+    main section { padding: 48px 0; border-bottom: 1px solid var(--line); }
+    h2 { margin: 0 0 12px; font-size: clamp(22px, 3vw, 28px); }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    .lead { color: var(--muted); margin: 0 0 20px; }
+    .stack { display: grid; gap: 14px; }
+    .block {
+      padding: 18px 20px; background: var(--panel);
+      border: 1px solid var(--line); border-radius: 4px;
+    }
+    .block p, .block li { color: var(--muted); margin: 0; }
+    .block ul { margin: 8px 0 0; padding-left: 1.15rem; }
+    .pipeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .pipe {
+      padding: 14px 12px; background: var(--brand-ink); color: #f3f7f5;
+      border-radius: 4px; font-size: 14px; min-height: 88px;
+    }
+    .pipe strong { display: block; margin-bottom: 6px; font-size: 13px; opacity: .85; }
+    footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
+    @media (max-width: 720px) { .pipeline { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .pipeline { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="nav wrap">
+    <a class="brand" href="../index.html">Mingzhe Li</a>
+    <div class="nav-links">
+      <a href="../index.html"><span class="lang-zh">关于</span><span class="lang-en">About</span></a>
+      <a href="../research.html"><span class="lang-zh">研究</span><span class="lang-en">Research</span></a>
+      <a href="../projects.html"><span class="lang-zh">项目</span><span class="lang-en">Projects</span></a>
+      <a href="../CV/"><span class="lang-zh">简历</span><span class="lang-en">CV</span></a>
+      <a href="ink-gravity.html"><span class="lang-zh">墨有引力</span><span class="lang-en">Ink Gravity</span></a>
+      <div class="lang-switch" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang-btn="zh" aria-pressed="false">中文</button>
+        <button type="button" data-lang-btn="en" class="is-active" aria-pressed="true">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <!-- BILINGUAL PAIR: hero -->
+      <div class="eyebrow lang-zh">星尘 OS 黑客松 · 深圳站二等奖</div>
+      <div class="eyebrow lang-en">Astribot OS Hackathon · Shenzhen · 2nd Prize</div>
+      <h1 class="lang-zh">自助台球厅陪练</h1>
+      <h1 class="lang-en">Billiards Companion</h1>
+      <p class="lang-zh">面向一人守桌的自助台球厅：一台上轮式机械臂，能移动、能看球、能出杆、能语音交互，用来陪练、陪打和做简易教学。</p>
+      <p class="lang-en">A wheeled-arm companion for a self-service billiards hall when one person is left at the table. It moves, sees the balls, takes a stroke, and talks—for practice, play-along, and basic coaching.</p>
+      <p class="meta lang-zh">2026年8月22–23日 · 深圳 · 星尘 T1 / Astribot OS · 李明哲</p>
+      <p class="meta lang-en">Aug 22–23, 2026 · Shenzhen · Astribot T1 / Astribot OS · Mingzhe Li</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: scene -->
+        <h2 class="lang-zh">场景</h2>
+        <h2 class="lang-en">Scene</h2>
+        <p class="lead lang-zh">自助球房经常只有一个人守一张桌。这版应用把轮臂收成店里的陪打：人说要练什么，机器人走到桌边，看台面，出一杆，再用语音把这一杆讲清楚。</p>
+        <p class="lead lang-en">Self-service halls often leave one person on a table. This app turns a wheeled arm into the in-house partner: the person says what to practice, the robot comes to the table, reads the layout, takes a stroke, and explains it by voice.</p>
+        <div class="pipeline">
+          <div class="pipe"><strong>01</strong><span class="lang-zh">移动到球桌</span><span class="lang-en">Move to the table</span></div>
+          <div class="pipe"><strong>02</strong><span class="lang-zh">看台面和球</span><span class="lang-en">See the table and balls</span></div>
+          <div class="pipe"><strong>03</strong><span class="lang-zh">出杆</span><span class="lang-en">Take the stroke</span></div>
+          <div class="pipe"><strong>04</strong><span class="lang-zh">语音陪练 / 教学</span><span class="lang-en">Voice practice / coaching</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: role -->
+        <h2 class="lang-zh">我负责的部分</h2>
+        <h2 class="lang-en">My Part</h2>
+        <div class="stack">
+          <div class="block">
+            <h3 class="lang-zh">场景和能力编排</h3>
+            <h3 class="lang-en">Scene and capability orchestration</h3>
+            <p class="lang-zh">两天里把题目收成一个能现场演示的场景 App：定义一人守桌时的陪练、陪打和简易教学，把移动、看球、出杆和语音交互编排进同一条服务。</p>
+            <p class="lang-en">In two days I turned the brief into a scene app that could be shown on site: practice, play-along, and basic coaching for a single player, with mobility, ball perception, stroking, and voice in one service.</p>
+          </div>
+          <div class="block">
+            <h3 class="lang-zh">现场交付</h3>
+            <h3 class="lang-en">On-site delivery</h3>
+            <p class="lang-zh">在星尘 T1 和 Astribot OS 上完成赛期演示。深圳站二等奖，并晋级 2026 年 10 月 24–25 日全国总决赛。</p>
+            <p class="lang-en">Demonstrated on an Astribot T1 running Astribot OS. 2nd prize in Shenzhen, and advanced to the national finals on Oct 24–25, 2026.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: status -->
+        <h2 class="lang-zh">当前可以公开说的范围</h2>
+        <h2 class="lang-en">What This Page States</h2>
+        <div class="block">
+          <ul class="lang-zh">
+            <li>这是星尘 OS 黑客松深圳站的作品，不是 PhotoMate。</li>
+            <li>现场演示覆盖移动、看球、出杆和语音交互。</li>
+            <li>感知、击球规划和语音的实现细节还没写进本页。代码仓库未公开。</li>
+          </ul>
+          <ul class="lang-en">
+            <li>This is the Astribot OS Hackathon (Shenzhen) entry, separate from PhotoMate.</li>
+            <li>The on-site demo covered moving, seeing the balls, stroking, and voice.</li>
+            <li>Perception, shot planning, and dialogue internals are not on this page yet. The repository is not public.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © 2026 Mingzhe Li · mc64655 [at] um [dot] edu [dot] mo ·
+      <a href="../projects.html"><span class="lang-zh">全部项目</span><span class="lang-en">All projects</span></a> ·
+      <a href="../index.html"><span class="lang-zh">主页</span><span class="lang-en">Home</span></a>
+    </div>
+  </footer>
+  <script src="../assets/js/lang-switch.js?v=20260928-en"></script>
+</body>
+</html>

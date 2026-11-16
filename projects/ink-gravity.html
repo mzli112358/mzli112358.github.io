@@ -1,0 +1,217 @@
+<!doctype html>
+<!--
+  BILINGUAL PAGE / 双语页面 (Ink Gravity / 墨有引力)
+  Toggle: .lang-zh / .lang-en + ../assets/js/lang-switch.js
+  RULE: edit Chinese ⇒ edit English; edit English ⇒ edit Chinese (same commit).
+  See ../docs/BILINGUAL.md
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ink Gravity | 墨有引力 | Mingzhe Li</title>
+  <meta name="description" content="Ink Gravity: rule-based brush calligraphy on an SO-101 arm. First place at the SpaceXAI Macau hackathon, November 2026. Algorithm by Mingzhe Li.">
+  <link rel="canonical" href="https://mzli112358.github.io/projects/ink-gravity.html">
+  <link rel="stylesheet" href="../assets/css/site.css?v=20261116-ink">
+  <style>
+    :root {
+      --ink: #1c1916;
+      --muted: #6b6258;
+      --line: #e4d9cc;
+      --paper: #fbf7f2;
+      --panel: #ffffff;
+      --brand: #8a3b2a;
+      --brand-ink: #3d2118;
+      --max: 920px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Source Sans 3", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: var(--brand); }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap; min-height: 60px;
+      border-bottom: 1px solid var(--line); background: var(--panel);
+    }
+    .nav a { color: var(--ink); text-decoration: none; font-size: 14px; }
+    .nav-links { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .brand { font-weight: 700; }
+    .hero {
+      padding: 64px 0 56px;
+      background: linear-gradient(180deg, #f3e6dc 0%, var(--paper) 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      display: inline-block; margin-bottom: 14px;
+      font-size: 13px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--brand);
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.15; letter-spacing: -.02em;
+    }
+    .hero p { margin: 0; max-width: 66ch; color: var(--muted); font-size: 17px; }
+    .meta { margin-top: 18px; color: var(--muted); font-size: 14px; }
+    main section { padding: 48px 0; border-bottom: 1px solid var(--line); }
+    h2 { margin: 0 0 12px; font-size: clamp(22px, 3vw, 28px); }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    .lead { color: var(--muted); margin: 0 0 20px; }
+    .stack { display: grid; gap: 14px; }
+    .block {
+      padding: 18px 20px; background: var(--panel);
+      border: 1px solid var(--line); border-radius: 4px;
+    }
+    .block p, .block li { color: var(--muted); margin: 0; }
+    .block ul { margin: 8px 0 0; padding-left: 1.15rem; }
+    .pipeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .pipe {
+      padding: 14px 12px; background: var(--brand-ink); color: #f8f1ea;
+      border-radius: 4px; font-size: 14px; min-height: 96px;
+    }
+    .pipe strong { display: block; margin-bottom: 6px; font-size: 13px; opacity: .8; }
+    footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
+    @media (max-width: 720px) { .pipeline { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .pipeline { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="nav wrap">
+    <a class="brand" href="../index.html">Mingzhe Li</a>
+    <div class="nav-links">
+      <a href="../index.html"><span class="lang-zh">关于</span><span class="lang-en">About</span></a>
+      <a href="../research.html"><span class="lang-zh">研究</span><span class="lang-en">Research</span></a>
+      <a href="../projects.html"><span class="lang-zh">项目</span><span class="lang-en">Projects</span></a>
+      <a href="../CV/"><span class="lang-zh">简历</span><span class="lang-en">CV</span></a>
+      <a href="billiards.html"><span class="lang-zh">台球陪练</span><span class="lang-en">Billiards</span></a>
+      <div class="lang-switch" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang-btn="zh" aria-pressed="false">中文</button>
+        <button type="button" data-lang-btn="en" class="is-active" aria-pressed="true">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <!-- BILINGUAL PAIR: hero -->
+      <div class="eyebrow lang-zh">SpaceXAI 澳门黑客松 · 第一名</div>
+      <div class="eyebrow lang-en">SpaceXAI Macau Hackathon · 1st Place</div>
+      <h1 class="lang-zh">墨有引力</h1>
+      <h1 class="lang-en">Ink Gravity</h1>
+      <p class="lang-zh">在 SO-101 机械臂上用毛笔写字。规则先把整字写出来：拆笔画、对齐笔顺、走中线、解关节。仿真跑通后再下到真机。现场演示的是这条规则链路。</p>
+      <p class="lang-en">Brush calligraphy on an SO-101 arm. A rule pipeline writes the character first: split strokes, align stroke order, follow the centerline, solve the joints. It runs in simulation, then on the real arm. That rule chain is what was shown on stage.</p>
+      <p class="meta lang-zh">2026年11月12–14日 · 澳门塔 · 算法：李明哲</p>
+      <p class="meta lang-en">Nov 12–14, 2026 · Macau Tower · Algorithm: Mingzhe Li</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: pipeline -->
+        <h2 class="lang-zh">规则写字</h2>
+        <h2 class="lang-en">Rule-Based Writing</h2>
+        <p class="lead lang-zh">我负责算法。笔杆歪比笔尖偏两毫米更要命，所以腕滚转锁住，笔杆相对竖直的倾角压在 5 度以内，逆解只用 4 个关节：肩、肩俯仰、肘、腕俯仰。</p>
+        <p class="lead lang-en">I owned the algorithm. A tilted brush shaft matters more than a 2 mm tip error, so wrist roll stays locked and shaft tilt stays within 5° of vertical. Inverse kinematics uses four joints: shoulder, shoulder pitch, elbow, and wrist pitch.</p>
+        <div class="pipeline">
+          <div class="pipe"><strong>01</strong><span class="lang-zh">字图拆成独立笔画</span><span class="lang-en">Split the glyph into strokes</span></div>
+          <div class="pipe"><strong>02</strong><span class="lang-zh">用楷体笔画库对齐笔顺</span><span class="lang-en">Align stroke order to a regular-script library</span></div>
+          <div class="pipe"><strong>03</strong><span class="lang-zh">笔尖走笔画中线</span><span class="lang-en">Follow the stroke centerline</span></div>
+          <div class="pipe"><strong>04</strong><span class="lang-zh">MuJoCo 仿真，再下发真机</span><span class="lang-en">MuJoCo, then the real arm</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: hardware -->
+        <h2 class="lang-zh">真机上补的东西</h2>
+        <h2 class="lang-en">On the Real Arm</h2>
+        <div class="stack">
+          <div class="block">
+            <h3 class="lang-zh">仿真到这台从臂</h3>
+            <h3 class="lang-en">Simulation to this follower</h3>
+            <p class="lang-zh">仿真场景按 SO-101 的真实尺寸搭。真下发角是仿真角加一台从臂自己的零点偏移，换臂要重标定。官方校准流程会改零点，这条写字线没有用它。</p>
+            <p class="lang-en">The MuJoCo scene uses the SO-101’s real dimensions. Commanded angles are simulated angles plus that follower’s zero offset; another arm needs a new calibration. The stock calibrate routine moves the zero, so this writing line does not use it.</p>
+          </div>
+          <div class="block">
+            <h3 class="lang-zh">笔、墨、相机</h3>
+            <h3 class="lang-en">Brush, ink, camera</h3>
+            <ul class="lang-zh">
+              <li>参数化笔夹：舵机夹爪力矩小，笔杆必须夹死。</li>
+              <li>中式锁纹墨碟，大约 76×62×6.5 mm。</li>
+              <li>相机机位改到能同时看见笔尖和纸。</li>
+            </ul>
+            <ul class="lang-en">
+              <li>A parametric brush clamp. The servo gripper is too weak unless the shaft is locked in.</li>
+              <li>A Chinese lock-pattern ink dish, about 76×62×6.5 mm.</li>
+              <li>The camera moved so it sees both the tip and the paper.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: model line -->
+        <h2 class="lang-zh">另一条线：遥操作和字体</h2>
+        <h2 class="lang-en">The Other Lines: Teleoperation and Fonts</h2>
+        <div class="stack">
+          <div class="block">
+            <h3 class="lang-zh">主从遥操作，准备训 ACT</h3>
+            <h3 class="lang-en">Leader–follower teleoperation for ACT</h3>
+            <p class="lang-zh">主从同构，30 Hz，正视和腕部两路相机。采了人怎么写的数据，和仿真混合，准备训练 ACT。台上这一版没有用模型替代规则链路。遥操作是握着主臂平移，采得到动作，采不到笔法。</p>
+            <p class="lang-en">Isomorphic leader–follower at 30 Hz, with front and wrist cameras. Human writing was collected and mixed with simulation for an ACT run. The on-stage version did not replace the rule chain with the model. Translating the leader arm captures the motion, not the brush technique.</p>
+          </div>
+          <div class="block">
+            <h3 class="lang-zh">字体风格</h3>
+            <h3 class="lang-en">Font style</h3>
+            <p class="lang-zh">字体是队友的线。底座是开源 zi2zi-JiT 的 JiT-B/16，这次不重训底座。用少量《兰亭集序》样本做 LoRA 看风格能不能外推。我在台上只带过这组数字。</p>
+            <p class="lang-en">The font line belonged to a teammate. The base is the open zi2zi-JiT JiT-B/16 and was not retrained. A small Lantingji Xu LoRA tested whether the style extrapolates. On stage I only walked through those numbers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: team and limits -->
+        <h2 class="lang-zh">分工，以及还没做完的</h2>
+        <h2 class="lang-en">Team, and What Is Not Done</h2>
+        <div class="stack">
+          <div class="block">
+            <p class="lang-zh">李明哲：算法。零越群、李曼婷：机械臂。马茸：字体模型。葉子俊：视觉。黃卓：书法。</p>
+            <p class="lang-en">Mingzhe Li: algorithm. Ling Yuequn and Li Manting: the arm. Ma Rong: the font model. Ye Zijun: vision. Huang Zhuo: calligraphy.</p>
+          </div>
+          <div class="block">
+            <ul class="lang-zh">
+              <li>现场演示跑通的是规则写字。逐点提按（窄则抬、宽则压）还没写进规划器，这一版是恒定下压。</li>
+              <li>代码和演示视频还在本机，没有公开仓库。</li>
+            </ul>
+            <ul class="lang-en">
+              <li>The live demo was the rule writer. Per-point pressure (lift on a thin stroke, press on a thick one) is not in the planner; this version uses a constant press.</li>
+              <li>Code and the demo video are still local. There is no public repository yet.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © 2026 Mingzhe Li · mc64655 [at] um [dot] edu [dot] mo ·
+      <a href="../projects.html"><span class="lang-zh">全部项目</span><span class="lang-en">All projects</span></a> ·
+      <a href="../index.html"><span class="lang-zh">主页</span><span class="lang-en">Home</span></a>
+    </div>
+  </footer>
+  <script src="../assets/js/lang-switch.js?v=20260928-en"></script>
+</body>
+</html>

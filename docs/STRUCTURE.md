@@ -4,10 +4,13 @@
 mzli112358.github.io/
 ├── index.html, research.html, publications.html, projects.html   # 学术主站（由 tools/_build_pages.py 生成）
 ├── photomate.html, furniture-print.html                          # 短链 → projects/*
+├── billiards.html, ink-gravity.html                              # 短链 → projects/*
 ├── HackathonCV/index.html                                        # 旧链 → CV/
 ├── projects/
 │   ├── photomate.html                                            # PhotoMate 项目页
-│   └── furniture-print.html                                      # 室内米级协作臂 3D 打印
+│   ├── furniture-print.html                                      # 室内米级协作臂 3D 打印
+│   ├── billiards.html                                            # 星尘台球陪练
+│   └── ink-gravity.html                                          # 墨有引力毛笔字
 ├── CV/
 │   ├── index.html                                                # 学术简历查看器（中/英 PDF）
 │   ├── Mingzhe_Li_CV.pdf
