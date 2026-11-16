@@ -1,0 +1,204 @@
+<!doctype html>
+<!--
+  BILINGUAL PAGE / 双语页面 (Next idea: graffiti robot)
+  Toggle: .lang-zh / .lang-en + ../assets/js/lang-switch.js
+  RULE: edit Chinese ⇒ edit English; edit English ⇒ edit Chinese (same commit).
+  See ../docs/BILINGUAL.md
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Next Idea: Graffiti Robot | 涂鸦机器人 | Mingzhe Li</title>
+  <meta name="description" content="A mobile multi-color graffiti robot. Concept only: humanoid or dog-plus-arm, depth camera, and an RDK. Not built yet.">
+  <link rel="canonical" href="https://mzli112358.github.io/projects/next-idea.html">
+  <link rel="stylesheet" href="../assets/css/site.css?v=20261116-next">
+  <style>
+    :root {
+      --ink: #1c1614;
+      --muted: #6a564c;
+      --line: #eadfd6;
+      --paper: #fbf6f2;
+      --panel: #ffffff;
+      --brand: #c4512c;
+      --brand-ink: #3a2218;
+      --max: 920px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Source Sans 3", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: var(--brand); }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap; min-height: 60px;
+      border-bottom: 1px solid var(--line); background: var(--panel);
+    }
+    .nav a { color: var(--ink); text-decoration: none; font-size: 14px; }
+    .nav-links { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .brand { font-weight: 700; }
+    .hero {
+      padding: 64px 0 56px;
+      background: linear-gradient(180deg, #f8e4d8 0%, var(--paper) 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      display: inline-block; margin-bottom: 14px;
+      font-size: 13px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--brand);
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.15; letter-spacing: -.02em;
+    }
+    .hero p { margin: 0; max-width: 66ch; color: var(--muted); font-size: 17px; }
+    .meta { margin-top: 18px; color: var(--muted); font-size: 14px; }
+    main section { padding: 48px 0; border-bottom: 1px solid var(--line); }
+    h2 { margin: 0 0 12px; font-size: clamp(22px, 3vw, 28px); }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    .lead { color: var(--muted); margin: 0 0 20px; }
+    .stack { display: grid; gap: 14px; }
+    .block {
+      padding: 18px 20px; background: var(--panel);
+      border: 1px solid var(--line); border-radius: 4px;
+    }
+    .block p, .block li { color: var(--muted); margin: 0; }
+    .block ul { margin: 8px 0 0; padding-left: 1.15rem; }
+    .pipeline { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .pipe {
+      padding: 14px 12px; background: var(--brand-ink); color: #f8f1ea;
+      border-radius: 4px; font-size: 14px; min-height: 88px;
+    }
+    .pipe strong { display: block; margin-bottom: 6px; font-size: 13px; opacity: .8; }
+    footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
+    @media (max-width: 480px) { .pipeline { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="nav wrap">
+    <a class="brand" href="../index.html">Mingzhe Li</a>
+    <div class="nav-links">
+      <a href="../index.html"><span class="lang-zh">关于</span><span class="lang-en">About</span></a>
+      <a href="../research.html"><span class="lang-zh">研究</span><span class="lang-en">Research</span></a>
+      <a href="../projects.html"><span class="lang-zh">项目</span><span class="lang-en">Projects</span></a>
+      <a href="../CV/"><span class="lang-zh">简历</span><span class="lang-en">CV</span></a>
+      <a href="ink-gravity.html"><span class="lang-zh">墨有引力</span><span class="lang-en">Ink Gravity</span></a>
+      <div class="lang-switch" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang-btn="zh" aria-pressed="false">中文</button>
+        <button type="button" data-lang-btn="en" class="is-active" aria-pressed="true">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <!-- BILINGUAL PAIR: hero -->
+      <div class="eyebrow lang-zh">下一步 · 概念，还没开工</div>
+      <div class="eyebrow lang-en">Next · Concept, not started</div>
+      <h1 class="lang-zh">涂鸦机器人</h1>
+      <h1 class="lang-en">Graffiti Robot</h1>
+      <p class="lang-zh">一个能走到墙前的身体，拿着喷头，按颜色一层一层把图案喷上去。层的顺序是画面的一部分，先喷和后喷盖住的关系不一样。这页只定了要用来做它的身体，样机还没有。</p>
+      <p class="lang-en">A body that can walk up to a wall and lay color down one layer at a time. Layer order is part of the picture: what goes on first changes what the next layer covers. This page only fixes the body I want to use. There is no prototype yet.</p>
+      <p class="meta lang-zh">2026年11月提出 · 李明哲 · 算力打算用地瓜 RDK</p>
+      <p class="meta lang-en">Proposed Nov 2026 · Mingzhe Li · Compute planned on a D-Robotics RDK</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: body -->
+        <h2 class="lang-zh">打算用的身体</h2>
+        <h2 class="lang-en">The Body I Want</h2>
+        <p class="lead lang-zh">两条都留着。到现场再看哪一台当天能接到喷头。眼睛用深度相机，计算放在地瓜 RDK 上。RDK 我还没做过项目。</p>
+        <p class="lead lang-en">Both options stay open. On site I will use whichever body can take a sprayer that day. The eye is a depth camera. Compute sits on a D-Robotics RDK. I have not shipped an RDK project before.</p>
+        <div class="pipeline">
+          <div class="pipe"><strong class="lang-zh">身体 A · 人形</strong><strong class="lang-en">Body A · Humanoid</strong><span class="lang-zh">萝博派对，或宇树人形。</span><span class="lang-en">RoboParty, or a Unitree humanoid.</span></div>
+          <div class="pipe"><strong class="lang-zh">身体 B · 狗加臂</strong><strong class="lang-en">Body B · Dog plus arm</strong><span class="lang-zh">狗优先维他动力 Vbot，其次宇树狗。臂是求之 P7，或松灵。</span><span class="lang-en">Vita Dynamics Vbot first, then a Unitree dog. Arm: Qiuzhi P7 or AgileX.</span></div>
+        </div>
+        <div class="stack" style="margin-top:14px;">
+          <div class="block">
+            <h3 class="lang-zh">已经算进这套的</h3>
+            <h3 class="lang-en">Already in the kit</h3>
+            <ul class="lang-zh">
+              <li>深度相机，用来看墙距和已经喷上墙的结果。</li>
+              <li>地瓜 RDK，做端侧视觉和运动这边的计算。</li>
+              <li>喷头支架如果现场没有现成的，用 3D 打印做一个。</li>
+            </ul>
+            <ul class="lang-en">
+              <li>A depth camera, for wall distance and for what is already on the wall.</li>
+              <li>A D-Robotics RDK, for on-device vision and motion.</li>
+              <li>A sprayer mount, 3D-printed on site if none is ready.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: job -->
+        <h2 class="lang-zh">它要做成的事</h2>
+        <h2 class="lang-en">The Job</h2>
+        <div class="stack">
+          <div class="block">
+            <p class="lang-zh">大面上的涂装不要再靠好几台单色设备轮流上。一台机器按图层走：这一层是什么颜色、喷在哪、排在第几步。视觉闭环看的是墙上的结果，不是只看手臂有没有走完轨迹。墙距一旦漂，喷幅和臂的路径会一起漂。</p>
+            <p class="lang-en">Large-surface color should not need several single-color machines taking turns. One machine walks the layers: which color, where it goes, and which step it is. The visual loop judges the wall, not only whether the arm finished its path. If the wall distance drifts, spray width and the arm path drift with it.</p>
+          </div>
+          <div class="block">
+            <h3 class="lang-zh">模块，按这个顺序</h3>
+            <h3 class="lang-en">Modules, in this order</h3>
+            <ul class="lang-zh">
+              <li>身体开到墙前，定位，把墙和工作空间留在地图里。</li>
+              <li>稳住相对墙的距离，给喷头留出间隙。</li>
+              <li>在这个间隙里规划臂，并让身体和臂一起动。</li>
+              <li>把一张图拆成按颜色、按顺序的层，再按层喷；看着墙面结果回头修。</li>
+            </ul>
+            <ul class="lang-en">
+              <li>Drive up to the wall, localize, and keep the wall and the workspace on the map.</li>
+              <li>Hold the distance to the wall so the sprayer has a stable gap.</li>
+              <li>Plan the arm inside that gap, and move the body and the arm together.</li>
+              <li>Split one image into ordered color layers, spray them in order, and correct from the wall.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: status -->
+        <h2 class="lang-zh">现在还没有的</h2>
+        <h2 class="lang-en">What Does Not Exist Yet</h2>
+        <div class="block">
+          <ul class="lang-zh">
+            <li>没有样机，没有代码仓库，RDK 上也还没有跑通过。</li>
+            <li>喷头、换色方式、墙面类型、图案从哪来，都还没定。</li>
+            <li>人形和「狗加臂」哪一条先上，等看到当天的机器再定。狗这一条里，维他动力优先于宇树。</li>
+          </ul>
+          <ul class="lang-en">
+            <li>No prototype, no repository, and nothing running on an RDK yet.</li>
+            <li>The sprayer, how colors change, the wall, and where the artwork comes from are still open.</li>
+            <li>Humanoid versus dog-plus-arm waits until the machines on site are in hand. If it is a dog, Vita Dynamics comes before Unitree.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © 2026 Mingzhe Li · mc64655 [at] um [dot] edu [dot] mo ·
+      <a href="../projects.html"><span class="lang-zh">全部项目</span><span class="lang-en">All projects</span></a> ·
+      <a href="../index.html"><span class="lang-zh">主页</span><span class="lang-en">Home</span></a>
+    </div>
+  </footer>
+  <script src="../assets/js/lang-switch.js?v=20260928-en"></script>
+</body>
+</html>

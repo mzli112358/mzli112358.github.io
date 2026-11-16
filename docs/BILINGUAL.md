@@ -21,7 +21,7 @@ First-time visitors see English by default; returning visitors retain their save
 学术主站页面请改 `tools/_build_pages.py` 后运行 `python tools/_build_pages.py`，不要只改生成后的 HTML。  
 For academic pages, edit `tools/_build_pages.py` then regenerate; do not edit generated HTML alone.
 
-独立页（`projects/photomate.html`、`projects/furniture-print.html`、`projects/billiards.html`、`projects/ink-gravity.html`、`CV/index.html`）直接编辑文件内成对文案。  
+独立页（`projects/photomate.html`、`projects/furniture-print.html`、`projects/billiards.html`、`projects/ink-gravity.html`、`projects/next-idea.html`、`CV/index.html`）直接编辑文件内成对文案。  
 Standalone pages: edit paired strings in those HTML files directly.
 
 ## 注释标记 / Comment Markers
