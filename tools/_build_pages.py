@@ -284,7 +284,7 @@ def page(title, description, canonical, active, page_title_zh, page_title_en, co
 index_content = r"""
           <!-- BILINGUAL PAIR: about — ZH ↔ EN sync required / 改一语必改另一语 -->
           <div class="lang-zh">
-            <p>我是面向<strong>机器人系统、具身智能与三维视觉</strong>的研究者与工程开发者，具备从本体设计、硬件原型、感知导航、遥操作数据采集到 <strong>VLA</strong> 训练与任务智能体的端到端经验。现于<strong>星尘智能（Astribot）</strong>任<strong>机器人算法工程师（实习）</strong>（2026 年 9 月至今），独立负责单场景轮式机械臂应用，从场景定义、技术路线、机械模块与仿真，到运动控制、闭环评估和真机测试的全链路交付。此前于 2026 年 3–9 月在<strong>原力无限（INFIFORCE）深圳研究院</strong>参与家庭服务机器人研发，并在香港大学陈佳玉助理教授 <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> 担任研究助理。</p>
+            <p>我是面向<strong>机器人系统、具身智能与三维视觉</strong>的研究者与工程开发者，具备从本体设计、硬件原型、感知导航、遥操作数据采集到 <strong>VLA</strong> 训练与任务智能体的端到端经验。2026 年 9–11 月在<strong>星尘智能（Astribot）</strong>任<strong>机器人算法工程师（实习）</strong>，实习已经结束。期间独立负责单场景轮式机械臂应用，从场景定义、技术路线、机械模块与仿真，到运动控制、闭环评估和真机测试的全链路交付。此前于 2026 年 3–9 月在<strong>原力无限（INFIFORCE）深圳研究院</strong>参与家庭服务机器人研发，并在香港大学陈佳玉助理教授 <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> 担任研究助理。</p>
             <!-- Jia Weijia / 贾维嘉 — extra refs (not shown on page; kept in HTML source):
                  http://bnuaifn.cn/ScientificResearchTeam/JiaWeijia.html
                  https://skliotsc.um.edu.mo/%E3%80%8C5g-enabled%EF%BC%8Ceverything-connected%E3%80%8D-%EF%BC%9Aprof-jia-weijia-deputy-director-of-smart-city-iot-state-key-lab-interviewed-by-tencent-finance-channel-on-august-30/
@@ -293,12 +293,12 @@ index_content = r"""
      https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
                  https://www.um.edu.mo/news-and-press-releases/campus-news/detail/48138/
             -->
-            <p>本科毕业于北师香港浸会大学<strong>数据科学</strong>，现为<strong>澳门大学机器人与自主系统（RAS）理学硕士生</strong>。本科 FYP 之外完成的未发表 <strong>IsoGS-SLAM</strong> 项目（ITSC 2026 拒稿后已停止推进）；参与 <strong>ICML 2025</strong> 论文（通讯作者 <a href="https://staff.uic.edu.cn/jiawj/cn" target="_blank" rel="noopener noreferrer">贾维嘉</a>）；本科期间在 <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> 支持下创立 <strong>Navigator Robotics Lab</strong>（约 35 人；战队早期名「烧仙草」），带队获 RoboMaster 工程挑战赛辽宁站第一名。2026 年 8 月获星尘 OS「一句话生成 App」机器人黑客松深圳站<strong>二等奖</strong>，并晋级 10 月全国总决赛。</p>
+            <p>本科毕业于北师香港浸会大学<strong>数据科学</strong>，现为<strong>澳门大学机器人与自主系统（RAS）理学硕士生</strong>。本科 FYP 之外完成的未发表 <strong>IsoGS-SLAM</strong> 项目（ITSC 2026 拒稿后已停止推进）；参与 <strong>ICML 2025</strong> 论文（通讯作者 <a href="https://staff.uic.edu.cn/jiawj/cn" target="_blank" rel="noopener noreferrer">贾维嘉</a>）；本科期间在 <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a> 支持下创立 <strong>Navigator Robotics Lab</strong>（约 35 人；战队早期名「烧仙草」），带队获 RoboMaster 工程挑战赛辽宁站第一名。2026 年 11 月，SpaceXAI 澳门黑客松作品 <a href="projects/ink-gravity.html">墨有引力</a> 获物理 AI 赛道<strong>第一名</strong>。2026 年 8 月获星尘 OS「一句话生成 App」机器人黑客松深圳站<strong>二等奖</strong>，并晋级 10 月全国总决赛。</p>
             <p>更多见 <a href="research.html">研究</a>、<a href="projects.html">项目</a>、<a href="https://github.com/mzli112358">GitHub</a> 与 <a href="CV/">简历</a>。</p>
           </div>
           <div class="lang-en">
-            <p>I am a researcher-engineer working on <strong>robotics systems, embodied AI, and 3D vision</strong>, with end-to-end experience from hardware prototyping and perception to <strong>VLA</strong> training and task agents. <strong>Robotics Algorithm Engineer Intern</strong> at <strong>Astribot</strong> (Sep 2026–Present), owning the full delivery chain for a single-scenario wheeled-arm application: scenario definition, technical approach, mechanical modules, simulation, motion control, closed-loop evaluation, and real-robot testing. Previously worked on home-service robots at the <strong>INFIFORCE Shenzhen Research Institute</strong> (Mar–Sep 2026), as a research assistant in Prof. Jiayu Chen’s <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> at HKU.</p>
-            <p>B.Sc. in <strong>Data Science</strong> (BNBU/UIC); currently an <strong>M.Sc. student in Robotics and Autonomous Systems</strong> at the <strong>University of Macau</strong>. Completed an unpublished <strong>IsoGS-SLAM</strong> project outside the undergraduate FYP (submission rejected at ITSC 2026 and no longer being pursued); contributor to an <strong>ICML 2025</strong> paper (corresponding author <a href="https://staff.uic.edu.cn/jiawj/en" target="_blank" rel="noopener noreferrer">Weijia Jia</a>); during undergrad founded <strong>Navigator Robotics Lab</strong> (~35 members; formerly “Shao Xian Cao”) with support from <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a>, and led the team to 1st Place in the RoboMaster Regional Engineer Challenge. In August 2026, <strong>2nd Prize</strong> at the Astribot OS “Generate an App in One Sentence” Robot Hackathon (Shenzhen), advancing to the October national finals.</p>
+            <p>I am a researcher-engineer working on <strong>robotics systems, embodied AI, and 3D vision</strong>, with end-to-end experience from hardware prototyping and perception to <strong>VLA</strong> training and task agents. <strong>Robotics Algorithm Engineer Intern</strong> at <strong>Astribot</strong> (Sep–Nov 2026); the internship has ended. I owned the full delivery chain for a single-scenario wheeled-arm application: scenario definition, technical approach, mechanical modules, simulation, motion control, closed-loop evaluation, and real-robot testing. Previously worked on home-service robots at the <strong>INFIFORCE Shenzhen Research Institute</strong> (Mar–Sep 2026), as a research assistant in Prof. Jiayu Chen’s <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer"><strong>Agentic Intelligence Lab</strong></a> at HKU.</p>
+            <p>B.Sc. in <strong>Data Science</strong> (BNBU/UIC); currently an <strong>M.Sc. student in Robotics and Autonomous Systems</strong> at the <strong>University of Macau</strong>. Completed an unpublished <strong>IsoGS-SLAM</strong> project outside the undergraduate FYP (submission rejected at ITSC 2026 and no longer being pursued); contributor to an <strong>ICML 2025</strong> paper (corresponding author <a href="https://staff.uic.edu.cn/jiawj/en" target="_blank" rel="noopener noreferrer">Weijia Jia</a>); during undergrad founded <strong>Navigator Robotics Lab</strong> (~35 members; formerly “Shao Xian Cao”) with support from <a href="https://aidsrh.bnbu.edu.cn/" target="_blank" rel="noopener noreferrer">AIRH</a>, and led the team to 1st Place in the RoboMaster Regional Engineer Challenge. In November 2026, <a href="projects/ink-gravity.html">Ink Gravity</a> took <strong>1st place</strong> in the physical-AI track at the SpaceXAI Macau Hackathon. In August 2026, <strong>2nd Prize</strong> at the Astribot OS “Generate an App in One Sentence” Robot Hackathon (Shenzhen), advancing to the October national finals.</p>
             <p>See <a href="research.html">Research</a>, <a href="projects.html">Projects</a>, <a href="https://github.com/mzli112358">GitHub</a>, and <a href="CV/">CV</a>.</p>
           </div>
 
@@ -345,6 +345,10 @@ index_content = r"""
           <h2 id="news" class="lang-zh">动态</h2>
           <h2 id="news-en" class="lang-en">News</h2>
           <ul class="news-list">
+            <li class="lang-zh"><strong>[2026.11.12–14]</strong> SpaceXAI 澳门黑客松：<a href="projects/ink-gravity.html">墨有引力</a> 获物理 AI 赛道<strong>第一名</strong>。在 SO-101 上用规则把毛笔字写到真机。</li>
+            <li class="lang-en"><strong>[2026.11.12–14]</strong> SpaceXAI Macau Hackathon: <a href="projects/ink-gravity.html">Ink Gravity</a> took <strong>1st place</strong> in the physical-AI track. Rule-based brush writing ran on an SO-101 arm.</li>
+            <li class="lang-zh"><strong>[2026.11]</strong> 星尘智能实习结束（2026.09–11）。深圳站台球陪练见 <a href="projects/billiards.html">项目页</a>。下一步概念：<a href="projects/next-idea.html">涂鸦机器人</a>，还没开工。</li>
+            <li class="lang-en"><strong>[2026.11]</strong> Astribot internship ended (Sep–Nov 2026). The Shenzhen billiards companion is on its <a href="projects/billiards.html">project page</a>. Next concept: a <a href="projects/next-idea.html">graffiti robot</a>, not started.</li>
             <li class="lang-zh"><strong>[2026.09.21]</strong> 加入星尘智能（Astribot），担任<strong>机器人算法工程师（实习）</strong>，负责轮式机械臂应用的全栈开发。</li>
             <li class="lang-en"><strong>[2026.09.21]</strong> Joined Astribot as a <strong>Robotics Algorithm Engineer Intern</strong>, working on full-stack development of a wheeled-arm robot application.</li>
             <li class="lang-zh"><strong>[2026.08.22–23]</strong> 星尘 OS「一句话生成 App」机器人黑客松深圳站<strong>二等奖</strong>；晋级 <strong>10 月 24–25 日</strong>全国总决赛 · 共创者大会。</li>
@@ -442,6 +446,8 @@ index_content = r"""
           <h2 id="honors" class="lang-zh">荣誉与奖项</h2>
           <h2 id="honors-en" class="lang-en">Honors &amp; Awards</h2>
           <ul class="news-list">
+            <li class="lang-zh"><strong>第一名</strong>，SpaceXAI 澳门黑客松物理 AI 赛道，2026（<a href="projects/ink-gravity.html">墨有引力</a>）</li>
+            <li class="lang-en"><strong>1st Place</strong>, SpaceXAI Macau Hackathon, physical-AI track, 2026 (<a href="projects/ink-gravity.html">Ink Gravity</a>)</li>
             <li class="lang-zh"><strong>二等奖</strong>，星尘 OS「一句话生成 App」机器人黑客松深圳站，2026（晋级全国总决赛）</li>
             <li class="lang-en"><strong>2nd Prize</strong>, Astribot OS “Generate an App in One Sentence” Robot Hackathon (Shenzhen), 2026 (advanced to national finals)</li>
             <li class="lang-zh"><strong>一等奖</strong>，RoboMaster 机甲大师高校联盟赛工程挑战赛辽宁站，2024</li>
@@ -500,11 +506,17 @@ research_content = r"""
           <p class="lang-zh">显式状态机 · 多模态交互 · 体验交付</p>
           <p class="lang-en">Explicit FSM · multimodal interaction · experience delivery</p>
           <ul class="lang-zh">
+            <li><a href="projects/ink-gravity.html"><strong>墨有引力</strong></a>：SO-101 毛笔规则写字，仿真后下发真机。SpaceXAI 澳门黑客松物理 AI 赛道第一名。</li>
+            <li><a href="projects/billiards.html"><strong>自助台球厅陪练</strong></a>：星尘 T1 上移动、看球、出杆、语音。深圳站二等奖。</li>
+            <li><a href="projects/next-idea.html"><strong>涂鸦机器人</strong></a>：概念。人形或狗加臂，按颜色分层喷涂。还没开工。</li>
             <li><a href="projects/photomate.html"><strong>PhotoMate</strong></a>：S0–S6 拍照 Agent（FastAPI + Qwen-Omni + React <code>/flow/</code>）；探月完成软件链，真机执行未闭环。</li>
             <li><a href="projects/furniture-print.html"><strong>室内米级协作臂 3D 打印</strong></a>：原构想为移动操作打印 + 语音/Agent → STL → 切片执行；2026 年 9 月 27 日起暂停。</li>
             <li>长程任务智能体：导航定位、任务规划与执行链路。</li>
           </ul>
           <ul class="lang-en">
+            <li><a href="projects/ink-gravity.html"><strong>Ink Gravity</strong></a>: rule-based brush writing on an SO-101, simulated and then run on the real arm. 1st place, SpaceXAI Macau Hackathon, physical-AI track.</li>
+            <li><a href="projects/billiards.html"><strong>Billiards companion</strong></a>: move, see, stroke, and talk on an Astribot T1. 2nd prize, Shenzhen.</li>
+            <li><a href="projects/next-idea.html"><strong>Graffiti robot</strong></a>: concept. A humanoid or a dog-plus-arm sprays ordered color layers. Not started.</li>
             <li><a href="projects/photomate.html"><strong>PhotoMate</strong></a>: S0–S6 photo agent (FastAPI + Qwen-Omni + React <code>/flow/</code>); software validated at Tanyue; real-robot loop unfinished.</li>
             <li><a href="projects/furniture-print.html"><strong>Indoor meter-scale arm printing</strong></a>: concept for mobile manipulative AM + voice/agent → STL → slice/execute; on hold since September 27, 2026.</li>
             <li>Long-horizon agents: navigation, planning, and execution chains.</li>
@@ -524,8 +536,8 @@ research_content = r"""
           <h2 id="experience"><span class="lang-zh">相关经历</span><span class="lang-en">Related Experience</span></h2>
           <h3 class="lang-zh">星尘智能（Astribot）</h3>
           <h3 class="lang-en">Astribot</h3>
-          <p class="lang-zh"><em>机器人算法工程师（实习） · 2026.09 – 至今</em></p>
-          <p class="lang-en"><em>Robotics Algorithm Engineer Intern · Sep 2026 – Present</em></p>
+          <p class="lang-zh"><em>机器人算法工程师（实习） · 2026.09 – 2026.11</em></p>
+          <p class="lang-en"><em>Robotics Algorithm Engineer Intern · Sep 2026 – Nov 2026</em></p>
           <ul class="lang-zh">
             <li>独立负责单场景轮式机械臂应用的全链路交付：场景定义、技术路线、机械模块、仿真、运动控制、闭环评估与真机测试。</li>
             <li>搭建仿真场景，在实际部署前迭代任务执行；结合交付周期和可控性，对比传统 CV/SLAM、强化学习和学习策略。</li>
@@ -615,7 +627,55 @@ publications_content = r"""
 
 projects_content = r"""
           <div class="paper-card">
-            <div class="paper-title"><a href="projects/furniture-print.html"><span class="lang-zh">1. 室内米级协作臂 3D 打印平台</span><span class="lang-en">1. Indoor Meter-Scale Collaborative-Arm 3D Printing</span></a></div>
+            <div class="paper-title"><a href="projects/ink-gravity.html"><span class="lang-zh">1. 墨有引力</span><span class="lang-en">1. Ink Gravity</span></a></div>
+            <p class="paper-meta lang-zh">2026.11.12–14 · SpaceXAI 澳门黑客松 · 物理 AI 赛道第一名 · SO-101 · 规则写字</p>
+            <p class="paper-meta lang-en">Nov 12–14, 2026 · SpaceXAI Macau Hackathon · 1st place, physical AI · SO-101 · rule-based writing</p>
+            <ul class="lang-zh">
+              <li>我负责算法。字图拆成笔画，对齐笔顺，笔尖走中线，只解 4 个关节。先在 MuJoCo 里按真机尺寸跑通，再下发到右臂从臂。</li>
+              <li>现场演示的是这条规则链路。代码仓库未公开。</li>
+              <li><a href="projects/ink-gravity.html">项目页 →</a></li>
+            </ul>
+            <ul class="lang-en">
+              <li>I owned the algorithm: split strokes, align stroke order, follow the centerline, and solve four joints. It ran in MuJoCo at the real arm’s size, then on the right follower.</li>
+              <li>The on-stage demo was this rule chain. The repository is not public.</li>
+              <li><a href="projects/ink-gravity.html">Project page →</a></li>
+            </ul>
+          </div>
+
+          <div class="paper-card">
+            <div class="paper-title"><a href="projects/billiards.html"><span class="lang-zh">2. 自助台球厅陪练</span><span class="lang-en">2. Billiards Companion</span></a></div>
+            <p class="paper-meta lang-zh">2026.08.22–23 · 星尘 OS 黑客松深圳站二等奖 · 星尘 T1 · 晋级全国总决赛</p>
+            <p class="paper-meta lang-en">Aug 22–23, 2026 · Astribot OS Hackathon, Shenzhen, 2nd prize · Astribot T1 · national finals</p>
+            <ul class="lang-zh">
+              <li>一人守桌时的陪练：能移动、能看球、能出杆、能语音交互。现场做了演示。</li>
+              <li>感知和击球规划的实现没有写在项目页上。代码仓库未公开。</li>
+              <li><a href="projects/billiards.html">项目页 →</a></li>
+            </ul>
+            <ul class="lang-en">
+              <li>A practice partner for one person at the table: it moves, sees the balls, takes a stroke, and talks. Demonstrated on site.</li>
+              <li>Perception and shot-planning internals are not on the project page. The repository is not public.</li>
+              <li><a href="projects/billiards.html">Project page →</a></li>
+            </ul>
+          </div>
+
+          <div class="paper-card">
+            <div class="paper-title"><a href="projects/next-idea.html"><span class="lang-zh">3. 涂鸦机器人</span><span class="lang-en">3. Graffiti Robot</span></a></div>
+            <p class="paper-meta lang-zh">2026.11 提出 · 概念，还没开工 · 人形或狗加臂 · 地瓜 RDK</p>
+            <p class="paper-meta lang-en">Proposed Nov 2026 · concept, not started · humanoid or dog-plus-arm · D-Robotics RDK</p>
+            <ul class="lang-zh">
+              <li>走到墙前，按颜色一层一层喷。层的顺序是画面的一部分。</li>
+              <li>身体留两条：萝博派对或宇树人形；或者维他动力机器狗优先，加求之或松灵机械臂。没有样机。</li>
+              <li><a href="projects/next-idea.html">项目页 →</a></li>
+            </ul>
+            <ul class="lang-en">
+              <li>Walk up to a wall and spray one color layer at a time. Layer order is part of the picture.</li>
+              <li>Two bodies stay open: a RoboParty or Unitree humanoid, or a Vita Dynamics dog first plus a Qiuzhi or AgileX arm. No prototype yet.</li>
+              <li><a href="projects/next-idea.html">Project page →</a></li>
+            </ul>
+          </div>
+
+          <div class="paper-card">
+            <div class="paper-title"><a href="projects/furniture-print.html"><span class="lang-zh">4. 室内米级协作臂 3D 打印平台</span><span class="lang-en">4. Indoor Meter-Scale Collaborative-Arm 3D Printing</span></a></div>
             <p class="paper-meta lang-zh">已暂停（2026.09.27 起）· 2026.07 启动 · 移动操作 · 定位融合 · 切片/G-code</p>
             <p class="paper-meta lang-en">On hold since Sep 27, 2026 · Started Jul 2026 · mobile manipulation · localization fusion · slicing/G-code</p>
             <ul class="lang-zh">
@@ -631,7 +691,7 @@ projects_content = r"""
           </div>
 
           <div class="paper-card">
-            <div class="paper-title"><a href="projects/photomate.html">2. PhotoMate 具身智能摄影师</a></div>
+            <div class="paper-title"><a href="projects/photomate.html"><span class="lang-zh">5. PhotoMate 具身智能摄影师</span><span class="lang-en">5. PhotoMate</span></a></div>
             <p class="paper-meta lang-zh">2026.07.08–11 · 探月 Physical AI 黑客松 · S0–S6 Agent</p>
             <p class="paper-meta lang-en">Jul 8–11, 2026 · Tanyue Physical AI Hackathon · S0–S6 agent</p>
             <ul class="lang-zh">
@@ -647,8 +707,8 @@ projects_content = r"""
           </div>
 
           <div class="paper-card">
-            <div class="paper-title lang-zh">3. 家庭服务机器人与 VLA（INFIFORCE / <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">AIL</a>）</div>
-            <div class="paper-title lang-en">3. Home-Service Robot &amp; VLA (INFIFORCE / <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">AIL</a>)</div>
+            <div class="paper-title lang-zh">6. 家庭服务机器人与 VLA（INFIFORCE / <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">AIL</a>）</div>
+            <div class="paper-title lang-en">6. Home-Service Robot &amp; VLA (INFIFORCE / <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">AIL</a>)</div>
             <p class="paper-meta">2026.03–2026.09 · LeRobot · ACT / OpenPI · teleop</p>
             <ul class="lang-zh">
               <li>多臂平台集成、真实数据采集与策略微调；长程任务智能体链路。</li>
@@ -659,8 +719,8 @@ projects_content = r"""
           </div>
 
           <div class="paper-card">
-            <div class="paper-title lang-zh">4. IsoGS-SLAM：几何一致实时三维重建</div>
-            <div class="paper-title lang-en">4. IsoGS-SLAM: Geometry-Consistent Real-Time 3D Reconstruction</div>
+            <div class="paper-title lang-zh">7. IsoGS-SLAM：几何一致实时三维重建</div>
+            <div class="paper-title lang-en">7. IsoGS-SLAM: Geometry-Consistent Real-Time 3D Reconstruction</div>
             <p class="paper-meta lang-zh">2025.12–2026.04 · 3DGS · SLAM · 解析法向 · CUDA</p>
             <p class="paper-meta lang-en">Dec 2025–Apr 2026 · 3DGS · SLAM · analytic normals · CUDA</p>
             <ul class="lang-zh">
@@ -674,8 +734,8 @@ projects_content = r"""
           </div>
 
           <div class="paper-card">
-            <div class="paper-title lang-zh">5. 动态环境鲁棒单目 SLAM（毕业设计）</div>
-            <div class="paper-title lang-en">5. Robust Monocular SLAM (FYP)</div>
+            <div class="paper-title lang-zh">8. 动态环境鲁棒单目 SLAM（毕业设计）</div>
+            <div class="paper-title lang-en">8. Robust Monocular SLAM (FYP)</div>
             <p class="paper-meta">2025.05–2025.11 · ORB-SLAM3 · YOLO · C++</p>
             <ul class="lang-zh">
               <li>语义掩码抑制动态特征，评估定位与目标跟踪。</li>
@@ -686,8 +746,8 @@ projects_content = r"""
           </div>
 
           <div class="paper-card" id="navigator">
-            <div class="paper-title lang-zh">6. RoboMaster 实验室与竞赛机器人（Navigator）</div>
-            <div class="paper-title lang-en">6. RoboMaster Lab &amp; Competition Robots (Navigator)</div>
+            <div class="paper-title lang-zh">9. RoboMaster 实验室与竞赛机器人（Navigator）</div>
+            <div class="paper-title lang-en">9. RoboMaster Lab &amp; Competition Robots (Navigator)</div>
             <p class="paper-meta">2023.04–2025.08 · team leadership · mechanical · ROS2 · AIRH-supported</p>
             <ul class="lang-zh">
               <li><strong>Navigator Robotics Lab</strong>（早期「烧仙草」战队）：全栈竞赛机器人；辽宁站第一名。</li>
@@ -701,8 +761,8 @@ projects_content = r"""
           </div>
 
           <div class="paper-card">
-            <div class="paper-title lang-zh">7. 工业与知识产权 LLM 智能体</div>
-            <div class="paper-title lang-en">7. LLM Agents for Industry &amp; IP</div>
+            <div class="paper-title lang-zh">10. 工业与知识产权 LLM 智能体</div>
+            <div class="paper-title lang-en">10. LLM Agents for Industry &amp; IP</div>
             <p class="paper-meta">RAG · LangChain · multi-agent</p>
             <ul class="lang-zh">
               <li>数字工厂调度/质检；专利文档自动化审查与检索。</li>
@@ -747,7 +807,7 @@ pages = [
     (
         "projects.html",
         "Projects | Mingzhe Li",
-        "Selected projects: PhotoMate, VLA, IsoGS-SLAM, RoboMaster, and a meter-scale 3D printing concept currently on hold.",
+        "Selected projects: Ink Gravity, a billiards companion, a graffiti-robot concept, PhotoMate, VLA, and RoboMaster.",
         "projects.html",
         "projects",
         "项目",

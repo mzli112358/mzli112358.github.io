@@ -11,13 +11,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects | Mingzhe Li</title>
-  <meta name="description" content="Selected projects: PhotoMate, VLA, IsoGS-SLAM, RoboMaster, and a meter-scale 3D printing concept currently on hold.">
+  <meta name="description" content="Selected projects: Ink Gravity, a billiards companion, a graffiti-robot concept, PhotoMate, VLA, and RoboMaster.">
   <link rel="canonical" href="https://mzli112358.github.io/projects.html">
   <meta property="og:locale" content="en-US">
   <meta property="og:site_name" content="Mingzhe Li">
   <meta property="og:title" content="Projects | Mingzhe Li">
   <meta property="og:url" content="https://mzli112358.github.io/projects.html">
-  <meta property="og:description" content="Selected projects: PhotoMate, VLA, IsoGS-SLAM, RoboMaster, and a meter-scale 3D printing concept currently on hold.">
+  <meta property="og:description" content="Selected projects: Ink Gravity, a billiards companion, a graffiti-robot concept, PhotoMate, VLA, and RoboMaster.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -157,7 +157,55 @@
 <!-- PAGE BODY: every visible copy block below should be a ZH/EN pair. -->
 
           <div class="paper-card">
-            <div class="paper-title"><a href="projects/furniture-print.html"><span class="lang-zh">1. 室内米级协作臂 3D 打印平台</span><span class="lang-en">1. Indoor Meter-Scale Collaborative-Arm 3D Printing</span></a></div>
+            <div class="paper-title"><a href="projects/ink-gravity.html"><span class="lang-zh">1. 墨有引力</span><span class="lang-en">1. Ink Gravity</span></a></div>
+            <p class="paper-meta lang-zh">2026.11.12–14 · SpaceXAI 澳门黑客松 · 物理 AI 赛道第一名 · SO-101 · 规则写字</p>
+            <p class="paper-meta lang-en">Nov 12–14, 2026 · SpaceXAI Macau Hackathon · 1st place, physical AI · SO-101 · rule-based writing</p>
+            <ul class="lang-zh">
+              <li>我负责算法。字图拆成笔画，对齐笔顺，笔尖走中线，只解 4 个关节。先在 MuJoCo 里按真机尺寸跑通，再下发到右臂从臂。</li>
+              <li>现场演示的是这条规则链路。代码仓库未公开。</li>
+              <li><a href="projects/ink-gravity.html">项目页 →</a></li>
+            </ul>
+            <ul class="lang-en">
+              <li>I owned the algorithm: split strokes, align stroke order, follow the centerline, and solve four joints. It ran in MuJoCo at the real arm’s size, then on the right follower.</li>
+              <li>The on-stage demo was this rule chain. The repository is not public.</li>
+              <li><a href="projects/ink-gravity.html">Project page →</a></li>
+            </ul>
+          </div>
+
+          <div class="paper-card">
+            <div class="paper-title"><a href="projects/billiards.html"><span class="lang-zh">2. 自助台球厅陪练</span><span class="lang-en">2. Billiards Companion</span></a></div>
+            <p class="paper-meta lang-zh">2026.08.22–23 · 星尘 OS 黑客松深圳站二等奖 · 星尘 T1 · 晋级全国总决赛</p>
+            <p class="paper-meta lang-en">Aug 22–23, 2026 · Astribot OS Hackathon, Shenzhen, 2nd prize · Astribot T1 · national finals</p>
+            <ul class="lang-zh">
+              <li>一人守桌时的陪练：能移动、能看球、能出杆、能语音交互。现场做了演示。</li>
+              <li>感知和击球规划的实现没有写在项目页上。代码仓库未公开。</li>
+              <li><a href="projects/billiards.html">项目页 →</a></li>
+            </ul>
+            <ul class="lang-en">
+              <li>A practice partner for one person at the table: it moves, sees the balls, takes a stroke, and talks. Demonstrated on site.</li>
+              <li>Perception and shot-planning internals are not on the project page. The repository is not public.</li>
+              <li><a href="projects/billiards.html">Project page →</a></li>
+            </ul>
+          </div>
+
+          <div class="paper-card">
+            <div class="paper-title"><a href="projects/next-idea.html"><span class="lang-zh">3. 涂鸦机器人</span><span class="lang-en">3. Graffiti Robot</span></a></div>
+            <p class="paper-meta lang-zh">2026.11 提出 · 概念，还没开工 · 人形或狗加臂 · 地瓜 RDK</p>
+            <p class="paper-meta lang-en">Proposed Nov 2026 · concept, not started · humanoid or dog-plus-arm · D-Robotics RDK</p>
+            <ul class="lang-zh">
+              <li>走到墙前，按颜色一层一层喷。层的顺序是画面的一部分。</li>
+              <li>身体留两条：萝博派对或宇树人形；或者维他动力机器狗优先，加求之或松灵机械臂。没有样机。</li>
+              <li><a href="projects/next-idea.html">项目页 →</a></li>
+            </ul>
+            <ul class="lang-en">
+              <li>Walk up to a wall and spray one color layer at a time. Layer order is part of the picture.</li>
+              <li>Two bodies stay open: a RoboParty or Unitree humanoid, or a Vita Dynamics dog first plus a Qiuzhi or AgileX arm. No prototype yet.</li>
+              <li><a href="projects/next-idea.html">Project page →</a></li>
+            </ul>
+          </div>
+
+          <div class="paper-card">
+            <div class="paper-title"><a href="projects/furniture-print.html"><span class="lang-zh">4. 室内米级协作臂 3D 打印平台</span><span class="lang-en">4. Indoor Meter-Scale Collaborative-Arm 3D Printing</span></a></div>
             <p class="paper-meta lang-zh">已暂停（2026.09.27 起）· 2026.07 启动 · 移动操作 · 定位融合 · 切片/G-code</p>
             <p class="paper-meta lang-en">On hold since Sep 27, 2026 · Started Jul 2026 · mobile manipulation · localization fusion · slicing/G-code</p>
             <ul class="lang-zh">
@@ -173,7 +221,7 @@
           </div>
 
           <div class="paper-card">
-            <div class="paper-title"><a href="projects/photomate.html">2. PhotoMate 具身智能摄影师</a></div>
+            <div class="paper-title"><a href="projects/photomate.html"><span class="lang-zh">5. PhotoMate 具身智能摄影师</span><span class="lang-en">5. PhotoMate</span></a></div>
             <p class="paper-meta lang-zh">2026.07.08–11 · 探月 Physical AI 黑客松 · S0–S6 Agent</p>
             <p class="paper-meta lang-en">Jul 8–11, 2026 · Tanyue Physical AI Hackathon · S0–S6 agent</p>
             <ul class="lang-zh">
@@ -189,8 +237,8 @@
           </div>
 
           <div class="paper-card">
-            <div class="paper-title lang-zh">3. 家庭服务机器人与 VLA（INFIFORCE / <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">AIL</a>）</div>
-            <div class="paper-title lang-en">3. Home-Service Robot &amp; VLA (INFIFORCE / <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">AIL</a>)</div>
+            <div class="paper-title lang-zh">6. 家庭服务机器人与 VLA（INFIFORCE / <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">AIL</a>）</div>
+            <div class="paper-title lang-en">6. Home-Service Robot &amp; VLA (INFIFORCE / <a href="https://agentic-intelligence-lab.org/team/" target="_blank" rel="noopener noreferrer">AIL</a>)</div>
             <p class="paper-meta">2026.03–2026.09 · LeRobot · ACT / OpenPI · teleop</p>
             <ul class="lang-zh">
               <li>多臂平台集成、真实数据采集与策略微调；长程任务智能体链路。</li>
@@ -201,13 +249,13 @@
           </div>
 
           <div class="paper-card">
-            <div class="paper-title lang-zh">4. IsoGS-SLAM：几何一致实时三维重建</div>
-            <div class="paper-title lang-en">4. IsoGS-SLAM: Geometry-Consistent Real-Time 3D Reconstruction</div>
+            <div class="paper-title lang-zh">7. IsoGS-SLAM：几何一致实时三维重建</div>
+            <div class="paper-title lang-en">7. IsoGS-SLAM: Geometry-Consistent Real-Time 3D Reconstruction</div>
             <p class="paper-meta lang-zh">2025.12–2026.04 · 3DGS · SLAM · 解析法向 · CUDA</p>
             <p class="paper-meta lang-en">Dec 2025–Apr 2026 · 3DGS · SLAM · analytic normals · CUDA</p>
             <ul class="lang-zh">
               <li>针对 3DGS 表面几何与法向连续性不足，引入隐式几何约束与变分优化。</li>
-              <li>本科 FYP 之外的未发表项目。</li>
+              <li>本科 FYP 之外的未发表项目；ITSC 2026 拒稿后已停止推进。</li>
             </ul>
             <ul class="lang-en">
               <li>Investigated geometric constraints and normal continuity in 3DGS; results are archived as an unpublished project.</li>
@@ -216,8 +264,8 @@
           </div>
 
           <div class="paper-card">
-            <div class="paper-title lang-zh">5. 动态环境鲁棒单目 SLAM（毕业设计）</div>
-            <div class="paper-title lang-en">5. Robust Monocular SLAM (FYP)</div>
+            <div class="paper-title lang-zh">8. 动态环境鲁棒单目 SLAM（毕业设计）</div>
+            <div class="paper-title lang-en">8. Robust Monocular SLAM (FYP)</div>
             <p class="paper-meta">2025.05–2025.11 · ORB-SLAM3 · YOLO · C++</p>
             <ul class="lang-zh">
               <li>语义掩码抑制动态特征，评估定位与目标跟踪。</li>
@@ -228,8 +276,8 @@
           </div>
 
           <div class="paper-card" id="navigator">
-            <div class="paper-title lang-zh">6. RoboMaster 实验室与竞赛机器人（Navigator）</div>
-            <div class="paper-title lang-en">6. RoboMaster Lab &amp; Competition Robots (Navigator)</div>
+            <div class="paper-title lang-zh">9. RoboMaster 实验室与竞赛机器人（Navigator）</div>
+            <div class="paper-title lang-en">9. RoboMaster Lab &amp; Competition Robots (Navigator)</div>
             <p class="paper-meta">2023.04–2025.08 · team leadership · mechanical · ROS2 · AIRH-supported</p>
             <ul class="lang-zh">
               <li><strong>Navigator Robotics Lab</strong>（早期「烧仙草」战队）：全栈竞赛机器人；辽宁站第一名。</li>
@@ -243,8 +291,8 @@
           </div>
 
           <div class="paper-card">
-            <div class="paper-title lang-zh">7. 工业与知识产权 LLM 智能体</div>
-            <div class="paper-title lang-en">7. LLM Agents for Industry &amp; IP</div>
+            <div class="paper-title lang-zh">10. 工业与知识产权 LLM 智能体</div>
+            <div class="paper-title lang-en">10. LLM Agents for Industry &amp; IP</div>
             <p class="paper-meta">RAG · LangChain · multi-agent</p>
             <ul class="lang-zh">
               <li>数字工厂调度/质检；专利文档自动化审查与检索。</li>
