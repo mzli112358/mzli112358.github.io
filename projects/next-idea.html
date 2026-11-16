@@ -57,6 +57,9 @@
       font-size: clamp(28px, 5vw, 44px);
       line-height: 1.15; letter-spacing: -.02em;
     }
+    .cover { margin: 0 0 28px; }
+    .cover img { width: 100%; height: auto; display: block; border-radius: 4px; }
+    .cover figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; }
     .hero p { margin: 0; max-width: 66ch; color: var(--muted); font-size: 17px; }
     .meta { margin-top: 18px; color: var(--muted); font-size: 14px; }
     main section { padding: 48px 0; border-bottom: 1px solid var(--line); }
@@ -104,6 +107,10 @@
   <header class="hero">
     <div class="wrap">
       <!-- BILINGUAL PAIR: hero -->
+      <figure class="cover">
+        <img src="../assets/images/graffiti-render.jpg" alt="Concept render of a robot dog spraying a wall">
+        <figcaption><span class="lang-zh">效果渲染图。想要的样子：机器狗加机械臂，拿喷罐在墙上喷。不是真机，样机还没有。</span><span class="lang-en">Concept render. The intended look: a robot dog with an arm, spraying a wall. Not a real machine, and there is no prototype yet.</span></figcaption>
+      </figure>
       <div class="eyebrow lang-zh">下一步 · 概念，还没开工</div>
       <div class="eyebrow lang-en">Next · Concept, not started</div>
       <h1 class="lang-zh">涂鸦机器人</h1>
