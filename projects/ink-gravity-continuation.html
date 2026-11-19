@@ -98,6 +98,15 @@
     .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
     .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
     .pipeline.cols3 { grid-template-columns: repeat(3, 1fr); }
+    .pipeline.cols2 { grid-template-columns: repeat(2, 1fr); }
+    .refs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .refs figure { margin: 0; }
+    .refs figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; }
+    .player {
+      position: relative; aspect-ratio: 9 / 16; background: #1c1916;
+      border: 1px solid var(--line); border-radius: 4px; overflow: hidden;
+    }
+    .player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
     .team { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
     .team img { width: 100%; height: auto; display: block; }
     .team figcaption { margin-top: 8px; font-size: 13px; color: var(--muted); text-align: center; }
@@ -109,7 +118,7 @@
       .pipeline, .pipeline.cols3, .grid3, .team { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 560px) {
-      .pipeline, .pipeline.cols3, .grid2, .grid3, .team { grid-template-columns: 1fr; }
+      .pipeline, .pipeline.cols3, .pipeline.cols2, .grid2, .grid3, .team, .refs { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -133,10 +142,10 @@
       <div class="eyebrow lang-en">SpaceXAI Macau Hackathon · 1st Place</div>
       <h1 class="lang-zh">墨有引力</h1>
       <h1 class="lang-en">Ink Gravity</h1>
-      <p class="lang-zh">在 SO-101 机械臂上用毛笔写字。规则先把整字写出来：拆笔画、对齐笔顺、走中线、解关节。仿真跑通后再下到真机。现场演示的是这条规则链路。</p>
-      <p class="lang-en">Brush calligraphy on an SO-101 arm. A rule pipeline writes the character first: split strokes, align stroke order, follow the centerline, solve the joints. It runs in simulation, then on the real arm. That rule chain is what was shown on stage.</p>
-      <p class="meta lang-zh">2026年11月12–14日 · 澳门塔 · 算法：李明哲</p>
-      <p class="meta lang-en">Nov 12–14, 2026 · Macau Tower · Algorithm: Mingzhe Li</p>
+      <p class="lang-zh">用机械臂写毛笔字，做软笔书法，精进书写效果；之后再延伸到数位毛笔设计，并扩展到绘画、涂鸦等场景。</p>
+      <p class="lang-en">Brush writing with a robot arm: soft-brush calligraphy, with the brushwork refined. From there it extends to digital-brush design, and out to drawing, painting, and graffiti.</p>
+      <p class="meta lang-zh">2026年11月12–14日</p>
+      <p class="meta lang-en">Nov 12–14, 2026</p>
     </div>
   </header>
 
@@ -144,10 +153,8 @@
     <section>
       <div class="wrap">
         <!-- BILINGUAL PAIR: video -->
-        <h2 class="lang-zh">实拍</h2>
-        <h2 class="lang-en">The Recording</h2>
-        <p class="lead lang-zh">终稿演示用的现场录像，大约 30 秒。后面的播放器是仿真回放，不是这段。</p>
-        <p class="lead lang-en">The on-site recording from the deck, about 30 seconds. The player further down is the simulation replay, not this clip.</p>
+        <h2 class="lang-zh">实拍效果</h2>
+        <h2 class="lang-en">Footage</h2>
         <video class="clip" controls playsinline preload="metadata" poster="../assets/images/ink/write-scene.jpg">
           <source src="../assets/images/ink/demo.mp4" type="video/mp4">
         </video>
@@ -183,26 +190,11 @@
 
     <section>
       <div class="wrap">
-        <!-- BILINGUAL PAIR: three lines -->
-        <h2 class="lang-zh">三条线</h2>
-        <h2 class="lang-en">Three Lines</h2>
-        <p class="lead lang-zh">先有字，再落笔。字体是队友的线，我在台上快速带过。现场演示走的是规则控制。</p>
-        <p class="lead lang-en">A character first, then the brush. The font line belonged to a teammate; on stage I only walked through it. The live demo was the rule controller.</p>
-        <div class="pipeline cols3">
-          <div class="pipe"><strong>01</strong><span class="lang-zh">字体生成。开源底座上做风格 LoRA，让新内容接上指定风格。</span><span class="lang-en">Font generation. A style LoRA on an open base, so new characters take on a chosen hand.</span></div>
-          <div class="pipe"><strong>02</strong><span class="lang-zh">规则控制。字形到笔画、中线、轨迹。先仿真，再真机。</span><span class="lang-en">Rule control. Glyph to strokes, centerline, trajectory. Simulation first, then the real arm.</span></div>
-          <div class="pipe"><strong>03</strong><span class="lang-zh">模型驱动。主从遥操作采示范，准备训 ACT。这一版没有用它替换规则。</span><span class="lang-en">A learned policy. Leader–follower demonstrations, collected for ACT. This version did not replace the rules with it.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
         <!-- BILINGUAL PAIR: font -->
         <h2 class="lang-zh">字体生成</h2>
         <h2 class="lang-en">Font Generation</h2>
-        <p class="lead lang-zh">底座不是我们训的。开源 zi2zi-JiT 的 JiT-B/16 已经认识「一个字正常长什么样」。我们只在上面挂 LoRA。</p>
-        <p class="lead lang-en">We did not train the base. The open zi2zi-JiT JiT-B/16 already knows what a character looks like. We only hung a LoRA on it.</p>
+        <p class="lead lang-zh">很多知名书法家传世的字不过几百个。以现代常用字为基底，加上这位书家几百字的风格样本，就能把那种风格铺满全部常用字；那些没有留下来的字，模型也能推断——他当年会怎么写。</p>
+        <p class="lead lang-en">Many celebrated calligraphers left only a few hundred characters behind. Take the modern set of common characters as the base and a few hundred style samples from that hand, and the style can be completed across every common character. For the characters that were never recorded, the model infers how he would have written them.</p>
         <figure class="fig">
           <img src="../assets/images/ink/font-flow.png" alt="Flowchart of JiT-B/16 pretraining and a Lantingji Xu LoRA">
           <figcaption>
@@ -233,8 +225,8 @@
     <section>
       <div class="wrap">
         <!-- BILINGUAL PAIR: rules -->
-        <h2 class="lang-zh">规则写字</h2>
-        <h2 class="lang-en">Rule-Based Writing</h2>
+        <h2 class="lang-zh">传统规则控制算法书写</h2>
+        <h2 class="lang-en">Classical Rule Control</h2>
         <p class="lead lang-zh">我负责算法。一张字图要变成关节角，中间四步。笔杆歪比笔尖偏两毫米更要命，所以腕滚转锁在 90 度，笔杆相对竖直的倾角压在 5 度以内，逆解只用肩、肩俯仰、肘、腕俯仰。</p>
         <p class="lead lang-en">I owned the algorithm. Four steps turn a glyph into joint angles. A tilted brush shaft matters more than a 2 mm tip error, so wrist roll stays locked at 90° and shaft tilt stays within 5° of vertical. Inverse kinematics uses shoulder, shoulder pitch, elbow, and wrist pitch.</p>
         <div class="pipeline">
@@ -370,42 +362,6 @@
 
     <section>
       <div class="wrap">
-        <!-- BILINGUAL PAIR: team -->
-        <h2 class="lang-zh">谁做的</h2>
-        <h2 class="lang-en">Who Did What</h2>
-        <p class="lead lang-zh">照片按终稿团队页的位置对上名字。代码还在本机，没有公开仓库。</p>
-        <p class="lead lang-en">Photos are matched to names by where they sit on the deck’s team page. The code is still local. There is no public repository yet.</p>
-        <div class="team">
-          <figure>
-            <img src="../assets/images/ink/team-mingzhe.png" alt="Mingzhe Li">
-            <figcaption><strong>李明哲</strong><span class="lang-zh">算法</span><span class="lang-en">Algorithm</span></figcaption>
-          </figure>
-          <figure>
-            <img src="../assets/images/ink/team-yuequn.png" alt="Ling Yuequn">
-            <figcaption><strong>零越群</strong><span class="lang-zh">机械臂</span><span class="lang-en">Arm</span></figcaption>
-          </figure>
-          <figure>
-            <img src="../assets/images/ink/team-manting.png" alt="Li Manting">
-            <figcaption><strong>李曼婷</strong><span class="lang-zh">机械臂</span><span class="lang-en">Arm</span></figcaption>
-          </figure>
-          <figure>
-            <img src="../assets/images/ink/team-rong.png" alt="Ma Rong">
-            <figcaption><strong>马茸</strong><span class="lang-zh">字体模型</span><span class="lang-en">Font model</span></figcaption>
-          </figure>
-          <figure>
-            <img src="../assets/images/ink/team-zijun.png" alt="Ye Zijun">
-            <figcaption><strong>葉子俊</strong><span class="lang-zh">视觉</span><span class="lang-en">Vision</span></figcaption>
-          </figure>
-          <figure>
-            <img src="../assets/images/ink/team-zhuo.png" alt="Huang Zhuo">
-            <figcaption><strong>黃卓</strong><span class="lang-zh">书法</span><span class="lang-en">Calligraphy</span></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
         <!-- BILINGUAL PAIR: next -->
         <h2 class="lang-zh">下一步</h2>
         <h2 class="lang-en">Next</h2>
@@ -427,9 +383,128 @@
           <div class="block">
             <h3 class="lang-zh">涂鸦</h3>
             <h3 class="lang-en">Graffiti</h3>
-        <p class="lang-zh"><strong>涂鸦机器人</strong>。概念已经有了，样机还没有。</p>
-        <p class="lang-en"><strong>Graffiti robot</strong>. The concept exists. There is no prototype yet.</p>
+            <p class="lang-zh"><strong>涂鸦机器人</strong>。概念写在页面最后，样机还没有。</p>
+            <p class="lang-en"><strong>The graffiti robot</strong>. The concept is at the end of this page. There is no prototype yet.</p>
           </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: graffiti -->
+        <h2 class="lang-zh">涂鸦机器人</h2>
+        <h2 class="lang-en">Graffiti Robot</h2>
+        <p class="lead lang-zh">一个能走到墙前的身体，拿着喷头，按颜色一层一层把图案喷上去。层的顺序是画面的一部分，先喷和后喷盖住的关系不一样。这一节只定了要用来做它的身体，样机还没有。</p>
+        <p class="lead lang-en">A body that can walk up to a wall and lay color down one layer at a time. Layer order is part of the picture: what goes on first changes what the next layer covers. This section only fixes the body I want to use. There is no prototype yet.</p>
+        <p class="meta lang-zh">2026年11月提出 · 李明哲 · 算力打算用地瓜 RDK</p>
+        <p class="meta lang-en">Proposed Nov 2026 · Mingzhe Li · Compute planned on a D-Robotics RDK</p>
+        <figure class="fig">
+          <img src="../assets/images/graffiti-render.jpg" alt="Concept render of a robot dog spraying a wall">
+          <figcaption><span class="lang-zh">效果渲染图。想要的样子：机器狗加机械臂，拿喷罐在墙上喷。不是真机，样机还没有。</span><span class="lang-en">Concept render. The intended look: a robot dog with an arm, spraying a wall. Not a real machine, and there is no prototype yet.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: graffiti refs -->
+        <h2 class="lang-zh">灵感</h2>
+        <h2 class="lang-en">References</h2>
+        <p class="lead lang-zh">两段人手拿喷罐在墙上喷的参考，用的是原作者的播放器。不是这个项目拍的，本地也没有存视频。</p>
+        <p class="lead lang-en">Two references of a person spraying a wall, embedded from the original player. This project did not film them, and the video files are not stored here.</p>
+        <div class="refs">
+          <figure>
+            <div class="player">
+              <iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=117603636878879&amp;bvid=BV1wJWR6HEs9&amp;cid=43547298341&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" title="沉浸式涂鸦吴邪"></iframe>
+            </div>
+            <figcaption>沉浸式涂鸦吴邪</figcaption>
+          </figure>
+          <figure>
+            <div class="player">
+              <iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=117561643505466&amp;bvid=BV1HsxZ6aEA6&amp;cid=43341250901&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" title="肥鸭势力过于强大"></iframe>
+            </div>
+            <figcaption>肥鸭势力过于强大</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: graffiti body -->
+        <h2 class="lang-zh">打算用的身体</h2>
+        <h2 class="lang-en">The Body I Want</h2>
+        <p class="lead lang-zh">两条都留着。到现场再看哪一台当天能接到喷头。眼睛用深度相机，计算放在地瓜 RDK 上。RDK 我还没做过项目。</p>
+        <p class="lead lang-en">Both options stay open. On site I will use whichever body can take a sprayer that day. The eye is a depth camera. Compute sits on a D-Robotics RDK. I have not shipped an RDK project before.</p>
+        <div class="pipeline cols2">
+          <div class="pipe"><strong class="lang-zh">身体 A · 人形</strong><strong class="lang-en">Body A · Humanoid</strong><span class="lang-zh">萝博派对，或宇树人形。</span><span class="lang-en">RoboParty, or a Unitree humanoid.</span></div>
+          <div class="pipe"><strong class="lang-zh">身体 B · 狗加臂</strong><strong class="lang-en">Body B · Dog plus arm</strong><span class="lang-zh">狗优先维他动力 Vbot，其次宇树狗。臂是求之 P7，或松灵。</span><span class="lang-en">Vita Dynamics Vbot first, then a Unitree dog. Arm: Qiuzhi P7 or AgileX.</span></div>
+        </div>
+        <div class="stack" style="margin-top:14px;">
+          <div class="block">
+            <h3 class="lang-zh">已经算进这套的</h3>
+            <h3 class="lang-en">Already in the kit</h3>
+            <ul class="lang-zh">
+              <li>深度相机，用来看墙距和已经喷上墙的结果。</li>
+              <li>地瓜 RDK，做端侧视觉和运动这边的计算。</li>
+              <li>喷头支架如果现场没有现成的，用 3D 打印做一个。</li>
+            </ul>
+            <ul class="lang-en">
+              <li>A depth camera, for wall distance and for what is already on the wall.</li>
+              <li>A D-Robotics RDK, for on-device vision and motion.</li>
+              <li>A sprayer mount, 3D-printed on site if none is ready.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: graffiti job -->
+        <h2 class="lang-zh">它要做成的事</h2>
+        <h2 class="lang-en">The Job</h2>
+        <div class="stack">
+          <div class="block">
+            <p class="lang-zh">大面上的涂装不要再靠好几台单色设备轮流上。一台机器按图层走：这一层是什么颜色、喷在哪、排在第几步。视觉闭环看的是墙上的结果，不是只看手臂有没有走完轨迹。墙距一旦漂，喷幅和臂的路径会一起漂。</p>
+            <p class="lang-en">Large-surface color should not need several single-color machines taking turns. One machine walks the layers: which color, where it goes, and which step it is. The visual loop judges the wall, not only whether the arm finished its path. If the wall distance drifts, spray width and the arm path drift with it.</p>
+          </div>
+          <div class="block">
+            <h3 class="lang-zh">模块，按这个顺序</h3>
+            <h3 class="lang-en">Modules, in this order</h3>
+            <ul class="lang-zh">
+              <li>身体开到墙前，定位，把墙和工作空间留在地图里。</li>
+              <li>稳住相对墙的距离，给喷头留出间隙。</li>
+              <li>在这个间隙里规划臂，并让身体和臂一起动。</li>
+              <li>把一张图拆成按颜色、按顺序的层，再按层喷；看着墙面结果回头修。</li>
+            </ul>
+            <ul class="lang-en">
+              <li>Drive up to the wall, localize, and keep the wall and the workspace on the map.</li>
+              <li>Hold the distance to the wall so the sprayer has a stable gap.</li>
+              <li>Plan the arm inside that gap, and move the body and the arm together.</li>
+              <li>Split one image into ordered color layers, spray them in order, and correct from the wall.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: graffiti status -->
+        <h2 class="lang-zh">现在还没有的</h2>
+        <h2 class="lang-en">What Does Not Exist Yet</h2>
+        <div class="block">
+          <ul class="lang-zh">
+            <li>没有样机，没有代码仓库，RDK 上也还没有跑通过。</li>
+            <li>喷头、换色方式和墙面类型还没定。上面两段是人手喷涂的参考，机器人要喷的那张图还没定。</li>
+            <li>人形和「狗加臂」哪一条先上，等看到当天的机器再定。狗这一条里，维他动力优先于宇树。</li>
+          </ul>
+          <ul class="lang-en">
+            <li>No prototype, no repository, and nothing running on an RDK yet.</li>
+            <li>The sprayer, how colors change, and the wall are still open. The two clips above are hand-spraying references. The picture this robot will spray is not chosen yet.</li>
+            <li>Humanoid versus dog-plus-arm waits until the machines on site are in hand. If it is a dog, Vita Dynamics comes before Unitree.</li>
+          </ul>
         </div>
       </div>
     </section>
