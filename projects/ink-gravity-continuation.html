@@ -139,8 +139,8 @@
       <a href="#why"><span class="lang-zh">手写的字</span><span class="lang-en">Signs</span></a>
       <a href="#font"><span class="lang-zh">字体生成</span><span class="lang-en">Font</span></a>
       <a href="#rules"><span class="lang-zh">规则控制</span><span class="lang-en">Rules</span></a>
-      <a href="#sim"><span class="lang-zh">仿真与真机</span><span class="lang-en">Simulation</span></a>
       <a href="#pressure"><span class="lang-zh">提按</span><span class="lang-en">Pressure</span></a>
+      <a href="#sim"><span class="lang-zh">仿真与真机</span><span class="lang-en">Simulation</span></a>
       <a href="#model"><span class="lang-zh">模型</span><span class="lang-en">Model</span></a>
       <a href="#next"><span class="lang-zh">下一步</span><span class="lang-en">Next</span></a>
       <a href="#graffiti"><span class="lang-zh">涂鸦机器人</span><span class="lang-en">Graffiti</span></a>
@@ -267,40 +267,6 @@
       </div>
     </section>
 
-    <section id="sim">
-      <div class="wrap">
-        <!-- BILINGUAL PAIR: sim and hardware -->
-        <h2 class="lang-zh">先仿真，再真机</h2>
-        <h2 class="lang-en">Simulation, Then the Arm</h2>
-        <p class="lead lang-zh">MuJoCo 场景按 SO-101 的真实尺寸搭，桌子、纸、虚拟毛笔都在。轨迹先在仿真里跑。现场网只有几百 KB/s，数采脚本是当场让 Cursor 写的，没有把仓库拉下来。</p>
-        <p class="lead lang-en">The MuJoCo scene uses the SO-101’s real dimensions: table, paper, and a virtual brush. Trajectories ran there first. The venue network was a few hundred KB/s, so the logging scripts were written on the spot in Cursor instead of cloning a repository.</p>
-        <figure class="fig">
-          <img src="../assets/images/ink/sim.jpg" alt="MuJoCo scene of an SO-101 arm writing on paper">
-          <figcaption><span class="lang-zh">一比一的仿真场景。</span><span class="lang-en">The one-to-one simulation scene.</span></figcaption>
-        </figure>
-        <p class="lead lang-zh" style="margin-top:18px;">下面是浏览器里回放的仿真轨迹，写的是「澳」。可以拖动视角、暂停、改速度。这不是真机录像。</p>
-        <p class="lead lang-en" style="margin-top:18px;">A browser replay of the exported simulation trajectory, writing 澳. Drag to orbit, pause, or change speed. This is not the real-arm recording.</p>
-        <div class="demo">
-          <iframe src="ink-gravity-demo/index.html" title="SO-101 calligraphy simulation replay" allow="fullscreen" loading="lazy"></iframe>
-        </div>
-        <p class="demo-link"><a href="ink-gravity-demo/index.html"><span class="lang-zh">单独打开</span><span class="lang-en">Open full page</span></a></p>
-        <div class="grid2">
-          <figure class="fig">
-            <img src="../assets/images/ink/arm.jpg" alt="SO-101 arm with a clamped brush dipping toward an ink dish">
-            <figcaption><span class="lang-zh">笔夹是量了笔杆再参数化打印的。舵机夹爪力矩小，笔杆必须夹死，一歪，坐标系就乱。</span><span class="lang-en">The clamp was printed from a measured shaft. The servo gripper is too weak unless the shaft is locked in. If it tilts, the frame is gone.</span></figcaption>
-          </figure>
-          <figure class="fig">
-            <img src="../assets/images/ink/ink-dish.jpg" alt="Brush dipping into a printed Chinese lock-pattern ink dish">
-            <figcaption><span class="lang-zh">中式锁纹墨碟，大约 76×62×6.5 mm。相机机位改到能同时看见笔尖和纸。</span><span class="lang-en">A Chinese lock-pattern ink dish, about 76×62×6.5 mm. The camera was moved so it sees both the tip and the paper.</span></figcaption>
-          </figure>
-        </div>
-        <div class="block" style="margin-top:14px;">
-          <p class="lang-zh">真下发角是仿真角加这台从臂自己的零点偏移。换臂要重标定。官方校准会改零点，这条写字线没有用它。</p>
-          <p class="lang-en">Commanded angles are simulated angles plus that follower’s zero offset. Another arm needs a new calibration. The stock calibrate routine moves the zero, so this writing line does not use it.</p>
-        </div>
-      </div>
-    </section>
-
     <section id="pressure">
       <div class="wrap">
         <!-- BILINGUAL PAIR: pressure -->
@@ -333,6 +299,40 @@
             <img src="../assets/images/ink/write-extra.jpg" alt="Another brush-written character on paper">
             <figcaption><span class="lang-zh">真机写在纸上的字。</span><span class="lang-en">Ink from the real arm.</span></figcaption>
           </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="sim">
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: sim and hardware -->
+        <h2 class="lang-zh">先仿真，再真机</h2>
+        <h2 class="lang-en">Simulation, Then the Arm</h2>
+        <p class="lead lang-zh">MuJoCo 场景按 SO-101 的真实尺寸搭，桌子、纸、虚拟毛笔都在。轨迹先在仿真里跑。现场网只有几百 KB/s，数采脚本是当场让 Cursor 写的，没有把仓库拉下来。</p>
+        <p class="lead lang-en">The MuJoCo scene uses the SO-101’s real dimensions: table, paper, and a virtual brush. Trajectories ran there first. The venue network was a few hundred KB/s, so the logging scripts were written on the spot in Cursor instead of cloning a repository.</p>
+        <figure class="fig">
+          <img src="../assets/images/ink/sim.jpg" alt="MuJoCo scene of an SO-101 arm writing on paper">
+          <figcaption><span class="lang-zh">一比一的仿真场景。</span><span class="lang-en">The one-to-one simulation scene.</span></figcaption>
+        </figure>
+        <p class="lead lang-zh" style="margin-top:18px;">下面是浏览器里回放的仿真轨迹，写的是「澳」。可以拖动视角、暂停、改速度。这不是真机录像。</p>
+        <p class="lead lang-en" style="margin-top:18px;">A browser replay of the exported simulation trajectory, writing 澳. Drag to orbit, pause, or change speed. This is not the real-arm recording.</p>
+        <div class="demo">
+          <iframe src="ink-gravity-demo/index.html" title="SO-101 calligraphy simulation replay" allow="fullscreen" loading="lazy"></iframe>
+        </div>
+        <p class="demo-link"><a href="ink-gravity-demo/index.html"><span class="lang-zh">单独打开</span><span class="lang-en">Open full page</span></a></p>
+        <div class="grid2">
+          <figure class="fig">
+            <img src="../assets/images/ink/arm.jpg" alt="SO-101 arm with a clamped brush dipping toward an ink dish">
+            <figcaption><span class="lang-zh">笔夹是量了笔杆再参数化打印的。舵机夹爪力矩小，笔杆必须夹死，一歪，坐标系就乱。</span><span class="lang-en">The clamp was printed from a measured shaft. The servo gripper is too weak unless the shaft is locked in. If it tilts, the frame is gone.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="../assets/images/ink/ink-dish.jpg" alt="Brush dipping into a printed Chinese lock-pattern ink dish">
+            <figcaption><span class="lang-zh">中式锁纹墨碟，大约 76×62×6.5 mm。相机机位改到能同时看见笔尖和纸。</span><span class="lang-en">A Chinese lock-pattern ink dish, about 76×62×6.5 mm. The camera was moved so it sees both the tip and the paper.</span></figcaption>
+          </figure>
+        </div>
+        <div class="block" style="margin-top:14px;">
+          <p class="lang-zh">真下发角是仿真角加这台从臂自己的零点偏移。换臂要重标定。官方校准会改零点，这条写字线没有用它。</p>
+          <p class="lang-en">Commanded angles are simulated angles plus that follower’s zero offset. Another arm needs a new calibration. The stock calibrate routine moves the zero, so this writing line does not use it.</p>
         </div>
       </div>
     </section>
@@ -408,6 +408,7 @@
         </div>
       </div>
     </section>
+
     <section id="graffiti">
       <div class="wrap">
         <!-- BILINGUAL PAIR: graffiti -->
@@ -471,6 +472,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
