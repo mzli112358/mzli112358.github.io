@@ -108,7 +108,6 @@
     .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
     .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
     .pipeline.cols3 { grid-template-columns: repeat(3, 1fr); }
-    .pipeline.cols2 { grid-template-columns: repeat(2, 1fr); }
     .refs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     .refs figure { margin: 0; }
     .refs figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; }
@@ -128,7 +127,7 @@
       .pipeline, .pipeline.cols3, .grid3, .team { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 560px) {
-      .pipeline, .pipeline.cols3, .pipeline.cols2, .grid2, .grid3, .team, .refs { grid-template-columns: 1fr; }
+      .pipeline, .pipeline.cols3, .grid2, .grid3, .team, .refs { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -414,76 +413,16 @@
         <!-- BILINGUAL PAIR: graffiti -->
         <h2 class="lang-zh">涂鸦机器人</h2>
         <h2 class="lang-en">Graffiti Robot</h2>
-        <p class="lead lang-zh">一个能走到墙前的身体，拿着喷头，按颜色一层一层把图案喷上去。层的顺序是画面的一部分，先喷和后喷盖住的关系不一样。这一节只定了要用来做它的身体，样机还没有。</p>
-        <p class="lead lang-en">A body that can walk up to a wall and lay color down one layer at a time. Layer order is part of the picture: what goes on first changes what the next layer covers. This section only fixes the body I want to use. There is no prototype yet.</p>
-        <p class="meta lang-zh">2026年11月提出 · 李明哲 · 算力打算用地瓜 RDK</p>
-        <p class="meta lang-en">Proposed Nov 2026 · Mingzhe Li · Compute planned on a D-Robotics RDK</p>
+        <p class="lead lang-zh">一个能走到墙前的身体，拿着喷头，按颜色一层一层把图案喷上去。层的顺序是画面的一部分，先喷和后喷盖住的关系不一样。这一节还只是概念，样机还没有。</p>
+        <p class="lead lang-en">A body that can walk up to a wall and lay color down one layer at a time. Layer order is part of the picture: what goes on first changes what the next layer covers. This section is still only a concept. There is no prototype yet.</p>
+        <p class="meta lang-zh">2026年11月16日提出</p>
+        <p class="meta lang-en">Proposed Nov 16, 2026</p>
         <figure class="fig">
           <img src="../assets/images/graffiti-render.jpg" alt="Concept render of a robot dog spraying a wall">
           <figcaption><span class="lang-zh">效果渲染图。想要的样子：机器狗加机械臂，拿喷罐在墙上喷。不是真机，样机还没有。</span><span class="lang-en">Concept render. The intended look: a robot dog with an arm, spraying a wall. Not a real machine, and there is no prototype yet.</span></figcaption>
         </figure>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <!-- BILINGUAL PAIR: graffiti refs -->
-        <h2 class="lang-zh">灵感</h2>
-        <h2 class="lang-en">References</h2>
-        <p class="lead lang-zh">两段人手拿喷罐在墙上喷的参考，用的是原作者的播放器。不是这个项目拍的，本地也没有存视频。</p>
-        <p class="lead lang-en">Two references of a person spraying a wall, embedded from the original player. This project did not film them, and the video files are not stored here.</p>
-        <div class="refs">
-          <figure>
-            <div class="player">
-              <iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=117603636878879&amp;bvid=BV1wJWR6HEs9&amp;cid=43547298341&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" title="沉浸式涂鸦吴邪"></iframe>
-            </div>
-            <figcaption>沉浸式涂鸦吴邪</figcaption>
-          </figure>
-          <figure>
-            <div class="player">
-              <iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=117561643505466&amp;bvid=BV1HsxZ6aEA6&amp;cid=43341250901&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" title="肥鸭势力过于强大"></iframe>
-            </div>
-            <figcaption>肥鸭势力过于强大</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <!-- BILINGUAL PAIR: graffiti body -->
-        <h2 class="lang-zh">打算用的身体</h2>
-        <h2 class="lang-en">The Body I Want</h2>
-        <p class="lead lang-zh">两条都留着。到现场再看哪一台当天能接到喷头。眼睛用深度相机，计算放在地瓜 RDK 上。RDK 我还没做过项目。</p>
-        <p class="lead lang-en">Both options stay open. On site I will use whichever body can take a sprayer that day. The eye is a depth camera. Compute sits on a D-Robotics RDK. I have not shipped an RDK project before.</p>
-        <div class="pipeline cols2">
-          <div class="pipe"><strong class="lang-zh">身体 A · 人形</strong><strong class="lang-en">Body A · Humanoid</strong><span class="lang-zh">萝博派对，或宇树人形。</span><span class="lang-en">RoboParty, or a Unitree humanoid.</span></div>
-          <div class="pipe"><strong class="lang-zh">身体 B · 狗加臂</strong><strong class="lang-en">Body B · Dog plus arm</strong><span class="lang-zh">狗优先维他动力 Vbot，其次宇树狗。臂是求之 P7，或松灵。</span><span class="lang-en">Vita Dynamics Vbot first, then a Unitree dog. Arm: Qiuzhi P7 or AgileX.</span></div>
-        </div>
-        <div class="stack" style="margin-top:14px;">
-          <div class="block">
-            <h3 class="lang-zh">已经算进这套的</h3>
-            <h3 class="lang-en">Already in the kit</h3>
-            <ul class="lang-zh">
-              <li>深度相机，用来看墙距和已经喷上墙的结果。</li>
-              <li>地瓜 RDK，做端侧视觉和运动这边的计算。</li>
-              <li>喷头支架如果现场没有现成的，用 3D 打印做一个。</li>
-            </ul>
-            <ul class="lang-en">
-              <li>A depth camera, for wall distance and for what is already on the wall.</li>
-              <li>A D-Robotics RDK, for on-device vision and motion.</li>
-              <li>A sprayer mount, 3D-printed on site if none is ready.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <!-- BILINGUAL PAIR: graffiti job -->
-        <h2 class="lang-zh">它要做成的事</h2>
-        <h2 class="lang-en">The Job</h2>
+        <h3 class="lang-zh" style="margin-top:26px;">它要做成的事</h3>
+        <h3 class="lang-en" style="margin-top:26px;">The Job</h3>
         <div class="stack">
           <div class="block">
             <p class="lang-zh">大面上的涂装不要再靠好几台单色设备轮流上。一台机器按图层走：这一层是什么颜色、喷在哪、排在第几步。视觉闭环看的是墙上的结果，不是只看手臂有没有走完轨迹。墙距一旦漂，喷幅和臂的路径会一起漂。</p>
@@ -511,20 +450,24 @@
 
     <section>
       <div class="wrap">
-        <!-- BILINGUAL PAIR: graffiti status -->
-        <h2 class="lang-zh">现在还没有的</h2>
-        <h2 class="lang-en">What Does Not Exist Yet</h2>
-        <div class="block">
-          <ul class="lang-zh">
-            <li>没有样机，没有代码仓库，RDK 上也还没有跑通过。</li>
-            <li>喷头、换色方式和墙面类型还没定。上面两段是人手喷涂的参考，机器人要喷的那张图还没定。</li>
-            <li>人形和「狗加臂」哪一条先上，等看到当天的机器再定。狗这一条里，维他动力优先于宇树。</li>
-          </ul>
-          <ul class="lang-en">
-            <li>No prototype, no repository, and nothing running on an RDK yet.</li>
-            <li>The sprayer, how colors change, and the wall are still open. The two clips above are hand-spraying references. The picture this robot will spray is not chosen yet.</li>
-            <li>Humanoid versus dog-plus-arm waits until the machines on site are in hand. If it is a dog, Vita Dynamics comes before Unitree.</li>
-          </ul>
+        <!-- BILINGUAL PAIR: graffiti refs -->
+        <h2 class="lang-zh">涂鸦灵感</h2>
+        <h2 class="lang-en">Graffiti References</h2>
+        <p class="lead lang-zh">两段人手拿喷罐在墙上喷的参考，用的是原作者的播放器。不是这个项目拍的，本地也没有存视频。</p>
+        <p class="lead lang-en">Two references of a person spraying a wall, embedded from the original player. This project did not film them, and the video files are not stored here.</p>
+        <div class="refs">
+          <figure>
+            <div class="player">
+              <iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=117603636878879&amp;bvid=BV1wJWR6HEs9&amp;cid=43547298341&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" title="沉浸式涂鸦吴邪"></iframe>
+            </div>
+            <figcaption>沉浸式涂鸦吴邪</figcaption>
+          </figure>
+          <figure>
+            <div class="player">
+              <iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=117561643505466&amp;bvid=BV1HsxZ6aEA6&amp;cid=43341250901&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" title="肥鸭势力过于强大"></iframe>
+            </div>
+            <figcaption>肥鸭势力过于强大</figcaption>
+          </figure>
         </div>
       </div>
     </section>
