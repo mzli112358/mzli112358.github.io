@@ -119,9 +119,34 @@
     /* width.png is 1034x1013; cap its height to match the 1400x678 centreline figure in the grid above */
     .fig.fig-widthmap { display: flex; flex-direction: column; }
     .fig.fig-widthmap img { max-height: min(300px, 32vw); width: auto; max-width: 100%; align-self: center; }
-    /* graffiti-render.jpg is 4:3; full width made it 690px tall */
+    /* digital-brush render is 1.777:1, the CAD sheet is 2.763:1: weight by aspect ratio so both render the same height */
+    .grid2.grid-brushpair { grid-template-columns: 1.777fr 2.763fr; align-items: stretch; }
+    .grid2.grid-brushpair figure { display: flex; flex-direction: column; }
+    .grid2.grid-brushpair .fig { margin: 0; }
+    /* click any content image to open it full size */
+    .fig img, .grid2 img, .grid4 img, .hero-strip img { cursor: zoom-in; }
+    #lightbox {
+      position: fixed; inset: 0; z-index: 1000; display: none;
+      align-items: center; justify-content: center; padding: 20px;
+      background: rgba(14, 11, 9, .93);
+    }
+    #lightbox.is-open { display: flex; }
+    #lightbox img {
+      max-width: min(96vw, 1800px); max-height: 88vh; width: auto; height: auto;
+      border-radius: 4px; box-shadow: 0 12px 48px rgba(0,0,0,.55); cursor: zoom-out;
+    }
+    #lightbox button {
+      position: absolute; top: 14px; right: 18px; width: 44px; height: 44px;
+      font-size: 26px; line-height: 1; cursor: pointer; color: #f3ece4;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.28); border-radius: 999px;
+    }
+    #lightbox button:hover { background: rgba(255,255,255,.22); }
+    body.lb-open { overflow: hidden; }
     .fig.fig-graffiti { display: flex; flex-direction: column; }
     .fig.fig-graffiti img { max-height: min(440px, 46vw); width: auto; max-width: 100%; align-self: center; }
+    /* sim.jpg is 16:9; full width made it 517px tall */
+    .fig.fig-sim { display: flex; flex-direction: column; }
+    .fig.fig-sim img { max-height: min(400px, 44vw); width: auto; max-width: 100%; align-self: center; }
     .fig figcaption, .cover figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; }
     .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
     /* centerline.png is 1400x678, path.png is 1000x1000: weight the columns by aspect ratio so both render the same height */
@@ -231,7 +256,7 @@
         <p class="lang-zh">如果你去过香港或澳门，走在弥敦道或是旺角街头，抬头望去，招牌上那些苍劲有力的汉字，就是北魏真书。这些手写招牌早已是香港的文化符号，它不只是信息载体，更是一门艺术。</p>
         <p class="lang-en">If you have been to Hong Kong or Macau, walk down Nathan Road or through Mong Kok and look up: the forceful characters on the shop signs are Wei Bei zhenshu, a Northern Wei stele hand in regular script. Those hand-written signs have long been a cultural symbol of Hong Kong — not only a carrier of information but an art form in its own right.</p>
         <figure class="fig">
-          <img src="../assets/images/ink/street.jpg" alt="Hong Kong street of handwritten shop signs, a neon sign, and a sign painter with light-box letters">
+          <img loading="lazy" decoding="async" src="../assets/images/ink/street.jpg" alt="Hong Kong street of handwritten shop signs, a neon sign, and a sign painter with light-box letters">
           <figcaption>
             <span class="lang-zh">上图是街头繁体手写招牌。左下是太子「劳联」霓虹，李汉师傅最后一件霓虹招牌，后来拆了，图来自 leehon_hk 的 Instagram，当代中国网 2021-04-14 转载。右下两张是招牌师傅欧阳昌：皇都戏院工作现场，以及他的「真体字」灯箱，出处同为当代中国网，2021-04-14。</span>
             <span class="lang-en">Top: a street of traditional-character shop signs. Bottom left: the “劳联” neon in Prince Edward, master Li Han’s last neon sign, later taken down; photo by leehon_hk on Instagram, republished by Our China Story on 2021-04-14. Bottom right: sign painter Ouyang Chang at work in the Rialto, and his “真体字” light boxes. Those three are also from Our China Story, 2021-04-14.</span>
@@ -261,7 +286,7 @@
         <p class="lead lang-zh">很多知名书法家传世的字不过几百个。以现代常用字为基底，加上这位书家几百字的风格样本，就能把那种风格铺满全部常用字；那些没有留下来的字，模型也能推断——他当年会怎么写。</p>
         <p class="lead lang-en">Many celebrated calligraphers left only a few hundred characters behind. Take the modern set of common characters as the base and a few hundred style samples from that hand, and the style can be completed across every common character. For the characters that were never recorded, the model infers how he would have written them.</p>
         <figure class="fig">
-          <img src="../assets/images/ink/font-flow.png" alt="Flowchart of JiT-B/16 pretraining and a Lantingji Xu LoRA">
+          <img loading="lazy" decoding="async" src="../assets/images/ink/font-flow.png" alt="Flowchart of JiT-B/16 pretraining and a Lantingji Xu LoRA">
           <figcaption>
             <span class="lang-zh">上半：四百多种字体、三十万张以上字形，预训练 2000 个 epoch。图里「每种字体最多 800 字」是底座语料的上限。下半：《兰亭集序》206 个不重复字，训练 198 张，留出 8 个，大约 23 分钟。另一套风格是方正北魏，800 张，大约 2 小时。</span>
             <span class="lang-en">Top: 400+ fonts and 300k+ glyph images, pretrained for 2,000 epochs. “At most 800 characters per font” is the cap on that corpus. Bottom: Lantingji Xu, 206 unique characters, 198 training images, 8 held out, about 23 minutes. A second style, Founder Beiwei, used 800 images and about 2 hours.</span>
@@ -269,16 +294,16 @@
         </figure>
         <div class="grid2">
           <figure class="fig">
-            <img src="../assets/images/ink/sample-beiwei.jpg" alt="Founder Beiwei samples next to a source glyph">
+            <img loading="lazy" decoding="async" src="../assets/images/ink/sample-beiwei.jpg" alt="Founder Beiwei samples next to a source glyph">
             <figcaption><span class="lang-zh">方正北魏的样本。</span><span class="lang-en">Founder Beiwei samples.</span></figcaption>
           </figure>
           <figure class="fig">
-            <img src="../assets/images/ink/sample-lanting.jpg" alt="Lantingji Xu style samples next to a source glyph">
+            <img loading="lazy" decoding="async" src="../assets/images/ink/sample-lanting.jpg" alt="Lantingji Xu style samples next to a source glyph">
             <figcaption><span class="lang-zh">《兰亭集序》风格的样本。</span><span class="lang-en">Lantingji Xu style samples.</span></figcaption>
           </figure>
         </div>
         <figure class="fig">
-          <img src="../assets/images/ink/heldout.png" alt="Eight characters: source font, original Lanting glyphs, and model output">
+          <img loading="lazy" decoding="async" src="../assets/images/ink/heldout.png" alt="Eight characters: source font, original Lanting glyphs, and model output">
           <figcaption>
             <span class="lang-zh">也、化、合、宙、少、幽、自、遇。中间一行是原帖里的字。训练时没给模型看。下面一行是生成的。</span>
             <span class="lang-en">也, 化, 合, 宙, 少, 幽, 自, 遇. The middle row is the original Lanting glyphs. They were held out of training. The bottom row is the model.</span>
@@ -294,11 +319,11 @@
         <h2 class="lang-en">Preparation</h2>
         <div class="grid2 grid-prepair">
           <figure class="fig">
-            <img src="../assets/images/ink/arm.jpg" alt="SO-101 arm with a clamped brush dipping toward an ink dish">
+            <img loading="lazy" decoding="async" src="../assets/images/ink/arm.jpg" alt="SO-101 arm with a clamped brush dipping toward an ink dish">
             <figcaption><span class="lang-zh">笔夹是量了笔杆再参数化打印的。舵机夹爪力矩小，笔杆必须夹死，一歪，坐标系就乱。</span><span class="lang-en">The clamp was printed from a measured shaft. The servo gripper is too weak unless the shaft is locked in. If it tilts, the frame is gone.</span></figcaption>
           </figure>
           <figure class="fig">
-            <img src="../assets/images/ink/ink-dish.jpg" alt="Brush dipping into a printed Chinese lock-pattern ink dish">
+            <img loading="lazy" decoding="async" src="../assets/images/ink/ink-dish.jpg" alt="Brush dipping into a printed Chinese lock-pattern ink dish">
             <figcaption><span class="lang-zh">中式锁纹墨碟，大约 76×62×6.5 mm。相机机位改到能同时看见笔尖和纸。</span><span class="lang-en">A Chinese lock-pattern ink dish, about 76×62×6.5 mm. The camera was moved so it sees both the tip and the paper.</span></figcaption>
           </figure>
         </div>
@@ -320,11 +345,11 @@
         </div>
         <div class="grid2 grid-inkpair">
           <figure class="fig">
-            <img src="../assets/images/ink/centerline.png" alt="The character 永 as ink and as colored stroke centerlines">
+            <img loading="lazy" decoding="async" src="../assets/images/ink/centerline.png" alt="The character 永 as ink and as colored stroke centerlines">
             <figcaption><span class="lang-zh">左是字形，右是贴出来的笔顺中线，一笔一色。笔尖走的是这条线。</span><span class="lang-en">Left, the ink. Right, the fitted centerlines, one color per stroke. The tip follows that line.</span></figcaption>
           </figure>
           <figure class="fig">
-            <img src="../assets/images/ink/path.png" alt="Stroke paths the arm actually followed for 永">
+            <img loading="lazy" decoding="async" src="../assets/images/ink/path.png" alt="Stroke paths the arm actually followed for 永">
             <figcaption><span class="lang-zh">仿真里机械臂实际走出来的一笔一笔。能跑通，才上真机。</span><span class="lang-en">The strokes the arm actually traced in simulation. It went to the real arm after this ran.</span></figcaption>
           </figure>
         </div>
@@ -333,7 +358,7 @@
         <p class="lead lang-zh">毛笔没有力传感器。沿中线量法向宽度，窄的地方抬，宽的地方压，想用高度去近似提按。这一版规划器还是整笔恒定下压，这条曲线没有接进去。</p>
         <p class="lead lang-en">The brush has no force sensor. The idea is to measure width along the normal of the centerline, lift where it is thin, and press where it is thick, so height stands in for pressure. This version’s planner still uses one constant press for the whole stroke. That curve is not wired in.</p>
         <figure class="fig fig-widthmap">
-          <img src="../assets/images/ink/width.png" alt="Normal width samples across the character 永, blue for thin and red for thick">
+          <img loading="lazy" decoding="async" src="../assets/images/ink/width.png" alt="Normal width samples across the character 永, blue for thin and red for thick">
           <figcaption><span class="lang-zh">蓝是细，红是粗。每一条是一次法向宽度。图是这个方法，不是这一版已经跑出来的高度曲线。</span><span class="lang-en">Blue is thin, red is thick. Each line is one width sample. The figure is the method, not a height curve this version already ran.</span></figcaption>
         </figure>
       </div>
@@ -346,8 +371,8 @@
         <h2 class="lang-en">Simulation, Then the Arm</h2>
         <p class="lead lang-zh">MuJoCo 场景按 SO-101 的真实尺寸搭，桌子、纸、虚拟毛笔都在。轨迹先在仿真里跑。现场网只有几百 KB/s，数采脚本是当场让 Cursor 写的，没有把仓库拉下来。</p>
         <p class="lead lang-en">The MuJoCo scene uses the SO-101’s real dimensions: table, paper, and a virtual brush. Trajectories ran there first. The venue network was a few hundred KB/s, so the logging scripts were written on the spot in Cursor instead of cloning a repository.</p>
-        <figure class="fig">
-          <img src="../assets/images/ink/sim.jpg" alt="MuJoCo scene of an SO-101 arm writing on paper">
+        <figure class="fig fig-sim">
+          <img loading="lazy" decoding="async" src="../assets/images/ink/sim.jpg" alt="MuJoCo scene of an SO-101 arm writing on paper">
           <figcaption><span class="lang-zh">一比一的仿真场景。</span><span class="lang-en">The one-to-one simulation scene.</span></figcaption>
         </figure>
         <p class="lead lang-zh" style="margin-top:18px;">下面是浏览器里回放的仿真轨迹，写的是「澳」。可以拖动视角、暂停、改速度。这不是真机录像。</p>
@@ -358,19 +383,19 @@
         <p class="demo-link"><a href="ink-gravity-demo/index.html"><span class="lang-zh">单独打开</span><span class="lang-en">Open full page</span></a></p>
         <div class="grid4">
           <figure class="fig">
-            <img src="../assets/images/ink/write-scene.jpg" alt="Two SO-101 arms at a table, with 天 written on paper">
+            <img loading="lazy" decoding="async" src="../assets/images/ink/write-scene.jpg" alt="Two SO-101 arms at a table, with 天 written on paper">
             <figcaption><span class="lang-zh">真机现场。纸上是「天」。</span><span class="lang-en">The real setup. The paper says 天.</span></figcaption>
           </figure>
           <figure class="fig">
-            <img src="../assets/images/ink/write-tian.jpg" alt="Brush-written character 天 on paper">
+            <img loading="lazy" decoding="async" src="../assets/images/ink/write-tian.jpg" alt="Brush-written character 天 on paper">
             <figcaption><span class="lang-zh">「天」。</span><span class="lang-en">天.</span></figcaption>
           </figure>
           <figure class="fig">
-            <img src="../assets/images/ink/write-qiu-b.jpg" alt="Brush-written character 求 on paper">
+            <img loading="lazy" decoding="async" src="../assets/images/ink/write-qiu-b.jpg" alt="Brush-written character 求 on paper">
             <figcaption><span class="lang-zh">「求」。</span><span class="lang-en">求.</span></figcaption>
           </figure>
           <figure class="fig">
-            <img src="../assets/images/ink/write-extra.jpg" alt="Another brush-written character on paper">
+            <img loading="lazy" decoding="async" src="../assets/images/ink/write-extra.jpg" alt="Another brush-written character on paper">
             <figcaption><span class="lang-zh">真机写在纸上的字。</span><span class="lang-en">Ink from the real arm.</span></figcaption>
           </figure>
         </div>
@@ -386,11 +411,11 @@
         <p class="lead lang-en">The rules write the geometry. A person also pauses and flicks, and that is not in a font file. The other line is isomorphic leader–follower teleoperation at 30 Hz, with front and wrist cameras. Stock calibration moves the zero, so logging did not use it. The deck’s page says 55 teleop episodes, mixed real to simulation at 3 to 7, for an ACT run.</p>
         <div class="grid2 grid-photopair">
           <figure class="fig">
-            <img src="../assets/images/ink/teleop.jpg" alt="A person holding the leader arm while the follower writes on red paper">
+            <img loading="lazy" decoding="async" src="../assets/images/ink/teleop.jpg" alt="A person holding the leader arm while the follower writes on red paper">
             <figcaption><span class="lang-zh">主臂在手上，从臂在纸上。遥操作是握着主臂平移。</span><span class="lang-en">Leader in hand, follower on the paper. Teleoperation here is translating the leader arm.</span></figcaption>
           </figure>
           <figure class="fig">
-            <img src="../assets/images/ink/collect-ui.jpg" alt="Data-collection screen with front and wrist camera views">
+            <img loading="lazy" decoding="async" src="../assets/images/ink/collect-ui.jpg" alt="Data-collection screen with front and wrist camera views">
             <figcaption><span class="lang-zh">数采界面。左是第三视角，右是腕部。</span><span class="lang-en">The logging screen. Front view on the left, wrist view on the right.</span></figcaption>
           </figure>
         </div>
@@ -456,14 +481,18 @@
         <h2 class="lang-en">A Digital Brush</h2>
         <p class="lead lang-zh">把数采做扎实，把模型训好，做成一支数位毛笔。</p>
         <p class="lead lang-en">Collect better data, train a better model, and make a digital calligraphy brush.</p>
+        <p class="lang-zh">现在市面上已经有数位笔了，但那是给手写板和平板用的。为了把数据采得更扎实，我们打算自己做一支数位毛笔；这支笔做出来之后，同一套采集思路还能往水墨画、水粉、水彩、油画的笔触上延。</p>
+        <p class="lang-en">Digital styli already exist, but they are built for drawing tablets and handwriting pads. To collect better data we plan to build our own digital brush; once it works, the same collection approach can extend to ink wash, gouache, watercolour and oil painting.</p>
+        <div class="grid2 grid-brushpair">
         <figure class="fig">
-          <img src="../assets/images/ink/digital-brush-render.jpg" alt="Exploded render of the digital brush: brush tip, spring, force-sensor board, controller, battery, shaft and tail cap">
+          <img loading="lazy" decoding="async" src="../assets/images/ink/digital-brush-render.jpg" alt="Exploded render of the digital brush: brush tip, spring, force-sensor board, controller, battery, shaft and tail cap">
           <figcaption><span class="lang-zh">整支笔的分解渲染：笔头、弹簧、力传感器、主控、电池、笔杆与尾盖。</span><span class="lang-en">The finished design, exploded: brush head, spring, force sensor, controller, battery, shaft and tail cap.</span></figcaption>
         </figure>
         <figure class="fig">
-          <img src="../assets/images/ink/digital-brush.png" alt="Exploded CAD view of a digital brush: stylus top and bottom shells, 10440 battery, force sensor PCB, spring, nib base, and plastic nib">
+          <img loading="lazy" decoding="async" src="../assets/images/ink/digital-brush.png" alt="Exploded CAD view of a digital brush: stylus top and bottom shells, 10440 battery, force sensor PCB, spring, nib base, and plastic nib">
           <figcaption><span class="lang-zh">结构爆炸图：笔杆前后壳、10440 电池、力传感器板、弹簧（6.5×10 mm）、笔尖座与塑料笔尖，主控是 XIAO nRF52840 Sense，笔杆 20 mm。</span><span class="lang-en">Exploded view: stylus top and bottom shells, a 10440 battery, the force sensor PCB, a 6.5 × 10 mm spring, the nib base and a plastic nib. The controller is an XIAO nRF52840 Sense; the shaft is 20 mm.</span></figcaption>
         </figure>
+        </div>
       </div>
     </section>
 
@@ -477,7 +506,7 @@
         <p class="meta lang-zh">2026年11月16日提出</p>
         <p class="meta lang-en">Proposed Nov 16, 2026</p>
         <figure class="fig fig-graffiti">
-          <img src="../assets/images/graffiti-render.jpg" alt="Concept render of a robot dog spraying a wall">
+          <img loading="lazy" decoding="async" src="../assets/images/graffiti-render.jpg" alt="Concept render of a robot dog spraying a wall">
           <figcaption><span class="lang-zh">效果渲染图。想要的样子：机器狗加机械臂，拿喷罐在墙上喷。不是真机，样机还没有。</span><span class="lang-en">Concept render. The intended look: a robot dog with an arm, spraying a wall. Not a real machine, and there is no prototype yet.</span></figcaption>
         </figure>
         <h3 class="lang-zh" style="margin-top:26px;">它要做成的事</h3>
@@ -555,11 +584,14 @@
         <p class="lead lang-zh" style="margin-top:24px;">2026年11月15日的现场状态。</p>
         <p class="lead lang-en" style="margin-top:24px;">The setup as of Nov 15, 2026.</p>
         <div class="grid2 grid-safetypair">
-          <video class="clip" controls playsinline preload="metadata" poster="../assets/images/ink/status-2026-11-15-poster.jpg">
-            <source src="../assets/images/ink/status-2026-11-15.mp4" type="video/mp4">
-          </video>
           <figure class="fig">
-            <img src="../assets/images/ink/status-2026-11-15.jpg" alt="Brush-written characters 天气 on paper">
+            <video class="clip" controls playsinline preload="metadata" poster="../assets/images/ink/status-2026-11-15-poster.jpg">
+              <source src="../assets/images/ink/status-2026-11-15.mp4" type="video/mp4">
+            </video>
+            <figcaption><span class="lang-zh">此视频只展示了机械臂执行的部分。实验整体还包含数据采集，那一段没有录制。</span><span class="lang-en">This clip only shows the arm executing. The experiment also includes data collection, which was not recorded.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <img loading="lazy" decoding="async" src="../assets/images/ink/status-2026-11-15.jpg" alt="Brush-written characters 天气 on paper">
             <figcaption><span class="lang-zh">11月15日写下的「天气」。</span><span class="lang-en">天气, written on Nov 15, 2026.</span></figcaption>
           </figure>
         </div>
@@ -608,6 +640,47 @@
 
   </main>
 
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button type="button" aria-label="Close">&times;</button>
+    <img alt="">
+  </div>
+
+  <script>
+    /* Click-to-zoom for content images. No dependencies: if this script does not run,
+       images simply stay at their normal size. */
+    (function () {
+      var box = document.getElementById('lightbox');
+      if (!box) return;
+      var big = box.querySelector('img');
+      var closeBtn = box.querySelector('button');
+
+      function open(src, alt) {
+        if (!src) return;
+        big.src = src;
+        big.alt = alt || '';
+        box.classList.add('is-open');
+        document.body.classList.add('lb-open');
+        closeBtn.focus();
+      }
+      function close() {
+        box.classList.remove('is-open');
+        document.body.classList.remove('lb-open');
+        big.removeAttribute('src');
+      }
+
+      document.addEventListener('click', function (e) {
+        var el = e.target;
+        if (!el || el.tagName !== 'IMG' || el.closest('#lightbox')) return;
+        if (!el.closest('.fig, .grid2, .grid4, .hero-strip')) return;
+        e.preventDefault();
+        open(el.currentSrc || el.src, el.alt);
+      });
+      box.addEventListener('click', function () { close(); });
+      document.addEventListener('keydown', function (e) {
+        if ((e.key === 'Escape' || e.keyCode === 27) && box.classList.contains('is-open')) close();
+      });
+    })();
+  </script>
   <script src="../assets/js/lang-switch.js?v=20260928-en"></script>
 </body>
 </html>
