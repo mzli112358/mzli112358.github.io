@@ -102,9 +102,9 @@
     .cover { margin: 0 0 28px; }
     /* three hero images in one row; columns weighted by aspect ratio so all render the same height */
     .hero-strip {
-      display: grid; grid-template-columns: 1.777fr 1.779fr 1.333fr;
+      display: grid; grid-template-columns: 1.779fr 1.777fr 1.333fr;
       gap: 8px; align-items: stretch;
-      width: min(1400px, calc(100% - 40px)); margin: 0 auto 34px;
+      width: min(1400px, calc(100% - 40px)); margin: 34px auto 0;
     }
     .hero-strip figure { margin: 0; }
     .hero-strip img {
@@ -118,6 +118,9 @@
     /* width.png is 1034x1013; cap its height to match the 1400x678 centreline figure in the grid above */
     .fig.fig-widthmap { display: flex; flex-direction: column; }
     .fig.fig-widthmap img { max-height: min(300px, 32vw); width: auto; max-width: 100%; align-self: center; }
+    /* graffiti-render.jpg is 4:3; full width made it 690px tall */
+    .fig.fig-graffiti { display: flex; flex-direction: column; }
+    .fig.fig-graffiti img { max-height: min(440px, 46vw); width: auto; max-width: 100%; align-self: center; }
     .fig figcaption, .cover figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; }
     .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
     /* centerline.png is 1400x678, path.png is 1000x1000: weight the columns by aspect ratio so both render the same height */
@@ -190,11 +193,6 @@
 
   <header class="hero">
     <!-- BILINGUAL PAIR: hero -->
-    <div class="hero-strip">
-      <figure><img src="../assets/images/ink/hero-dual-arm.jpg" alt="Two SO-101 arms writing 国 and 中 on paper with brushes"></figure>
-      <figure><img src="../assets/images/ink/cover.jpg" alt="Title card: a robot arm holding a brush through the characters 墨有引力"></figure>
-      <figure><img src="../assets/images/ink/hero-single-arm.jpg" alt="An SO-101 arm holding a brush, writing a stroke on paper"></figure>
-    </div>
     <div class="wrap">
       <div class="eyebrow lang-zh">SpaceXAI 澳门黑客松 · 2026年11月12–14日 · 物理AI赛道 · 第一名</div>
       <div class="eyebrow lang-en">SpaceXAI Macau Hackathon · Nov 12–14, 2026 · Physical AI track · 1st Place</div>
@@ -204,6 +202,11 @@
       <p class="lang-en">Brush writing with a robot arm: soft-brush calligraphy, with the brushwork refined.<br>From there it extends to digital-brush design, and out to drawing, painting, and graffiti.</p>
       <p class="meta lang-zh">持续推进中，2026年11月16日~12月31日（预计）</p>
       <p class="meta lang-en">Ongoing · Nov 16 – Dec 31, 2026 (expected)</p>
+    </div>
+    <div class="hero-strip">
+      <figure><img src="../assets/images/ink/cover.jpg" alt="Title card: a robot arm holding a brush through the characters 墨有引力"></figure>
+      <figure><img src="../assets/images/ink/hero-dual-arm.jpg" alt="Two SO-101 arms writing 国 and 中 on paper with brushes"></figure>
+      <figure><img src="../assets/images/ink/hero-single-arm.jpg" alt="An SO-101 arm holding a brush, writing a stroke on paper"></figure>
     </div>
   </header>
 
@@ -473,7 +476,7 @@
         <p class="lead lang-en">A body that can walk up to a wall and lay color down one layer at a time. Layer order is part of the picture: what goes on first changes what the next layer covers. This section is still only a concept. There is no prototype yet.</p>
         <p class="meta lang-zh">2026年11月16日提出</p>
         <p class="meta lang-en">Proposed Nov 16, 2026</p>
-        <figure class="fig">
+        <figure class="fig fig-graffiti">
           <img src="../assets/images/graffiti-render.jpg" alt="Concept render of a robot dog spraying a wall">
           <figcaption><span class="lang-zh">效果渲染图。想要的样子：机器狗加机械臂，拿喷罐在墙上喷。不是真机，样机还没有。</span><span class="lang-en">Concept render. The intended look: a robot dog with an arm, spraying a wall. Not a real machine, and there is no prototype yet.</span></figcaption>
         </figure>
