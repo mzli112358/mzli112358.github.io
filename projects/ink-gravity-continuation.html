@@ -115,11 +115,18 @@
     /* teleop.jpg is 1600x2133, collect-ui.jpg is 1600x837: weight by aspect ratio so both render the same height */
     .grid2.grid-photopair { grid-template-columns: 0.75fr 1.912fr; align-items: stretch; }
     .grid2.grid-photopair figure { display: flex; flex-direction: column; }
+    /* arm.jpg is 1:1, ink-dish.jpg is 3:4: weight by aspect ratio so both render the same height */
+    .grid2.grid-prepair { grid-template-columns: 1fr 0.75fr; align-items: stretch; }
+    .grid2.grid-prepair figure { display: flex; flex-direction: column; }
     .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+    .grid5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 14px; align-items: start; }
+    .grid5 .fig { margin: 0; }
     .pipeline.cols3 { grid-template-columns: repeat(3, 1fr); }
     .refs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     .refs figure { margin: 0; }
-    .refs figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; }
+    .refs figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; text-align: center; }
+    /* keep 9:16 but shrink the players so the row is not a metre tall */
+    .refs .player { max-width: 260px; margin: 0 auto; }
     .player {
       position: relative; aspect-ratio: 9 / 16; background: #1c1916;
       border: 1px solid var(--line); border-radius: 4px; overflow: hidden;
@@ -134,9 +141,11 @@
     table.cmp th { background: #f3e6dc; }
     @media (max-width: 860px) {
       .pipeline, .pipeline.cols3, .grid3, .team { grid-template-columns: 1fr 1fr; }
+      .grid5 { grid-template-columns: repeat(3, 1fr); }
     }
     @media (max-width: 560px) {
-      .pipeline, .pipeline.cols3, .grid2, .grid2.grid-inkpair, .grid2.grid-photopair, .grid3, .team, .refs { grid-template-columns: 1fr; }
+      .pipeline, .pipeline.cols3, .grid2, .grid2.grid-inkpair, .grid2.grid-photopair, .grid2.grid-prepair, .grid3, .team, .refs { grid-template-columns: 1fr; }
+      .grid5 { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -262,7 +271,7 @@
         <!-- BILINGUAL PAIR: preparation -->
         <h2 class="lang-zh">准备</h2>
         <h2 class="lang-en">Preparation</h2>
-        <div class="grid2">
+        <div class="grid2 grid-prepair">
           <figure class="fig">
             <img src="../assets/images/ink/arm.jpg" alt="SO-101 arm with a clamped brush dipping toward an ink dish">
             <figcaption><span class="lang-zh">笔夹是量了笔杆再参数化打印的。舵机夹爪力矩小，笔杆必须夹死，一歪，坐标系就乱。</span><span class="lang-en">The clamp was printed from a measured shaft. The servo gripper is too weak unless the shaft is locked in. If it tilts, the frame is gone.</span></figcaption>
@@ -306,28 +315,6 @@
           <img src="../assets/images/ink/width.png" alt="Normal width samples across the character 永, blue for thin and red for thick">
           <figcaption><span class="lang-zh">蓝是细，红是粗。每一条是一次法向宽度。图是这个方法，不是这一版已经跑出来的高度曲线。</span><span class="lang-en">Blue is thin, red is thick. Each line is one width sample. The figure is the method, not a height curve this version already ran.</span></figcaption>
         </figure>
-        <div class="grid3">
-          <figure class="fig">
-            <img src="../assets/images/ink/write-scene.jpg" alt="Two SO-101 arms at a table, with 天 written on paper">
-            <figcaption><span class="lang-zh">真机现场。纸上是「天」。</span><span class="lang-en">The real setup. The paper says 天.</span></figcaption>
-          </figure>
-          <figure class="fig">
-            <img src="../assets/images/ink/write-tian.jpg" alt="Brush-written character 天 on paper">
-            <figcaption><span class="lang-zh">「天」。</span><span class="lang-en">天.</span></figcaption>
-          </figure>
-          <figure class="fig">
-            <img src="../assets/images/ink/write-qiu-b.jpg" alt="Brush-written character 求 on paper">
-            <figcaption><span class="lang-zh">「求」。</span><span class="lang-en">求.</span></figcaption>
-          </figure>
-          <figure class="fig">
-            <img src="../assets/images/ink/write-qiu-a.jpg" alt="A heavier brush rendering of 求">
-            <figcaption><span class="lang-zh">另一张「求」。</span><span class="lang-en">Another 求.</span></figcaption>
-          </figure>
-          <figure class="fig">
-            <img src="../assets/images/ink/write-extra.jpg" alt="Another brush-written character on paper">
-            <figcaption><span class="lang-zh">真机写在纸上的字。</span><span class="lang-en">Ink from the real arm.</span></figcaption>
-          </figure>
-        </div>
       </div>
     </section>
 
@@ -348,9 +335,27 @@
           <iframe src="ink-gravity-demo/index.html" title="SO-101 calligraphy simulation replay" allow="fullscreen" loading="lazy"></iframe>
         </div>
         <p class="demo-link"><a href="ink-gravity-demo/index.html"><span class="lang-zh">单独打开</span><span class="lang-en">Open full page</span></a></p>
-        <div class="block" style="margin-top:14px;">
-          <p class="lang-zh">真下发角是仿真角加这台从臂自己的零点偏移。换臂要重标定。官方校准会改零点，这条写字线没有用它。</p>
-          <p class="lang-en">Commanded angles are simulated angles plus that follower’s zero offset. Another arm needs a new calibration. The stock calibrate routine moves the zero, so this writing line does not use it.</p>
+        <div class="grid5">
+          <figure class="fig">
+            <img src="../assets/images/ink/write-scene.jpg" alt="Two SO-101 arms at a table, with 天 written on paper">
+            <figcaption><span class="lang-zh">真机现场。纸上是「天」。</span><span class="lang-en">The real setup. The paper says 天.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="../assets/images/ink/write-tian.jpg" alt="Brush-written character 天 on paper">
+            <figcaption><span class="lang-zh">「天」。</span><span class="lang-en">天.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="../assets/images/ink/write-qiu-b.jpg" alt="Brush-written character 求 on paper">
+            <figcaption><span class="lang-zh">「求」。</span><span class="lang-en">求.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="../assets/images/ink/write-qiu-a.jpg" alt="A heavier brush rendering of 求">
+            <figcaption><span class="lang-zh">另一张「求」。</span><span class="lang-en">Another 求.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="../assets/images/ink/write-extra.jpg" alt="Another brush-written character on paper">
+            <figcaption><span class="lang-zh">真机写在纸上的字。</span><span class="lang-en">Ink from the real arm.</span></figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -524,6 +529,17 @@
             <li>Fire and fire-safety training as the venue requires, and that is all.</li>
           </ul>
         </div>
+        <p class="lang-zh" style="margin-top:18px;">所用机械臂的型号：<a href="https://mp.weixin.qq.com/s?__biz=MzU3MjQ2MDcwNQ==&amp;mid=2247777420&amp;idx=2&amp;sn=bb62915515096c6678af89cde7e8af3d&amp;chksm=fd9869f1cffbe5a0a314a65c4aaf9f525048b5185a0f4f3fd57dcf903867a4705c715a7b0c68&amp;scene=27" target="_blank" rel="noopener noreferrer">微信公众号介绍</a></p>
+        <p class="lang-en" style="margin-top:18px;">The arm model used here: <a href="https://mp.weixin.qq.com/s?__biz=MzU3MjQ2MDcwNQ==&amp;mid=2247777420&amp;idx=2&amp;sn=bb62915515096c6678af89cde7e8af3d&amp;chksm=fd9869f1cffbe5a0a314a65c4aaf9f525048b5185a0f4f3fd57dcf903867a4705c715a7b0c68&amp;scene=27" target="_blank" rel="noopener noreferrer">WeChat article</a></p>
+        <p class="lead lang-zh" style="margin-top:24px;">2026年11月15日的现场状态。</p>
+        <p class="lead lang-en" style="margin-top:24px;">The setup as of Nov 15, 2026.</p>
+        <video class="clip" controls playsinline preload="metadata" poster="../assets/images/ink/status-2026-11-15-poster.jpg">
+          <source src="../assets/images/ink/status-2026-11-15.mp4" type="video/mp4">
+        </video>
+        <figure class="fig">
+          <img src="../assets/images/ink/status-2026-11-15.jpg" alt="Brush-written characters 天气 on paper">
+          <figcaption><span class="lang-zh">11月15日写下的「天气」。</span><span class="lang-en">天气, written on Nov 15, 2026.</span></figcaption>
+        </figure>
       </div>
     </section>
 
