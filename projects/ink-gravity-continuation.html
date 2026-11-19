@@ -102,10 +102,13 @@
     .cover { margin: 0 0 28px; }
     .cover img, .fig img, video.clip { width: 100%; height: auto; display: block; border-radius: 4px; }
     .fig img { border: 1px solid var(--line); background: #fff; }
-    video.clip { background: #111; }
+    video.clip { background: #111; aspect-ratio: 16 / 9; }
     .fig { margin: 14px 0 0; }
     .fig figcaption, .cover figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; }
     .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+    /* centerline.png is 1400x678, path.png is 1000x1000: weight the columns by aspect ratio so both render the same height */
+    .grid2.grid-inkpair { grid-template-columns: 2.065fr 1fr; align-items: stretch; }
+    .grid2.grid-inkpair figure { display: flex; flex-direction: column; }
     .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
     .pipeline.cols3 { grid-template-columns: repeat(3, 1fr); }
     .refs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
@@ -127,7 +130,7 @@
       .pipeline, .pipeline.cols3, .grid3, .team { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 560px) {
-      .pipeline, .pipeline.cols3, .grid2, .grid3, .team, .refs { grid-template-columns: 1fr; }
+      .pipeline, .pipeline.cols3, .grid2, .grid2.grid-inkpair, .grid3, .team, .refs { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -139,9 +142,8 @@
       <a href="#why"><span class="lang-zh">手写的字</span><span class="lang-en">Signs</span></a>
       <a href="#font"><span class="lang-zh">字体生成</span><span class="lang-en">Font</span></a>
       <a href="#rules"><span class="lang-zh">规则控制</span><span class="lang-en">Rules</span></a>
-      <a href="#pressure"><span class="lang-zh">提按</span><span class="lang-en">Pressure</span></a>
       <a href="#sim"><span class="lang-zh">仿真与真机</span><span class="lang-en">Simulation</span></a>
-      <a href="#model"><span class="lang-zh">模型</span><span class="lang-en">Model</span></a>
+      <a href="#model"><span class="lang-zh">数采与模型</span><span class="lang-en">Data &amp; Model</span></a>
       <a href="#next"><span class="lang-zh">下一步</span><span class="lang-en">Next</span></a>
       <a href="#digital-brush"><span class="lang-zh">数位毛笔</span><span class="lang-en">Digital Brush</span></a>
       <a href="#graffiti"><span class="lang-zh">涂鸦机器人</span><span class="lang-en">Graffiti</span></a>
@@ -160,14 +162,14 @@
       <figure class="cover">
         <img src="../assets/images/ink/cover.jpg" alt="Title card: a robot arm holding a brush through the characters 墨有引力">
       </figure>
-      <div class="eyebrow lang-zh">SpaceXAI 澳门黑客松 · 第一名</div>
-      <div class="eyebrow lang-en">SpaceXAI Macau Hackathon · 1st Place</div>
+      <div class="eyebrow lang-zh">SpaceXAI 澳门黑客松 · 2026年11月12–14日 · 物理AI赛道 · 第一名</div>
+      <div class="eyebrow lang-en">SpaceXAI Macau Hackathon · Nov 12–14, 2026 · Physical AI track · 1st Place</div>
       <h1 class="lang-zh">墨有引力</h1>
       <h1 class="lang-en">Ink Gravity</h1>
-      <p class="lang-zh">用机械臂写毛笔字，做软笔书法，精进书写效果；之后再延伸到数位毛笔设计，并扩展到绘画、涂鸦等场景。</p>
-      <p class="lang-en">Brush writing with a robot arm: soft-brush calligraphy, with the brushwork refined. From there it extends to digital-brush design, and out to drawing, painting, and graffiti.</p>
-      <p class="meta lang-zh">2026年11月12–14日</p>
-      <p class="meta lang-en">Nov 12–14, 2026</p>
+      <p class="lang-zh">用机械臂写毛笔字，做软笔书法，精进书写效果；<br>之后再延伸到数位毛笔设计，并扩展到绘画、涂鸦等场景。</p>
+      <p class="lang-en">Brush writing with a robot arm: soft-brush calligraphy, with the brushwork refined.<br>From there it extends to digital-brush design, and out to drawing, painting, and graffiti.</p>
+      <p class="meta lang-zh">持续推进中，2026年11月16日~12月31日（预计）</p>
+      <p class="meta lang-en">Ongoing · Nov 16 – Dec 31, 2026 (expected)</p>
     </div>
   </header>
 
@@ -177,7 +179,7 @@
         <!-- BILINGUAL PAIR: video -->
         <h2 class="lang-zh">实拍效果</h2>
         <h2 class="lang-en">Footage</h2>
-        <video class="clip" controls playsinline preload="metadata" poster="../assets/images/ink/write-scene.jpg">
+        <video class="clip" controls playsinline preload="metadata" poster="../assets/images/ink/demo-poster.jpg">
           <source src="../assets/images/ink/demo.mp4" type="video/mp4">
         </video>
       </div>
@@ -257,7 +259,7 @@
           <div class="pipe"><strong>03</strong><span class="lang-zh">中线。骨架加上法向距离变换的峰值，交叉口不窜笔。</span><span class="lang-en">Centerline. A skeleton plus the peak of the normal distance transform, so crossings do not jump strokes.</span></div>
           <div class="pipe"><strong>04</strong><span class="lang-zh">逆解。纸面坐标变成四个关节角。</span><span class="lang-en">Inverse kinematics. Paper coordinates become four joint angles.</span></div>
         </div>
-        <div class="grid2">
+        <div class="grid2 grid-inkpair">
           <figure class="fig">
             <img src="../assets/images/ink/centerline.png" alt="The character 永 as ink and as colored stroke centerlines">
             <figcaption><span class="lang-zh">左是字形，右是贴出来的笔顺中线，一笔一色。笔尖走的是这条线。</span><span class="lang-en">Left, the ink. Right, the fitted centerlines, one color per stroke. The tip follows that line.</span></figcaption>
@@ -267,14 +269,8 @@
             <figcaption><span class="lang-zh">仿真里机械臂实际走出来的一笔一笔。能跑通，才上真机。</span><span class="lang-en">The strokes the arm actually traced in simulation. It went to the real arm after this ran.</span></figcaption>
           </figure>
         </div>
-      </div>
-    </section>
-
-    <section id="pressure">
-      <div class="wrap">
-        <!-- BILINGUAL PAIR: pressure -->
-        <h2 class="lang-zh">提按：把粗细写成高度</h2>
-        <h2 class="lang-en">Pressure, Written as Height</h2>
+        <h3 class="lang-zh" style="margin-top:30px;">提按：把粗细写成高度</h3>
+        <h3 class="lang-en" style="margin-top:30px;">Pressure, Written as Height</h3>
         <p class="lead lang-zh">毛笔没有力传感器。沿中线量法向宽度，窄的地方抬，宽的地方压，想用高度去近似提按。这一版规划器还是整笔恒定下压，这条曲线没有接进去。</p>
         <p class="lead lang-en">The brush has no force sensor. The idea is to measure width along the normal of the centerline, lift where it is thin, and press where it is thick, so height stands in for pressure. This version’s planner still uses one constant press for the whole stroke. That curve is not wired in.</p>
         <figure class="fig">
@@ -343,8 +339,8 @@
     <section id="model">
       <div class="wrap">
         <!-- BILINGUAL PAIR: act -->
-        <h2 class="lang-zh">基于模型的机械臂控制</h2>
-        <h2 class="lang-en">Model-Based Arm Control</h2>
+        <h2 class="lang-zh">数采与模型训练</h2>
+        <h2 class="lang-en">Data Collection and Model Training</h2>
         <p class="lead lang-zh">规则写的是字形。人写的还有停顿和出手，那些不在字库里。所以另外采了主从同构的遥操作：30 Hz，正视和腕部两路相机。官方校准会改零点，数采没有用它。终稿这页写的是遥操 55 条，真机和仿真按 3 比 7 混合，准备训 ACT。</p>
         <p class="lead lang-en">The rules write the geometry. A person also pauses and flicks, and that is not in a font file. The other line is isomorphic leader–follower teleoperation at 30 Hz, with front and wrist cameras. Stock calibration moves the zero, so logging did not use it. The deck’s page says 55 teleop episodes, mixed real to simulation at 3 to 7, for an ACT run.</p>
         <div class="grid2">
