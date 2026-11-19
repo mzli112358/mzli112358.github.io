@@ -112,6 +112,9 @@
     /* centerline.png is 1400x678, path.png is 1000x1000: weight the columns by aspect ratio so both render the same height */
     .grid2.grid-inkpair { grid-template-columns: 2.065fr 1fr; align-items: stretch; }
     .grid2.grid-inkpair figure { display: flex; flex-direction: column; }
+    /* teleop.jpg is 1600x2133, collect-ui.jpg is 1600x837: weight by aspect ratio so both render the same height */
+    .grid2.grid-photopair { grid-template-columns: 0.75fr 1.912fr; align-items: stretch; }
+    .grid2.grid-photopair figure { display: flex; flex-direction: column; }
     .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
     .pipeline.cols3 { grid-template-columns: repeat(3, 1fr); }
     .refs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
@@ -133,7 +136,7 @@
       .pipeline, .pipeline.cols3, .grid3, .team { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 560px) {
-      .pipeline, .pipeline.cols3, .grid2, .grid2.grid-inkpair, .grid3, .team, .refs { grid-template-columns: 1fr; }
+      .pipeline, .pipeline.cols3, .grid2, .grid2.grid-inkpair, .grid2.grid-photopair, .grid3, .team, .refs { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -144,6 +147,7 @@
       <a href="#footage"><span class="lang-zh">实拍效果</span><span class="lang-en">Footage</span></a>
       <a href="#why"><span class="lang-zh">动机</span><span class="lang-en">Motivation</span></a>
       <a href="#font"><span class="lang-zh">字体生成</span><span class="lang-en">Font</span></a>
+      <a href="#prep"><span class="lang-zh">准备</span><span class="lang-en">Prep</span></a>
       <a href="#rules"><span class="lang-zh">规则控制</span><span class="lang-en">Rules</span></a>
       <a href="#sim"><span class="lang-zh">仿真与真机</span><span class="lang-en">Simulation</span></a>
       <a href="#model"><span class="lang-zh">数采与模型</span><span class="lang-en">Data &amp; Model</span></a>
@@ -253,6 +257,24 @@
       </div>
     </section>
 
+    <section id="prep">
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: preparation -->
+        <h2 class="lang-zh">准备</h2>
+        <h2 class="lang-en">Preparation</h2>
+        <div class="grid2">
+          <figure class="fig">
+            <img src="../assets/images/ink/arm.jpg" alt="SO-101 arm with a clamped brush dipping toward an ink dish">
+            <figcaption><span class="lang-zh">笔夹是量了笔杆再参数化打印的。舵机夹爪力矩小，笔杆必须夹死，一歪，坐标系就乱。</span><span class="lang-en">The clamp was printed from a measured shaft. The servo gripper is too weak unless the shaft is locked in. If it tilts, the frame is gone.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="../assets/images/ink/ink-dish.jpg" alt="Brush dipping into a printed Chinese lock-pattern ink dish">
+            <figcaption><span class="lang-zh">中式锁纹墨碟，大约 76×62×6.5 mm。相机机位改到能同时看见笔尖和纸。</span><span class="lang-en">A Chinese lock-pattern ink dish, about 76×62×6.5 mm. The camera was moved so it sees both the tip and the paper.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section id="rules">
       <div class="wrap">
         <!-- BILINGUAL PAIR: rules -->
@@ -326,16 +348,6 @@
           <iframe src="ink-gravity-demo/index.html" title="SO-101 calligraphy simulation replay" allow="fullscreen" loading="lazy"></iframe>
         </div>
         <p class="demo-link"><a href="ink-gravity-demo/index.html"><span class="lang-zh">单独打开</span><span class="lang-en">Open full page</span></a></p>
-        <div class="grid2">
-          <figure class="fig">
-            <img src="../assets/images/ink/arm.jpg" alt="SO-101 arm with a clamped brush dipping toward an ink dish">
-            <figcaption><span class="lang-zh">笔夹是量了笔杆再参数化打印的。舵机夹爪力矩小，笔杆必须夹死，一歪，坐标系就乱。</span><span class="lang-en">The clamp was printed from a measured shaft. The servo gripper is too weak unless the shaft is locked in. If it tilts, the frame is gone.</span></figcaption>
-          </figure>
-          <figure class="fig">
-            <img src="../assets/images/ink/ink-dish.jpg" alt="Brush dipping into a printed Chinese lock-pattern ink dish">
-            <figcaption><span class="lang-zh">中式锁纹墨碟，大约 76×62×6.5 mm。相机机位改到能同时看见笔尖和纸。</span><span class="lang-en">A Chinese lock-pattern ink dish, about 76×62×6.5 mm. The camera was moved so it sees both the tip and the paper.</span></figcaption>
-          </figure>
-        </div>
         <div class="block" style="margin-top:14px;">
           <p class="lang-zh">真下发角是仿真角加这台从臂自己的零点偏移。换臂要重标定。官方校准会改零点，这条写字线没有用它。</p>
           <p class="lang-en">Commanded angles are simulated angles plus that follower’s zero offset. Another arm needs a new calibration. The stock calibrate routine moves the zero, so this writing line does not use it.</p>
@@ -350,7 +362,7 @@
         <h2 class="lang-en">Data Collection and Model Training</h2>
         <p class="lead lang-zh">规则写的是字形。人写的还有停顿和出手，那些不在字库里。所以另外采了主从同构的遥操作：30 Hz，正视和腕部两路相机。官方校准会改零点，数采没有用它。终稿这页写的是遥操 55 条，真机和仿真按 3 比 7 混合，准备训 ACT。</p>
         <p class="lead lang-en">The rules write the geometry. A person also pauses and flicks, and that is not in a font file. The other line is isomorphic leader–follower teleoperation at 30 Hz, with front and wrist cameras. Stock calibration moves the zero, so logging did not use it. The deck’s page says 55 teleop episodes, mixed real to simulation at 3 to 7, for an ACT run.</p>
-        <div class="grid2">
+        <div class="grid2 grid-photopair">
           <figure class="fig">
             <img src="../assets/images/ink/teleop.jpg" alt="A person holding the leader arm while the follower writes on red paper">
             <figcaption><span class="lang-zh">主臂在手上，从臂在纸上。遥操作是握着主臂平移。</span><span class="lang-en">Leader in hand, follower on the paper. Teleoperation here is translating the leader arm.</span></figcaption>
