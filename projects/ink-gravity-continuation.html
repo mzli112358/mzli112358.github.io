@@ -34,13 +34,23 @@
       line-height: 1.7;
     }
     a { color: var(--brand); }
+    /* site.css reserves 5.5rem for the fixed masthead used elsewhere; this page has no masthead */
+    html body { padding-top: 0 !important; }
     .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
     .nav {
+      position: sticky; top: 0; z-index: 20;
       display: flex; align-items: center; justify-content: space-between;
-      gap: 12px; flex-wrap: wrap; min-height: 60px;
+      gap: 6px 18px; flex-wrap: wrap; min-height: 52px; padding: 6px 0;
       border-bottom: 1px solid var(--line); background: var(--panel);
     }
-    .nav a { color: var(--ink); text-decoration: none; font-size: 14px; }
+    .toc { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .toc a, .nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
+    .toc a:hover, .nav a:hover { color: var(--brand); }
+    .nav .lang-switch { margin: 0; }
+    section { scroll-margin-top: 64px; }
+    @media (max-width: 560px) {
+      .nav { position: static; }
+    }
     .nav-links { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
     .brand { font-weight: 700; }
     .hero {
@@ -123,9 +133,19 @@
   </style>
 </head>
 <body>
-  <!-- Standalone page: no navigation in, no links out. Share by URL only. -->
+  <!-- Standalone page: on-page table of contents, no links out. Share by URL only. -->
   <div class="nav wrap">
-    <span class="brand">Mingzhe Li</span>
+    <nav class="toc" aria-label="本页目录 / On this page">
+      <a href="#footage"><span class="lang-zh">实拍效果</span><span class="lang-en">Footage</span></a>
+      <a href="#why"><span class="lang-zh">手写的字</span><span class="lang-en">Signs</span></a>
+      <a href="#font"><span class="lang-zh">字体生成</span><span class="lang-en">Font</span></a>
+      <a href="#rules"><span class="lang-zh">规则控制</span><span class="lang-en">Rules</span></a>
+      <a href="#sim"><span class="lang-zh">仿真与真机</span><span class="lang-en">Simulation</span></a>
+      <a href="#pressure"><span class="lang-zh">提按</span><span class="lang-en">Pressure</span></a>
+      <a href="#model"><span class="lang-zh">模型</span><span class="lang-en">Model</span></a>
+      <a href="#next"><span class="lang-zh">下一步</span><span class="lang-en">Next</span></a>
+      <a href="#graffiti"><span class="lang-zh">涂鸦机器人</span><span class="lang-en">Graffiti</span></a>
+    </nav>
     <div class="lang-switch" role="group" aria-label="Language / 语言">
       <button type="button" data-lang-btn="zh" aria-pressed="false">中文</button>
       <button type="button" data-lang-btn="en" class="is-active" aria-pressed="true">EN</button>
@@ -150,7 +170,7 @@
   </header>
 
   <main>
-    <section>
+    <section id="footage">
       <div class="wrap">
         <!-- BILINGUAL PAIR: video -->
         <h2 class="lang-zh">实拍效果</h2>
@@ -161,7 +181,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="why">
       <div class="wrap">
         <!-- BILINGUAL PAIR: why -->
         <h2 class="lang-zh">手写的字</h2>
@@ -188,7 +208,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="font">
       <div class="wrap">
         <!-- BILINGUAL PAIR: font -->
         <h2 class="lang-zh">字体生成</h2>
@@ -222,7 +242,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="rules">
       <div class="wrap">
         <!-- BILINGUAL PAIR: rules -->
         <h2 class="lang-zh">传统规则控制算法书写</h2>
@@ -248,7 +268,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="sim">
       <div class="wrap">
         <!-- BILINGUAL PAIR: sim and hardware -->
         <h2 class="lang-zh">先仿真，再真机</h2>
@@ -282,7 +302,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="pressure">
       <div class="wrap">
         <!-- BILINGUAL PAIR: pressure -->
         <h2 class="lang-zh">提按：把粗细写成高度</h2>
@@ -318,7 +338,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="model">
       <div class="wrap">
         <!-- BILINGUAL PAIR: act -->
         <h2 class="lang-zh">模型这一条</h2>
@@ -360,7 +380,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="next">
       <div class="wrap">
         <!-- BILINGUAL PAIR: next -->
         <h2 class="lang-zh">下一步</h2>
@@ -389,7 +409,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section id="graffiti">
       <div class="wrap">
         <!-- BILINGUAL PAIR: graffiti -->
         <h2 class="lang-zh">涂鸦机器人</h2>
