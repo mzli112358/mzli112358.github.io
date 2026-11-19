@@ -22,7 +22,7 @@
       --panel: #ffffff;
       --brand: #1d6b45;
       --brand-ink: #0e3d28;
-      --max: 920px;
+      --max: 1040px;
     }
     * { box-sizing: border-box; }
     body {
@@ -76,14 +76,30 @@
       border-radius: 4px; font-size: 14px; min-height: 88px;
     }
     .pipe strong { display: block; margin-bottom: 6px; font-size: 13px; opacity: .85; }
-    .cover { margin: 0 0 26px; }
-    .cover img, .fig img { width: 100%; height: auto; display: block; border-radius: 4px; }
-    .fig img { border: 1px solid var(--line); background: #fff; }
-    .cover figcaption, .fig figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; }
-    .fig { margin: 14px 0 0; }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 44px;
+      align-items: center;
+    }
+    .hero-copy { min-width: 0; }
+    .hero-figure { margin: 0; }
+    .hero-figure img {
+      display: block; width: 100%; height: auto;
+      border-radius: 4px; border: 1px solid var(--line);
+      box-shadow: 0 18px 44px rgba(20, 60, 40, .14);
+    }
+    .hero-figure figcaption { margin-top: 10px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .fig { margin: 20px 0 0; }
+    .fig img { width: 100%; height: auto; display: block; border-radius: 4px; border: 1px solid var(--line); background: #fff; }
+    .fig figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; }
     footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
     @media (max-width: 720px) { .pipeline { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 480px) { .pipeline { grid-template-columns: 1fr; } }
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 30px; }
+      .hero-figure { max-width: 300px; }
+    }
   </style>
 </head>
 <body>
@@ -103,15 +119,9 @@
   </nav>
 
   <header class="hero">
-    <div class="wrap">
+    <div class="hero-inner wrap">
+      <div class="hero-copy">
       <!-- BILINGUAL PAIR: hero -->
-      <figure class="cover">
-        <img src="../assets/images/billiards/cover.jpg" width="1448" height="1086" alt="A white humanoid robot arm leaning over a green pool table, cue resting on the white ball beside the corner pocket">
-        <figcaption>
-          <span class="lang-zh">概念示意图（AI 生成），不是现场照片。真机是星尘 T1 轮式机械臂。</span>
-          <span class="lang-en">Concept illustration, AI-generated — not a photo of the demo. The real machine is an Astribot T1 wheeled arm.</span>
-        </figcaption>
-      </figure>
       <div class="eyebrow lang-zh">星尘 OS 黑客松 · 深圳站二等奖</div>
       <div class="eyebrow lang-en">Astribot OS Hackathon · Shenzhen · 2nd Prize</div>
       <h1 class="lang-zh">自助台球厅陪练</h1>
@@ -120,6 +130,14 @@
       <p class="lang-en">A wheeled-arm companion for a self-service billiards hall when one person is left at the table. It moves, sees the balls, takes a stroke, and talks—for practice, play-along, and basic coaching.</p>
       <p class="meta lang-zh">2026年8月22–23日 · 深圳 · 星尘 T1 / Astribot OS · 李明哲</p>
       <p class="meta lang-en">Aug 22–23, 2026 · Shenzhen · Astribot T1 / Astribot OS · Mingzhe Li</p>
+      </div>
+      <figure class="hero-figure">
+        <img src="../assets/images/billiards/cover.jpg" width="900" height="1125" alt="A white humanoid robot arm leaning over a green pool table, cue resting on the white ball beside the corner pocket">
+        <figcaption>
+          <span class="lang-zh">概念示意图（AI 生成），不是现场照片。真机是星尘 T1 轮式机械臂。</span>
+          <span class="lang-en">Concept illustration, AI-generated — not a photo of the demo. The real machine is an Astribot T1 wheeled arm.</span>
+        </figcaption>
+      </figure>
     </div>
   </header>
 
