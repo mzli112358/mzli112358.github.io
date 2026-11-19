@@ -76,6 +76,11 @@
       border-radius: 4px; font-size: 14px; min-height: 88px;
     }
     .pipe strong { display: block; margin-bottom: 6px; font-size: 13px; opacity: .85; }
+    .cover { margin: 0 0 26px; }
+    .cover img, .fig img { width: 100%; height: auto; display: block; border-radius: 4px; }
+    .fig img { border: 1px solid var(--line); background: #fff; }
+    .cover figcaption, .fig figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; }
+    .fig { margin: 14px 0 0; }
     footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
     @media (max-width: 720px) { .pipeline { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 480px) { .pipeline { grid-template-columns: 1fr; } }
@@ -100,6 +105,13 @@
   <header class="hero">
     <div class="wrap">
       <!-- BILINGUAL PAIR: hero -->
+      <figure class="cover">
+        <img src="../assets/images/billiards/cover.jpg" width="1448" height="1086" alt="A white humanoid robot arm leaning over a green pool table, cue resting on the white ball beside the corner pocket">
+        <figcaption>
+          <span class="lang-zh">概念示意图（AI 生成），不是现场照片。真机是星尘 T1 轮式机械臂。</span>
+          <span class="lang-en">Concept illustration, AI-generated — not a photo of the demo. The real machine is an Astribot T1 wheeled arm.</span>
+        </figcaption>
+      </figure>
       <div class="eyebrow lang-zh">星尘 OS 黑客松 · 深圳站二等奖</div>
       <div class="eyebrow lang-en">Astribot OS Hackathon · Shenzhen · 2nd Prize</div>
       <h1 class="lang-zh">自助台球厅陪练</h1>
