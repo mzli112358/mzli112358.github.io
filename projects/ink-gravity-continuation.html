@@ -123,25 +123,8 @@
     .grid2.grid-brushpair { grid-template-columns: 1.777fr 2.763fr; align-items: stretch; }
     .grid2.grid-brushpair figure { display: flex; flex-direction: column; }
     .grid2.grid-brushpair .fig { margin: 0; }
-    /* click any content image to open it full size */
+    /* click any content image to open it full size — shared assets/js/lightbox.js */
     .fig img, .grid2 img, .grid4 img, .hero-strip img { cursor: zoom-in; }
-    #lightbox {
-      position: fixed; inset: 0; z-index: 1000; display: none;
-      align-items: center; justify-content: center; padding: 20px;
-      background: rgba(14, 11, 9, .93);
-    }
-    #lightbox.is-open { display: flex; }
-    #lightbox img {
-      max-width: min(96vw, 1800px); max-height: 88vh; width: auto; height: auto;
-      border-radius: 4px; box-shadow: 0 12px 48px rgba(0,0,0,.55); cursor: zoom-out;
-    }
-    #lightbox button {
-      position: absolute; top: 14px; right: 18px; width: 44px; height: 44px;
-      font-size: 26px; line-height: 1; cursor: pointer; color: #f3ece4;
-      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.28); border-radius: 999px;
-    }
-    #lightbox button:hover { background: rgba(255,255,255,.22); }
-    body.lb-open { overflow: hidden; }
     .fig.fig-graffiti { display: flex; flex-direction: column; }
     .fig.fig-graffiti img { max-height: min(440px, 46vw); width: auto; max-width: 100%; align-self: center; }
     /* sim.jpg is 16:9; full width made it 517px tall */
@@ -635,52 +618,38 @@
             <p class="lang-en">Drawbacks: narrow, and no power.</p>
           </div>
         </div>
+        <div class="block" style="margin-top:14px;">
+          <h3 class="lang-zh">场地使用时间</h3>
+          <h3 class="lang-en">How long we need the space</h3>
+          <ul class="lang-zh">
+            <li>预计使用两周：2026 年 11 月 20 日起，至 12 月 7 日。</li>
+            <li>之后视项目进度，再申请延期。</li>
+          </ul>
+          <ul class="lang-en">
+            <li>Two weeks to begin with: from Nov 20 to Dec 7, 2026.</li>
+            <li>Any extension will be requested later, depending on progress.</li>
+          </ul>
+        </div>
+        <div class="block" style="margin-top:14px;">
+          <h3 class="lang-zh">场地要求</h3>
+          <h3 class="lang-en">What the space needs</h3>
+          <ul class="lang-zh">
+            <li>面积：大约 10 平米。</li>
+            <li>供电：有墙插，能直接取电。</li>
+            <li>环境：可以接受设备运行的噪音。</li>
+          </ul>
+          <ul class="lang-en">
+            <li>Floor area: about 10 m².</li>
+            <li>Power: a wall socket we can draw from directly.</li>
+            <li>Noise from running equipment is acceptable.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
-    <button type="button" aria-label="Close">&times;</button>
-    <img alt="">
-  </div>
-
-  <script>
-    /* Click-to-zoom for content images. No dependencies: if this script does not run,
-       images simply stay at their normal size. */
-    (function () {
-      var box = document.getElementById('lightbox');
-      if (!box) return;
-      var big = box.querySelector('img');
-      var closeBtn = box.querySelector('button');
-
-      function open(src, alt) {
-        if (!src) return;
-        big.src = src;
-        big.alt = alt || '';
-        box.classList.add('is-open');
-        document.body.classList.add('lb-open');
-        closeBtn.focus();
-      }
-      function close() {
-        box.classList.remove('is-open');
-        document.body.classList.remove('lb-open');
-        big.removeAttribute('src');
-      }
-
-      document.addEventListener('click', function (e) {
-        var el = e.target;
-        if (!el || el.tagName !== 'IMG' || el.closest('#lightbox')) return;
-        if (!el.closest('.fig, .grid2, .grid4, .hero-strip')) return;
-        e.preventDefault();
-        open(el.currentSrc || el.src, el.alt);
-      });
-      box.addEventListener('click', function () { close(); });
-      document.addEventListener('keydown', function (e) {
-        if ((e.key === 'Escape' || e.keyCode === 27) && box.classList.contains('is-open')) close();
-      });
-    })();
-  </script>
+  <script src="../assets/js/lightbox.js?v=20261120-lb"></script>
   <script src="../assets/js/lang-switch.js?v=20260928-en"></script>
 </body>
 </html>
