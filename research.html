@@ -294,43 +294,7 @@
     </footer>
   </div>
 
-  <div id="imageModal" class="image-modal">
-    <div class="image-modal-overlay"></div>
-    <div class="image-modal-container">
-      <button class="image-modal-close" id="imageModalClose" type="button">&times;</button>
-      <div class="image-modal-content">
-        <img id="modalImage" src="" alt="Preview" class="modal-image">
-      </div>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      var previewImages = document.querySelectorAll('.preview-image');
-      var modal = document.getElementById('imageModal');
-      var modalImage = document.getElementById('modalImage');
-      var closeBtn = document.getElementById('imageModalClose');
-      var overlay = document.querySelector('.image-modal-overlay');
-      if (!previewImages.length || !modal || !modalImage) return;
-      function closeModal() {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-      previewImages.forEach(function (img) {
-        img.addEventListener('click', function () {
-          modalImage.src = this.getAttribute('data-full-src') || this.src;
-          modalImage.alt = this.alt;
-          modal.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        });
-      });
-      if (closeBtn) closeBtn.addEventListener('click', closeModal);
-      if (overlay) overlay.addEventListener('click', closeModal);
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeModal();
-      });
-    })();
-  </script>
+  <script src="assets/js/lightbox.js?v=20261120-lb"></script>
   <script src="assets/js/main.min.js"></script>
   <script src="assets/js/lang-switch.js?v=20260928-en"></script>
 </body>
