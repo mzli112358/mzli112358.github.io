@@ -25,6 +25,9 @@
       --max: 920px;
     }
     * { box-sizing: border-box; }
+    /* site.css clears the fixed Academic Pages masthead with body padding-top:5.5rem.
+       This page ships its own static .nav, so that 88px gap is dead space. */
+    html body { padding-top: 0 !important; }
     body {
       margin: 0;
       color: var(--ink);
