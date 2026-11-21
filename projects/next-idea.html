@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Next Idea: Graffiti Robot | 涂鸦机器人 | Mingzhe Li</title>
-  <meta name="description" content="A mobile multi-color graffiti robot. Concept only: humanoid or dog-plus-arm, depth camera, and an RDK. Not built yet.">
+  <meta name="description" content="A robot dog and B601-RS arm spray a seven-color mural in simulation. No hardware prototype yet.">
   <link rel="canonical" href="https://mzli112358.github.io/projects/next-idea.html">
   <link rel="stylesheet" href="../assets/css/site.css?v=20261116-next">
   <style>
@@ -111,8 +111,8 @@
         <img src="../assets/images/graffiti-render.jpg" alt="Concept render of a robot dog spraying a wall">
         <figcaption><span class="lang-zh">效果渲染图。想要的样子：机器狗加机械臂，拿喷罐在墙上喷。不是真机，样机还没有。</span><span class="lang-en">Concept render. The intended look: a robot dog with an arm, spraying a wall. Not a real machine, and there is no prototype yet.</span></figcaption>
       </figure>
-      <div class="eyebrow lang-zh">下一步 · 概念，还没开工</div>
-      <div class="eyebrow lang-en">Next · Concept, not started</div>
+      <div class="eyebrow lang-zh">仿真演示 · 尚无实体样机</div>
+      <div class="eyebrow lang-en">Simulation Demo · No Hardware Prototype Yet</div>
       <h1 class="lang-zh">涂鸦机器人</h1>
       <h1 class="lang-en">Graffiti Robot</h1>
       <p class="lang-zh">一个能走到墙前的身体，拿着喷头，按颜色一层一层把图案喷上去。层的顺序是画面的一部分，先喷和后喷盖住的关系不一样。这页只定了要用来做它的身体，样机还没有。</p>
@@ -123,6 +123,18 @@
   </header>
 
   <main>
+    <section id="spray-simulation">
+      <div class="wrap">
+        <h2 class="lang-zh">七色喷涂仿真</h2>
+        <h2 class="lang-en">Seven-Color Spray Simulation</h2>
+        <video controls playsinline preload="none" style="width:100%;height:auto;" aria-label="Seven-color robotic spray simulation">
+          <source src="../assets/simulation/b601_rs_duck_seven_color_spray.mp4" type="video/mp4">
+        </video>
+        <p class="lang-zh">原速演示（3 分 11 秒）：机器狗搭载 B601-RS 机械臂，从方桌上依次取放喷罐，在墙上分层喷出七色小鸭图案。</p>
+        <p class="lang-en">Original-speed simulation (3:11): a robot dog carrying a B601-RS arm picks up and returns spray cans on a square table, layering seven colors to paint a duck mural.</p>
+      </div>
+    </section>
+
     <section>
       <div class="wrap">
         <!-- BILINGUAL PAIR: references -->
@@ -215,12 +227,12 @@
         <div class="block">
           <ul class="lang-zh">
             <li>没有样机，没有代码仓库，RDK 上也还没有跑通过。</li>
-            <li>喷头、换色方式和墙面类型还没定。上面两段是人手喷涂的参考，机器人要喷的那张图还没定。</li>
+            <li>实体喷头、换色方式和墙面材料仍待验证。仿真的小鸭图案用于演示。</li>
             <li>人形和「狗加臂」哪一条先上，等看到当天的机器再定。狗这一条里，维他动力优先于宇树。</li>
           </ul>
           <ul class="lang-en">
             <li>No prototype, no repository, and nothing running on an RDK yet.</li>
-            <li>The sprayer, how colors change, and the wall are still open. The two clips above are hand-spraying references. The picture this robot will spray is not chosen yet.</li>
+            <li>The real sprayer, color changes, and wall material still need validation. The duck mural is a simulation example.</li>
             <li>Humanoid versus dog-plus-arm waits until the machines on site are in hand. If it is a dog, Vita Dynamics comes before Unitree.</li>
           </ul>
         </div>

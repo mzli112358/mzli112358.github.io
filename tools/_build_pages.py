@@ -200,43 +200,7 @@ def footer_scripts() -> str:
     </footer>
   </div>
 
-  <div id="imageModal" class="image-modal">
-    <div class="image-modal-overlay"></div>
-    <div class="image-modal-container">
-      <button class="image-modal-close" id="imageModalClose" type="button">&times;</button>
-      <div class="image-modal-content">
-        <img id="modalImage" src="" alt="Preview" class="modal-image">
-      </div>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      var previewImages = document.querySelectorAll('.preview-image');
-      var modal = document.getElementById('imageModal');
-      var modalImage = document.getElementById('modalImage');
-      var closeBtn = document.getElementById('imageModalClose');
-      var overlay = document.querySelector('.image-modal-overlay');
-      if (!previewImages.length || !modal || !modalImage) return;
-      function closeModal() {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-      previewImages.forEach(function (img) {
-        img.addEventListener('click', function () {
-          modalImage.src = this.getAttribute('data-full-src') || this.src;
-          modalImage.alt = this.alt;
-          modal.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        });
-      });
-      if (closeBtn) closeBtn.addEventListener('click', closeModal);
-      if (overlay) overlay.addEventListener('click', closeModal);
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeModal();
-      });
-    })();
-  </script>
+  <script src="assets/js/lightbox.js?v=20261120-lb"></script>
   <script src="assets/js/main.min.js"></script>
   <script src="assets/js/lang-switch.js?v=20260928-en"></script>
 </body>
@@ -347,8 +311,8 @@ index_content = r"""
           <ul class="news-list">
             <li class="lang-zh"><strong>[2026.11.12–14]</strong> SpaceXAI 澳门黑客松：<a href="projects/ink-gravity.html">墨有引力</a> 获物理 AI 赛道<strong>第一名</strong>。在 SO-101 上用规则把毛笔字写到真机。</li>
             <li class="lang-en"><strong>[2026.11.12–14]</strong> SpaceXAI Macau Hackathon: <a href="projects/ink-gravity.html">Ink Gravity</a> took <strong>1st place</strong> in the physical-AI track. Rule-based brush writing ran on an SO-101 arm.</li>
-            <li class="lang-zh"><strong>[2026.11]</strong> 星尘智能实习结束（2026.09–11）。深圳站台球陪练见 <a href="projects/billiards.html">项目页</a>。下一步概念：<a href="projects/next-idea.html">涂鸦机器人</a>，还没开工。</li>
-            <li class="lang-en"><strong>[2026.11]</strong> Astribot internship ended (Sep–Nov 2026). The Shenzhen billiards companion is on its <a href="projects/billiards.html">project page</a>. Next concept: a <a href="projects/next-idea.html">graffiti robot</a>, not started.</li>
+            <li class="lang-zh"><strong>[2026.11]</strong> 星尘智能实习结束（2026.09–11）。深圳站台球陪练见 <a href="projects/billiards.html">项目页</a>。新增 <a href="projects/next-idea.html#spray-simulation">七色喷涂</a>与<a href="projects/ink-gravity.html#brush-simulation">数位毛笔及「永」字仿真</a>演示。</li>
+            <li class="lang-en"><strong>[2026.11]</strong> Astribot internship ended (Sep–Nov 2026). See the <a href="projects/billiards.html">Shenzhen billiards companion</a>, plus new demos of <a href="projects/next-idea.html#spray-simulation">seven-color spraying</a> and the <a href="projects/ink-gravity.html#brush-simulation">digital brush and Yong calligraphy simulation</a>.</li>
             <li class="lang-zh"><strong>[2026.09.21]</strong> 加入星尘智能（Astribot），担任<strong>机器人算法工程师（实习）</strong>，负责轮式机械臂应用的全栈开发。</li>
             <li class="lang-en"><strong>[2026.09.21]</strong> Joined Astribot as a <strong>Robotics Algorithm Engineer Intern</strong>, working on full-stack development of a wheeled-arm robot application.</li>
             <li class="lang-zh"><strong>[2026.08.22–23]</strong> 星尘 OS「一句话生成 App」机器人黑客松深圳站<strong>二等奖</strong>；晋级 <strong>10 月 24–25 日</strong>全国总决赛 · 共创者大会。</li>
@@ -508,7 +472,7 @@ research_content = r"""
           <ul class="lang-zh">
             <li><a href="projects/ink-gravity.html"><strong>墨有引力</strong></a>：SO-101 毛笔规则写字，仿真后下发真机。SpaceXAI 澳门黑客松物理 AI 赛道第一名。</li>
             <li><a href="projects/billiards.html"><strong>自助台球厅陪练</strong></a>：星尘 T1 上移动、看球、出杆、语音。深圳站二等奖。</li>
-            <li><a href="projects/next-idea.html"><strong>涂鸦机器人</strong></a>：概念。人形或狗加臂，按颜色分层喷涂。还没开工。</li>
+            <li><a href="projects/next-idea.html#spray-simulation"><strong>涂鸦机器人</strong></a>：机器狗搭载机械臂，分层进行七色喷涂仿真。</li>
             <li><a href="projects/photomate.html"><strong>PhotoMate</strong></a>：S0–S6 拍照 Agent（FastAPI + Qwen-Omni + React <code>/flow/</code>）；探月完成软件链，真机执行未闭环。</li>
             <li><a href="projects/furniture-print.html"><strong>室内米级协作臂 3D 打印</strong></a>：原构想为移动操作打印 + 语音/Agent → STL → 切片执行；2026 年 9 月 27 日起暂停。</li>
             <li>长程任务智能体：导航定位、任务规划与执行链路。</li>
@@ -516,7 +480,7 @@ research_content = r"""
           <ul class="lang-en">
             <li><a href="projects/ink-gravity.html"><strong>Ink Gravity</strong></a>: rule-based brush writing on an SO-101, simulated and then run on the real arm. 1st place, SpaceXAI Macau Hackathon, physical-AI track.</li>
             <li><a href="projects/billiards.html"><strong>Billiards companion</strong></a>: move, see, stroke, and talk on an Astribot T1. 2nd prize, Shenzhen.</li>
-            <li><a href="projects/next-idea.html"><strong>Graffiti robot</strong></a>: concept. A humanoid or a dog-plus-arm sprays ordered color layers. Not started.</li>
+            <li><a href="projects/next-idea.html#spray-simulation"><strong>Graffiti robot</strong></a>: a robot dog and arm spray seven color layers in simulation.</li>
             <li><a href="projects/photomate.html"><strong>PhotoMate</strong></a>: S0–S6 photo agent (FastAPI + Qwen-Omni + React <code>/flow/</code>); software validated at Tanyue; real-robot loop unfinished.</li>
             <li><a href="projects/furniture-print.html"><strong>Indoor meter-scale arm printing</strong></a>: concept for mobile manipulative AM + voice/agent → STL → slice/execute; on hold since September 27, 2026.</li>
             <li>Long-horizon agents: navigation, planning, and execution chains.</li>
@@ -634,11 +598,13 @@ projects_content = r"""
               <li>我负责算法。字图拆成笔画，对齐笔顺，笔尖走中线，只解 4 个关节。先在 MuJoCo 里按真机尺寸跑通，再下发到右臂从臂。</li>
               <li>现场演示的是这条规则链路。代码仓库未公开。</li>
               <li><a href="projects/ink-gravity.html">项目页 →</a></li>
+              <li><a href="projects/ink-gravity.html#brush-simulation">数位毛笔与「永」字仿真</a></li>
             </ul>
             <ul class="lang-en">
               <li>I owned the algorithm: split strokes, align stroke order, follow the centerline, and solve four joints. It ran in MuJoCo at the real arm’s size, then on the right follower.</li>
               <li>The on-stage demo was this rule chain. The repository is not public.</li>
               <li><a href="projects/ink-gravity.html">Project page →</a></li>
+              <li><a href="projects/ink-gravity.html#brush-simulation">Digital brush and Yong simulation</a></li>
             </ul>
           </div>
 
@@ -660,17 +626,17 @@ projects_content = r"""
 
           <div class="paper-card">
             <div class="paper-title"><a href="projects/next-idea.html"><span class="lang-zh">3. 涂鸦机器人</span><span class="lang-en">3. Graffiti Robot</span></a></div>
-            <p class="paper-meta lang-zh">2026.11 提出 · 概念，还没开工 · 人形或狗加臂 · 地瓜 RDK</p>
-            <p class="paper-meta lang-en">Proposed Nov 2026 · concept, not started · humanoid or dog-plus-arm · D-Robotics RDK</p>
+            <p class="paper-meta lang-zh">2026.11 · 七色喷涂仿真 · 尚无实体样机</p>
+            <p class="paper-meta lang-en">Nov 2026 · seven-color spray simulation · no hardware prototype yet</p>
             <ul class="lang-zh">
               <li>走到墙前，按颜色一层一层喷。层的顺序是画面的一部分。</li>
               <li>身体留两条：萝博派对或宇树人形；或者维他动力机器狗优先，加求之或松灵机械臂。没有样机。</li>
-              <li><a href="projects/next-idea.html">项目页 →</a></li>
+              <li><a href="projects/next-idea.html#spray-simulation">观看原速仿真（3 分 11 秒） →</a></li>
             </ul>
             <ul class="lang-en">
               <li>Walk up to a wall and spray one color layer at a time. Layer order is part of the picture.</li>
               <li>Two bodies stay open: a RoboParty or Unitree humanoid, or a Vita Dynamics dog first plus a Qiuzhi or AgileX arm. No prototype yet.</li>
-              <li><a href="projects/next-idea.html">Project page →</a></li>
+              <li><a href="projects/next-idea.html#spray-simulation">Watch the original-speed simulation (3:11) →</a></li>
             </ul>
           </div>
 
@@ -807,7 +773,7 @@ pages = [
     (
         "projects.html",
         "Projects | Mingzhe Li",
-        "Selected projects: Ink Gravity, a billiards companion, a graffiti-robot concept, PhotoMate, VLA, and RoboMaster.",
+        "Selected projects: Ink Gravity, robotic brush and spray simulations, a billiards companion, PhotoMate, VLA, and RoboMaster.",
         "projects.html",
         "projects",
         "项目",
