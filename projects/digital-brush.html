@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Brush | 数位毛笔 | Mingzhe Li</title>
+  <meta name="description" content="A digital calligraphy brush for collecting brushstroke data, from the original stylus concept to the updated dou-brush design.">
+  <link rel="canonical" href="https://mzli112358.github.io/projects/digital-brush.html">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    body { max-width: 960px; margin: 0 auto; padding: 24px; }
+    nav, footer { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; }
+    header, section { margin: 36px 0; }
+    figure { margin: 16px 0; }
+    figure img { display: block; width: 100%; height: auto; border-radius: 4px; }
+    .brush-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; }
+  </style>
+</head>
+<body>
+  <nav aria-label="Site navigation">
+    <a href="../index.html">Mingzhe Li</a>
+    <a href="../projects.html"><span class="lang-zh">全部项目</span><span class="lang-en">All projects</span></a>
+    <div class="lang-switch" role="group" aria-label="Language / 语言">
+      <button type="button" data-lang-btn="zh" aria-pressed="false">中文</button>
+      <button type="button" data-lang-btn="en" class="is-active" aria-pressed="true">EN</button>
+    </div>
+  </nav>
+  <main>
+    <header>
+      <h1 class="lang-zh">数位毛笔</h1>
+      <h1 class="lang-en">Digital Brush</h1>
+      <p class="lang-zh">把数采做扎实，把模型训好，做成一支数位毛笔。</p>
+      <p class="lang-en">Collect better data, train a better model, and make a digital calligraphy brush.</p>
+      <p class="lang-zh">现在市面上已经有数位笔了，但那是给手写板和平板用的。为了把数据采得更扎实，我们打算自己做一支数位毛笔；这支笔做出来之后，同一套采集思路还能往水墨画、水粉、水彩、油画的笔触上延。</p>
+      <p class="lang-en">Digital styli already exist, but they are built for drawing tablets and handwriting pads. To collect better data we plan to build our own digital brush; once it works, the same collection approach can extend to ink wash, gouache, watercolour and oil painting.</p>
+    </header>
+    <section>
+      <h2 class="lang-zh">新版斗笔爆炸图</h2>
+      <h2 class="lang-en">Updated Dou Brush: Exploded View</h2>
+      <figure>
+        <img class="preview-image" src="../assets/simulation/digital-brush-exploded.png" width="2000" height="1700" alt="Updated digital dou brush in assembled, sectional and exploded views">
+        <figcaption><span class="lang-zh">从左到右：整笔装配、内部剖视、结构爆炸图。新版采用 302030 扁平电池；目前为数字样机设计，尚待实物验证。</span><span class="lang-en">Left to right: assembled brush, section view, and exploded view. The updated design uses a flat 302030 battery and has yet to be validated in hardware.</span></figcaption>
+      </figure>
+    </section>
+    <section>
+      <h2 class="lang-zh">早期设计</h2>
+      <h2 class="lang-en">Earlier Design</h2>
+      <div class="brush-grid">
+        <figure>
+          <img class="preview-image" loading="lazy" src="../assets/images/ink/digital-brush-render.jpg" alt="Early exploded render of the digital brush">
+          <figcaption><span class="lang-zh">整支笔的分解渲染：笔头、弹簧、力传感器、主控、电池、笔杆与尾盖。</span><span class="lang-en">Exploded render: brush head, spring, force sensor, controller, battery, shaft and tail cap.</span></figcaption>
+        </figure>
+        <figure>
+          <img class="preview-image" loading="lazy" src="../assets/images/ink/digital-brush.png" alt="Early exploded CAD view of the digital brush">
+          <figcaption><span class="lang-zh">早期 CAD 方案：笔杆前后壳、10440 电池、力传感器板、6.5 × 10 mm 弹簧、笔尖座和塑料笔尖；主控为 XIAO nRF52840 Sense，笔杆 20 mm。</span><span class="lang-en">Early CAD design: two shaft shells, a 10440 battery, a force-sensor PCB, a 6.5 × 10 mm spring, a nib base and plastic nib. The controller is an XIAO nRF52840 Sense; the shaft is 20 mm.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <a href="ink-gravity-continuation.html#digital-brush"><span class="lang-zh">查看墨有引力延续页中的原始记录</span><span class="lang-en">See the original Ink Gravity continuation notes</span></a>
+  </footer>
+  <script src="../assets/js/lightbox.js?v=20261120-lb"></script>
+  <script src="../assets/js/lang-switch.js?v=20260928-en"></script>
+</body>
+</html>

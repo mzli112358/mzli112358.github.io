@@ -175,8 +175,8 @@
       <div class="eyebrow lang-en">SpaceXAI Macau Hackathon · Nov 12–14, 2026 · Physical AI track · 1st Place</div>
       <h1 class="lang-zh">墨有引力</h1>
       <h1 class="lang-en">Ink Gravity</h1>
-      <p class="lang-zh">用机械臂写毛笔字，做软笔书法，精进书写效果；<br>之后再延伸到数位毛笔设计，并扩展到绘画、涂鸦等场景。</p>
-      <p class="lang-en">Brush writing with a robot arm: soft-brush calligraphy, with the brushwork refined.<br>From there it extends to digital-brush design, and out to drawing, painting, and graffiti.</p>
+      <p class="lang-zh">用机械臂写毛笔字，做软笔书法，精进书写效果，并探索绘画、涂鸦等应用。</p>
+      <p class="lang-en">Brush writing with a robot arm: refining soft-brush calligraphy and exploring applications in drawing, painting, and graffiti.</p>
       <p class="meta lang-zh">持续推进中，2026年11月16日~12月31日（预计）</p>
       <p class="meta lang-en">Ongoing · Nov 16 – Dec 31, 2026 (expected)</p>
     </div>
@@ -195,22 +195,6 @@
         <video class="clip" controls playsinline preload="metadata" poster="../assets/images/ink/demo-poster.jpg">
           <source src="../assets/images/ink/demo.mp4" type="video/mp4">
         </video>
-      </div>
-    </section>
-
-    <section id="brush-simulation">
-      <div class="wrap">
-        <h2 class="lang-zh">后续探索：数位毛笔与「永」字仿真</h2>
-        <h2 class="lang-en">Follow-up: Digital Brush and Yong Simulation</h2>
-        <figure>
-          <img class="preview-image" src="../assets/simulation/usb_tail_detail.png" alt="Digital brush tail and USB-C connector detail" loading="lazy">
-          <figcaption><span class="lang-zh">数位斗笔设计：尾端 USB-C 接口细节。</span><span class="lang-en">Digital brush design: USB-C connector detail at the tail.</span></figcaption>
-        </figure>
-        <video class="clip" controls playsinline preload="none" aria-label="B601-RS brush calligraphy simulation">
-          <source src="../assets/simulation/b601_rs_brush_calligraphy_yong.mp4" type="video/mp4">
-        </video>
-        <p class="lang-zh">B601-RS 仿真演示（约 24 秒）：斗笔蘸墨、沿砚台圆沿刮墨捋锋，再分五笔写「永」。这段视频不是 SO-101 真机实拍。</p>
-        <p class="lang-en">B601-RS simulation (about 24 seconds): the arm dips the brush, wipes and shapes the tip against the inkstone rim, then writes 永 (Yong) in five strokes. This is separate from the SO-101 hardware footage.</p>
       </div>
     </section>
 
@@ -477,18 +461,23 @@
             <p class="lang-en">Keep improving the control algorithm I own. For each stroke, build a library of the canonical brush inclination and the related stroke data.</p>
           </div>
           <div class="block">
-            <h3 class="lang-zh">数位毛笔</h3>
-            <h3 class="lang-en">A digital brush</h3>
-            <p class="lang-zh">把数采做扎实，把模型训好，做成一支数位毛笔。</p>
-            <p class="lang-en">Collect better data, train a better model, and make a digital calligraphy brush.</p>
-          </div>
-          <div class="block">
             <h3 class="lang-zh">涂鸦</h3>
             <h3 class="lang-en">Graffiti</h3>
             <p class="lang-zh"><a href="next-idea.html">涂鸦机器人</a>。概念已经写在那一页，样机还没有。</p>
             <p class="lang-en"><a href="next-idea.html">Graffiti robot</a>. The concept is on that page. There is no prototype yet.</p>
           </div>
         </div>
+      </div>
+    </section>
+    <section id="brush-simulation">
+      <div class="wrap">
+        <h2 class="lang-zh">B601-RS 写「永」仿真</h2>
+        <h2 class="lang-en">B601-RS Yong Calligraphy Simulation</h2>
+        <p class="lang-zh">约 24 秒：斗笔蘸墨、沿砚台圆沿刮墨捋锋，再分五笔写「永」。这段视频是仿真，不是 SO-101 真机实拍。</p>
+        <p class="lang-en">About 24 seconds: the arm dips the brush, wipes and shapes the tip against the inkstone rim, then writes 永 (Yong) in five strokes. This is simulation, not SO-101 hardware footage.</p>
+        <video class="clip" controls playsinline preload="none" width="1280" height="960" style="aspect-ratio:4 / 3;" aria-label="B601-RS brush calligraphy simulation">
+          <source src="../assets/simulation/b601_rs_brush_calligraphy_yong.mp4" type="video/mp4">
+        </video>
       </div>
     </section>
   </main>

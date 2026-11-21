@@ -311,8 +311,8 @@ index_content = r"""
           <ul class="news-list">
             <li class="lang-zh"><strong>[2026.11.12–14]</strong> SpaceXAI 澳门黑客松：<a href="projects/ink-gravity.html">墨有引力</a> 获物理 AI 赛道<strong>第一名</strong>。在 SO-101 上用规则把毛笔字写到真机。</li>
             <li class="lang-en"><strong>[2026.11.12–14]</strong> SpaceXAI Macau Hackathon: <a href="projects/ink-gravity.html">Ink Gravity</a> took <strong>1st place</strong> in the physical-AI track. Rule-based brush writing ran on an SO-101 arm.</li>
-            <li class="lang-zh"><strong>[2026.11]</strong> 星尘智能实习结束（2026.09–11）。深圳站台球陪练见 <a href="projects/billiards.html">项目页</a>。新增 <a href="projects/next-idea.html#spray-simulation">七色喷涂</a>与<a href="projects/ink-gravity.html#brush-simulation">数位毛笔及「永」字仿真</a>演示。</li>
-            <li class="lang-en"><strong>[2026.11]</strong> Astribot internship ended (Sep–Nov 2026). See the <a href="projects/billiards.html">Shenzhen billiards companion</a>, plus new demos of <a href="projects/next-idea.html#spray-simulation">seven-color spraying</a> and the <a href="projects/ink-gravity.html#brush-simulation">digital brush and Yong calligraphy simulation</a>.</li>
+            <li class="lang-zh"><strong>[2026.11]</strong> 星尘智能实习结束（2026.09–11）。深圳站台球陪练见 <a href="projects/billiards.html">项目页</a>。另见 <a href="projects/digital-brush.html">数位毛笔设计</a>、<a href="projects/ink-gravity.html#brush-simulation">「永」字仿真</a>和<a href="projects/next-idea.html#spray-simulation">七色喷涂仿真</a>。</li>
+            <li class="lang-en"><strong>[2026.11]</strong> Astribot internship ended (Sep–Nov 2026). See the <a href="projects/billiards.html">Shenzhen billiards companion</a>, the <a href="projects/digital-brush.html">digital brush design</a>, and the <a href="projects/ink-gravity.html#brush-simulation">Yong calligraphy</a> and <a href="projects/next-idea.html#spray-simulation">seven-color spray</a> simulations.</li>
             <li class="lang-zh"><strong>[2026.09.21]</strong> 加入星尘智能（Astribot），担任<strong>机器人算法工程师（实习）</strong>，负责轮式机械臂应用的全栈开发。</li>
             <li class="lang-en"><strong>[2026.09.21]</strong> Joined Astribot as a <strong>Robotics Algorithm Engineer Intern</strong>, working on full-stack development of a wheeled-arm robot application.</li>
             <li class="lang-zh"><strong>[2026.08.22–23]</strong> 星尘 OS「一句话生成 App」机器人黑客松深圳站<strong>二等奖</strong>；晋级 <strong>10 月 24–25 日</strong>全国总决赛 · 共创者大会。</li>
@@ -598,13 +598,13 @@ projects_content = r"""
               <li>我负责算法。字图拆成笔画，对齐笔顺，笔尖走中线，只解 4 个关节。先在 MuJoCo 里按真机尺寸跑通，再下发到右臂从臂。</li>
               <li>现场演示的是这条规则链路。代码仓库未公开。</li>
               <li><a href="projects/ink-gravity.html">项目页 →</a></li>
-              <li><a href="projects/ink-gravity.html#brush-simulation">数位毛笔与「永」字仿真</a></li>
+              <li><a href="projects/ink-gravity.html#brush-simulation">B601-RS 写「永」仿真</a></li>
             </ul>
             <ul class="lang-en">
               <li>I owned the algorithm: split strokes, align stroke order, follow the centerline, and solve four joints. It ran in MuJoCo at the real arm’s size, then on the right follower.</li>
               <li>The on-stage demo was this rule chain. The repository is not public.</li>
               <li><a href="projects/ink-gravity.html">Project page →</a></li>
-              <li><a href="projects/ink-gravity.html#brush-simulation">Digital brush and Yong simulation</a></li>
+              <li><a href="projects/ink-gravity.html#brush-simulation">B601-RS Yong calligraphy simulation</a></li>
             </ul>
           </div>
 
@@ -736,6 +736,11 @@ projects_content = r"""
             <ul class="lang-en">
               <li>Factory scheduling/defect agents; automated patent review and retrieval.</li>
             </ul>
+          </div>
+          <div class="paper-card">
+            <div class="paper-title"><a href="projects/digital-brush.html"><span class="lang-zh">11. 数位毛笔</span><span class="lang-en">11. Digital Brush</span></a></div>
+            <p class="paper-meta lang-zh">笔触数据采集 · 数字样机 · 新版斗笔爆炸图</p>
+            <p class="paper-meta lang-en">Brushstroke data collection · digital prototype · updated exploded view</p>
           </div>
 """
 
