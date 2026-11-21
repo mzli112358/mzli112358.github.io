@@ -96,6 +96,9 @@
     .fig { margin: 20px 0 0; }
     .fig img { width: 100%; height: auto; display: block; border-radius: 4px; border: 1px solid var(--line); background: #fff; }
     .fig figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; }
+    .fig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 20px; }
+    .fig-grid .fig { margin: 0; }
+    @media (max-width: 720px) { .fig-grid { grid-template-columns: 1fr; } }
     footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
     @media (max-width: 720px) { .pipeline { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 480px) { .pipeline { grid-template-columns: 1fr; } }
@@ -161,6 +164,39 @@
       </div>
     </section>
 
+    <section id="visuals">
+      <div class="wrap">
+        <!-- BILINGUAL PAIR: visuals -->
+        <h2 class="lang-zh">图示</h2>
+        <h2 class="lang-en">Visuals</h2>
+        <p class="lead lang-zh">下面三张是概念示意（AI 生成），不是现场照片，只用来说明轮臂、球桌和出杆姿态之间的关系。</p>
+        <p class="lead lang-en">The three images below are concept illustrations (AI-generated), not photos of the demo. They only show how the wheeled arm, the table, and the stroke relate.</p>
+        <figure class="fig">
+          <img loading="lazy" decoding="async" src="../assets/images/billiards/wide.jpg" width="1600" height="1000" alt="A white humanoid robot on a wheeled base leaning over a green pool table, cue aimed at the white ball, racked balls at the far end">
+          <figcaption>
+            <span class="lang-zh">整体关系：机器人停在桌边，俯身贴台；前手在台面架杆，后手握杆，杆头送向白球，球堆在远端。</span>
+            <span class="lang-en">The whole setup: the robot stands at the table and leans in; the front hand sets the bridge on the cloth, the rear hand holds the cue, and the tip reaches toward the white ball, with the rack at the far end.</span>
+          </figcaption>
+        </figure>
+        <div class="fig-grid">
+          <figure class="fig">
+            <img loading="lazy" decoding="async" src="../assets/images/billiards/closeup.jpg" width="1600" height="1000" alt="Close-up of the robot leaning over the table, one hand holding a blue bridge block on the cloth and the cue running along it to the white ball">
+            <figcaption>
+              <span class="lang-zh">近景：前手握着一块蓝色架杆块压在台面上，杆身沿它走直线，杆头停在白球前。</span>
+              <span class="lang-en">Close-up: the front hand holds a blue bridge block against the cloth, the shaft runs straight along it, and the tip stops in front of the white ball.</span>
+            </figcaption>
+          </figure>
+          <figure class="fig">
+            <img loading="lazy" decoding="async" src="../assets/images/billiards/overhead.jpg" width="1600" height="1000" alt="Top-down view of the full pool table, the robot at the left edge with its cue on the white ball, and a triangle rack at the right end">
+            <figcaption>
+              <span class="lang-zh">俯视：机器人停在球桌左端，白球在中场偏左，球堆在右端。站哪一侧、从什么角度对进球线，是移动和看球要先回答的问题。</span>
+              <span class="lang-en">Top-down: the robot at the left end, the white ball left of center, the rack at the right end. Which side to come in on — and at what angle to meet the line — is what moving and seeing have to answer first.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section>
       <div class="wrap">
         <!-- BILINGUAL PAIR: role -->
@@ -193,11 +229,13 @@
             <li>这是星尘 OS 黑客松深圳站的作品，不是 PhotoMate。</li>
             <li>现场演示覆盖移动、看球、出杆和语音交互。</li>
             <li>感知、击球规划和语音的实现细节还没写进本页。代码仓库未公开。</li>
+            <li>本页配图是 AI 生成的概念示意，不是现场照片。</li>
           </ul>
           <ul class="lang-en">
             <li>This is the Astribot OS Hackathon (Shenzhen) entry, separate from PhotoMate.</li>
             <li>The on-site demo covered moving, seeing the balls, stroking, and voice.</li>
             <li>Perception, shot planning, and dialogue internals are not on this page yet. The repository is not public.</li>
+            <li>The images on this page are AI-generated concept illustrations, not photos of the demo.</li>
           </ul>
         </div>
       </div>
