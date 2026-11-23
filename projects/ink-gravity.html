@@ -109,6 +109,8 @@
     .cover img, .fig img, video.clip { width: 100%; height: auto; display: block; border-radius: 4px; }
     .fig img { border: 1px solid var(--line); background: #fff; }
     video.clip { background: #111; aspect-ratio: 16 / 9; }
+    /* the Yong simulation is rendered 1280x960; its reserved box must be 4:3 before playback too */
+    video.clip.clip-4x3 { aspect-ratio: 4 / 3; }
     .fig { margin: 14px 0 0; }
     /* width.png is 1034x1013; cap its height so the rule section stays readable */
     .fig.fig-widthmap { display: flex; flex-direction: column; }
@@ -475,7 +477,7 @@
         <h2 class="lang-en">B601-RS Yong Calligraphy Simulation</h2>
         <p class="lang-zh">约 24 秒：斗笔蘸墨、沿砚台圆沿刮墨捋锋，再分五笔写「永」。这段视频是仿真，不是 SO-101 真机实拍。</p>
         <p class="lang-en">About 24 seconds: the arm dips the brush, wipes and shapes the tip against the inkstone rim, then writes 永 (Yong) in five strokes. This is simulation, not SO-101 hardware footage.</p>
-        <video class="clip" controls playsinline preload="none" width="1280" height="960" style="aspect-ratio:4 / 3;" aria-label="B601-RS brush calligraphy simulation">
+        <video class="clip clip-4x3" controls playsinline preload="none" width="1280" height="960" poster="../assets/images/ink/b601-rs-yong-poster.jpg" aria-label="B601-RS brush calligraphy simulation">
           <source src="../assets/simulation/b601_rs_brush_calligraphy_yong.mp4" type="video/mp4">
         </video>
       </div>
