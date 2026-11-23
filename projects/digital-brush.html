@@ -10,10 +10,14 @@
   <link rel="stylesheet" href="../assets/css/site.css">
   <style>
     body { max-width: 960px; margin: 0 auto; padding: 24px; }
+    /* site.css clears the fixed Academic Pages masthead with body padding-top:5.5rem.
+       This page has its own plain nav, so keep the 24px page padding instead. */
+    html body { padding-top: 24px !important; }
     nav, footer { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; }
     header, section { margin: 36px 0; }
     figure { margin: 16px 0; }
     figure img { display: block; width: 100%; height: auto; border-radius: 4px; }
+    figure video { display: block; width: 100%; height: auto; border-radius: 4px; background: #111; }
     .brush-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; }
   </style>
 </head>
@@ -41,6 +45,19 @@
       <figure>
         <img class="preview-image" src="../assets/simulation/digital-brush-exploded.png" width="2000" height="1700" alt="Updated digital dou brush in assembled, sectional and exploded views">
         <figcaption><span class="lang-zh">从左到右：整笔装配、内部剖视、结构爆炸图。新版采用 302030 扁平电池；目前为数字样机设计，尚待实物验证。</span><span class="lang-en">Left to right: assembled brush, section view, and exploded view. The updated design uses a flat 302030 battery and has yet to be validated in hardware.</span></figcaption>
+      </figure>
+    </section>
+    <section>
+      <h2 class="lang-zh">相机标定演示</h2>
+      <h2 class="lang-en">Camera Calibration Demo</h2>
+      <figure>
+        <video controls playsinline preload="metadata" width="1280" height="720" poster="../assets/images/ink/dou-brush-calibration-poster.jpg" aria-label="Simulated camera-calibration walkthrough: a marker board is photographed at centre, right, top-left, bottom-left and off-centre positions, then the paper plane is shot for the extrinsics">
+          <source src="../assets/simulation/dou_brush_calibration_demo.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          <span class="lang-zh">标定演示（仿真）：用标定板拍内参，依次覆盖画面中央、右侧、左上、左下和中央偏远几个位置；再固定机位拍纸面外参。过程中分辨率、ROI、焦距和对焦保持不变，30 FPS。</span>
+          <span class="lang-en">Calibration walkthrough (simulation): a marker board is shot for the intrinsics at centre, right, top-left, bottom-left and off-centre positions, then the paper plane is shot for the extrinsics with the camera fixed. Resolution, ROI, focal length and focus stay fixed throughout, at 30 FPS.</span>
+        </figcaption>
       </figure>
     </section>
     <section>
