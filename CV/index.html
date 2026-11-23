@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="../assets/css/site.css?v=20260928-cv">
   <style>
     * { box-sizing: border-box; }
+    /* site.css clears the fixed Academic Pages masthead with body padding-top:5.5rem.
+       This page ships its own header instead, so that 88px gap is dead space. */
+    html body { padding-top: 0 !important; }
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", "Noto Sans TC", sans-serif;
