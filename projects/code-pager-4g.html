@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Pager 4G · 4G 随身编程机 | Mingzhe Li</title>
+  <meta name="description" content="基于 UniKnect Gen1 Pro 的 4G 随身编程终端概念设计，包含九款造型、爆炸图和使用演示。">
+  <link rel="canonical" href="https://mzli112358.github.io/projects/code-pager-4g.html">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    html body { max-width: 960px; margin: 0 auto; padding: 24px !important; }
+    nav { display: flex; flex-wrap: wrap; gap: 16px; }
+    header, section { margin: 36px 0; }
+    figure { margin: 16px 0; }
+    img, video { display: block; width: 100%; height: auto; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <nav aria-label="站点导航">
+    <a href="../index.html">Mingzhe Li</a>
+    <a href="../projects.html">全部项目</a>
+  </nav>
+  <main>
+    <header>
+      <h1>Code Pager 4G · 4G 随身编程机</h1>
+      <p>电脑留在原地运行编程任务。人出门后，随身终端通过 4G 接收构建、测试和待确认简报，响铃提示。用户可从屏幕翻阅并按键回传，也可以按住语音键说出新的提示词。</p>
+      <p>指定开发套件为 UniKnect Gen1 Pro（QADP-EC200U-Arduino）。目前已完成九款 Blender 概念设计及交互演示。下一阶段验证蜂窝简报和按键回执，再测试录音上传与转写。</p>
+    </header>
+    <section>
+      <h2>V1–V9 造型探索</h2>
+      <figure>
+        <img src="../assets/code-pager-4g/designs.jpg" width="1800" height="1590" alt="九款 Code Pager 外形，从四键 BB 机到玻璃掌机、透窗终端、工业手持、像素宠物、楔形翻盖和珠宝挂件">
+      </figure>
+    </section>
+    <section>
+      <h2>V2 装配构想</h2>
+      <figure>
+        <img src="../assets/code-pager-4g/exploded.png" width="1920" height="1440" loading="lazy" alt="V2 爆炸图，展示电子纸屏、输入板、QADP 主板、STM32 底板、天线与电池">
+        <figcaption>开发板和装配尺寸基于资料估算，打样前需实测校核。</figcaption>
+      </figure>
+    </section>
+    <section>
+      <h2>使用情景演示</h2>
+      <video controls playsinline preload="none" width="1280" height="720" aria-label="概念演示视频，含中文字幕与提示音">
+        <source src="../assets/code-pager-4g/concept.mp4" type="video/mp4">
+        <a href="../assets/code-pager-4g/concept.mp4">打开概念演示视频</a>
+      </video>
+    </section>
+  </main>
+</body>
+</html>
